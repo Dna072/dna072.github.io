@@ -60,7 +60,11 @@ export function SubmitJobPage() {
         <form onSubmit={handleSubmit} className="form">
           <label>
             Job type
-            <select value={jobType} onChange={(e) => setJobType(e.target.value as JobType)} required>
+            <select
+              value={jobType}
+              onChange={(e) => setJobType(e.target.value as JobType)}
+              required
+            >
               {JOB_TYPES.map((t) => (
                 <option key={t} value={t}>
                   {t}

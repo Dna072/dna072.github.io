@@ -1,13 +1,7 @@
 export type JobType = 'transcode' | 'thumbnail' | 'audio_extract' | 'metadata'
 
 export type JobStatus =
-  | 'pending'
-  | 'queued'
-  | 'processing'
-  | 'retrying'
-  | 'completed'
-  | 'failed'
-  | 'cancelled'
+  'pending' | 'queued' | 'processing' | 'retrying' | 'completed' | 'failed' | 'cancelled'
 
 export type WorkerStatus = 'idle' | 'busy' | 'offline'
 

@@ -94,7 +94,10 @@ export function JobDetailPage() {
             <DetailRow label="Retries" value={`${job.retries} / ${job.max_retries}`} />
             <DetailRow label="Worker" value={job.worker_id ?? '—'} />
             <DetailRow label="Input URI" value={<code>{job.input_uri}</code>} />
-            <DetailRow label="Output URI" value={job.output_uri ? <code>{job.output_uri}</code> : '—'} />
+            <DetailRow
+              label="Output URI"
+              value={job.output_uri ? <code>{job.output_uri}</code> : '—'}
+            />
             <DetailRow label="Created" value={formatTime(job.created_at)} />
             <DetailRow label="Queued" value={formatTime(job.queued_at)} />
             <DetailRow label="Started" value={formatTime(job.started_at)} />

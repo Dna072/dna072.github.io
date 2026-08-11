@@ -160,6 +160,7 @@ def compute_video_performance(
     descending: bool,
     limit: int,
     offset: int,
+    video_id: int | None = None,
 ) -> tuple[int, list[VideoPerformance]]:
     view_agg = (
         db.query(
@@ -172,7 +173,7 @@ def compute_video_performance(
                 "completed"
             ),
         )
-        .filter(ViewEvent.occurred_at.between(start_dt, end_dt))
+        .filter(*_view_filters(start_dt, end_dt, video_id))
         .group_by(ViewEvent.video_id)
         .subquery()
     )
@@ -190,7 +191,7 @@ def compute_video_performance(
                 func.sum(case((EngagementEvent.event_type == EngagementType.share, 1), else_=0)), 0
             ).label("shares"),
         )
-        .filter(EngagementEvent.occurred_at.between(start_dt, end_dt))
+        .filter(*_engagement_filters(start_dt, end_dt, video_id))
         .group_by(EngagementEvent.video_id)
         .subquery()
     )

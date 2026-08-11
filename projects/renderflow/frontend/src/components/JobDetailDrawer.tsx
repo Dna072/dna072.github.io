@@ -41,7 +41,10 @@ export function JobDetailDrawer({ job, onClose, onRetry, onCancel }: JobDetailDr
         <Row label="Input" value={<span className="mono">{job.input_uri}</span>} />
         <Row label="Output" value={<span className="mono">{job.output_uri ?? '—'}</span>} />
         <Row label="Created" value={new Date(job.created_at).toLocaleString()} />
-        <Row label="Started" value={job.started_at ? new Date(job.started_at).toLocaleString() : '—'} />
+        <Row
+          label="Started"
+          value={job.started_at ? new Date(job.started_at).toLocaleString() : '—'}
+        />
         <Row
           label="Completed"
           value={job.completed_at ? new Date(job.completed_at).toLocaleString() : '—'}

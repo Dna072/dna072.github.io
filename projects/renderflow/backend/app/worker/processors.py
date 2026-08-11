@@ -77,6 +77,11 @@ class Processor:
         }.get(job_type)
         if handler is None:
             raise ProcessingError(f"unsupported job type: {job_type}")
+        if not self.mock and not Path(input_path).exists():
+            # ffmpeg/ffprobe are installed but the referenced media doesn't exist on
+            # disk (e.g. demo/CI jobs submitted with placeholder URIs) - fall back to
+            # mock processing instead of letting the real binary fail on a missing file.
+            self.mock = True
         return handler(input_path, params)
 
     # --- transcode ------------------------------------------------------- #

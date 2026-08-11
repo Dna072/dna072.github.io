@@ -100,6 +100,7 @@ class Worker:
         self._heartbeat_thread.start()
 
     def _emit_heartbeat(self, *, status: str) -> None:
+        self._touch_liveness_file()
         try:
             session = SessionLocal()
             try:
@@ -116,6 +117,15 @@ class Worker:
                 session.close()
         except Exception:  # noqa: BLE001
             logger.exception("failed to emit heartbeat")
+
+    def _touch_liveness_file(self) -> None:
+        """Touch a file so a K8s exec probe can verify the loop is alive."""
+        try:
+            path = self.settings.worker_liveness_file
+            with open(path, "w") as fh:
+                fh.write(str(time.time()))
+        except OSError:
+            pass
 
     # --- main loop ------------------------------------------------------- #
     def _loop(self) -> None:

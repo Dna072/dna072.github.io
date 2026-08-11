@@ -58,6 +58,9 @@ class Settings(BaseSettings):
     worker_stale_after_seconds: float = Field(default=30.0)
     # Jobs stuck RUNNING past this many seconds are reaped and retried.
     job_lease_seconds: float = Field(default=600.0)
+    # File touched on every heartbeat so orchestrators can run a file-based
+    # exec liveness probe against the (HTTP-less) worker process.
+    worker_liveness_file: str = Field(default="/tmp/renderflow-worker-alive")
 
     # --- Processing --------------------------------------------------------
     # Force mock processing even when ffmpeg is present (useful in CI).

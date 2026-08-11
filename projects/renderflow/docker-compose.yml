@@ -1,0 +1,91 @@
+# RenderFlow local stack: Postgres + Redis + API + scalable workers + frontend.
+# Usage:
+#   docker compose up --build
+#   docker compose up --scale worker=3          # run 3 workers
+# Then open http://localhost:8080 (UI) and http://localhost:8000/docs (API).
+
+x-backend-env: &backend-env
+  RENDERFLOW_ENVIRONMENT: production
+  RENDERFLOW_LOG_LEVEL: INFO
+  RENDERFLOW_DATABASE_URL: postgresql+psycopg://renderflow:renderflow@postgres:5432/renderflow
+  RENDERFLOW_REDIS_URL: redis://redis:6379/0
+  RENDERFLOW_STORAGE_BACKEND: local
+  RENDERFLOW_STORAGE_LOCAL_DIR: /data/storage
+  # Set true if the image has no ffmpeg (both images include it by default).
+  RENDERFLOW_FORCE_MOCK_PROCESSING: "false"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: renderflow
+      POSTGRES_PASSWORD: renderflow
+      POSTGRES_DB: renderflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U renderflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      <<: *backend-env
+    ports:
+      - "8000:8000"
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    environment:
+      <<: *backend-env
+      RENDERFLOW_SERVICE_NAME: renderflow-worker
+    volumes:
+      - storage:/data/storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      api:
+        condition: service_started
+    # Scale horizontally: docker compose up --scale worker=3
+    deploy:
+      replicas: 2
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
+  storage:

@@ -1,0 +1,254 @@
+/* MediaVault design system — slate neutrals with a teal/forest accent.
+   Deliberately avoids purple gradients and generic AI aesthetics. */
+
+:root {
+  --teal-50: #f0fdfa;
+  --teal-100: #ccfbf1;
+  --teal-400: #2dd4bf;
+  --teal-500: #14b8a6;
+  --teal-600: #0d9488;
+  --teal-700: #0f766e;
+  --teal-800: #115e59;
+
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+
+  --amber-500: #f59e0b;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --green-500: #22c55e;
+
+  --bg: var(--slate-50);
+  --surface: #ffffff;
+  --surface-2: var(--slate-100);
+  --border: var(--slate-200);
+  --text: var(--slate-800);
+  --text-muted: var(--slate-500);
+  --accent: var(--teal-700);
+  --accent-hover: var(--teal-800);
+  --accent-soft: var(--teal-50);
+
+  --radius: 10px;
+  --radius-sm: 7px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.16);
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #111a2b;
+  --surface-2: #16223a;
+  --border: #23324d;
+  --text: #e6edf6;
+  --text-muted: #93a4bd;
+  --accent: var(--teal-400);
+  --accent-hover: var(--teal-500);
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 500;
+  font-size: 13.5px;
+  transition: background 0.15s, border-color 0.15s, transform 0.05s;
+  white-space: nowrap;
+}
+.btn:hover {
+  background: var(--surface-2);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+.btn-ghost {
+  background: transparent;
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+}
+.btn-danger {
+  color: var(--red-600);
+  border-color: transparent;
+  background: transparent;
+}
+.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+/* --- Inputs ------------------------------------------------------------- */
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13.5px;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* --- Cards / surfaces --------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Badges ------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+.badge-role-ADMIN {
+  background: rgba(15, 118, 110, 0.12);
+  color: var(--teal-700);
+}
+.badge-role-MEMBER {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+.badge-role-VIEWER {
+  background: var(--surface-2);
+  color: var(--text-muted);
+}
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+.tag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* --- Utilities ---------------------------------------------------------- */
+.muted {
+  color: var(--text-muted);
+}
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--border) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.3s infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

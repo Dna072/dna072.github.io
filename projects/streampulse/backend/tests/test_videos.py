@@ -27,6 +27,22 @@ def test_video_performance_sorted_by_views_desc(client, auth_headers, seeded_vid
     assert items[1]["views"] == 1
 
 
+def test_video_performance_respects_video_filter(client, auth_headers, seeded_videos):
+    today = seeded_videos["today"]
+    start = today - timedelta(days=1)
+    video_b = seeded_videos["video_b"]
+    response = client.get(
+        "/api/videos/performance",
+        params={"start": start.isoformat(), "end": today.isoformat(), "video_id": video_b.id},
+        headers=auth_headers,
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["total"] == 1
+    assert body["items"][0]["title"] == "Deterministic Video B"
+    assert body["items"][0]["views"] == 1
+
+
 def test_video_performance_pagination(client, auth_headers, seeded_videos):
     today = seeded_videos["today"]
     start = today - timedelta(days=1)

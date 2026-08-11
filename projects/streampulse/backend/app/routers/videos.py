@@ -32,7 +32,14 @@ def video_performance(
     _: User = Depends(get_current_user),
 ) -> VideoPerformanceResponse:
     total, items = compute_video_performance(
-        db, rng.start_dt, rng.end_dt, sort=sort, descending=(order == "desc"), limit=limit, offset=offset
+        db,
+        rng.start_dt,
+        rng.end_dt,
+        sort=sort,
+        descending=(order == "desc"),
+        limit=limit,
+        offset=offset,
+        video_id=rng.video_id,
     )
     return VideoPerformanceResponse(
         range=DateRange(start=rng.start, end=rng.end),

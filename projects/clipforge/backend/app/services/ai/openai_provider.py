@@ -1,90 +1,88 @@
 """OpenAI-backed AI provider.
 
-Uses Whisper for transcription and a chat model for summary/chapter/tag
-extraction. Imports of the ``openai`` SDK are done lazily so the package is only
-required when this provider is actually selected. Any failure falls back to the
-mock provider to keep the pipeline resilient.
+Kept intentionally thin: it maps ClipForge's provider contract onto the OpenAI
+SDK. Transcription uses Whisper; analysis uses a chat model constrained to JSON
+output. Network calls are wrapped in retries. When no key is configured the
+factory falls back to :class:`MockAIProvider`, so this class is never the reason
+demo mode breaks.
 """
 
 from __future__ import annotations
 
 import json
 
+from tenacity import retry, stop_after_attempt, wait_exponential
+
 from app.core.config import settings
 from app.core.logging import get_logger
-from app.services.ai.base import AnalysisResult, Chapter, TranscriptResult
-from app.services.ai.mock_provider import MockAIProvider
+from app.services.ai.base import (
+    ChapterMarker,
+    ContentInsights,
+    Transcript,
+    TranscriptSegment,
+)
 
-logger = get_logger("clipforge.ai.openai")
+logger = get_logger(__name__)
 
 _ANALYSIS_SYSTEM_PROMPT = (
-    "You are a video content analyst. Given a transcript, respond with strict "
-    "JSON containing: 'summary' (2-3 sentences), 'chapters' (array of "
-    "{title, start, end} in seconds), and 'tags' (3-6 short lowercase strings)."
+    "You are a video content analyst. Given a transcript, return a strict JSON "
+    "object with keys: summary (string, 2-3 sentences), chapters (array of "
+    "{start: number seconds, title: string}), and tags (array of 3-6 lowercase "
+    "strings). Return JSON only."
 )
 
 
 class OpenAIProvider:
-    """AI provider backed by the OpenAI API."""
-
     name = "openai"
 
-    def __init__(self) -> None:
-        self._fallback = MockAIProvider()
-        try:
-            from openai import OpenAI  # noqa: PLC0415 - lazy import
+    def __init__(self, api_key: str | None = None, model: str | None = None) -> None:
+        from openai import OpenAI  # imported lazily so the SDK is optional at runtime
 
-            self._client = OpenAI(api_key=settings.openai_api_key)
-        except Exception as exc:  # pragma: no cover - depends on optional dep
-            logger.warning("openai_init_failed", extra={"error": str(exc)})
-            self._client = None
+        self._client = OpenAI(api_key=api_key or settings.openai_api_key)
+        self._model = model or settings.openai_model
 
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10))
     def transcribe(
-        self, audio_path: str, *, duration: float | None = None
-    ) -> TranscriptResult:
-        if self._client is None:
-            return self._fallback.transcribe(audio_path, duration=duration)
-        try:
-            with open(audio_path, "rb") as handle:
-                result = self._client.audio.transcriptions.create(
-                    model="whisper-1", file=handle
-                )
-            return TranscriptResult(text=getattr(result, "text", ""), language="en")
-        except Exception as exc:  # pragma: no cover - network path
-            logger.warning("openai_transcribe_failed", extra={"error": str(exc)})
-            return self._fallback.transcribe(audio_path, duration=duration)
+        self, audio_path: str, *, duration_seconds: float | None = None
+    ) -> Transcript:
+        with open(audio_path, "rb") as fh:
+            result = self._client.audio.transcriptions.create(
+                model="whisper-1",
+                file=fh,
+                response_format="verbose_json",
+            )
+        segments = [
+            TranscriptSegment(start=float(s.start), end=float(s.end), text=s.text.strip())
+            for s in getattr(result, "segments", []) or []
+        ]
+        return Transcript(
+            text=result.text,
+            segments=segments,
+            language=getattr(result, "language", "en") or "en",
+        )
 
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=1, max=10))
     def analyze(
-        self, transcript: str, *, duration: float | None = None
-    ) -> AnalysisResult:
-        if self._client is None:
-            return self._fallback.analyze(transcript, duration=duration)
-        try:
-            response = self._client.chat.completions.create(
-                model=settings.openai_model,
-                response_format={"type": "json_object"},
-                messages=[
-                    {"role": "system", "content": _ANALYSIS_SYSTEM_PROMPT},
-                    {
-                        "role": "user",
-                        "content": f"Duration: {duration}s\nTranscript:\n{transcript}",
-                    },
-                ],
-            )
-            data = json.loads(response.choices[0].message.content or "{}")
-            chapters = [
-                Chapter(
-                    title=str(c.get("title", "Chapter")),
-                    start=float(c.get("start", 0)),
-                    end=float(c.get("end", 0)),
-                )
-                for c in data.get("chapters", [])
-            ]
-            return AnalysisResult(
-                summary=str(data.get("summary", "")),
-                chapters=chapters,
-                tags=[str(t) for t in data.get("tags", [])],
-            )
-        except Exception as exc:  # pragma: no cover - network path
-            logger.warning("openai_analyze_failed", extra={"error": str(exc)})
-            return self._fallback.analyze(transcript, duration=duration)
+        self, transcript: str, *, title: str, duration_seconds: float | None = None
+    ) -> ContentInsights:
+        response = self._client.chat.completions.create(
+            model=self._model,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": _ANALYSIS_SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": f"Title: {title}\nDuration: {duration_seconds}s\n\n{transcript}",
+                },
+            ],
+        )
+        payload = json.loads(response.choices[0].message.content or "{}")
+        chapters = [
+            ChapterMarker(start=float(c.get("start", 0)), title=str(c.get("title", "")))
+            for c in payload.get("chapters", [])
+        ]
+        return ContentInsights(
+            summary=str(payload.get("summary", "")).strip(),
+            chapters=chapters,
+            tags=[str(t).lower() for t in payload.get("tags", [])][:6],
+        )

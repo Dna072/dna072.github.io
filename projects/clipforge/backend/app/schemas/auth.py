@@ -1,16 +1,16 @@
-"""Authentication-related schemas."""
-
 from __future__ import annotations
 
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field
+
+from app.schemas.common import ORMModel
 
 
 class UserRegister(BaseModel):
     email: EmailStr
+    full_name: str = Field(min_length=1, max_length=200)
     password: str = Field(min_length=8, max_length=128)
-    full_name: str = Field(min_length=1, max_length=255)
 
 
 class UserLogin(BaseModel):
@@ -28,16 +28,10 @@ class RefreshRequest(BaseModel):
     refresh_token: str
 
 
-class UserPublic(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
+class UserRead(ORMModel):
     id: str
     email: EmailStr
     full_name: str
     is_active: bool
+    is_superuser: bool
     created_at: datetime
-
-
-class AuthResponse(BaseModel):
-    user: UserPublic
-    tokens: TokenPair

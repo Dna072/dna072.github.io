@@ -1,33 +1,32 @@
-"""Workspace schemas."""
-
 from __future__ import annotations
 
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
+
+from app.schemas.common import ORMModel
 
 
 class WorkspaceCreate(BaseModel):
-    name: str = Field(min_length=1, max_length=120)
-    description: str | None = Field(default=None, max_length=2000)
+    name: str = Field(min_length=1, max_length=200)
 
 
-class WorkspaceUpdate(BaseModel):
-    name: str | None = Field(default=None, min_length=1, max_length=120)
-    description: str | None = Field(default=None, max_length=2000)
-
-
-class WorkspacePublic(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
-
+class WorkspaceRead(ORMModel):
     id: str
     name: str
     slug: str
-    description: str | None
     owner_id: str
     created_at: datetime
-    updated_at: datetime
 
 
-class WorkspaceWithStats(WorkspacePublic):
-    video_count: int = 0
+class ProjectCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=200)
+    description: str | None = Field(default=None, max_length=2000)
+
+
+class ProjectRead(ORMModel):
+    id: str
+    name: str
+    description: str | None
+    workspace_id: str
+    created_at: datetime

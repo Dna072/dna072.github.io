@@ -1,27 +1,25 @@
-"""Processing job schemas."""
-
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Any
 
-from pydantic import BaseModel, ConfigDict
-
-from app.models.enums import JobStage, JobStatus
+from app.models.job import JobStatus
+from app.schemas.common import ORMModel
 
 
-class JobPublic(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
+class JobStep(ORMModel):
+    name: str
+    status: str  # pending|running|succeeded|failed|skipped
+    detail: str | None = None
 
+
+class JobRead(ORMModel):
     id: str
     video_id: str
     status: JobStatus
-    stage: JobStage
-    progress: int
     attempts: int
-    stage_history: list[dict[str, Any]] | None
+    max_attempts: int
+    steps: list[JobStep] | None
     error_message: str | None
     started_at: datetime | None
     finished_at: datetime | None
     created_at: datetime
-    updated_at: datetime

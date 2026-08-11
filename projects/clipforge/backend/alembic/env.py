@@ -1,18 +1,20 @@
-"""Alembic migration environment."""
+"""Alembic environment.
+
+Uses the application's ``Settings.database_url`` and the shared ``Base.metadata``
+(with all models imported) so autogenerate sees the full schema.
+"""
 
 from __future__ import annotations
 
 from logging.config import fileConfig
 
+import app.models  # noqa: F401  -- register all models on Base.metadata
 from alembic import context
+from app.core.config import settings
+from app.core.database import Base
 from sqlalchemy import engine_from_config, pool
 
-from app.core.config import settings
-from app.models import Base  # noqa: F401 - registers all models on metadata
-
 config = context.config
-
-# Inject the runtime database URL from application settings.
 config.set_main_option("sqlalchemy.url", settings.database_url)
 
 if config.config_file_name is not None:
@@ -27,7 +29,6 @@ def run_migrations_offline() -> None:
         target_metadata=target_metadata,
         literal_binds=True,
         dialect_opts={"paramstyle": "named"},
-        render_as_batch=settings.is_sqlite,
         compare_type=True,
     )
     with context.begin_transaction():
@@ -35,16 +36,15 @@ def run_migrations_offline() -> None:
 
 
 def run_migrations_online() -> None:
+    section = config.get_section(config.config_ini_section) or {}
+    section["sqlalchemy.url"] = settings.database_url
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
+        section, prefix="sqlalchemy.", poolclass=pool.NullPool
     )
     with connectable.connect() as connection:
         context.configure(
             connection=connection,
             target_metadata=target_metadata,
-            render_as_batch=settings.is_sqlite,
             compare_type=True,
         )
         with context.begin_transaction():

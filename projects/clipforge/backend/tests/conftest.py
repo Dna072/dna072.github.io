@@ -1,69 +1,44 @@
 """Shared pytest fixtures.
 
-Environment variables are configured *before* application modules are imported
-so the cached Settings pick up a throwaway SQLite database and the mock AI
-provider. The job queue is stubbed so uploads do not spawn background workers
-during API tests; pipeline behaviour is exercised directly in test_pipeline.
+Tests run against an isolated in-memory SQLite database and an in-memory job
+queue, so no PostgreSQL, Redis, or network access is required. AI defaults to the
+MockAIProvider.
 """
 
 from __future__ import annotations
 
-import os
-import tempfile
-from pathlib import Path
-from typing import Iterator
+import io
+from collections.abc import Generator
 
 import pytest
-
-# --- Configure environment before importing the app ------------------------
-_TMP = tempfile.mkdtemp(prefix="clipforge-test-")
-os.environ["DATABASE_URL"] = f"sqlite:///{_TMP}/test.db"
-os.environ["STORAGE_DIR"] = f"{_TMP}/storage"
-os.environ["JWT_SECRET_KEY"] = "test-secret"
-os.environ["AI_PROVIDER"] = "mock"
-os.environ["BCRYPT_ROUNDS"] = "4"  # faster hashing in tests
-os.environ["LOG_JSON"] = "false"
-
-from fastapi.testclient import TestClient  # noqa: E402
-
-from app.db.session import SessionLocal, engine  # noqa: E402
-from app.main import app  # noqa: E402
-from app.models import Base  # noqa: E402
-
-
-class _StubQueue:
-    """Records enqueued job ids without running any work."""
-
-    backend = "stub"
-
-    def __init__(self) -> None:
-        self.enqueued: list[str] = []
-
-    def enqueue(self, job_id: str) -> None:
-        self.enqueued.append(job_id)
-
-
-@pytest.fixture(autouse=True)
-def _reset_db() -> Iterator[None]:
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
-    Path(os.environ["STORAGE_DIR"]).mkdir(parents=True, exist_ok=True)
-    yield
-    Base.metadata.drop_all(bind=engine)
-
-
-@pytest.fixture(autouse=True)
-def _stub_queue(monkeypatch) -> _StubQueue:
-    """Replace the real queue everywhere it is used during tests."""
-    stub = _StubQueue()
-    monkeypatch.setattr("app.workers.queue.get_queue", lambda: stub)
-    monkeypatch.setattr("app.services.video_service.get_queue", lambda: stub)
-    return stub
+from app.core.database import Base, get_db
+from app.main import create_app
+from app.services.queue import InMemoryQueue, set_queue
+from fastapi.testclient import TestClient
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.pool import StaticPool
 
 
 @pytest.fixture
-def db():
-    session = SessionLocal()
+def engine():
+    eng = create_engine(
+        "sqlite+pysqlite:///:memory:",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+        future=True,
+    )
+    import app.models  # noqa: F401 -- register models
+
+    Base.metadata.create_all(eng)
+    yield eng
+    Base.metadata.drop_all(eng)
+
+
+@pytest.fixture
+def db_session(engine) -> Generator[Session, None, None]:
+    TestSession = sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)
+    session = TestSession()
     try:
         yield session
     finally:
@@ -71,23 +46,59 @@ def db():
 
 
 @pytest.fixture
-def client() -> Iterator[TestClient]:
-    with TestClient(app) as test_client:
-        yield test_client
+def memory_queue() -> InMemoryQueue:
+    q = InMemoryQueue()
+    set_queue(q)
+    yield q
+    set_queue(None)
 
 
 @pytest.fixture
-def auth_client(client: TestClient) -> TestClient:
-    """A TestClient with an authenticated demo user + default workspace."""
-    resp = client.post(
-        "/api/v1/auth/register",
-        json={
-            "email": "tester@example.com",
-            "password": "supersecret1",
-            "full_name": "Tester",
-        },
-    )
+def client(engine, memory_queue) -> Generator[TestClient, None, None]:
+    """A TestClient sharing the in-memory engine via a dependency override."""
+    TestSession = sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)
+    app = create_app()
+
+    def _override_get_db() -> Generator[Session, None, None]:
+        db = TestSession()
+        try:
+            yield db
+        finally:
+            db.close()
+
+    app.dependency_overrides[get_db] = _override_get_db
+    with TestClient(app) as c:
+        yield c
+    app.dependency_overrides.clear()
+
+
+@pytest.fixture
+def registered_user(client: TestClient) -> dict:
+    payload = {
+        "email": "tester@example.com",
+        "full_name": "Test Person",
+        "password": "supersecret1",
+    }
+    resp = client.post("/api/v1/auth/register", json=payload)
     assert resp.status_code == 201, resp.text
-    tokens = resp.json()["tokens"]
-    client.headers.update({"Authorization": f"Bearer {tokens['access_token']}"})
+    login = client.post(
+        "/api/v1/auth/login",
+        json={"email": payload["email"], "password": payload["password"]},
+    )
+    assert login.status_code == 200, login.text
+    tokens = login.json()
+    return {"user": resp.json(), "tokens": tokens, "password": payload["password"]}
+
+
+@pytest.fixture
+def auth_client(client: TestClient, registered_user: dict) -> TestClient:
+    token = registered_user["tokens"]["access_token"]
+    client.headers.update({"Authorization": f"Bearer {token}"})
     return client
+
+
+@pytest.fixture
+def sample_video_bytes() -> io.BytesIO:
+    # A tiny non-empty payload; MockAI/pipeline don't require valid video content
+    # (ffprobe/ffmpeg stages degrade gracefully on undecodable input).
+    return io.BytesIO(b"\x00\x00\x00\x18ftypmp42" + b"clipforge-test" * 64)

@@ -1,32 +1,37 @@
-# --- Web framework ---
-fastapi==0.115.5
-uvicorn[standard]==0.32.1
-python-multipart==0.0.17
+# Core web framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
 
-# --- Data / ORM ---
-sqlalchemy==2.0.36
-alembic==1.14.0
-psycopg2-binary==2.9.10
-
-# --- Validation / settings ---
-pydantic==2.10.3
-pydantic-settings==2.6.1
+# Data & validation
+pydantic==2.10.4
+pydantic-settings==2.7.1
 email-validator==2.2.0
 
-# --- Auth / security ---
-pyjwt==2.10.1
-passlib[bcrypt]==1.7.4
-# bcrypt pinned <4.1 for compatibility with passlib 1.7.4's version probe.
-bcrypt==4.0.1
+# Database
+SQLAlchemy==2.0.36
+alembic==1.14.0
+psycopg[binary]==3.2.3
 
-# --- Queue ---
+# Auth & security
+# bcrypt pinned to 4.0.1 for passlib 1.7.4 compatibility (avoids the
+# "module 'bcrypt' has no attribute '__about__'" warning with bcrypt>=4.1).
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+pyjwt==2.10.1
+
+# Queue / cache
 redis==5.2.1
 
-# --- Optional AI provider (OpenAI). Safe to keep installed; only used when
-#     OPENAI_API_KEY is configured. ---
-openai==1.57.4
+# AI (optional at runtime; MockAIProvider works without it)
+openai==1.59.6
 
-# --- Testing ---
-pytest==8.3.4
-pytest-cov==6.0.0
+# Rate limiting
+slowapi==0.1.9
+
+# Observability
+structlog==24.4.0
+
+# Utilities
 httpx==0.28.1
+tenacity==9.0.0

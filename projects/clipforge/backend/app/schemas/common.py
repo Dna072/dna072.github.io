@@ -1,38 +1,37 @@
-"""Common/shared Pydantic schemas."""
-
 from __future__ import annotations
 
+from datetime import datetime
 from typing import Generic, TypeVar
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 T = TypeVar("T")
 
 
-class Message(BaseModel):
-    message: str
-
-
-class HealthStatus(BaseModel):
-    status: str
-    service: str
-    version: str
-
-
-class ReadinessStatus(BaseModel):
-    status: str
-    checks: dict[str, str]
+class ORMModel(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
 
 
 class Page(BaseModel, Generic[T]):
-    """Generic paginated response envelope."""
-
     items: list[T]
     total: int
     limit: int
     offset: int
 
 
-class PaginationParams(BaseModel):
-    limit: int = Field(default=20, ge=1, le=100)
-    offset: int = Field(default=0, ge=0)
+class Message(BaseModel):
+    detail: str
+
+
+class HealthResponse(BaseModel):
+    status: str = "ok"
+    service: str
+    environment: str
+    version: str
+
+
+class ReadyResponse(BaseModel):
+    status: str
+    database: bool
+    redis: bool
+    checked_at: datetime = Field(default_factory=datetime.utcnow)

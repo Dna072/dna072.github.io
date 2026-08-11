@@ -1,11 +1,13 @@
-"""Authentication service: registration, login, token refresh."""
+"""Authentication & registration business logic."""
 
 from __future__ import annotations
+
+import re
 
 import jwt
 from sqlalchemy.orm import Session
 
-from app.core.exceptions import AuthenticationError, ConflictError, NotFoundError
+from app.core.exceptions import AuthError, ConflictError
 from app.core.security import (
     create_access_token,
     create_refresh_token,
@@ -14,42 +16,66 @@ from app.core.security import (
     verify_password,
 )
 from app.models.user import User
-from app.repositories.user_repo import UserRepository
+from app.models.workspace import Workspace, WorkspaceMember
+from app.repositories.user import UserRepository
+from app.repositories.workspace import WorkspaceRepository
 from app.schemas.auth import TokenPair, UserRegister
+
+
+def _slugify(value: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+    return slug or "workspace"
 
 
 class AuthService:
     def __init__(self, db: Session) -> None:
         self.db = db
         self.users = UserRepository(db)
+        self.workspaces = WorkspaceRepository(db)
 
-    def register(self, payload: UserRegister) -> User:
-        email = payload.email.lower()
-        if self.users.get_by_email(email):
-            raise ConflictError("An account with this email already exists.")
+    def register(self, data: UserRegister) -> User:
+        if self.users.get_by_email(data.email):
+            raise ConflictError("An account with this email already exists")
+
         user = User(
-            email=email,
-            full_name=payload.full_name,
-            hashed_password=hash_password(payload.password),
+            email=data.email.lower(),
+            full_name=data.full_name,
+            hashed_password=hash_password(data.password),
         )
         self.users.add(user)
+
+        # Bootstrap a default workspace so the user can upload immediately.
+        base_slug = _slugify(data.full_name or data.email.split("@")[0])
+        slug = base_slug
+        suffix = 1
+        while self.workspaces.slug_exists(slug):
+            suffix += 1
+            slug = f"{base_slug}-{suffix}"
+
+        workspace = Workspace(
+            name=f"{data.full_name.split(' ')[0]}'s Workspace",
+            slug=slug,
+            owner_id=user.id,
+        )
+        self.workspaces.add(workspace)
+        self.workspaces.db.add(
+            WorkspaceMember(workspace_id=workspace.id, user_id=user.id, role="owner")
+        )
         self.db.commit()
         self.db.refresh(user)
         return user
 
     def authenticate(self, email: str, password: str) -> User:
-        user = self.users.get_by_email(email.lower())
+        user = self.users.get_by_email(email)
         if not user or not verify_password(password, user.hashed_password):
-            raise AuthenticationError("Invalid email or password.")
+            raise AuthError("Invalid email or password")
         if not user.is_active:
-            raise AuthenticationError("This account is disabled.")
+            raise AuthError("Account is disabled")
         return user
 
     def issue_tokens(self, user: User) -> TokenPair:
         return TokenPair(
-            access_token=create_access_token(
-                user.id, extra_claims={"email": user.email}
-            ),
+            access_token=create_access_token(user.id),
             refresh_token=create_refresh_token(user.id),
         )
 
@@ -57,14 +83,9 @@ class AuthService:
         try:
             payload = decode_token(refresh_token, expected_type="refresh")
         except jwt.PyJWTError as exc:
-            raise AuthenticationError("Invalid or expired refresh token.") from exc
+            raise AuthError("Invalid or expired refresh token") from exc
+
         user = self.users.get(payload["sub"])
         if not user or not user.is_active:
-            raise AuthenticationError("User no longer exists or is disabled.")
+            raise AuthError("User no longer active")
         return self.issue_tokens(user)
-
-    def get_user(self, user_id: str) -> User:
-        user = self.users.get(user_id)
-        if not user:
-            raise NotFoundError("User not found.")
-        return user

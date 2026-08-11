@@ -1,13 +1,18 @@
-interface Props {
-  status: string;
-  kind?: string;
-}
+import type { VideoStatus } from '@/types';
 
-export function StatusBadge({ status, kind }: Props) {
+const LABELS: Record<VideoStatus, string> = {
+  uploaded: 'Uploaded',
+  queued: 'Queued',
+  processing: 'Processing',
+  completed: 'Completed',
+  failed: 'Failed',
+};
+
+export function StatusBadge({ status }: { status: VideoStatus }) {
   return (
-    <span className={`badge badge-${status}`} title={kind}>
+    <span className={`badge ${status}`}>
       <span className="dot" />
-      {status}
+      {LABELS[status] ?? status}
     </span>
   );
 }

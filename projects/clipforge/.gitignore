@@ -1,18 +1,33 @@
-node_modules/
-.venv/
-venv/
+# Python
 __pycache__/
 *.py[cod]
+*.egg-info/
+.venv/
+venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.coverage
+htmlcov/
+*.db
+*.sqlite3
+
+# Env / secrets
 .env
+.env.*
 !.env.example
-uploads/
-data/
+
+# Storage / media artifacts
+backend/storage/
 storage/
+
+# Node / frontend
+node_modules/
 dist/
-build/
-*.egg-info/
-coverage/
+*.local
+.vite/
+
+# Editor / OS
 .DS_Store
+.idea/
+.vscode/

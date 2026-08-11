@@ -1,0 +1,47 @@
+# ClipForge frontend CI — lint, format check, unit tests, and production build.
+#
+# NOTE ON MONOREPO EXECUTION: see clipforge-backend.yml. Copy/symlink this file
+# to the repo-root `.github/workflows/` to activate it in this monorepo; it is
+# already self-contained for extraction to a standalone repo.
+name: clipforge-frontend
+
+on:
+  push:
+    paths:
+      - 'projects/clipforge/frontend/**'
+      - '.github/workflows/clipforge-frontend.yml'
+  pull_request:
+    paths:
+      - 'projects/clipforge/frontend/**'
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: projects/clipforge/frontend
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: projects/clipforge/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Prettier check
+        run: npx prettier --check "src/**/*.{ts,tsx,css}"
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Build
+        run: npm run build

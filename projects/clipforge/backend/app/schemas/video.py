@@ -1,61 +1,68 @@
-"""Video schemas."""
-
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, Field
 
-from app.models.enums import VideoStatus
-
-
-class VideoCreate(BaseModel):
-    """Metadata accompanying an upload (multipart form fields)."""
-
-    title: str | None = Field(default=None, max_length=255)
-    description: str | None = Field(default=None, max_length=4000)
-
-
-class VideoUpdate(BaseModel):
-    title: str | None = Field(default=None, min_length=1, max_length=255)
-    description: str | None = Field(default=None, max_length=4000)
-    tags: list[str] | None = None
+from app.models.video import VideoStatus
+from app.schemas.common import ORMModel
 
 
 class Chapter(BaseModel):
+    start: float = Field(ge=0, description="Chapter start time in seconds")
     title: str
-    start: float
-    end: float
 
 
-class VideoPublic(BaseModel):
-    model_config = ConfigDict(from_attributes=True)
+class VideoMetadata(BaseModel):
+    duration_seconds: float | None = None
+    width: int | None = None
+    height: int | None = None
+    codec: str | None = None
+    frame_rate: float | None = None
+    bitrate: int | None = None
 
+
+class VideoRead(ORMModel):
     id: str
-    workspace_id: str
+    project_id: str
     title: str
-    description: str | None
-    status: VideoStatus
     original_filename: str
     content_type: str
     size_bytes: int
+    status: VideoStatus
+    error_message: str | None
+
     duration_seconds: float | None
     width: int | None
     height: int | None
+    codec: str | None
+    frame_rate: float | None
+    bitrate: int | None
+
     thumbnail_path: str | None
+    audio_path: str | None
+
+    transcript: str | None
+    summary: str | None
+    chapters: list[Chapter] | None
     tags: list[str] | None
+
     created_at: datetime
     updated_at: datetime
 
 
-class VideoDetail(VideoPublic):
-    transcript: str | None
-    summary: str | None
-    chapters: list[dict[str, Any]] | None
-    error_message: str | None
+class VideoListItem(ORMModel):
+    """Lightweight projection for library/list views."""
+
+    id: str
+    project_id: str
+    title: str
+    status: VideoStatus
+    duration_seconds: float | None
+    thumbnail_path: str | None
+    tags: list[str] | None
+    created_at: datetime
 
 
-class VideoUploadResponse(BaseModel):
-    video: VideoPublic
-    job_id: str
+class VideoUpdate(BaseModel):
+    title: str | None = Field(default=None, min_length=1, max_length=300)

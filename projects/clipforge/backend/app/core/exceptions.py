@@ -1,19 +1,17 @@
-"""Domain-level exceptions mapped to HTTP responses by handlers in main."""
+"""Domain-level exceptions mapped to HTTP responses in the API layer."""
 
 from __future__ import annotations
 
 
 class AppError(Exception):
-    """Base class for application errors carrying an HTTP status code."""
+    """Base class for expected, client-facing errors."""
 
     status_code: int = 400
     code: str = "app_error"
 
-    def __init__(self, message: str, *, code: str | None = None) -> None:
-        super().__init__(message)
-        self.message = message
-        if code:
-            self.code = code
+    def __init__(self, detail: str | None = None) -> None:
+        self.detail = detail or self.__class__.__name__
+        super().__init__(self.detail)
 
 
 class NotFoundError(AppError):
@@ -21,19 +19,19 @@ class NotFoundError(AppError):
     code = "not_found"
 
 
+class AuthError(AppError):
+    status_code = 401
+    code = "unauthorized"
+
+
+class ForbiddenError(AppError):
+    status_code = 403
+    code = "forbidden"
+
+
 class ConflictError(AppError):
     status_code = 409
     code = "conflict"
-
-
-class AuthenticationError(AppError):
-    status_code = 401
-    code = "authentication_error"
-
-
-class PermissionError_(AppError):
-    status_code = 403
-    code = "permission_denied"
 
 
 class ValidationError(AppError):

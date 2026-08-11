@@ -7,81 +7,77 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import {
-  ACCESS_TOKEN_KEY,
-  clearTokens,
-  extractErrorMessage,
-  fetchMe,
-  login as apiLogin,
-  register as apiRegister,
-} from '../api/client';
-import type { User } from '../api/types';
+
+import { authApi } from '@/api';
+import { tokenStore } from '@/api/client';
+import type { User } from '@/types';
 
 interface AuthContextValue {
   user: User | null;
-  isLoading: boolean;
-  isAuthenticated: boolean;
+  loading: boolean;
   login: (email: string, password: string) => Promise<void>;
-  register: (email: string, password: string, fullName: string) => Promise<void>;
+  register: (email: string, fullName: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextValue | null>(null);
+const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem(ACCESS_TOKEN_KEY);
-    if (!token) {
-      setIsLoading(false);
-      return;
+    let cancelled = false;
+    async function bootstrap() {
+      if (!tokenStore.access) {
+        setLoading(false);
+        return;
+      }
+      try {
+        const me = await authApi.me();
+        if (!cancelled) setUser(me);
+      } catch {
+        tokenStore.clear();
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
     }
-
-    fetchMe()
-      .then(setUser)
-      .catch(() => clearTokens())
-      .finally(() => setIsLoading(false));
+    bootstrap();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const login = useCallback(async (email: string, password: string) => {
-    const response = await apiLogin(email, password);
-    setUser(response.user);
+    await authApi.login(email, password);
+    setUser(await authApi.me());
   }, []);
 
   const register = useCallback(
-    async (email: string, password: string, fullName: string) => {
-      const response = await apiRegister(email, password, fullName);
-      setUser(response.user);
+    async (email: string, fullName: string, password: string) => {
+      await authApi.register(email, fullName, password);
+      await authApi.login(email, password);
+      setUser(await authApi.me());
     },
     [],
   );
 
   const logout = useCallback(() => {
-    clearTokens();
+    authApi.logout();
     setUser(null);
   }, []);
 
   const value = useMemo(
-    () => ({
-      user,
-      isLoading,
-      isAuthenticated: !!user,
-      login,
-      register,
-      logout,
-    }),
-    [user, isLoading, login, register, logout],
+    () => ({ user, loading, login, register, logout }),
+    [user, loading, login, register, logout],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error('useAuth must be used within AuthProvider');
   return ctx;
 }
-
-export { extractErrorMessage };

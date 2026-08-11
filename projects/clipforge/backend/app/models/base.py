@@ -1,43 +1,29 @@
-"""Declarative base and shared model mixins."""
+"""Reusable model mixins."""
 
 from __future__ import annotations
 
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from sqlalchemy import DateTime, String, func
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column
 
 
 def _uuid() -> str:
     return uuid.uuid4().hex
 
 
-class Base(DeclarativeBase):
-    """Base class for all ORM models."""
+class UUIDMixin:
+    id: Mapped[str] = mapped_column(String(32), primary_key=True, default=_uuid)
 
 
 class TimestampMixin:
-    """Adds created/updated timestamp columns."""
-
     created_at: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True),
-        server_default=func.now(),
-        default=lambda: datetime.now(timezone.utc),
-        nullable=False,
+        DateTime(timezone=True), server_default=func.now(), nullable=False
     )
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now(),
-        default=lambda: datetime.now(timezone.utc),
-        onupdate=lambda: datetime.now(timezone.utc),
+        onupdate=lambda: datetime.now(UTC),
         nullable=False,
-    )
-
-
-class UUIDMixin:
-    """Adds a string UUID primary key (portable across SQLite/Postgres)."""
-
-    id: Mapped[str] = mapped_column(
-        String(32), primary_key=True, default=_uuid, index=True
     )

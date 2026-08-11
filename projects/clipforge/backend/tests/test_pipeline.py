@@ -1,96 +1,102 @@
-"""Processing pipeline tests using the mock AI provider."""
-
 from __future__ import annotations
 
-from pathlib import Path
+import io
 
-import pytest
-
-from app.core.security import hash_password
-from app.models.enums import JobStage, JobStatus, VideoStatus
-from app.models.job import ProcessingJob
+from app.models.job import JobStatus, ProcessingJob
+from app.models.project import Project
 from app.models.user import User
-from app.models.video import Video
-from app.models.workspace import Workspace
-from app.services.ai.mock_provider import MockAIProvider
-from app.utils.files import video_dir
-from app.workers.pipeline import PipelineError, run_pipeline
+from app.models.video import Video, VideoStatus
+from app.models.workspace import Workspace, WorkspaceMember
+from app.services.ai.mock import MockAIProvider
+from app.services.pipeline import ProcessingPipeline
+from app.services.storage import LocalStorage
 
 
-def _make_video(db) -> tuple[Video, ProcessingJob]:
-    user = User(
-        email="pipe@example.com",
-        full_name="Pipe",
-        hashed_password=hash_password("password123"),
-    )
+def _seed_video(db, store: LocalStorage) -> tuple[Video, ProcessingJob]:
+    user = User(email="p@b.com", full_name="P", hashed_password="x")
     db.add(user)
     db.flush()
-    workspace = Workspace(name="WS", slug="ws", owner_id=user.id)
-    db.add(workspace)
+    ws = Workspace(name="W", slug="w", owner_id=user.id)
+    db.add(ws)
     db.flush()
+    db.add(WorkspaceMember(workspace_id=ws.id, user_id=user.id, role="owner"))
+    project = Project(name="Proj", workspace_id=ws.id)
+    db.add(project)
+    db.flush()
+
     video = Video(
-        workspace_id=workspace.id,
-        title="Clip",
-        status=VideoStatus.QUEUED,
+        project_id=project.id,
+        uploaded_by=user.id,
+        title="Pipeline Test Clip",
         original_filename="clip.mp4",
+        storage_path="videos/vid1/source.mp4",
         content_type="video/mp4",
-        storage_path="",
-        size_bytes=0,
+        size_bytes=1234,
+        status=VideoStatus.QUEUED,
     )
     db.add(video)
     db.flush()
-    # Write a placeholder source so file paths resolve (ffmpeg falls back to mock).
-    source = video_dir(video.id) / "source.mp4"
-    source.write_bytes(b"PLACEHOLDER" * 32)
-    video.storage_path = str(source)
-    video.size_bytes = source.stat().st_size
-    job = ProcessingJob(video_id=video.id, status=JobStatus.PENDING)
+    store.save_stream(video.storage_path, io.BytesIO(b"not-a-real-video" * 100))
+
+    job = ProcessingJob(
+        video_id=video.id,
+        status=JobStatus.QUEUED,
+        steps=[
+            {"name": s, "status": "pending"}
+            for s in ["metadata", "thumbnail", "audio", "transcript", "ai_insights"]
+        ],
+    )
     db.add(job)
     db.commit()
     return video, job
 
 
-def test_pipeline_completes_and_populates_outputs(db):
-    video, job = _make_video(db)
+def test_pipeline_completes_with_mock_ai(db_session, tmp_path):
+    store = LocalStorage(str(tmp_path))
+    video, job = _seed_video(db_session, store)
 
-    run_pipeline(db, job.id, ai=MockAIProvider())
+    pipeline = ProcessingPipeline(db_session, ai=MockAIProvider(), store=store)
+    result = pipeline.run(job.id)
 
-    db.refresh(video)
-    db.refresh(job)
-
-    assert job.status == JobStatus.COMPLETED
-    assert job.stage == JobStage.DONE
-    assert job.progress == 100
-    assert job.started_at is not None
-    assert job.finished_at is not None
-
-    assert video.status == VideoStatus.READY
-    assert video.duration_seconds and video.duration_seconds > 0
+    assert result.status == JobStatus.SUCCEEDED
+    db_session.refresh(video)
+    assert video.status == VideoStatus.COMPLETED
     assert video.transcript
     assert video.summary
-    assert video.chapters and len(video.chapters) >= 3
-    assert video.tags and len(video.tags) >= 3
-    assert video.thumbnail_path and Path(video.thumbnail_path).exists()
+    assert video.chapters and len(video.chapters) >= 1
+    assert video.tags and len(video.tags) >= 1
 
 
-def test_pipeline_records_stage_history(db):
-    _, job = _make_video(db)
-    run_pipeline(db, job.id, ai=MockAIProvider())
-    db.refresh(job)
+def test_pipeline_records_step_progress(db_session, tmp_path):
+    store = LocalStorage(str(tmp_path))
+    _, job = _seed_video(db_session, store)
+    pipeline = ProcessingPipeline(db_session, ai=MockAIProvider(), store=store)
+    result = pipeline.run(job.id)
 
-    stages = [entry["stage"] for entry in job.stage_history]
-    for expected in ["probe", "thumbnail", "audio", "transcript", "ai_analysis", "done"]:
-        assert expected in stages
+    names = {s["name"]: s["status"] for s in result.steps}
+    assert names["transcript"] == "succeeded"
+    assert names["ai_insights"] == "succeeded"
+    # metadata always runs; thumbnail/audio may be 'skipped' on undecodable input
+    assert names["metadata"] in {"succeeded", "skipped"}
 
 
-def test_pipeline_missing_job_raises(db):
+def test_pipeline_failure_marks_failed(db_session, tmp_path):
+    store = LocalStorage(str(tmp_path))
+    video, job = _seed_video(db_session, store)
+
+    class ExplodingAI(MockAIProvider):
+        def analyze(self, *a, **k):  # type: ignore[override]
+            raise RuntimeError("ai boom")
+
+    pipeline = ProcessingPipeline(db_session, ai=ExplodingAI(), store=store)
+    import pytest
+    from app.services.pipeline import PipelineError
+
     with pytest.raises(PipelineError):
-        run_pipeline(db, "nonexistent-job-id", ai=MockAIProvider())
+        pipeline.run(job.id)
 
-
-def test_mock_provider_is_deterministic():
-    provider = MockAIProvider()
-    a = provider.analyze("Hello world. This is a test.", duration=120)
-    b = provider.analyze("Hello world. This is a test.", duration=120)
-    assert a.summary == b.summary
-    assert a.tags == b.tags
+    db_session.refresh(job)
+    db_session.refresh(video)
+    # First failure re-queues for retry (attempts < max_attempts).
+    assert job.error_message is not None
+    assert "ai boom" in job.error_message

@@ -1,32 +1,29 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { Layout } from './components/Layout';
-import { ProtectedRoute } from './components/ProtectedRoute';
-import { AuthProvider } from './context/AuthContext';
-import { DashboardPage } from './pages/DashboardPage';
-import { LibraryPage } from './pages/LibraryPage';
-import { LoginPage } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
-import { UploadPage } from './pages/UploadPage';
-import { VideoDetailPage } from './pages/VideoDetailPage';
+import { Navigate, Route, Routes } from 'react-router-dom';
+
+import { Layout } from '@/components/Layout';
+import { ProtectedRoute } from '@/components/ProtectedRoute';
+import { Dashboard } from '@/pages/Dashboard';
+import { Library } from '@/pages/Library';
+import { Login } from '@/pages/Login';
+import { Register } from '@/pages/Register';
+import { Upload } from '@/pages/Upload';
+import { VideoDetail } from '@/pages/VideoDetail';
 
 export function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route element={<ProtectedRoute />}>
-            <Route element={<Layout />}>
-              <Route path="/" element={<DashboardPage />} />
-              <Route path="/library" element={<LibraryPage />} />
-              <Route path="/upload" element={<UploadPage />} />
-              <Route path="/videos/:id" element={<VideoDetailPage />} />
-            </Route>
-          </Route>
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route element={<ProtectedRoute />}>
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/videos/:id" element={<VideoDetail />} />
+        </Route>
+      </Route>
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    </Routes>
   );
 }

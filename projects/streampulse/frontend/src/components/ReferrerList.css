@@ -1,0 +1,40 @@
+.referrer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.referrer-list__row {
+  display: grid;
+  grid-template-columns: 90px 1fr 44px;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+}
+
+.referrer-list__label {
+  color: var(--muted);
+}
+
+.referrer-list__track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.referrer-list__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+}
+
+.referrer-list__value {
+  text-align: right;
+  color: var(--fg);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+}

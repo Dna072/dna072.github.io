@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: streampulse
+      POSTGRES_PASSWORD: streampulse
+      POSTGRES_DB: streampulse
+    ports:
+      - "5433:5432"
+    volumes:
+      - streampulse_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U streampulse"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://streampulse:streampulse@postgres:5432/streampulse
+      JWT_SECRET_KEY: local-dev-secret-change-me
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
+      SEED_ON_STARTUP: "true"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+
+volumes:
+  streampulse_pg:

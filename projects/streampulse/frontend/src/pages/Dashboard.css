@@ -1,0 +1,55 @@
+.dashboard {
+  min-height: 100vh;
+  padding: 0 1.5rem 3rem;
+}
+
+.dashboard__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.kpi-card--skeleton {
+  min-height: 96px;
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 37%, var(--bg-card) 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border: 1px solid var(--border);
+}
+
+.kpi-grid__error {
+  grid-column: 1 / -1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.dashboard__grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .dashboard__grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dashboard__timeseries {
+  min-height: 340px;
+}

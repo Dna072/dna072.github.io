@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+# E501: line length handled by formatting, not worth failing CI on.
+# B008: FastAPI's `Depends()`-as-default-argument is the documented idiom.
+ignore = ["E501", "B008"]

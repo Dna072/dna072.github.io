@@ -1,0 +1,32 @@
+# --- Web framework ---
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-multipart==0.0.17
+
+# --- Data / ORM ---
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+
+# --- Validation / settings ---
+pydantic==2.10.3
+pydantic-settings==2.6.1
+email-validator==2.2.0
+
+# --- Auth / security ---
+pyjwt==2.10.1
+passlib[bcrypt]==1.7.4
+# bcrypt pinned <4.1 for compatibility with passlib 1.7.4's version probe.
+bcrypt==4.0.1
+
+# --- Queue ---
+redis==5.2.1
+
+# --- Optional AI provider (OpenAI). Safe to keep installed; only used when
+#     OPENAI_API_KEY is configured. ---
+openai==1.57.4
+
+# --- Testing ---
+pytest==8.3.4
+pytest-cov==6.0.0
+httpx==0.28.1

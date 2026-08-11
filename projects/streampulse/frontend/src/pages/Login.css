@@ -1,0 +1,128 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(165deg, rgba(34, 211, 238, 0.07), transparent 55%), var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.1rem 2.3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.login-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.login-card__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-strong));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+}
+
+.login-card__brand h1 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.login-card__brand h1 span {
+  color: var(--accent);
+}
+
+.login-card__tagline {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 0 0 1.5rem;
+}
+
+.login-card__tabs {
+  display: flex;
+  background: var(--bg-elevated);
+  border-radius: 999px;
+  padding: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-card__tabs button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.login-card__tabs button.active {
+  background: var(--accent);
+  color: #04202a;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.login-form__field input {
+  padding: 0.65rem 0.8rem;
+  font-size: 0.92rem;
+}
+
+.login-form__error {
+  color: var(--negative);
+  font-size: 0.82rem;
+  margin: -0.3rem 0 0;
+}
+
+.login-form__submit {
+  margin-top: 0.4rem;
+  padding: 0.75rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #04202a;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.login-form__submit:hover {
+  filter: brightness(1.08);
+}
+
+.login-form__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.login-card__hint {
+  margin: 1.4rem 0 0;
+  color: var(--muted-soft);
+  font-size: 0.78rem;
+  text-align: center;
+}

@@ -14,7 +14,6 @@ from collections.abc import Sequence
 
 import sqlalchemy as sa
 from alembic import op
-
 from app.core.json_type import JSONType
 
 revision: str = "0001_initial"

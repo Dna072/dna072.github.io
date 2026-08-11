@@ -104,5 +104,5 @@ class MockAIProvider:
                 break
             idx = seed % len(vocab)
             picked.append(vocab.pop(idx))
-            seed //= 7 or 1
+            seed //= 7
         return picked

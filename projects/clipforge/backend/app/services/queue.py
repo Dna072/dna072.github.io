@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 from collections import deque
-from typing import Any, Protocol
+from typing import Any, Protocol, cast
 
 from app.core.config import settings
 from app.core.logging import get_logger
@@ -40,7 +40,10 @@ class RedisQueue:
         logger.info("job_enqueued", queue=self._queue, **payload)
 
     def dequeue(self, timeout: int = 5) -> dict[str, Any] | None:
-        result = self._redis.brpop([self._queue], timeout=timeout)
+        result = cast(
+            "tuple[str, str] | None",
+            self._redis.brpop([self._queue], timeout=timeout),
+        )
         if result is None:
             return None
         _, raw = result

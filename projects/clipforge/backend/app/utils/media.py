@@ -72,8 +72,8 @@ def probe(path: str) -> ProbeResult:
         logger.warning("ffprobe_failed", path=path, error=str(exc))
         return ProbeResult()
 
-    fmt = data.get("format", {})
-    video_stream = next(
+    fmt: dict = data.get("format", {})
+    video_stream: dict = next(
         (s for s in data.get("streams", []) if s.get("codec_type") == "video"), {}
     )
 

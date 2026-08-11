@@ -14,6 +14,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
+from sqlalchemy.orm.attributes import flag_modified
 
 from app.core.exceptions import NotFoundError
 from app.core.logging import get_logger
@@ -57,6 +58,9 @@ class ProcessingPipeline:
         else:
             steps.append({"name": name, "status": status, "detail": detail})
         job.steps = steps
+        # JSON columns are not mutation-tracked by default; flag it explicitly so
+        # the reassignment is always flushed.
+        flag_modified(job, "steps")
         self.db.add(job)
         self.db.commit()
 

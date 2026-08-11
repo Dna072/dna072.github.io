@@ -46,7 +46,9 @@ def upload_video(
 def search_videos(
     current_user: CurrentUser,
     db: DbSession,
-    q: Annotated[str | None, Query(description="Full-text search over title/summary/transcript")] = None,
+    q: Annotated[
+        str | None, Query(description="Search over title/summary/transcript")
+    ] = None,
     status_filter: Annotated[VideoStatus | None, Query(alias="status")] = None,
     project_id: str | None = None,
     limit: Annotated[int, Query(ge=1, le=100)] = 20,

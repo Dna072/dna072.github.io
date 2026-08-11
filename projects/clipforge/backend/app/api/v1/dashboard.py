@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from sqlalchemy import func, select
-
 from fastapi import APIRouter
+from sqlalchemy import func, select
 
 from app.core.deps import CurrentUser, DbSession
 from app.models.project import Project
@@ -28,8 +27,12 @@ def dashboard_stats(current_user: CurrentUser, db: DbSession) -> DashboardStats:
     )
 
     total_videos = db.scalar(select(func.count()).select_from(scoped)) or 0
-    total_duration = db.scalar(select(func.coalesce(func.sum(scoped.c.duration_seconds), 0.0))) or 0.0
-    total_storage = db.scalar(select(func.coalesce(func.sum(scoped.c.size_bytes), 0))) or 0
+    total_duration = (
+        db.scalar(select(func.coalesce(func.sum(scoped.c.duration_seconds), 0.0))) or 0.0
+    )
+    total_storage = (
+        db.scalar(select(func.coalesce(func.sum(scoped.c.size_bytes), 0))) or 0
+    )
 
     total_projects = db.scalar(
         select(func.count(func.distinct(Project.id)))

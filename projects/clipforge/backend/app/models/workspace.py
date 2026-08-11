@@ -42,7 +42,8 @@ class WorkspaceMember(UUIDMixin, TimestampMixin, Base):
     user_id: Mapped[str] = mapped_column(
         ForeignKey("users.id", ondelete="CASCADE"), index=True, nullable=False
     )
-    role: Mapped[str] = mapped_column(String(20), default="member", nullable=False)  # owner|admin|member
+    # role is one of: owner | admin | member
+    role: Mapped[str] = mapped_column(String(20), default="member", nullable=False)
 
     workspace: Mapped[Workspace] = relationship(back_populates="members")
     user: Mapped[User] = relationship(back_populates="memberships")

@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from sqlalchemy import text
-
 from fastapi import APIRouter
+from sqlalchemy import text
 
 from app import __version__
 from app.core.config import settings

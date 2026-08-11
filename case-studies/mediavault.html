@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MediaVault — Case Study | Derrick Adjei</title>
+    <meta
+      name="description"
+      content="Case study: MediaVault video asset management SaaS — RBAC, search, and API design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../">Derrick Adjei<span>.</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../#projects">Projects</a>
+          <a href="https://github.com/Dna072/mediavault">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container page-hero prose">
+      <p class="eyebrow">Portfolio project · API &amp; data modeling</p>
+      <h1>MediaVault</h1>
+      <p>
+        Video asset management SaaS for creative teams. Built as a production-style portfolio
+        project emphasizing relational design, authorization, and search.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="https://github.com/Dna072/mediavault">GitHub repository</a>
+        <a class="btn btn-ghost" href="../projects/mediavault/">Source in monorepo</a>
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Teams accumulate media quickly. Without workspaces, folders, tags, and permissions, assets
+        become unsearchable and unsafe to share.
+      </p>
+
+      <h2>Solution</h2>
+      <p>
+        Versioned FastAPI (<code>/api/v1</code>) with JWT auth, workspace membership roles
+        (ADMIN / MEMBER / VIEWER), folder trees, tagged assets, full-text search, pagination, and
+        signed download URLs—backed by a React DAM-style UI.
+      </p>
+
+      <h2 id="architecture">Architecture</h2>
+      <div class="diagram">React SPA
+  → FastAPI /api/v1 (auth, workspaces, assets, folders, tags, search, shares)
+  → PostgreSQL (indexes + FTS)
+  → Object storage abstraction (local / S3) + signed URLs</div>
+
+      <h2>Key features</h2>
+      <ul>
+        <li>Workspaces and membership RBAC</li>
+        <li>Asset upload, folders, tags</li>
+        <li>Search, filter, sort, pagination</li>
+        <li>Share links and permission checks</li>
+        <li>Grid/table library UX, upload modal, user management</li>
+      </ul>
+
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Explicit API versioning for stable contracts</li>
+        <li>Authorization checked at workspace and asset boundaries</li>
+        <li>Database indexes and FTS chosen for library query patterns</li>
+        <li>Signed URLs instead of forever-public object paths</li>
+      </ul>
+
+      <h2>Challenges</h2>
+      <ul>
+        <li>Keeping RBAC consistent across list/detail/share endpoints</li>
+        <li>Folder navigation UX that still maps cleanly to relational data</li>
+        <li>Upload safety without blocking legitimate large media</li>
+      </ul>
+
+      <h2>Testing</h2>
+      <p>API tests for auth, RBAC, search, and pagination; frontend smoke tests; CI lint/test/build.</p>
+
+      <h2>Infrastructure</h2>
+      <p>
+        Docker Compose locally. Documented AWS: S3 + CloudFront signed URLs, RDS PostgreSQL, ECS API.
+      </p>
+
+      <h2>What I learned</h2>
+      <p>
+        Asset products are permission products. Clean schema and index choices matter as much as UI
+        polish when libraries grow.
+      </p>
+    </main>
+    <footer class="footer">
+      <div class="container"><a href="../">← Back to portfolio</a></div>
+    </footer>
+  </body>
+</html>

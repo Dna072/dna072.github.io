@@ -1,341 +1,302 @@
-"""Generate realistic demo data for StreamPulse.
+"""Seed the database with realistic — but clearly synthetic — analytics data.
 
-Run with:
+This generates several months of impression and view events with plausible
+structure: per-video popularity, recency decay, weekly seasonality (weekends
+run hotter), geo/device mixes, and retention/engagement that correlate with a
+per-video "quality" factor.
 
-    python -m app.seed            # seed if the videos table is empty
-    python -m app.seed --reset    # drop & recreate all tables first
+NONE OF THIS IS REAL TRAFFIC. It exists only so the dashboard has something
+meaningful to render locally. Run with::
 
-The generator models a believable content lifecycle rather than pure
-randomness:
+    python -m app.seed
 
-* each video gets a random "popularity" weight (log-normal),
-* views spike shortly after a video's publish date and decay to a
-  long-tail baseline afterwards,
-* weekday traffic is heavier than weekend traffic,
-* watch-time follows a beta distribution so most sessions drop off early
-  and a smaller share watch to completion,
-* engagement (like/comment/share) probability scales with watch percent.
+Environment knobs:
+    SEED_DAYS         number of days of history to generate (default 120)
+    SEED_TRAFFIC      global multiplier on volume (default 1.0)
+    SEED_RANDOM_SEED  RNG seed for reproducibility (default 42)
 """
-from __future__ import annotations
 
-import argparse
+import os
 import random
-from datetime import datetime, timedelta, timezone
+import uuid
+from datetime import UTC, datetime, timedelta
 
-from sqlalchemy import insert
+from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
 
-from app.core.config import get_settings
-from app.core.database import Base, SessionLocal, engine
-from app.core.reference_data import COUNTRIES, REFERRER_SOURCES, VIDEO_CATEGORIES
+from app.core.config import settings
+from app.core.logging import configure_logging, get_logger
 from app.core.security import hash_password
-from app.models import DeviceType, EngagementEvent, EngagementType, User, Video, ViewEvent
+from app.db.session import SessionLocal, engine
+from app.models.analytics import ImpressionEvent, Video, ViewEvent
+from app.models.user import User
 
-settings = get_settings()
+configure_logging(settings.log_level, json_logs=False)
+log = get_logger("seed")
 
-DEMO_USER_EMAIL = "demo@streampulse.io"
-DEMO_USER_PASSWORD = "streampulse123"
+BATCH = 5000
 
-DEVICE_WEIGHTS = {
-    DeviceType.mobile: 0.46,
-    DeviceType.desktop: 0.34,
-    DeviceType.tablet: 0.12,
-    DeviceType.tv: 0.08,
-}
-
-COUNTRY_WEIGHTS = [0.28, 0.12, 0.09, 0.07, 0.08, 0.06, 0.05, 0.06, 0.05, 0.04, 0.03, 0.03, 0.02, 0.01, 0.01]
-
-REFERRER_WEIGHTS = {
-    "search": 0.32,
-    "social": 0.24,
-    "direct": 0.18,
-    "recommendation": 0.14,
-    "embed": 0.07,
-    "email": 0.05,
-}
-
-# Bimodal hour-of-day weighting: a lunchtime bump and a larger evening peak.
-HOUR_WEIGHTS = [
-    1, 1, 1, 1, 1, 2, 3, 5, 7, 8, 8, 9,
-    10, 9, 8, 7, 7, 8, 10, 12, 11, 8, 5, 3,
+CATEGORIES = [
+    "Tutorials",
+    "Product Demos",
+    "Live Streams",
+    "Shorts",
+    "Interviews",
+    "Behind the Scenes",
 ]
 
-TITLE_TEMPLATES = {
-    "Product Updates": ["What's new in {product}", "{product} release notes: {month}", "Inside the {product} roadmap"],
-    "Tutorials": ["Getting started with {product}", "Advanced {product} workflows", "{product} in 10 minutes"],
-    "Customer Stories": ["How {company} scaled with {product}", "{company}'s journey to production", "Behind {company}'s launch"],
-    "Webinars": ["Live Q&A: {product} best practices", "{month} webinar: scaling with {product}", "Ask us anything: {product}"],
-    "Behind the Scenes": ["Building {product}: engineering diary", "A day with the {product} team", "How we designed {product}"],
-    "Engineering Deep Dives": ["Architecting {product} for scale", "Deep dive: {product} internals", "Performance tuning {product}"],
-    "Highlights": ["{month} highlights reel", "Top moments from {product} conf", "Best of {product} community"],
+# (title, category, duration_seconds)
+VIDEO_LIBRARY = [
+    ("Getting Started with StreamPulse", "Tutorials", 480),
+    ("Advanced Query Optimization", "Tutorials", 1020),
+    ("Building Your First Dashboard", "Tutorials", 720),
+    ("Indexing Strategies Explained", "Tutorials", 900),
+    ("StreamPulse 2.0 Product Tour", "Product Demos", 360),
+    ("Comparison Mode Deep Dive", "Product Demos", 540),
+    ("Audience Insights Walkthrough", "Product Demos", 420),
+    ("Realtime Ingestion Demo", "Product Demos", 300),
+    ("Launch Day Live Q&A", "Live Streams", 3600),
+    ("Engineering Office Hours", "Live Streams", 2700),
+    ("Roadmap Live: What's Next", "Live Streams", 1800),
+    ("60-Second Metrics Tip", "Shorts", 60),
+    ("Funnel Analysis in 90s", "Shorts", 90),
+    ("One SQL Trick", "Shorts", 45),
+    ("Retention, Fast", "Shorts", 75),
+    ("Interview: Scaling Analytics", "Interviews", 1500),
+    ("Interview: From Batch to Streaming", "Interviews", 1320),
+    ("Interview: A Day in Data Eng", "Interviews", 1140),
+    ("How We Built the Query Layer", "Behind the Scenes", 660),
+    ("Designing the Charts", "Behind the Scenes", 600),
+    ("Load Testing StreamPulse", "Behind the Scenes", 780),
+    ("Our On-Call Playbook", "Behind the Scenes", 540),
+    ("Data Modeling for Video", "Tutorials", 840),
+    ("Cohorts & Segmentation", "Product Demos", 480),
+]
+
+COUNTRY_WEIGHTS = {
+    "US": 30, "GB": 12, "DE": 9, "IN": 9, "FR": 7, "BR": 6,
+    "CA": 6, "NG": 5, "GH": 4, "JP": 4, "AU": 4, "ZA": 4,
 }
-
-PRODUCTS = ["StreamPulse", "the analytics API", "the media pipeline", "the encoder", "the CDN layer", "the player SDK"]
-COMPANIES = ["Northwind Media", "Aurora Studios", "Fjord Broadcasting", "Lumen Labs", "Cobalt Films", "Nimbus Sports"]
-MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+DEVICE_WEIGHTS = {"mobile": 52, "desktop": 30, "tablet": 10, "tv": 8}
 
 
-def _weighted_choice(options: list, weights: list[float]):
-    return random.choices(options, weights=weights, k=1)[0]
+def _weighted_keys(weights: dict[str, int]) -> tuple[list[str], list[int]]:
+    return list(weights.keys()), list(weights.values())
 
 
-def _random_title(category: str) -> str:
-    template = random.choice(TITLE_TEMPLATES[category])
-    return template.format(
-        product=random.choice(PRODUCTS),
-        company=random.choice(COMPANIES),
-        month=random.choice(MONTHS),
-    )
+def _chunked_insert(db: Session, model, rows: list[dict]) -> int:
+    total = 0
+    for i in range(0, len(rows), BATCH):
+        chunk = rows[i : i + BATCH]
+        db.execute(model.__table__.insert(), chunk)
+        total += len(chunk)
+    return total
 
 
-def _make_videos(n: int, window_days: int) -> list[dict]:
-    now = datetime.now(timezone.utc)
-    videos = []
-    for i in range(n):
-        category = VIDEO_CATEGORIES[i % len(VIDEO_CATEGORIES)]
-        # Most videos were published before the analytics window opens;
-        # roughly a third publish *during* the window to show fresh ramp-up.
-        published_days_ago = random.randint(-10, window_days + 90)
-        published_at = now - timedelta(
-            days=published_days_ago, hours=random.randint(0, 23), minutes=random.randint(0, 59)
+def reset(db: Session) -> None:
+    db.execute(delete(ViewEvent))
+    db.execute(delete(ImpressionEvent))
+    db.execute(delete(Video))
+    db.commit()
+    log.info("cleared_existing_event_data")
+
+
+def ensure_admin(db: Session) -> None:
+    existing = db.execute(
+        select(User).where(User.email == settings.seed_admin_email)
+    ).scalar_one_or_none()
+    if existing:
+        log.info("admin_exists", email=settings.seed_admin_email)
+        return
+    db.add(
+        User(
+            email=settings.seed_admin_email,
+            full_name="StreamPulse Demo",
+            hashed_password=hash_password(settings.seed_admin_password),
+            is_active=True,
         )
-        duration = random.choice([180, 300, 420, 600, 900, 1200, 1800, 2400, 3000])
-        popularity = max(3.0, random.lognormvariate(3.3, 0.9))
+    )
+    db.commit()
+    log.info("admin_created", email=settings.seed_admin_email)
+
+
+def create_videos(db: Session, now: datetime, days: int) -> list[dict]:
+    videos: list[Video] = []
+    for idx, (title, category, duration) in enumerate(VIDEO_LIBRARY):
+        # Spread publish dates across (and a bit before) the window.
+        age_days = random.randint(5, days + 60)
+        published = now - timedelta(days=age_days, hours=random.randint(0, 23))
         videos.append(
+            Video(
+                title=title,
+                category=category,
+                duration_seconds=duration,
+                published_at=published,
+                thumbnail_url=f"https://picsum.photos/seed/sp{idx}/320/180",
+            )
+        )
+    db.add_all(videos)
+    db.commit()
+    for v in videos:
+        db.refresh(v)
+
+    # Attach synthetic latent traits used by the generator.
+    meta = []
+    for v in videos:
+        meta.append(
             {
-                "title": _random_title(category),
-                "description": f"A {category.lower()} video exploring practical, production-style workflows.",
-                "category": category,
-                "duration_seconds": duration,
-                "thumbnail_url": f"https://picsum.photos/seed/streampulse-{i}/480/270",
-                "published_at": published_at,
-                "_popularity": popularity,
+                "id": v.id,
+                "duration": v.duration_seconds,
+                "published_at": v.published_at,
+                "popularity": random.uniform(0.4, 3.0),  # base daily draw scale
+                "quality": random.uniform(0.45, 0.95),  # retention/engagement driver
             }
         )
-    return videos
+    log.info("videos_created", count=len(videos))
+    return meta
 
 
-def _lifecycle_factor(age_days: int) -> float:
-    if age_days < 0:
-        return 0.0
-    spike = 6.5 * (2.71828 ** (-age_days / 7.0))
-    baseline = 0.4
-    return baseline + spike
+def generate_events(
+    db: Session, meta: list[dict], now: datetime, days: int, traffic: float
+) -> None:
+    countries, c_weights = _weighted_keys(COUNTRY_WEIGHTS)
+    devices, d_weights = _weighted_keys(DEVICE_WEIGHTS)
 
+    # A bounded pool of pseudonymous viewers so that repeat views exist and
+    # "unique viewers" is meaningfully smaller than "total views". A small
+    # subset are power viewers (sampled far more often).
+    pool_size = max(500, int(6000 * traffic))
+    viewer_pool = [str(uuid.uuid4()) for _ in range(pool_size)]
+    power = viewer_pool[: max(1, pool_size // 20)]
 
-def _weekday_factor(day: datetime) -> float:
-    return 1.15 if day.weekday() < 5 else 0.72
+    def pick_viewer() -> str:
+        # ~35% of views come from the power-viewer subset.
+        if random.random() < 0.35:
+            return random.choice(power)
+        return random.choice(viewer_pool)
 
+    impressions: list[dict] = []
+    views: list[dict] = []
+    total_views = 0
+    total_impr = 0
 
-def _random_time_on_day(day_date) -> datetime:
-    hour = _weighted_choice(list(range(24)), HOUR_WEIGHTS)
-    minute = random.randint(0, 59)
-    second = random.randint(0, 59)
-    return datetime(day_date.year, day_date.month, day_date.day, hour, minute, second, tzinfo=timezone.utc)
+    window_start = now - timedelta(days=days)
 
+    for day_offset in range(days):
+        day = window_start + timedelta(days=day_offset)
+        # Weekly seasonality: weekends busier; slight upward trend over time.
+        weekday = day.weekday()
+        weekend_boost = 1.35 if weekday >= 5 else 1.0
+        trend = 1.0 + 0.3 * (day_offset / max(days, 1))
 
-def _watch_percent() -> float:
-    raw = random.betavariate(2.0, 2.3) * 118
-    return round(min(raw, 100.0), 1)
+        for m in meta:
+            # Videos published after this day generate nothing yet.
+            if m["published_at"].date() > day.date():
+                continue
+            # Recency decay: interest fades after publish.
+            age = max((day.date() - m["published_at"].date()).days, 0)
+            recency = 1.0 / (1.0 + age / 21.0)
 
-
-def seed(reset: bool = False) -> None:
-    if reset:
-        print("Dropping and recreating all tables...")
-        Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
-
-    random.seed(settings.seed_random_seed)
-
-    db: Session = SessionLocal()
-    try:
-        if not reset and db.query(Video).first() is not None:
-            print("Videos already present — skipping seed. Use --reset to regenerate.")
-            return
-
-        if db.query(User).filter(User.email == DEMO_USER_EMAIL).first() is None:
-            db.add(
-                User(
-                    email=DEMO_USER_EMAIL,
-                    hashed_password=hash_password(DEMO_USER_PASSWORD),
-                    full_name="Demo Analyst",
-                )
+            expected_impr = (
+                m["popularity"] * 220 * recency * weekend_boost * trend * traffic
             )
-            db.commit()
-            print(f"Created demo user: {DEMO_USER_EMAIL} / {DEMO_USER_PASSWORD}")
+            day_impr = max(0, int(random.gauss(expected_impr, expected_impr * 0.25)))
+            if day_impr == 0:
+                continue
 
-        window_days = settings.seed_days
-        n_videos = settings.seed_videos
+            # Click-through from impression to view.
+            ctr = min(0.6, max(0.08, random.gauss(0.28, 0.06)))
+            day_views = int(day_impr * ctr)
 
-        print(f"Generating {n_videos} videos over a {window_days}-day analytics window...")
-        video_rows = _make_videos(n_videos, window_days)
-        popularities = [v.pop("_popularity") for v in video_rows]
-
-        db.execute(insert(Video.__table__), video_rows)
-        db.commit()
-
-        video_ids = [row[0] for row in db.query(Video.id).order_by(Video.id).all()]
-        published_at_by_id = dict(db.query(Video.id, Video.published_at).all())
-        duration_by_id = dict(db.query(Video.id, Video.duration_seconds).all())
-        popularity_by_id = dict(zip(video_ids, popularities))
-
-        now = datetime.now(timezone.utc)
-        window_start = (now - timedelta(days=window_days - 1)).date()
-
-        view_batch: list[dict] = []
-        engagement_batch: list[dict] = []
-        total_views = 0
-        total_engagements = 0
-        BATCH_SIZE = 8000
-
-        def flush():
-            nonlocal view_batch, engagement_batch, total_views, total_engagements
-            if view_batch:
-                db.execute(insert(ViewEvent.__table__), view_batch)
-                total_views += len(view_batch)
-                view_batch = []
-            if engagement_batch:
-                db.execute(insert(EngagementEvent.__table__), engagement_batch)
-                total_engagements += len(engagement_batch)
-                engagement_batch = []
-            db.commit()
-
-        day_cursor = window_start
-        today = now.date()
-        day_index = 0
-        while day_cursor <= today:
-            for video_id in video_ids:
-                published_at = published_at_by_id[video_id]
-                duration = duration_by_id[video_id]
-                popularity = popularity_by_id[video_id]
-
-                age_days = (day_cursor - published_at.date()).days
-                if age_days < 0:
-                    continue
-
-                expected = (
-                    popularity
-                    * _lifecycle_factor(age_days)
-                    * _weekday_factor(datetime(day_cursor.year, day_cursor.month, day_cursor.day))
-                    * random.uniform(0.75, 1.3)
+            for _ in range(day_impr):
+                ts = day + timedelta(
+                    seconds=random.randint(0, 86399)
                 )
-                daily_views = max(0, min(settings.seed_max_daily_events_per_video, round(random.gauss(expected, expected * 0.25 + 1))))
+                impressions.append(
+                    {
+                        "video_id": m["id"],
+                        "event_time": ts,
+                        "country_code": random.choices(countries, c_weights)[0],
+                        "device_type": random.choices(devices, d_weights)[0],
+                    }
+                )
+            total_impr += day_impr
 
-                for _ in range(daily_views):
-                    occurred_at = _random_time_on_day(day_cursor)
-                    viewer_id = f"v-{random.getrandbits(48):x}"
-                    watch_percent = _watch_percent()
-                    watch_seconds = int(duration * (watch_percent / 100))
-                    completed = watch_percent >= 95.0
-                    device_type = _weighted_choice(list(DEVICE_WEIGHTS.keys()), list(DEVICE_WEIGHTS.values()))
-                    country_code = _weighted_choice([c[0] for c in COUNTRIES], COUNTRY_WEIGHTS)
-                    referrer = _weighted_choice(list(REFERRER_WEIGHTS.keys()), list(REFERRER_WEIGHTS.values()))
+            for _ in range(day_views):
+                ts = day + timedelta(seconds=random.randint(0, 86399))
+                device = random.choices(devices, d_weights)[0]
+                # Retention fraction of the video watched, skewed by quality.
+                # Beta-ish: quality shifts the mean watched fraction.
+                base = random.betavariate(2.0, 2.2)
+                watched_frac = min(1.0, base * (0.6 + m["quality"]))
+                # TVs/desktops watch a little longer than mobile on average.
+                if device in ("tv", "desktop"):
+                    watched_frac = min(1.0, watched_frac * 1.1)
+                watch_seconds = int(m["duration"] * watched_frac)
+                quartile = min(4, int(watched_frac * 4 + 1e-9))
+                if watched_frac >= 0.98:
+                    quartile = 4
 
-                    view_batch.append(
-                        {
-                            "video_id": video_id,
-                            "viewer_id": viewer_id,
-                            "occurred_at": occurred_at,
-                            "watch_seconds": watch_seconds,
-                            "watch_percent": watch_percent,
-                            "completed": completed,
-                            "device_type": device_type,
-                            "country_code": country_code,
-                            "referrer_source": referrer,
-                        }
-                    )
+                # Engagement more likely with higher quality and deeper watch.
+                eng_p = m["quality"] * (0.15 + 0.6 * watched_frac)
+                liked = random.random() < eng_p * 0.5
+                commented = random.random() < eng_p * 0.12
+                shared = random.random() < eng_p * 0.08
 
-                    engagement_batch.append(
-                        {
-                            "video_id": video_id,
-                            "viewer_id": viewer_id,
-                            "occurred_at": occurred_at,
-                            "event_type": EngagementType.play,
-                        }
-                    )
-                    if watch_percent >= 25:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.reach_25,
-                            }
-                        )
-                    if watch_percent >= 50:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.reach_50,
-                            }
-                        )
-                    if watch_percent >= 75:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.reach_75,
-                            }
-                        )
-                    if completed:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.complete,
-                            }
-                        )
+                views.append(
+                    {
+                        "video_id": m["id"],
+                        "viewer_id": pick_viewer(),
+                        "event_time": ts,
+                        "country_code": random.choices(countries, c_weights)[0],
+                        "device_type": device,
+                        "watch_seconds": watch_seconds,
+                        "quartile_reached": quartile,
+                        "liked": liked,
+                        "commented": commented,
+                        "shared": shared,
+                    }
+                )
+            total_views += day_views
 
-                    engagement_chance = watch_percent / 100.0
-                    if random.random() < engagement_chance * 0.16:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.like,
-                            }
-                        )
-                    if random.random() < engagement_chance * 0.035:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.comment,
-                            }
-                        )
-                    if random.random() < engagement_chance * 0.025:
-                        engagement_batch.append(
-                            {
-                                "video_id": video_id,
-                                "viewer_id": viewer_id,
-                                "occurred_at": occurred_at,
-                                "event_type": EngagementType.share,
-                            }
-                        )
+            # Flush periodically to keep memory bounded.
+            if len(views) >= BATCH * 4:
+                _chunked_insert(db, ViewEvent, views)
+                _chunked_insert(db, ImpressionEvent, impressions)
+                db.commit()
+                views.clear()
+                impressions.clear()
 
-                    if len(view_batch) >= BATCH_SIZE:
-                        flush()
+    if views:
+        _chunked_insert(db, ViewEvent, views)
+    if impressions:
+        _chunked_insert(db, ImpressionEvent, impressions)
+    db.commit()
+    log.info("events_generated", views=total_views, impressions=total_impr, days=days)
 
-            day_index += 1
-            if day_index % 15 == 0:
-                print(f"  ...processed {day_index}/{window_days} days ({total_views} views so far)")
-            day_cursor += timedelta(days=1)
 
-        flush()
-        print(f"Done. Inserted {total_views} view events and {total_engagements} engagement events "
-              f"across {n_videos} videos.")
-    finally:
-        db.close()
+def main() -> None:
+    days = int(os.getenv("SEED_DAYS", "120"))
+    traffic = float(os.getenv("SEED_TRAFFIC", "1.0"))
+    seed = int(os.getenv("SEED_RANDOM_SEED", "42"))
+    random.seed(seed)
+
+    now = datetime.now(UTC)
+    log.info(
+        "seed_start",
+        days=days,
+        traffic=traffic,
+        database=engine.url.render_as_string(hide_password=True),
+    )
+
+    with SessionLocal() as db:
+        ensure_admin(db)
+        reset(db)
+        meta = create_videos(db, now, days)
+        generate_events(db, meta, now, days, traffic)
+
+    log.info("seed_done")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Seed StreamPulse demo data")
-    parser.add_argument("--reset", action="store_true", help="Drop and recreate all tables first")
-    args = parser.parse_args()
-    seed(reset=args.reset)
+    main()

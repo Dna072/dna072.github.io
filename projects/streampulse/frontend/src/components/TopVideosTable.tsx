@@ -1,76 +1,95 @@
-import type { SortField, VideoPerformance } from "../types";
-import { formatCompactNumber, formatDateTimeLabel, formatPercent } from "../utils/format";
-import "./TopVideosTable.css";
+import { formatNumber, formatPercent } from '../lib/format';
+import type { VideoPerformancePage } from '../lib/types';
 
-interface Column {
-  field: SortField;
-  label: string;
-  render: (v: VideoPerformance) => string;
-}
+type SortKey = 'views' | 'watch_hours' | 'engagement_rate' | 'completion_rate';
 
-const COLUMNS: Column[] = [
-  { field: "views", label: "Views", render: (v) => formatCompactNumber(v.views) },
-  { field: "unique_viewers", label: "Uniques", render: (v) => formatCompactNumber(v.unique_viewers) },
-  { field: "watch_time_hours", label: "Watch time", render: (v) => `${v.watch_time_hours.toLocaleString()}h` },
-  { field: "avg_watch_percent", label: "Avg watched", render: (v) => formatPercent(v.avg_watch_percent) },
-  { field: "completion_rate", label: "Completion", render: (v) => formatPercent(v.completion_rate) },
+const COLUMNS: { key: SortKey; label: string }[] = [
+  { key: 'views', label: 'Views' },
+  { key: 'watch_hours', label: 'Watch h' },
+  { key: 'engagement_rate', label: 'Engmt' },
+  { key: 'completion_rate', label: 'Compl.' },
 ];
 
-interface TopVideosTableProps {
-  items: VideoPerformance[];
-  sort: SortField;
-  order: "asc" | "desc";
-  onSortChange: (field: SortField) => void;
-}
+export default function TopVideosTable({
+  data,
+  sortBy,
+  onSort,
+  page,
+  onPage,
+}: {
+  data: VideoPerformancePage;
+  sortBy: SortKey;
+  onSort: (key: SortKey) => void;
+  page: number;
+  onPage: (page: number) => void;
+}) {
+  const pageSize = data.limit;
+  const totalPages = Math.max(Math.ceil(data.total / pageSize), 1);
+  const startRank = page * pageSize;
 
-export default function TopVideosTable({ items, sort, order, onSortChange }: TopVideosTableProps) {
   return (
-    <div className="videos-table-wrapper scrollbar-thin">
-      <table className="videos-table">
+    <>
+      <table>
         <thead>
           <tr>
-            <th className="videos-table__title-col">Video</th>
-            {COLUMNS.map((col) => (
-              <th key={col.field}>
-                <button
-                  type="button"
-                  className={`videos-table__sort ${sort === col.field ? "videos-table__sort--active" : ""}`}
-                  onClick={() => onSortChange(col.field)}
-                >
-                  {col.label}
-                  {sort === col.field && <span className="videos-table__caret">{order === "desc" ? "▼" : "▲"}</span>}
-                </button>
+            <th className="rank">#</th>
+            <th>Video</th>
+            {COLUMNS.map((c) => (
+              <th
+                key={c.key}
+                className={`num ${sortBy === c.key ? 'sorted' : ''}`}
+                onClick={() => onSort(c.key)}
+                title={`Sort by ${c.label}`}
+              >
+                {c.label} {sortBy === c.key ? '▾' : ''}
               </th>
             ))}
-            <th>Likes</th>
-            <th>Comments</th>
-            <th>Shares</th>
           </tr>
         </thead>
         <tbody>
-          {items.map((video) => (
-            <tr key={video.video_id}>
-              <td className="videos-table__title-col">
-                <div className="videos-table__video">
-                  {video.thumbnail_url && <img src={video.thumbnail_url} alt="" loading="lazy" />}
-                  <div>
-                    <p className="videos-table__title">{video.title}</p>
-                    <p className="videos-table__meta">
-                      {video.category} · {formatDateTimeLabel(video.published_at)}
-                    </p>
-                  </div>
-                </div>
+          {data.items.map((v, i) => (
+            <tr key={v.video_id}>
+              <td className="rank">{startRank + i + 1}</td>
+              <td>
+                <div>{v.title}</div>
+                <span className="chip">{v.category}</span>
               </td>
-              {COLUMNS.map((col) => (
-                <td key={col.field}>{col.render(video)}</td>
-              ))}
-              <td>{formatCompactNumber(video.likes)}</td>
-              <td>{formatCompactNumber(video.comments)}</td>
-              <td>{formatCompactNumber(video.shares)}</td>
+              <td className="num">{formatNumber(v.views)}</td>
+              <td className="num">{formatNumber(v.watch_hours)}</td>
+              <td className="num">{formatPercent(v.engagement_rate)}</td>
+              <td className="num">{formatPercent(v.completion_rate)}</td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginTop: 14,
+          color: 'var(--text-dim)',
+          fontSize: 13,
+        }}
+      >
+        <span>
+          {data.total} video{data.total === 1 ? '' : 's'} with views · page {page + 1} of{' '}
+          {totalPages}
+        </span>
+        <div style={{ display: 'flex', gap: 8 }}>
+          <button className="btn ghost" disabled={page === 0} onClick={() => onPage(page - 1)}>
+            Prev
+          </button>
+          <button
+            className="btn ghost"
+            disabled={page + 1 >= totalPages}
+            onClick={() => onPage(page + 1)}
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </>
   );
 }

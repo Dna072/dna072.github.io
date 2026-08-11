@@ -1,51 +1,88 @@
-"""StreamPulse FastAPI application entrypoint."""
-from fastapi import FastAPI, Response, status
+"""StreamPulse API application factory."""
+
+import time
+import uuid
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from sqlalchemy import text
+from starlette.middleware.base import BaseHTTPMiddleware
 
-from app.core.config import get_settings
-from app.core.database import engine
-from app.routers import audience, auth, device, geo, overview, timeseries, videos
-from app.schemas import HealthResponse, ReadyResponse
+from app import __version__
+from app.api.routes import analytics, auth, health
+from app.core.config import settings
+from app.core.logging import configure_logging, get_logger, request_id_ctx
 
-settings = get_settings()
-
-app = FastAPI(
-    title=settings.app_name,
-    description="Video analytics API powering the StreamPulse dashboard.",
-    version="1.0.0",
-)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.cors_origin_list,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.include_router(auth.router)
-app.include_router(overview.router)
-app.include_router(timeseries.router)
-app.include_router(videos.router)
-app.include_router(audience.router)
-app.include_router(geo.router)
-app.include_router(device.router)
+configure_logging(settings.log_level, settings.log_json)
+log = get_logger("streampulse")
 
 
-@app.get("/health", response_model=HealthResponse, tags=["system"])
-def health() -> HealthResponse:
-    """Liveness probe: process is up. No external dependencies checked."""
-    return HealthResponse(status="ok")
+class RequestContextMiddleware(BaseHTTPMiddleware):
+    """Attach a request id, time the request, and emit a structured access log."""
+
+    async def dispatch(self, request: Request, call_next):
+        rid = request.headers.get("X-Request-ID") or uuid.uuid4().hex
+        token = request_id_ctx.set(rid)
+        start = time.perf_counter()
+        try:
+            response = await call_next(request)
+        except Exception:
+            duration_ms = round((time.perf_counter() - start) * 1000, 2)
+            log.exception(
+                "request_failed",
+                method=request.method,
+                path=request.url.path,
+                duration_ms=duration_ms,
+            )
+            raise
+        finally:
+            request_id_ctx.reset(token)
+
+        duration_ms = round((time.perf_counter() - start) * 1000, 2)
+        response.headers["X-Request-ID"] = rid
+        log.info(
+            "request",
+            method=request.method,
+            path=request.url.path,
+            status_code=response.status_code,
+            duration_ms=duration_ms,
+        )
+        return response
 
 
-@app.get("/ready", response_model=ReadyResponse, tags=["system"])
-def ready(response: Response) -> ReadyResponse:
-    """Readiness probe: confirms the database connection is usable."""
-    try:
-        with engine.connect() as conn:
-            conn.execute(text("SELECT 1"))
-        return ReadyResponse(status="ok", database="ok")
-    except Exception:  # noqa: BLE001
-        response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
-        return ReadyResponse(status="unavailable", database="unreachable")
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    log.info("startup", environment=settings.environment, version=__version__)
+    yield
+    log.info("shutdown")
+
+
+def create_app() -> FastAPI:
+    app = FastAPI(
+        title=settings.project_name,
+        version=__version__,
+        description="Video analytics & performance API — charts are served from real aggregations.",
+        docs_url="/docs",
+        openapi_url="/openapi.json",
+        lifespan=lifespan,
+    )
+
+    app.add_middleware(RequestContextMiddleware)
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.cors_origin_list,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+        expose_headers=["X-Request-ID"],
+    )
+
+    # Probes live at the root; business endpoints under the versioned prefix.
+    app.include_router(health.router)
+    app.include_router(auth.router, prefix=settings.api_v1_prefix)
+    app.include_router(analytics.router, prefix=settings.api_v1_prefix)
+
+    return app
+
+
+app = create_app()

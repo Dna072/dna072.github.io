@@ -1,34 +1,58 @@
 """Application configuration loaded from environment variables."""
+
 from functools import lru_cache
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+    )
 
-    app_name: str = "StreamPulse API"
-    environment: str = "development"
+    # --- App ---
+    project_name: str = "StreamPulse"
+    api_v1_prefix: str = "/api/v1"
+    environment: str = Field(default="development")
+    log_level: str = Field(default="INFO")
+    log_json: bool = Field(default=True)
 
-    database_url: str = "postgresql+psycopg2://streampulse:streampulse@localhost:5432/streampulse"
+    # --- Database ---
+    # Full SQLAlchemy URL. Compose supplies this; local dev can override.
+    database_url: str = Field(
+        default="postgresql+psycopg2://streampulse:streampulse@localhost:5432/streampulse"
+    )
+    db_pool_size: int = 5
+    db_max_overflow: int = 10
 
-    jwt_secret_key: str = "change-me-in-production-please"
+    # --- Auth ---
+    secret_key: str = Field(default="change-me-in-production-please-32-chars-min")
+    access_token_expire_minutes: int = 60 * 24
     jwt_algorithm: str = "HS256"
-    access_token_expire_minutes: int = 60 * 24  # 24 hours
 
-    cors_origins: str = "http://localhost:5173,http://localhost:3000"
+    # First user created by the seed script.
+    seed_admin_email: str = "demo@streampulse.dev"
+    seed_admin_password: str = "streampulse-demo"
 
-    seed_videos: int = 40
-    seed_days: int = 120
-    seed_min_daily_events_per_video: int = 5
-    seed_max_daily_events_per_video: int = 400
-    seed_random_seed: int = 42
+    # --- CORS ---
+    # Comma-separated list of allowed origins for the browser frontend.
+    cors_origins: str = (
+        "http://localhost:5173,http://localhost:3000,http://localhost:8080,"
+        "http://127.0.0.1:5173,http://127.0.0.1:3000,http://127.0.0.1:8080"
+    )
 
     @property
     def cors_origin_list(self) -> list[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
 
 
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+
+settings = get_settings()

@@ -1,67 +1,31 @@
-def test_register_creates_user_and_returns_token(client):
-    response = client.post(
-        "/api/auth/register",
-        json={"email": "new@streampulse.io", "password": "supersecure1", "full_name": "New User"},
+from tests.conftest import TEST_EMAIL
+
+
+def test_login_success(client, auth_headers):
+    assert auth_headers["Authorization"].startswith("Bearer ")
+
+
+def test_login_bad_password(client):
+    r = client.post(
+        "/api/v1/auth/login",
+        data={"username": TEST_EMAIL, "password": "wrong"},
     )
-    assert response.status_code == 201
-    body = response.json()
-    assert body["access_token"]
-    assert body["user"]["email"] == "new@streampulse.io"
-    assert body["user"]["full_name"] == "New User"
+    assert r.status_code == 401
 
 
-def test_register_duplicate_email_returns_409(client):
-    payload = {"email": "dup@streampulse.io", "password": "supersecure1", "full_name": "Dup"}
-    first = client.post("/api/auth/register", json=payload)
-    assert first.status_code == 201
-
-    second = client.post("/api/auth/register", json=payload)
-    assert second.status_code == 409
+def test_me(client, auth_headers):
+    r = client.get("/api/v1/auth/me", headers=auth_headers)
+    assert r.status_code == 200
+    assert r.json()["email"] == TEST_EMAIL
 
 
-def test_register_rejects_short_password(client):
-    response = client.post(
-        "/api/auth/register",
-        json={"email": "short@streampulse.io", "password": "short", "full_name": "Short"},
+def test_analytics_requires_auth(client):
+    assert client.get("/api/v1/analytics/overview").status_code == 401
+
+
+def test_invalid_token_rejected(client):
+    r = client.get(
+        "/api/v1/analytics/overview",
+        headers={"Authorization": "Bearer not-a-real-token"},
     )
-    assert response.status_code == 422
-
-
-def test_login_success(client, test_user):
-    response = client.post(
-        "/api/auth/login", json={"email": "tester@streampulse.io", "password": "testpassword123"}
-    )
-    assert response.status_code == 200
-    body = response.json()
-    assert body["access_token"]
-    assert body["user"]["email"] == "tester@streampulse.io"
-
-
-def test_login_wrong_password(client, test_user):
-    response = client.post(
-        "/api/auth/login", json={"email": "tester@streampulse.io", "password": "wrongpassword"}
-    )
-    assert response.status_code == 401
-
-
-def test_login_unknown_email(client):
-    response = client.post(
-        "/api/auth/login", json={"email": "ghost@streampulse.io", "password": "whatever123"}
-    )
-    assert response.status_code == 401
-
-
-def test_me_requires_token(client):
-    response = client.get("/api/auth/me")
-    assert response.status_code == 401
-
-
-def test_me_returns_current_user(client, auth_headers):
-    response = client.get("/api/auth/me", headers=auth_headers)
-    assert response.status_code == 200
-    assert response.json()["email"] == "tester@streampulse.io"
-
-
-def test_me_rejects_garbage_token(client):
-    response = client.get("/api/auth/me", headers={"Authorization": "Bearer not-a-real-token"})
-    assert response.status_code == 401
+    assert r.status_code == 401

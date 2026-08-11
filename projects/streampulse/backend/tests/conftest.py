@@ -1,181 +1,152 @@
-"""Shared pytest fixtures.
+"""Pytest fixtures.
 
-Tests run against a real PostgreSQL database (TEST_DATABASE_URL, defaulting
-to a local `streampulse_test` database) so that Postgres-specific SQL used
-by the aggregation layer (date(), enum columns, etc.) is exercised exactly
-as it runs in production.
-
-Each test runs inside a transaction that is rolled back afterwards, so
-tests never leak state into one another.
+Tests run against a real PostgreSQL database (the analytics queries use
+``date_trunc``, ``count(distinct)`` and ``FILTER``-style conditional
+aggregation that SQLite cannot emulate). Point ``TEST_DATABASE_URL`` at a
+throwaway database; the schema is created/dropped per session.
 """
-from __future__ import annotations
 
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import sessionmaker
 
-os.environ.setdefault(
-    "DATABASE_URL",
-    os.environ.get(
-        "TEST_DATABASE_URL",
-        "postgresql+psycopg2://streampulse:streampulse@localhost:5432/streampulse_test",
-    ),
+# Always target a dedicated test database. TEST_DATABASE_URL wins over any
+# inherited DATABASE_URL so tests can never accidentally drop a dev database.
+_TEST_URL = os.environ.get("TEST_DATABASE_URL") or (
+    "postgresql+psycopg2://streampulse:streampulse@localhost:5433/streampulse_test"
 )
-os.environ.setdefault("JWT_SECRET_KEY", "test-secret-key")
+if "_test" not in _TEST_URL:
+    raise RuntimeError(
+        "Refusing to run tests: TEST_DATABASE_URL must point at a *_test database "
+        f"(got {_TEST_URL!r})."
+    )
+os.environ["DATABASE_URL"] = _TEST_URL
+os.environ.setdefault("LOG_JSON", "false")
 
-from app.core.database import Base, get_db  # noqa: E402
 from app.core.security import hash_password  # noqa: E402
+from app.db.base import Base  # noqa: E402
+from app.db.session import get_db  # noqa: E402
 from app.main import app  # noqa: E402
-from app.models import DeviceType, EngagementEvent, EngagementType, User, Video, ViewEvent  # noqa: E402
+from app.models.analytics import ImpressionEvent, Video, ViewEvent  # noqa: E402
+from app.models.user import User  # noqa: E402
 
-TEST_DATABASE_URL = os.environ["DATABASE_URL"]
+TEST_URL = os.environ["DATABASE_URL"]
+engine = create_engine(TEST_URL, future=True)
+TestingSessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+
+TEST_EMAIL = "tester@streampulse.dev"
+TEST_PASSWORD = "test-password"
+
+
+@pytest.fixture(scope="session", autouse=True)
+def _schema():
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+    yield
+    Base.metadata.drop_all(bind=engine)
 
 
 @pytest.fixture(scope="session")
-def engine():
-    eng = create_engine(TEST_DATABASE_URL, future=True)
-    Base.metadata.drop_all(bind=eng)
-    Base.metadata.create_all(bind=eng)
-    yield eng
-    Base.metadata.drop_all(bind=eng)
-    eng.dispose()
+def seeded():
+    """Insert a small, fully deterministic dataset used across tests."""
+    now = datetime(2026, 6, 15, 12, 0, 0, tzinfo=UTC)
+    with TestingSessionLocal() as db:
+        db.add(
+            User(
+                email=TEST_EMAIL,
+                full_name="Tester",
+                hashed_password=hash_password(TEST_PASSWORD),
+                is_active=True,
+            )
+        )
+        v1 = Video(
+            title="Alpha",
+            category="Tutorials",
+            duration_seconds=100,
+            published_at=now - timedelta(days=40),
+        )
+        v2 = Video(
+            title="Beta",
+            category="Shorts",
+            duration_seconds=60,
+            published_at=now - timedelta(days=40),
+        )
+        db.add_all([v1, v2])
+        db.flush()
+
+        # Current period: 4 views on day now-2, spread across 2 viewers.
+        def view(video, day, viewer, q, country, device, liked=False):
+            return ViewEvent(
+                video_id=video.id,
+                viewer_id=viewer,
+                event_time=now - timedelta(days=day),
+                country_code=country,
+                device_type=device,
+                watch_seconds=int(video.duration_seconds * q / 4),
+                quartile_reached=q,
+                liked=liked,
+            )
+
+        db.add_all(
+            [
+                view(v1, 2, "u1", 4, "US", "mobile", liked=True),
+                view(v1, 2, "u1", 2, "US", "desktop"),
+                view(v1, 3, "u2", 4, "GB", "mobile", liked=True),
+                view(v2, 2, "u2", 1, "US", "tv"),
+            ]
+        )
+        # Previous period views: the comparison window for CURRENT_RANGE
+        # (2026-06-12 .. 2026-06-16) is the preceding 4 days
+        # [2026-06-08, 2026-06-12); days now-4 and now-5 land inside it.
+        db.add_all(
+            [
+                view(v1, 4, "u3", 4, "US", "mobile"),
+                view(v2, 5, "u3", 2, "DE", "desktop"),
+            ]
+        )
+        # Impressions for the funnel (current period).
+        for _ in range(20):
+            db.add(
+                ImpressionEvent(
+                    video_id=v1.id,
+                    event_time=now - timedelta(days=2, hours=1),
+                    country_code="US",
+                    device_type="mobile",
+                )
+            )
+        db.commit()
+    yield {"now": now}
 
 
 @pytest.fixture()
-def db_session(engine):
-    connection = engine.connect()
-    transaction = connection.begin()
-    TestingSessionLocal = sessionmaker(bind=connection, autoflush=False, autocommit=False, future=True)
-    session: Session = TestingSessionLocal()
-
-    yield session
-
-    session.close()
-    transaction.rollback()
-    connection.close()
-
-
-@pytest.fixture()
-def client(db_session):
+def client(seeded):
     def _override_get_db():
+        db = TestingSessionLocal()
         try:
-            yield db_session
+            yield db
         finally:
-            pass
+            db.close()
 
     app.dependency_overrides[get_db] = _override_get_db
-    with TestClient(app) as test_client:
-        yield test_client
+    with TestClient(app) as c:
+        yield c
     app.dependency_overrides.clear()
 
 
 @pytest.fixture()
-def test_user(db_session):
-    user = User(
-        email="tester@streampulse.io",
-        hashed_password=hash_password("testpassword123"),
-        full_name="Test User",
+def auth_headers(client):
+    resp = client.post(
+        "/api/v1/auth/login",
+        data={"username": TEST_EMAIL, "password": TEST_PASSWORD},
     )
-    db_session.add(user)
-    db_session.commit()
-    db_session.refresh(user)
-    return user
-
-
-@pytest.fixture()
-def auth_headers(client, test_user):
-    response = client.post(
-        "/api/auth/login", json={"email": "tester@streampulse.io", "password": "testpassword123"}
-    )
-    assert response.status_code == 200
-    token = response.json()["access_token"]
+    assert resp.status_code == 200, resp.text
+    token = resp.json()["access_token"]
     return {"Authorization": f"Bearer {token}"}
 
 
-@pytest.fixture()
-def seeded_videos(db_session):
-    """Two videos with fully deterministic view/engagement events so that
-    aggregation results can be asserted exactly, not just "greater than 0"."""
-    now = datetime.now(timezone.utc).replace(microsecond=0)
-    today = now.date()
-
-    video_a = Video(
-        title="Deterministic Video A",
-        description="Fixture video",
-        category="Tutorials",
-        duration_seconds=100,
-        thumbnail_url="https://example.com/a.png",
-        published_at=now - timedelta(days=10),
-    )
-    video_b = Video(
-        title="Deterministic Video B",
-        description="Fixture video",
-        category="Webinars",
-        duration_seconds=200,
-        thumbnail_url="https://example.com/b.png",
-        published_at=now - timedelta(days=5),
-    )
-    db_session.add_all([video_a, video_b])
-    db_session.commit()
-    db_session.refresh(video_a)
-    db_session.refresh(video_b)
-
-    def _dt(day_offset: int, hour: int = 12) -> datetime:
-        d = today - timedelta(days=day_offset)
-        return datetime(d.year, d.month, d.day, hour, tzinfo=timezone.utc)
-
-    # Video A: 3 views today, all fully specified.
-    view_specs = [
-        # (video, day_offset, watch_percent, completed, device, country, referrer)
-        (video_a, 0, 100.0, True, DeviceType.desktop, "US", "search"),
-        (video_a, 0, 50.0, False, DeviceType.mobile, "US", "social"),
-        (video_a, 0, 25.0, False, DeviceType.mobile, "GB", "direct"),
-        (video_a, 1, 75.0, False, DeviceType.tablet, "GB", "search"),
-        (video_b, 0, 100.0, True, DeviceType.tv, "DE", "embed"),
-    ]
-
-    for idx, (video, day_offset, watch_percent, completed, device, country, referrer) in enumerate(view_specs):
-        occurred_at = _dt(day_offset)
-        watch_seconds = int(video.duration_seconds * watch_percent / 100)
-        viewer_id = f"fixture-viewer-{idx}"
-        db_session.add(
-            ViewEvent(
-                video_id=video.id,
-                viewer_id=viewer_id,
-                occurred_at=occurred_at,
-                watch_seconds=watch_seconds,
-                watch_percent=watch_percent,
-                completed=completed,
-                device_type=device,
-                country_code=country,
-                referrer_source=referrer,
-            )
-        )
-
-        stages = [EngagementType.play]
-        if watch_percent >= 25:
-            stages.append(EngagementType.reach_25)
-        if watch_percent >= 50:
-            stages.append(EngagementType.reach_50)
-        if watch_percent >= 75:
-            stages.append(EngagementType.reach_75)
-        if completed:
-            stages.append(EngagementType.complete)
-            stages.append(EngagementType.like)
-
-        for stage in stages:
-            db_session.add(
-                EngagementEvent(
-                    video_id=video.id,
-                    viewer_id=viewer_id,
-                    occurred_at=occurred_at,
-                    event_type=stage,
-                )
-            )
-
-    db_session.commit()
-    return {"video_a": video_a, "video_b": video_b, "today": today}
+# Date range covering the current-period test events (now-4 .. now).
+CURRENT_RANGE = {"start_date": "2026-06-12", "end_date": "2026-06-16"}

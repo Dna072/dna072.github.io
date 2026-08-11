@@ -1,27 +1,35 @@
+name: streampulse
+
 services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: streampulse
-      POSTGRES_PASSWORD: streampulse
-      POSTGRES_DB: streampulse
+      POSTGRES_USER: ${POSTGRES_USER:-streampulse}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-streampulse}
+      POSTGRES_DB: ${POSTGRES_DB:-streampulse}
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
-      - streampulse_pg:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U streampulse"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-streampulse}"]
       interval: 5s
       timeout: 5s
       retries: 10
 
   api:
-    build: ./backend
+    build:
+      context: ./backend
     environment:
-      DATABASE_URL: postgresql+psycopg2://streampulse:streampulse@postgres:5432/streampulse
-      JWT_SECRET_KEY: local-dev-secret-change-me
-      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
-      SEED_ON_STARTUP: "true"
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-streampulse}:${POSTGRES_PASSWORD:-streampulse}@postgres:5432/${POSTGRES_DB:-streampulse}
+      SECRET_KEY: ${SECRET_KEY:-dev-only-change-me-32-characters-minimum}
+      LOG_JSON: ${LOG_JSON:-true}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      # On first boot the entrypoint runs migrations and seeds demo data.
+      RUN_SEED: ${RUN_SEED:-true}
+      SEED_DAYS: ${SEED_DAYS:-120}
+      SEED_TRAFFIC: ${SEED_TRAFFIC:-1.0}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080,http://localhost:5173}
     ports:
       - "8000:8000"
     depends_on:
@@ -29,13 +37,16 @@ services:
         condition: service_healthy
 
   frontend:
-    build: ./frontend
-    environment:
-      VITE_API_URL: http://localhost:8000
+    build:
+      context: ./frontend
+      args:
+        # Baked into the static bundle at build time; the browser calls the API
+        # on the host's published port.
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
     ports:
-      - "5173:80"
+      - "8080:80"
     depends_on:
       - api
 
 volumes:
-  streampulse_pg:
+  pgdata:

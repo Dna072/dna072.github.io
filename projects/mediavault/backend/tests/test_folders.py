@@ -1,98 +1,66 @@
-import pytest
+"""Folder hierarchy tests."""
+
+from __future__ import annotations
 
 
-@pytest.fixture
-def ws(client, register_user, auth_headers, make_workspace):
-    tokens = register_user(client, email="folders-owner@example.com")
-    headers = auth_headers(tokens)
-    workspace = make_workspace(client, headers)
-    return {"id": workspace["id"], "headers": headers}
+def _folder(client, ws_id, headers, name, parent_id=None):
+    body = {"name": name}
+    if parent_id:
+        body["parent_id"] = parent_id
+    return client.post(f"/api/v1/workspaces/{ws_id}/folders", json=body, headers=headers)
 
 
-def test_create_root_folder(client, ws):
-    response = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "Root"}, headers=ws["headers"]
-    )
-    assert response.status_code == 201
-    assert response.json()["path"] == ""
+def test_folder_tree_and_paths(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    marketing = _folder(client, ws_id, admin_headers, "Marketing").json()
+    q1 = _folder(client, ws_id, admin_headers, "Q1", marketing["id"]).json()
+    assert q1["path"] == "/Marketing/Q1"
+
+    tree = client.get(f"/api/v1/workspaces/{ws_id}/folders", headers=admin_headers).json()
+    assert len(tree) == 1
+    assert tree[0]["name"] == "Marketing"
+    assert tree[0]["children"][0]["name"] == "Q1"
 
 
-def test_nested_folder_path(client, ws):
-    root = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "Root"}, headers=ws["headers"]
+def test_breadcrumbs(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    a = _folder(client, ws_id, admin_headers, "A").json()
+    b = _folder(client, ws_id, admin_headers, "B", a["id"]).json()
+    crumbs = client.get(
+        f"/api/v1/workspaces/{ws_id}/folders/{b['id']}/breadcrumbs", headers=admin_headers
     ).json()
-    child = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders",
-        json={"name": "Child", "parent_id": root["id"]},
-        headers=ws["headers"],
-    ).json()
-    assert child["path"] == root["id"]
-
-    grandchild = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders",
-        json={"name": "Grandchild", "parent_id": child["id"]},
-        headers=ws["headers"],
-    ).json()
-    assert grandchild["path"] == f"{root['id']}/{child['id']}"
+    assert [c["name"] for c in crumbs] == ["A", "B"]
 
 
-def test_move_folder_recomputes_descendant_paths(client, ws):
-    a = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "A"}, headers=ws["headers"]
-    ).json()
-    b = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "B"}, headers=ws["headers"]
-    ).json()
-    child = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders",
-        json={"name": "Child", "parent_id": a["id"]},
-        headers=ws["headers"],
-    ).json()
+def test_duplicate_folder_name_conflict(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    _folder(client, ws_id, admin_headers, "Dupe")
+    resp = _folder(client, ws_id, admin_headers, "Dupe")
+    assert resp.status_code == 409
 
-    move_response = client.patch(
-        f"/api/v1/workspaces/{ws['id']}/folders/{child['id']}",
+
+def test_move_folder_repaths_descendants(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    a = _folder(client, ws_id, admin_headers, "A").json()
+    b = _folder(client, ws_id, admin_headers, "B").json()
+    child = _folder(client, ws_id, admin_headers, "Child", a["id"]).json()
+
+    moved = client.patch(
+        f"/api/v1/workspaces/{ws_id}/folders/{child['id']}",
         json={"parent_id": b["id"]},
-        headers=ws["headers"],
+        headers=admin_headers,
     )
-    assert move_response.status_code == 200
-    assert move_response.json()["path"] == b["id"]
+    assert moved.status_code == 200
+    assert moved.json()["path"] == "/B/Child"
 
 
-def test_cannot_move_folder_into_its_own_descendant(client, ws):
-    a = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "A"}, headers=ws["headers"]
-    ).json()
-    child = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders",
-        json={"name": "Child", "parent_id": a["id"]},
-        headers=ws["headers"],
-    ).json()
-
-    response = client.patch(
-        f"/api/v1/workspaces/{ws['id']}/folders/{a['id']}",
+def test_cannot_move_into_own_descendant(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    a = _folder(client, ws_id, admin_headers, "A").json()
+    child = _folder(client, ws_id, admin_headers, "Child", a["id"]).json()
+    resp = client.patch(
+        f"/api/v1/workspaces/{ws_id}/folders/{a['id']}",
         json={"parent_id": child["id"]},
-        headers=ws["headers"],
+        headers=admin_headers,
     )
-    assert response.status_code == 400
-
-
-def test_delete_folder_sets_asset_folder_id_null(client, ws):
-    folder = client.post(
-        f"/api/v1/workspaces/{ws['id']}/folders", json={"name": "Temp"}, headers=ws["headers"]
-    ).json()
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets?folder_id={folder['id']}",
-        files={"file": ("a.mp4", b"asset-bytes", "video/mp4")},
-        headers=ws["headers"],
-    )
-    asset_id = upload.json()["id"]
-
-    delete_response = client.delete(
-        f"/api/v1/workspaces/{ws['id']}/folders/{folder['id']}", headers=ws["headers"]
-    )
-    assert delete_response.status_code == 200
-
-    asset_response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets/{asset_id}", headers=ws["headers"]
-    )
-    assert asset_response.json()["folder_id"] is None
+    assert resp.status_code == 422

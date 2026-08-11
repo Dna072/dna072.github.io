@@ -1,38 +1,41 @@
-"""Role-based access control helpers.
+"""Role-based access-control helpers scoped to a workspace.
 
-Role hierarchy (each role inherits the permissions of the ones below it):
-
-    ADMIN > MEMBER > VIEWER
-
-- VIEWER: read-only access to workspace assets, folders, tags, search, shares.
-- MEMBER: VIEWER + create/update/delete their own assets, folders, tags, shares.
-- ADMIN:  MEMBER + manage workspace settings, manage memberships, and act on
-          any asset/folder/tag regardless of ownership.
+Every workspace-scoped request resolves a :class:`WorkspaceContext` that binds
+the current user to their membership role. Handlers then call ``require`` to
+assert the minimum role for an action, keeping authorization logic in one place.
 """
 
-from app.models.membership import WorkspaceRole
+from __future__ import annotations
 
-_ROLE_RANK = {
-    WorkspaceRole.VIEWER: 0,
-    WorkspaceRole.MEMBER: 1,
-    WorkspaceRole.ADMIN: 2,
-}
+from dataclasses import dataclass
 
-
-def role_at_least(role: WorkspaceRole, minimum: WorkspaceRole) -> bool:
-    return _ROLE_RANK[role] >= _ROLE_RANK[minimum]
+from app.core.exceptions import PermissionDeniedError
+from app.models.enums import Role
+from app.models.user import User
+from app.models.workspace import Membership, Workspace
 
 
-def can_write(role: WorkspaceRole) -> bool:
-    return role_at_least(role, WorkspaceRole.MEMBER)
+@dataclass
+class WorkspaceContext:
+    user: User
+    workspace: Workspace
+    membership: Membership
 
+    @property
+    def role(self) -> Role:
+        return self.membership.role
 
-def can_administer(role: WorkspaceRole) -> bool:
-    return role_at_least(role, WorkspaceRole.ADMIN)
+    def require(self, minimum: Role) -> None:
+        """Raise if the member's role is below ``minimum``."""
+        if self.user.is_superuser:
+            return
+        if not self.role.at_least(minimum):
+            raise PermissionDeniedError(
+                f"This action requires the {minimum.value} role; you have {self.role.value}."
+            )
 
+    def require_admin(self) -> None:
+        self.require(Role.ADMIN)
 
-def can_manage_resource(role: WorkspaceRole, is_owner: bool) -> bool:
-    """MEMBERs can manage resources they own; ADMINs can manage anything."""
-    if can_administer(role):
-        return True
-    return can_write(role) and is_owner
+    def can_write(self) -> bool:
+        return self.user.is_superuser or self.role.at_least(Role.MEMBER)

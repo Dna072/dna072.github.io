@@ -1,49 +1,36 @@
-import secrets
+"""Public share-link model for asset access outside the workspace."""
+
+from __future__ import annotations
+
 import uuid
 from datetime import datetime
-from enum import StrEnum
 from typing import TYPE_CHECKING
 
-from sqlalchemy import DateTime, Enum, ForeignKey, String
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import Boolean, DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
+from app.core.database import Base
+from app.models.mixins import GUID, TimestampMixin, uuid_pk
 
 if TYPE_CHECKING:
     from app.models.asset import Asset
-    from app.models.user import User
 
 
-class SharePermission(StrEnum):
-    VIEW = "VIEW"
-    DOWNLOAD = "DOWNLOAD"
-
-
-def generate_share_token() -> str:
-    return secrets.token_urlsafe(24)
-
-
-class Share(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+class Share(Base, TimestampMixin):
     __tablename__ = "shares"
 
+    id: Mapped[uuid.UUID] = uuid_pk()
     asset_id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("assets.id", ondelete="CASCADE"), nullable=False
+        GUID(), ForeignKey("assets.id", ondelete="CASCADE"), index=True, nullable=False
     )
-    created_by: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("users.id"))
-    token: Mapped[str] = mapped_column(
-        String(64), unique=True, index=True, nullable=False, default=generate_share_token
-    )
-    permission: Mapped[SharePermission] = mapped_column(
-        Enum(SharePermission, name="share_permission"),
-        nullable=False,
-        default=SharePermission.VIEW,
+    token: Mapped[str] = mapped_column(String(64), unique=True, index=True, nullable=False)
+    created_by: Mapped[uuid.UUID | None] = mapped_column(
+        GUID(), ForeignKey("users.id", ondelete="SET NULL"), nullable=True
     )
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
-    revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    max_downloads: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    download_count: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    allow_download: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    revoked: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
-    asset: Mapped["Asset"] = relationship(back_populates="shares")
-    creator: Mapped["User"] = relationship()
-
-    def __repr__(self) -> str:  # pragma: no cover
-        return f"<Share {self.token}>"
+    asset: Mapped[Asset] = relationship()

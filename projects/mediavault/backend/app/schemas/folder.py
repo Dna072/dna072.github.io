@@ -1,3 +1,7 @@
+"""Folder schemas."""
+
+from __future__ import annotations
+
 import uuid
 from datetime import datetime
 
@@ -22,8 +26,17 @@ class FolderRead(BaseModel):
     parent_id: uuid.UUID | None
     name: str
     path: str
-    created_by: uuid.UUID
     created_at: datetime
-    updated_at: datetime
+
+
+class FolderTree(FolderRead):
+    children: list[FolderTree] = []
     asset_count: int = 0
-    subfolder_count: int = 0
+
+
+FolderTree.model_rebuild()
+
+
+class Breadcrumb(BaseModel):
+    id: uuid.UUID
+    name: str

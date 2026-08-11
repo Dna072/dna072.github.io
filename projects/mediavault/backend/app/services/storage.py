@@ -1,114 +1,155 @@
-"""Storage abstraction.
+"""Storage abstraction supporting local disk and S3-compatible backends.
 
-`StorageBackend` defines the contract used by the API layer. `LocalStorage` is
-the only implementation shipped here (files on disk under `STORAGE_ROOT`),
-but the interface mirrors what an S3-backed implementation would look like
-(`save`, `open_stream`, `delete`, `exists`) so swapping backends in production
-is a matter of implementing this protocol against boto3, not rewriting the
-API. Signed, time-limited download URLs are generated with `itsdangerous`
-rather than exposing raw storage keys, matching the ergonomics of S3
-presigned URLs.
+The API surface intentionally mirrors the small subset of object-storage
+operations MediaVault needs (put, open, delete, presign) so the backend can be
+swapped between local disk (development) and S3/MinIO (production) without
+touching call sites.
 """
 
-import hashlib
-import shutil
-import uuid
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
-from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import BinaryIO
 
-from itsdangerous import BadSignature, SignatureExpired, URLSafeTimedSerializer
-
 from app.core.config import settings
+from app.core.logging import get_logger
 
-_serializer = URLSafeTimedSerializer(settings.SECRET_KEY, salt="mediavault-signed-url")
+logger = get_logger(__name__)
 
 
 class StorageBackend(ABC):
-    @abstractmethod
-    def save(self, key: str, file_obj: BinaryIO) -> tuple[int, str]:
-        """Persist a file under `key`. Returns (size_bytes, sha256_checksum)."""
+    """Abstract object store."""
 
     @abstractmethod
-    def open_stream(self, key: str) -> BinaryIO:
-        """Return a readable binary stream for the stored object."""
+    def save(self, key: str, fileobj: BinaryIO) -> int:
+        """Persist a stream under ``key`` and return the number of bytes written."""
 
     @abstractmethod
-    def delete(self, key: str) -> None: ...
+    def open(self, key: str) -> BinaryIO:
+        """Open an object for reading."""
 
     @abstractmethod
-    def exists(self, key: str) -> bool: ...
+    def delete(self, key: str) -> None:
+        ...
+
+    @abstractmethod
+    def exists(self, key: str) -> bool:
+        ...
+
+    def presigned_url(self, key: str, expires_in: int) -> str | None:
+        """Return a backend-native presigned URL when supported, else ``None``.
+
+        The local backend returns ``None`` so the app falls back to serving the
+        object through its own signed streaming endpoint.
+        """
+        return None
 
 
 class LocalStorage(StorageBackend):
-    def __init__(self, root: str | Path | None = None) -> None:
-        self.root = Path(root or settings.STORAGE_ROOT)
-        self.root.mkdir(parents=True, exist_ok=True)
+    """Filesystem-backed storage rooted at ``STORAGE_LOCAL_DIR``."""
 
-    def build_key(self, workspace_id: uuid.UUID, filename: str) -> str:
-        safe_name = Path(filename).name
-        return f"{workspace_id}/{uuid.uuid4().hex}_{safe_name}"
+    def __init__(self, base_dir: str) -> None:
+        self.base = Path(base_dir)
+        self.base.mkdir(parents=True, exist_ok=True)
 
-    def _resolve(self, key: str) -> Path:
-        resolved = (self.root / key).resolve()
-        if self.root.resolve() not in resolved.parents and resolved != self.root.resolve():
-            raise ValueError("Invalid storage key (path traversal detected)")
-        return resolved
+    def _path(self, key: str) -> Path:
+        # Prevent path traversal outside the storage root.
+        target = (self.base / key).resolve()
+        if not str(target).startswith(str(self.base.resolve())):
+            raise ValueError("Invalid storage key")
+        return target
 
-    def save(self, key: str, file_obj: BinaryIO) -> tuple[int, str]:
-        path = self._resolve(key)
+    def save(self, key: str, fileobj: BinaryIO) -> int:
+        path = self._path(key)
         path.parent.mkdir(parents=True, exist_ok=True)
-        hasher = hashlib.sha256()
         size = 0
         with open(path, "wb") as out:
-            for chunk in iter(lambda: file_obj.read(1024 * 1024), b""):
-                hasher.update(chunk)
-                size += len(chunk)
+            while chunk := fileobj.read(1024 * 1024):
                 out.write(chunk)
-        return size, hasher.hexdigest()
+                size += len(chunk)
+        logger.info("stored object", fields={"key": key, "bytes": size, "backend": "local"})
+        return size
 
-    def open_stream(self, key: str) -> BinaryIO:
-        path = self._resolve(key)
-        return open(path, "rb")
+    def open(self, key: str) -> BinaryIO:
+        return open(self._path(key), "rb")
 
     def delete(self, key: str) -> None:
-        path = self._resolve(key)
+        path = self._path(key)
         if path.exists():
             path.unlink()
 
     def exists(self, key: str) -> bool:
-        return self._resolve(key).exists()
+        return self._path(key).exists()
 
-    def wipe(self) -> None:
-        """Test-only helper: remove all stored files."""
-        if self.root.exists():
-            shutil.rmtree(self.root)
-        self.root.mkdir(parents=True, exist_ok=True)
+
+class S3Storage(StorageBackend):
+    """S3-compatible storage (AWS S3 or MinIO) using boto3.
+
+    boto3 is imported lazily so local/test environments do not require the
+    dependency unless the S3 backend is actually selected.
+    """
+
+    def __init__(self) -> None:
+        import boto3  # noqa: PLC0415 - lazy import by design
+
+        if not settings.S3_BUCKET:
+            raise ValueError("S3_BUCKET must be set when STORAGE_BACKEND=s3")
+        self.bucket = settings.S3_BUCKET
+        self.client = boto3.client(
+            "s3",
+            region_name=settings.S3_REGION,
+            endpoint_url=settings.S3_ENDPOINT_URL,
+            aws_access_key_id=settings.S3_ACCESS_KEY_ID,
+            aws_secret_access_key=settings.S3_SECRET_ACCESS_KEY,
+        )
+
+    def save(self, key: str, fileobj: BinaryIO) -> int:
+        self.client.upload_fileobj(fileobj, self.bucket, key)
+        head = self.client.head_object(Bucket=self.bucket, Key=key)
+        size = int(head["ContentLength"])
+        logger.info("stored object", fields={"key": key, "bytes": size, "backend": "s3"})
+        return size
+
+    def open(self, key: str) -> BinaryIO:
+        obj = self.client.get_object(Bucket=self.bucket, Key=key)
+        return obj["Body"]
+
+    def delete(self, key: str) -> None:
+        self.client.delete_object(Bucket=self.bucket, Key=key)
+
+    def exists(self, key: str) -> bool:
+        from botocore.exceptions import ClientError  # noqa: PLC0415
+
+        try:
+            self.client.head_object(Bucket=self.bucket, Key=key)
+            return True
+        except ClientError:
+            return False
+
+    def presigned_url(self, key: str, expires_in: int) -> str | None:
+        return self.client.generate_presigned_url(
+            "get_object",
+            Params={"Bucket": self.bucket, "Key": key},
+            ExpiresIn=expires_in,
+        )
+
+
+_backend: StorageBackend | None = None
 
 
 def get_storage() -> StorageBackend:
-    return LocalStorage()
+    """Return the process-wide storage backend selected by configuration."""
+    global _backend
+    if _backend is None:
+        if settings.STORAGE_BACKEND == "s3":
+            _backend = S3Storage()
+        else:
+            _backend = LocalStorage(settings.STORAGE_LOCAL_DIR)
+    return _backend
 
 
-def generate_signed_download_token(
-    asset_id: uuid.UUID, expires_seconds: int | None = None
-) -> tuple[str, datetime]:
-    expires_seconds = expires_seconds or settings.SIGNED_URL_EXPIRE_SECONDS
-    token = _serializer.dumps({"asset_id": str(asset_id)})
-    expires_at = datetime.now(UTC) + timedelta(seconds=expires_seconds)
-    return token, expires_at
-
-
-def verify_signed_download_token(
-    token: str, expires_seconds: int | None = None
-) -> uuid.UUID | None:
-    expires_seconds = expires_seconds or settings.SIGNED_URL_EXPIRE_SECONDS
-    try:
-        data = _serializer.loads(token, max_age=expires_seconds)
-    except (BadSignature, SignatureExpired):
-        return None
-    try:
-        return uuid.UUID(data["asset_id"])
-    except (KeyError, ValueError, TypeError):
-        return None
+def reset_storage() -> None:
+    """Reset the cached backend (used by tests)."""
+    global _backend
+    _backend = None

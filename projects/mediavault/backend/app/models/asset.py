@@ -1,77 +1,97 @@
+"""Asset model plus the asset<->tag association table."""
+
+from __future__ import annotations
+
 import uuid
-from enum import StrEnum
 from typing import TYPE_CHECKING
 
-from sqlalchemy import BigInteger, Computed, Enum, Float, ForeignKey, Integer, String, Text
-from sqlalchemy.dialects.postgresql import TSVECTOR, UUID
+from sqlalchemy import BigInteger, Float, ForeignKey, Index, Integer, String, Text
+from sqlalchemy import Enum as SAEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy.types import Text as SAText
+from sqlalchemy.types import TypeDecorator
 
-from app.db.base import Base, TimestampMixin, UUIDPrimaryKeyMixin
+from app.core.database import Base
+from app.models.enums import AssetKind, AssetStatus
+from app.models.mixins import GUID, TimestampMixin, uuid_pk
 
 if TYPE_CHECKING:
     from app.models.folder import Folder
-    from app.models.share import Share
     from app.models.tag import Tag
-    from app.models.user import User
     from app.models.workspace import Workspace
 
-# The generated tsvector column is computed server-side on PostgreSQL and gives
-# us native full-text search (ranked, stemmed, stop-word aware) without an
-# external search engine. See migration 0002 for the accompanying GIN index.
-_SEARCH_VECTOR_EXPRESSION = (
-    "setweight(to_tsvector('english', coalesce(filename, '')), 'A') || "
-    "setweight(to_tsvector('english', coalesce(original_filename, '')), 'B') || "
-    "setweight(to_tsvector('english', coalesce(description, '')), 'C')"
-)
+
+class TSVector(TypeDecorator):
+    """Portable full-text search column: TSVECTOR on PostgreSQL, text elsewhere."""
+
+    impl = SAText
+    cache_ok = True
+
+    def load_dialect_impl(self, dialect):
+        if dialect.name == "postgresql":
+            from sqlalchemy.dialects.postgresql import TSVECTOR
+
+            return dialect.type_descriptor(TSVECTOR())
+        return dialect.type_descriptor(SAText())
 
 
-class AssetStatus(StrEnum):
-    UPLOADING = "UPLOADING"
-    PROCESSING = "PROCESSING"
-    READY = "READY"
-    FAILED = "FAILED"
+class AssetTag(Base):
+    __tablename__ = "asset_tags"
+
+    asset_id: Mapped[uuid.UUID] = mapped_column(
+        GUID(), ForeignKey("assets.id", ondelete="CASCADE"), primary_key=True
+    )
+    tag_id: Mapped[uuid.UUID] = mapped_column(
+        GUID(), ForeignKey("tags.id", ondelete="CASCADE"), primary_key=True
+    )
 
 
-class Asset(UUIDPrimaryKeyMixin, TimestampMixin, Base):
+class Asset(Base, TimestampMixin):
     __tablename__ = "assets"
+    __table_args__ = (
+        Index("ix_assets_workspace_folder", "workspace_id", "folder_id"),
+        Index("ix_assets_workspace_created", "workspace_id", "created_at"),
+        Index("ix_assets_workspace_kind", "workspace_id", "kind"),
+    )
 
+    id: Mapped[uuid.UUID] = uuid_pk()
     workspace_id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("workspaces.id", ondelete="CASCADE"), nullable=False
+        GUID(), ForeignKey("workspaces.id", ondelete="CASCADE"), index=True, nullable=False
     )
     folder_id: Mapped[uuid.UUID | None] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("folders.id", ondelete="SET NULL"), nullable=True
-    )
-    owner_id: Mapped[uuid.UUID] = mapped_column(
-        UUID(as_uuid=True), ForeignKey("users.id", ondelete="SET NULL"), nullable=True
+        GUID(), ForeignKey("folders.id", ondelete="SET NULL"), index=True, nullable=True
     )
 
-    filename: Mapped[str] = mapped_column(String(500), nullable=False)
-    original_filename: Mapped[str] = mapped_column(String(500), nullable=False)
-    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    name: Mapped[str] = mapped_column(String(512), nullable=False)
+    description: Mapped[str] = mapped_column(Text, default="", nullable=False)
 
-    content_type: Mapped[str] = mapped_column(String(150), nullable=False)
-    size_bytes: Mapped[int] = mapped_column(BigInteger, nullable=False, default=0)
-    storage_key: Mapped[str] = mapped_column(String(1000), nullable=False)
+    # Storage metadata
+    storage_key: Mapped[str] = mapped_column(String(1024), nullable=False)
+    original_filename: Mapped[str] = mapped_column(String(512), nullable=False)
+    content_type: Mapped[str] = mapped_column(String(255), nullable=False)
+    kind: Mapped[AssetKind] = mapped_column(
+        SAEnum(AssetKind, name="asset_kind"), default=AssetKind.OTHER, nullable=False
+    )
+    size_bytes: Mapped[int] = mapped_column(BigInteger, default=0, nullable=False)
     checksum_sha256: Mapped[str | None] = mapped_column(String(64), nullable=True)
-
     status: Mapped[AssetStatus] = mapped_column(
-        Enum(AssetStatus, name="asset_status"), nullable=False, default=AssetStatus.UPLOADING
+        SAEnum(AssetStatus, name="asset_status"), default=AssetStatus.READY, nullable=False
     )
-    duration_seconds: Mapped[float | None] = mapped_column(Float, nullable=True)
+
+    # Media metadata (nullable — populated for images/video)
     width: Mapped[int | None] = mapped_column(Integer, nullable=True)
     height: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    duration_seconds: Mapped[float | None] = mapped_column(Float, nullable=True)
 
-    search_vector: Mapped[str | None] = mapped_column(
-        TSVECTOR, Computed(_SEARCH_VECTOR_EXPRESSION, persisted=True), nullable=True
+    uploaded_by: Mapped[uuid.UUID | None] = mapped_column(
+        GUID(), ForeignKey("users.id", ondelete="SET NULL"), nullable=True
     )
 
-    workspace: Mapped["Workspace"] = relationship(back_populates="assets")
-    folder: Mapped["Folder | None"] = relationship(back_populates="assets")
-    owner: Mapped["User | None"] = relationship()
-    tags: Mapped[list["Tag"]] = relationship(secondary="asset_tags", back_populates="assets")
-    shares: Mapped[list["Share"]] = relationship(
-        back_populates="asset", cascade="all, delete-orphan"
-    )
+    # Full-text search vector (maintained by a DB trigger on PostgreSQL).
+    search_vector: Mapped[str | None] = mapped_column(TSVector(), nullable=True)
 
-    def __repr__(self) -> str:  # pragma: no cover
-        return f"<Asset {self.filename}>"
+    workspace: Mapped[Workspace] = relationship(back_populates="assets")
+    folder: Mapped[Folder | None] = relationship(back_populates="assets")
+    tags: Mapped[list[Tag]] = relationship(
+        secondary="asset_tags", back_populates="assets"
+    )

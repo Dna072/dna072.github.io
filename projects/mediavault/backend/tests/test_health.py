@@ -1,18 +1,22 @@
-def test_health(client):
-    response = client.get("/health")
-    assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+"""Health and readiness probe tests."""
+
+from __future__ import annotations
 
 
-def test_ready(client):
-    response = client.get("/ready")
-    assert response.status_code == 200
-    body = response.json()
+def test_health_ok(client):
+    resp = client.get("/api/v1/health")
+    assert resp.status_code == 200
+    assert resp.json()["status"] == "ok"
+
+
+def test_ready_reports_database(client):
+    resp = client.get("/api/v1/ready")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["checks"]["database"] == "ok"
     assert body["status"] == "ready"
-    assert body["database"] == "up"
 
 
-def test_root(client):
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json()["api_prefix"] == "/api/v1"
+def test_request_id_header_present(client):
+    resp = client.get("/api/v1/health")
+    assert resp.headers.get("X-Request-ID")

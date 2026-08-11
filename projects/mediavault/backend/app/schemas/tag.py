@@ -1,27 +1,21 @@
-import re
+"""Tag schemas."""
+
+from __future__ import annotations
+
 import uuid
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-
-HEX_COLOR_RE = re.compile(r"^#[0-9a-fA-F]{6}$")
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class TagCreate(BaseModel):
-    name: str = Field(min_length=1, max_length=100)
-    color: str = Field(default="#2f6f5e")
-
-    @field_validator("color")
-    @classmethod
-    def validate_color(cls, value: str) -> str:
-        if not HEX_COLOR_RE.match(value):
-            raise ValueError("color must be a hex string like #2f6f5e")
-        return value
+    name: str = Field(min_length=1, max_length=64)
+    color: str = Field(default="#0f766e", pattern=r"^#[0-9a-fA-F]{6}$")
 
 
 class TagUpdate(BaseModel):
-    name: str | None = Field(default=None, min_length=1, max_length=100)
-    color: str | None = None
+    name: str | None = Field(default=None, min_length=1, max_length=64)
+    color: str | None = Field(default=None, pattern=r"^#[0-9a-fA-F]{6}$")
 
 
 class TagRead(BaseModel):
@@ -32,4 +26,3 @@ class TagRead(BaseModel):
     name: str
     color: str
     created_at: datetime
-    asset_count: int = 0

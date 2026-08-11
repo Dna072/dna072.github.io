@@ -1,110 +1,102 @@
-import pytest
+"""RBAC and workspace membership tests."""
+
+from __future__ import annotations
+
+from tests.conftest import auth_headers
 
 
-@pytest.fixture
-def workspace_with_roles(client, register_user, auth_headers, make_workspace):
-    """Owner (ADMIN), a MEMBER, and a VIEWER all in the same workspace."""
-    owner_tokens = register_user(client, email="rbac-owner@example.com")
-    owner_headers = auth_headers(owner_tokens)
-    workspace = make_workspace(client, owner_headers)
+def test_owner_is_admin(client, admin_headers, workspace):
+    resp = client.get(f"/api/v1/workspaces/{workspace['id']}", headers=admin_headers)
+    assert resp.status_code == 200
+    assert resp.json()["role"] == "ADMIN"
 
-    member_tokens = register_user(client, email="rbac-member@example.com")
-    client.post(
-        f"/api/v1/workspaces/{workspace['id']}/members",
-        json={"email": "rbac-member@example.com", "role": "MEMBER"},
-        headers=owner_headers,
+
+def test_non_member_cannot_access_workspace(client, admin_headers, workspace):
+    outsider = auth_headers(client, "outsider@example.com")
+    resp = client.get(f"/api/v1/workspaces/{workspace['id']}", headers=outsider)
+    assert resp.status_code == 404  # existence hidden from non-members
+
+
+def test_viewer_cannot_upload_but_can_read(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    # Register a viewer and add them to the workspace.
+    auth_headers(client, "viewer@example.com")
+    add = client.post(
+        f"/api/v1/workspaces/{ws_id}/members",
+        json={"email": "viewer@example.com", "role": "VIEWER"},
+        headers=admin_headers,
     )
+    assert add.status_code == 201
 
-    viewer_tokens = register_user(client, email="rbac-viewer@example.com")
-    client.post(
-        f"/api/v1/workspaces/{workspace['id']}/members",
-        json={"email": "rbac-viewer@example.com", "role": "VIEWER"},
-        headers=owner_headers,
-    )
-
-    return {
-        "workspace": workspace,
-        "owner_headers": owner_headers,
-        "member_headers": auth_headers(member_tokens),
-        "viewer_headers": auth_headers(viewer_tokens),
+    viewer_headers = {
+        "Authorization": "Bearer "
+        + client.post(
+            "/api/v1/auth/login",
+            json={"email": "viewer@example.com", "password": "Password123!"},
+        ).json()["tokens"]["access_token"]
     }
 
+    # Viewer can list assets (read).
+    assert client.get(f"/api/v1/workspaces/{ws_id}/assets", headers=viewer_headers).status_code == 200
 
-def test_viewer_cannot_create_folder(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    response = client.post(
+    # Viewer cannot create a folder (write requires MEMBER).
+    resp = client.post(
         f"/api/v1/workspaces/{ws_id}/folders",
         json={"name": "Nope"},
-        headers=workspace_with_roles["viewer_headers"],
+        headers=viewer_headers,
     )
-    assert response.status_code == 403
+    assert resp.status_code == 403
+    assert resp.json()["error"]["code"] == "permission_denied"
 
 
-def test_member_can_create_folder(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    response = client.post(
-        f"/api/v1/workspaces/{ws_id}/folders",
-        json={"name": "Yes"},
-        headers=workspace_with_roles["member_headers"],
+def test_member_cannot_manage_members(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    auth_headers(client, "member@example.com")
+    client.post(
+        f"/api/v1/workspaces/{ws_id}/members",
+        json={"email": "member@example.com", "role": "MEMBER"},
+        headers=admin_headers,
     )
-    assert response.status_code == 201
-
-
-def test_viewer_can_list_but_not_write(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    list_response = client.get(
-        f"/api/v1/workspaces/{ws_id}/folders", headers=workspace_with_roles["viewer_headers"]
+    member_headers = {
+        "Authorization": "Bearer "
+        + client.post(
+            "/api/v1/auth/login",
+            json={"email": "member@example.com", "password": "Password123!"},
+        ).json()["tokens"]["access_token"]
+    }
+    # MEMBER cannot invite others (ADMIN only).
+    resp = client.post(
+        f"/api/v1/workspaces/{ws_id}/members",
+        json={"email": "member@example.com", "role": "MEMBER"},
+        headers=member_headers,
     )
-    assert list_response.status_code == 200
+    assert resp.status_code == 403
 
-    tag_response = client.post(
-        f"/api/v1/workspaces/{ws_id}/tags",
-        json={"name": "cannot-create"},
-        headers=workspace_with_roles["viewer_headers"],
+
+def test_admin_can_change_role(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    auth_headers(client, "promote@example.com")
+    add = client.post(
+        f"/api/v1/workspaces/{ws_id}/members",
+        json={"email": "promote@example.com", "role": "VIEWER"},
+        headers=admin_headers,
+    ).json()
+    resp = client.patch(
+        f"/api/v1/workspaces/{ws_id}/members/{add['id']}",
+        json={"role": "ADMIN"},
+        headers=admin_headers,
     )
-    assert tag_response.status_code == 403
+    assert resp.status_code == 200
+    assert resp.json()["role"] == "ADMIN"
 
 
-def test_member_cannot_update_workspace_settings(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    response = client.patch(
-        f"/api/v1/workspaces/{ws_id}",
-        json={"name": "Renamed"},
-        headers=workspace_with_roles["member_headers"],
+def test_owner_role_cannot_be_downgraded(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    members = client.get(f"/api/v1/workspaces/{ws_id}/members", headers=admin_headers).json()
+    owner_membership = members[0]
+    resp = client.patch(
+        f"/api/v1/workspaces/{ws_id}/members/{owner_membership['id']}",
+        json={"role": "VIEWER"},
+        headers=admin_headers,
     )
-    assert response.status_code == 403
-
-
-def test_admin_can_update_workspace_settings(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    response = client.patch(
-        f"/api/v1/workspaces/{ws_id}",
-        json={"name": "Renamed"},
-        headers=workspace_with_roles["owner_headers"],
-    )
-    assert response.status_code == 200
-    assert response.json()["name"] == "Renamed"
-
-
-def test_member_cannot_delete_others_asset_but_admin_can(client, workspace_with_roles):
-    ws_id = workspace_with_roles["workspace"]["id"]
-    owner_headers = workspace_with_roles["owner_headers"]
-    member_headers = workspace_with_roles["member_headers"]
-
-    upload = client.post(
-        f"/api/v1/workspaces/{ws_id}/assets",
-        files={"file": ("owner.mp4", b"owner-owned-bytes", "video/mp4")},
-        headers=owner_headers,
-    )
-    assert upload.status_code == 201
-    asset_id = upload.json()["id"]
-
-    forbidden = client.delete(
-        f"/api/v1/workspaces/{ws_id}/assets/{asset_id}", headers=member_headers
-    )
-    assert forbidden.status_code == 403
-
-    allowed = client.delete(
-        f"/api/v1/workspaces/{ws_id}/assets/{asset_id}", headers=owner_headers
-    )
-    assert allowed.status_code == 200
+    assert resp.status_code == 403

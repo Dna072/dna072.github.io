@@ -1,46 +1,115 @@
 """Application configuration loaded from environment variables."""
 
-from functools import lru_cache
-from pathlib import Path
+from __future__ import annotations
 
+from functools import lru_cache
+from typing import Literal
+
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    """Central application settings.
 
-    # App
-    APP_NAME: str = "MediaVault API"
-    ENV: str = "development"
-    DEBUG: bool = True
+    Values are read from the environment (and an optional ``.env`` file). All
+    secrets must be provided via the environment in real deployments; the
+    defaults here only exist to make local development and tests frictionless.
+    """
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",
+    )
+
+    # --- Application ---------------------------------------------------------
+    PROJECT_NAME: str = "MediaVault"
+    ENVIRONMENT: Literal["local", "test", "staging", "production"] = "local"
     API_V1_PREFIX: str = "/api/v1"
+    DEBUG: bool = True
+    LOG_LEVEL: str = "INFO"
+    LOG_JSON: bool = True
 
-    # Security
-    SECRET_KEY: str = "change-me-in-production-please-use-a-random-64-char-string"
+    # --- Security ------------------------------------------------------------
+    SECRET_KEY: str = Field(
+        default="change-me-in-production-a-very-long-random-string",
+        description="Symmetric key used to sign JWT access/refresh tokens.",
+    )
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
-    REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 14  # 14 days
-    SIGNED_URL_EXPIRE_SECONDS: int = 600
-    SHARE_LINK_DEFAULT_EXPIRE_HOURS: int = 24 * 7
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 14
+    # Key used to sign short-lived asset download URLs (HMAC).
+    SIGNED_URL_SECRET: str = "change-me-signed-url-secret"
+    SIGNED_URL_EXPIRE_SECONDS: int = 900
 
-    # Database
+    # --- CORS ----------------------------------------------------------------
+    BACKEND_CORS_ORIGINS: list[str] = Field(
+        default_factory=lambda: [
+            "http://localhost:5173",
+            "http://localhost:3000",
+            "http://127.0.0.1:5173",
+        ]
+    )
+
+    # --- Database ------------------------------------------------------------
     DATABASE_URL: str = "postgresql+psycopg://mediavault:mediavault@localhost:5432/mediavault"
 
-    # CORS
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    # --- Redis (optional; rate limiting / caching) ---------------------------
+    REDIS_URL: str | None = "redis://localhost:6379/0"
+    RATE_LIMIT_ENABLED: bool = True
+    RATE_LIMIT_PER_MINUTE: int = 120
 
-    # Storage (local filesystem abstraction; swappable for S3 later)
-    STORAGE_BACKEND: str = "local"
-    STORAGE_ROOT: str = str(Path(__file__).resolve().parents[2] / "storage")
+    # --- Storage -------------------------------------------------------------
+    # "local" writes to STORAGE_LOCAL_DIR; "s3" uses an S3-compatible backend.
+    STORAGE_BACKEND: Literal["local", "s3"] = "local"
+    STORAGE_LOCAL_DIR: str = "/data/storage"
+    S3_BUCKET: str | None = None
+    S3_REGION: str | None = "us-east-1"
+    S3_ENDPOINT_URL: str | None = None  # e.g. MinIO endpoint
+    S3_ACCESS_KEY_ID: str | None = None
+    S3_SECRET_ACCESS_KEY: str | None = None
+
+    # --- Uploads -------------------------------------------------------------
     MAX_UPLOAD_SIZE_MB: int = 512
+    ALLOWED_UPLOAD_CONTENT_TYPES: list[str] = Field(
+        default_factory=lambda: [
+            "video/mp4",
+            "video/quicktime",
+            "video/webm",
+            "video/x-matroska",
+            "image/jpeg",
+            "image/png",
+            "image/webp",
+            "image/gif",
+            "application/pdf",
+        ]
+    )
 
-    # Pagination
-    DEFAULT_PAGE_SIZE: int = 20
-    MAX_PAGE_SIZE: int = 100
+    # --- Seed / bootstrap ----------------------------------------------------
+    FIRST_SUPERUSER_EMAIL: str = "admin@mediavault.dev"
+    FIRST_SUPERUSER_PASSWORD: str = "ChangeMe123!"
+
+    @field_validator("BACKEND_CORS_ORIGINS", "ALLOWED_UPLOAD_CONTENT_TYPES", mode="before")
+    @classmethod
+    def _split_csv(cls, value: object) -> object:
+        """Allow comma-separated env strings for list settings."""
+        if isinstance(value, str) and not value.startswith("["):
+            return [item.strip() for item in value.split(",") if item.strip()]
+        return value
 
     @property
-    def cors_origins_list(self) -> list[str]:
-        return [origin.strip() for origin in self.CORS_ORIGINS.split(",") if origin.strip()]
+    def max_upload_size_bytes(self) -> int:
+        return self.MAX_UPLOAD_SIZE_MB * 1024 * 1024
+
+    @property
+    def is_sqlite(self) -> bool:
+        return self.DATABASE_URL.startswith("sqlite")
+
+    @property
+    def is_postgres(self) -> bool:
+        return "postgresql" in self.DATABASE_URL
 
 
 @lru_cache

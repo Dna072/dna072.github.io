@@ -1,45 +1,76 @@
+# MediaVault local stack: PostgreSQL, Redis, FastAPI API and the React frontend.
+# Usage:
+#   cp .env.example .env
+#   docker compose up --build
+# Then open http://localhost:5173  (API docs: http://localhost:8000/docs)
+
 services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: mediavault
-      POSTGRES_PASSWORD: mediavault
-      POSTGRES_DB: mediavault
+      POSTGRES_USER: ${POSTGRES_USER:-mediavault}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mediavault}
+      POSTGRES_DB: ${POSTGRES_DB:-mediavault}
     ports:
-      - "5434:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - mediavault_pg:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mediavault"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mediavault}"]
       interval: 5s
       timeout: 5s
       retries: 10
 
-  api:
-    build: ./backend
-    environment:
-      DATABASE_URL: postgresql+psycopg2://mediavault:mediavault@postgres:5432/mediavault
-      JWT_SECRET_KEY: local-dev-secret-change-me
-      CORS_ORIGINS: http://localhost:5174,http://localhost:3000
-      STORAGE_ROOT: /data/storage
-    volumes:
-      - mediavault_storage:/data/storage
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
     ports:
-      - "8001:8000"
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: ./backend
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT:-local}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-mediavault}:${POSTGRES_PASSWORD:-mediavault}@postgres:5432/${POSTGRES_DB:-mediavault}
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-me}
+      SIGNED_URL_SECRET: ${SIGNED_URL_SECRET:-dev-signed-secret-change-me}
+      STORAGE_BACKEND: ${STORAGE_BACKEND:-local}
+      STORAGE_LOCAL_DIR: /data/storage
+      LOG_JSON: ${LOG_JSON:-true}
+      SEED_ON_START: ${SEED_ON_START:-true}
+      BACKEND_CORS_ORIGINS: http://localhost:5173,http://localhost:8080
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - storage:/data/storage
     depends_on:
       postgres:
         condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
 
   frontend:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: http://localhost:8001
+        VITE_API_BASE: /api/v1
     ports:
-      - "5174:80"
+      - "${FRONTEND_PORT:-5173}:80"
     depends_on:
       - api
 
 volumes:
-  mediavault_pg:
-  mediavault_storage:
+  pgdata:
+  storage:

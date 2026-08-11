@@ -1,88 +1,126 @@
-import axios, { type AxiosError, type InternalAxiosRequestConfig } from 'axios'
+import type { ApiError, TokenPair } from "./types";
 
-import type { TokenPair } from '@/types'
+const API_BASE = (import.meta.env.VITE_API_BASE as string) || "/api/v1";
+const ACCESS_KEY = "mv_access_token";
+const REFRESH_KEY = "mv_refresh_token";
 
-export const API_BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8001'
-export const API_V1 = `${API_BASE_URL}/api/v1`
-
-const ACCESS_TOKEN_KEY = 'mediavault.access_token'
-const REFRESH_TOKEN_KEY = 'mediavault.refresh_token'
-
-export const tokenStorage = {
-  getAccess: () => localStorage.getItem(ACCESS_TOKEN_KEY),
-  getRefresh: () => localStorage.getItem(REFRESH_TOKEN_KEY),
-  set: (tokens: TokenPair) => {
-    localStorage.setItem(ACCESS_TOKEN_KEY, tokens.access_token)
-    localStorage.setItem(REFRESH_TOKEN_KEY, tokens.refresh_token)
-  },
-  clear: () => {
-    localStorage.removeItem(ACCESS_TOKEN_KEY)
-    localStorage.removeItem(REFRESH_TOKEN_KEY)
-  },
-}
-
-export const apiClient = axios.create({ baseURL: API_V1 })
-
-apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  const token = tokenStorage.getAccess()
-  if (token) {
-    config.headers.set('Authorization', `Bearer ${token}`)
-  }
-  return config
-})
-
-let refreshPromise: Promise<string | null> | null = null
-
-async function refreshAccessToken(): Promise<string | null> {
-  const refreshToken = tokenStorage.getRefresh()
-  if (!refreshToken) return null
-  try {
-    const response = await axios.post<TokenPair>(`${API_V1}/auth/refresh`, {
-      refresh_token: refreshToken,
-    })
-    tokenStorage.set(response.data)
-    return response.data.access_token
-  } catch {
-    tokenStorage.clear()
-    return null
+export class ApiClientError extends Error {
+  code: string;
+  status: number;
+  requestId?: string;
+  constructor(status: number, error: ApiError) {
+    super(error.message);
+    this.code = error.code;
+    this.status = status;
+    this.requestId = error.request_id;
   }
 }
 
-apiClient.interceptors.response.use(
-  (response) => response,
-  async (error: AxiosError) => {
-    const original = error.config as (InternalAxiosRequestConfig & { _retried?: boolean }) | undefined
-    const status = error.response?.status
-    const isAuthEndpoint = original?.url?.includes('/auth/')
+export const tokenStore = {
+  get access() {
+    return localStorage.getItem(ACCESS_KEY);
+  },
+  get refresh() {
+    return localStorage.getItem(REFRESH_KEY);
+  },
+  set(tokens: TokenPair) {
+    localStorage.setItem(ACCESS_KEY, tokens.access_token);
+    localStorage.setItem(REFRESH_KEY, tokens.refresh_token);
+  },
+  clear() {
+    localStorage.removeItem(ACCESS_KEY);
+    localStorage.removeItem(REFRESH_KEY);
+  },
+};
 
-    if (status === 401 && original && !original._retried && !isAuthEndpoint) {
-      original._retried = true
-      refreshPromise ??= refreshAccessToken().finally(() => {
-        refreshPromise = null
-      })
-      const newToken = await refreshPromise
-      if (newToken) {
-        original.headers.set('Authorization', `Bearer ${newToken}`)
-        return apiClient(original)
+let refreshInFlight: Promise<boolean> | null = null;
+
+async function tryRefresh(): Promise<boolean> {
+  const refresh = tokenStore.refresh;
+  if (!refresh) return false;
+  if (!refreshInFlight) {
+    refreshInFlight = (async () => {
+      try {
+        const resp = await fetch(`${API_BASE}/auth/refresh`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ refresh_token: refresh }),
+        });
+        if (!resp.ok) return false;
+        tokenStore.set((await resp.json()) as TokenPair);
+        return true;
+      } catch {
+        return false;
+      } finally {
+        refreshInFlight = null;
       }
-      tokenStorage.clear()
-      window.dispatchEvent(new CustomEvent('mediavault:unauthorized'))
-    }
-    return Promise.reject(error)
-  },
-)
+    })();
+  }
+  return refreshInFlight;
+}
 
-export function extractErrorMessage(error: unknown, fallback = 'Something went wrong'): string {
-  if (axios.isAxiosError(error)) {
-    const data = error.response?.data as { detail?: unknown } | undefined
-    const detail = data?.detail
-    if (typeof detail === 'string') return detail
-    if (Array.isArray(detail)) {
-      return detail
-        .map((item) => (typeof item === 'string' ? item : item?.msg))
-        .filter(Boolean)
-        .join('; ') || fallback
+interface RequestOptions {
+  method?: string;
+  body?: unknown;
+  formData?: FormData;
+  auth?: boolean;
+  signal?: AbortSignal;
+}
+
+async function raw(path: string, opts: RequestOptions, retry = true): Promise<Response> {
+  const headers: Record<string, string> = {};
+  if (opts.auth !== false && tokenStore.access) {
+    headers.Authorization = `Bearer ${tokenStore.access}`;
+  }
+  let body: BodyInit | undefined;
+  if (opts.formData) {
+    body = opts.formData;
+  } else if (opts.body !== undefined) {
+    headers["Content-Type"] = "application/json";
+    body = JSON.stringify(opts.body);
+  }
+
+  const resp = await fetch(`${API_BASE}${path}`, {
+    method: opts.method ?? "GET",
+    headers,
+    body,
+    signal: opts.signal,
+  });
+
+  // Transparent refresh-and-retry on a single 401.
+  if (resp.status === 401 && retry && opts.auth !== false && tokenStore.refresh) {
+    if (await tryRefresh()) {
+      return raw(path, opts, false);
+    }
+    tokenStore.clear();
+  }
+  return resp;
+}
+
+export async function api<T>(path: string, opts: RequestOptions = {}): Promise<T> {
+  const resp = await raw(path, opts);
+  if (resp.status === 204) return undefined as T;
+  const text = await resp.text();
+  const data = text ? JSON.parse(text) : undefined;
+  if (!resp.ok) {
+    const error: ApiError = data?.error ?? { code: "error", message: resp.statusText };
+    throw new ApiClientError(resp.status, error);
+  }
+  return data as T;
+}
+
+export function buildQuery(params: Record<string, unknown>): string {
+  const search = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    if (value === undefined || value === null || value === "") continue;
+    if (Array.isArray(value)) {
+      value.forEach((v) => search.append(key, String(v)));
+    } else {
+      search.append(key, String(value));
     }
   }
-  return fallback
+  const qs = search.toString();
+  return qs ? `?${qs}` : "";
 }
+
+export { API_BASE };

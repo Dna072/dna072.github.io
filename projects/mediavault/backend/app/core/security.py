@@ -1,71 +1,90 @@
-"""Password hashing and JWT token utilities."""
+"""Password hashing, JWT token issuance and signed-URL helpers."""
 
-import uuid
+from __future__ import annotations
+
+import hashlib
+import hmac
+import secrets
 from datetime import UTC, datetime, timedelta
-from enum import StrEnum
-from typing import Any
+from typing import Any, Literal
 
-import bcrypt
-from jose import JWTError, jwt
+import jwt
+from passlib.context import CryptContext
 
 from app.core.config import settings
 
-# bcrypt truncates at 72 bytes internally; enforce it explicitly so behavior
-# is predictable rather than silently dropping the tail of long passwords.
-_MAX_PASSWORD_BYTES = 72
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+TokenType = Literal["access", "refresh"]
 
 
-class TokenType(StrEnum):
-    ACCESS = "access"
-    REFRESH = "refresh"
-
-
+# --- Passwords --------------------------------------------------------------
 def hash_password(password: str) -> str:
-    password_bytes = password.encode("utf-8")[:_MAX_PASSWORD_BYTES]
-    return bcrypt.hashpw(password_bytes, bcrypt.gensalt()).decode("utf-8")
+    return pwd_context.hash(password)
 
 
-def verify_password(plain_password: str, hashed_password: str) -> bool:
-    password_bytes = plain_password.encode("utf-8")[:_MAX_PASSWORD_BYTES]
-    try:
-        return bcrypt.checkpw(password_bytes, hashed_password.encode("utf-8"))
-    except ValueError:
-        return False
+def verify_password(plain: str, hashed: str) -> bool:
+    return pwd_context.verify(plain, hashed)
 
 
-def _create_token(
-    subject: str, token_type: TokenType, expires_delta: timedelta, jti: str | None = None
-) -> tuple[str, str, datetime]:
+# --- JWT --------------------------------------------------------------------
+def _create_token(subject: str, token_type: TokenType, expires_delta: timedelta, **claims: Any) -> str:
     now = datetime.now(UTC)
-    jti = jti or str(uuid.uuid4())
-    expires_at = now + expires_delta
     payload: dict[str, Any] = {
         "sub": subject,
-        "type": token_type.value,
-        "iat": now,
-        "exp": expires_at,
-        "jti": jti,
+        "type": token_type,
+        "iat": int(now.timestamp()),
+        "exp": int((now + expires_delta).timestamp()),
+        "jti": secrets.token_urlsafe(16),
+        **claims,
     }
-    token = jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
-    return token, jti, expires_at
+    return jwt.encode(payload, settings.SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
 
 
-def create_access_token(user_id: str) -> str:
-    token, _, _ = _create_token(
-        user_id, TokenType.ACCESS, timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-    )
-    return token
-
-
-def create_refresh_token(user_id: str) -> tuple[str, str, datetime]:
-    """Returns (token, jti, expires_at) so the caller can persist the jti for revocation."""
+def create_access_token(subject: str, **claims: Any) -> str:
     return _create_token(
-        user_id, TokenType.REFRESH, timedelta(minutes=settings.REFRESH_TOKEN_EXPIRE_MINUTES)
+        subject,
+        "access",
+        timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES),
+        **claims,
     )
 
 
-def decode_token(token: str) -> dict[str, Any] | None:
-    try:
-        return jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.JWT_ALGORITHM])
-    except JWTError:
-        return None
+def create_refresh_token(subject: str, **claims: Any) -> str:
+    return _create_token(
+        subject,
+        "refresh",
+        timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS),
+        **claims,
+    )
+
+
+def decode_token(token: str, expected_type: TokenType | None = None) -> dict[str, Any]:
+    """Decode and validate a JWT. Raises ``jwt.PyJWTError`` on failure."""
+    payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.JWT_ALGORITHM])
+    if expected_type is not None and payload.get("type") != expected_type:
+        raise jwt.InvalidTokenError(f"Expected {expected_type} token, got {payload.get('type')}")
+    return payload
+
+
+def hash_token(token: str) -> str:
+    """Deterministic hash used to store refresh tokens at rest."""
+    return hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+
+# --- Signed URLs ------------------------------------------------------------
+def sign_asset_url(asset_id: str, expires_at: int) -> str:
+    """Return an HMAC signature binding an asset id to an expiry timestamp.
+
+    Mirrors the CloudFront/S3 signed-URL model: the signature is verified
+    server-side before streaming bytes, so URLs are tamper-proof and expire.
+    """
+    message = f"{asset_id}:{expires_at}".encode()
+    return hmac.new(settings.SIGNED_URL_SECRET.encode("utf-8"), message, hashlib.sha256).hexdigest()
+
+
+def verify_asset_signature(asset_id: str, expires_at: int, signature: str) -> bool:
+    expected = sign_asset_url(asset_id, expires_at)
+    if not hmac.compare_digest(expected, signature):
+        return False
+    return int(datetime.now(UTC).timestamp()) <= expires_at

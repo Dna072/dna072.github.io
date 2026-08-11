@@ -1,199 +1,144 @@
-from pathlib import Path
+"""Asset upload, validation, signed URL and share-flow tests."""
 
-import pytest
+from __future__ import annotations
+
+import io
+
+PNG_1x1 = bytes.fromhex(
+    "89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4"
+    "890000000d4944415478da63f8cff0bf1f0005ff02fedca4b9740000000049454e44ae426082"
+)
 
 
-@pytest.fixture
-def ws(client, register_user, auth_headers, make_workspace):
-    tokens = register_user(client, email="assets-owner@example.com")
-    headers = auth_headers(tokens)
-    workspace = make_workspace(client, headers)
-    return {"id": workspace["id"], "headers": headers}
-
-
-def test_upload_rejects_unsupported_content_type(client, ws):
-    response = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("doc.pdf", b"pdf-bytes", "application/pdf")},
-        headers=ws["headers"],
+def _upload(client, ws_id, headers, name="clip.png", content_type="image/png", folder_id=None):
+    data = {"name": name}
+    if folder_id:
+        data["folder_id"] = folder_id
+    return client.post(
+        f"/api/v1/workspaces/{ws_id}/assets",
+        headers=headers,
+        files={"file": (name, io.BytesIO(PNG_1x1), content_type)},
+        data=data,
     )
-    assert response.status_code == 415
 
 
-def test_upload_rejects_empty_file(client, ws):
-    response = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("empty.mp4", b"", "video/mp4")},
-        headers=ws["headers"],
+def test_upload_and_get_asset(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    resp = _upload(client, ws_id, admin_headers, name="Launch Teaser.png")
+    assert resp.status_code == 201, resp.text
+    asset = resp.json()
+    assert asset["kind"] == "IMAGE"
+    assert asset["size_bytes"] > 0
+    assert asset["checksum_sha256"]
+
+    got = client.get(f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}", headers=admin_headers)
+    assert got.status_code == 200
+    assert got.json()["name"] == "Launch Teaser.png"
+
+
+def test_upload_rejects_unsupported_type(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    resp = client.post(
+        f"/api/v1/workspaces/{ws_id}/assets",
+        headers=admin_headers,
+        files={"file": ("evil.exe", io.BytesIO(b"MZ..."), "application/x-msdownload")},
     )
-    assert response.status_code == 400
+    assert resp.status_code == 415
 
 
-def test_upload_and_get_asset(client, ws):
-    response = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"some video bytes here", "video/mp4")},
-        headers=ws["headers"],
+def test_upload_rejects_content_type_mismatch(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    resp = client.post(
+        f"/api/v1/workspaces/{ws_id}/assets",
+        headers=admin_headers,
+        files={"file": ("fake.png", io.BytesIO(b"not-a-real-png"), "image/png")},
     )
-    assert response.status_code == 201
-    body = response.json()
-    assert body["filename"] == "clip.mp4"
-    assert body["size_bytes"] == len(b"some video bytes here")
-    assert body["checksum_sha256"]
+    assert resp.status_code == 422
+    assert resp.json()["error"]["code"] == "content_type_mismatch"
 
-    get_response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets/{body['id']}", headers=ws["headers"]
+
+def test_signed_url_download_flow(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    asset = _upload(client, ws_id, admin_headers).json()
+
+    signed = client.get(
+        f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}/signed-url", headers=admin_headers
     )
-    assert get_response.status_code == 200
+    assert signed.status_code == 200
+    url = signed.json()["url"]
+
+    # The signed URL requires no auth header but must validate.
+    download = client.get(url)
+    assert download.status_code == 200
+    assert download.content == PNG_1x1
 
 
-def test_list_assets_pagination(client, ws):
-    for i in range(5):
-        client.post(
-            f"/api/v1/workspaces/{ws['id']}/assets",
-            files={"file": (f"clip-{i}.mp4", f"bytes-{i}".encode(), "video/mp4")},
-            headers=ws["headers"],
-        )
-    response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets?page=1&page_size=2", headers=ws["headers"]
-    )
-    body = response.json()
-    assert body["total"] == 5
-    assert body["page_size"] == 2
-    assert len(body["items"]) == 2
-    assert body["pages"] == 3
-
-
-def test_list_assets_filter_by_content_type(client, ws):
-    client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"video-bytes", "video/mp4")},
-        headers=ws["headers"],
-    )
-    client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("pic.png", b"image-bytes", "image/png")},
-        headers=ws["headers"],
-    )
-    response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets?content_type=image/", headers=ws["headers"]
-    )
-    body = response.json()
-    assert body["total"] == 1
-    assert body["items"][0]["content_type"] == "image/png"
-
-
-def test_list_assets_sort_by_size(client, ws):
-    client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("small.mp4", b"a", "video/mp4")},
-        headers=ws["headers"],
-    )
-    client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("big.mp4", b"a" * 1000, "video/mp4")},
-        headers=ws["headers"],
-    )
-    response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets?sort_by=size_bytes&sort_dir=asc",
-        headers=ws["headers"],
-    )
-    items = response.json()["items"]
-    assert items[0]["filename"] == "small.mp4"
-    assert items[-1]["filename"] == "big.mp4"
-
-
-def test_update_asset_metadata(client, ws):
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"bytes", "video/mp4")},
-        headers=ws["headers"],
+def test_signed_url_tamper_rejected(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    asset = _upload(client, ws_id, admin_headers).json()
+    signed = client.get(
+        f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}/signed-url", headers=admin_headers
     ).json()
-    response = client.patch(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}",
-        json={"filename": "renamed.mp4", "description": "Updated description"},
-        headers=ws["headers"],
+    tampered = signed["url"].replace("signature=", "signature=deadbeef")
+    assert client.get(tampered).status_code == 403
+
+
+def test_public_share_flow(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    asset = _upload(client, ws_id, admin_headers).json()
+
+    share = client.post(
+        f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}/shares",
+        json={"max_downloads": 2, "allow_download": True},
+        headers=admin_headers,
     )
-    assert response.status_code == 200
-    assert response.json()["filename"] == "renamed.mp4"
-    assert response.json()["description"] == "Updated description"
+    assert share.status_code == 201
+    token = share.json()["token"]
+
+    view = client.get(f"/api/v1/shares/{token}")
+    assert view.status_code == 200
+    assert view.json()["name"] == asset["name"]
+
+    dl = client.get(f"/api/v1/shares/{token}/download")
+    assert dl.status_code == 200
+    assert dl.content == PNG_1x1
 
 
-def test_tag_attach_and_detach(client, ws):
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"bytes", "video/mp4")},
-        headers=ws["headers"],
-    ).json()
+def test_share_download_limit_enforced(client, admin_headers, workspace):
+    ws_id = workspace["id"]
+    asset = _upload(client, ws_id, admin_headers).json()
+    token = client.post(
+        f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}/shares",
+        json={"max_downloads": 1},
+        headers=admin_headers,
+    ).json()["token"]
+
+    assert client.get(f"/api/v1/shares/{token}/download").status_code == 200
+    # Second download exceeds the limit.
+    assert client.get(f"/api/v1/shares/{token}/download").status_code == 403
+
+
+def test_tagging_and_filtering(client, admin_headers, workspace):
+    ws_id = workspace["id"]
     tag = client.post(
-        f"/api/v1/workspaces/{ws['id']}/tags", json={"name": "final-cut"}, headers=ws["headers"]
+        f"/api/v1/workspaces/{ws_id}/tags",
+        json={"name": "hero", "color": "#0f766e"},
+        headers=admin_headers,
     ).json()
+    asset = _upload(client, ws_id, admin_headers).json()
 
-    attach_response = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}/tags/{tag['id']}",
-        headers=ws["headers"],
+    tagged = client.put(
+        f"/api/v1/workspaces/{ws_id}/assets/{asset['id']}/tags",
+        json={"tag_ids": [tag["id"]]},
+        headers=admin_headers,
     )
-    assert attach_response.status_code == 200
-    assert len(attach_response.json()["tags"]) == 1
+    assert tagged.status_code == 200
+    assert tagged.json()["tags"][0]["name"] == "hero"
 
-    detach_response = client.delete(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}/tags/{tag['id']}",
-        headers=ws["headers"],
+    filtered = client.get(
+        f"/api/v1/workspaces/{ws_id}/assets",
+        params={"tag_ids": tag["id"]},
+        headers=admin_headers,
     )
-    assert detach_response.status_code == 200
-    assert len(detach_response.json()["tags"]) == 0
-
-
-def test_delete_asset_removes_file_from_storage(client, ws):
-    from app.core.config import settings
-
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"bytes-to-delete", "video/mp4")},
-        headers=ws["headers"],
-    ).json()
-
-    storage_files_before = list(Path(settings.STORAGE_ROOT).rglob("*"))
-    assert any(f.is_file() for f in storage_files_before)
-
-    delete_response = client.delete(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}", headers=ws["headers"]
-    )
-    assert delete_response.status_code == 200
-
-    get_response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}", headers=ws["headers"]
-    )
-    assert get_response.status_code == 404
-
-
-def test_signed_download_url_roundtrip(client, ws):
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"downloadable-bytes", "video/mp4")},
-        headers=ws["headers"],
-    ).json()
-    url_response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}/download-url", headers=ws["headers"]
-    )
-    assert url_response.status_code == 200
-    download_url = url_response.json()["url"]
-
-    download_response = client.get(download_url)
-    assert download_response.status_code == 200
-    assert download_response.content == b"downloadable-bytes"
-
-
-def test_download_with_tampered_token_rejected(client, ws):
-    upload = client.post(
-        f"/api/v1/workspaces/{ws['id']}/assets",
-        files={"file": ("clip.mp4", b"secret-bytes", "video/mp4")},
-        headers=ws["headers"],
-    ).json()
-    url_response = client.get(
-        f"/api/v1/workspaces/{ws['id']}/assets/{upload['id']}/download-url", headers=ws["headers"]
-    )
-    download_url = url_response.json()["url"]
-    tampered_url = download_url[:-2] + "xx"
-    response = client.get(tampered_url)
-    assert response.status_code == 401
+    assert filtered.status_code == 200
+    assert filtered.json()["total"] == 1

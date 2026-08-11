@@ -1,16 +1,17 @@
+"""Share-link schemas."""
+
+from __future__ import annotations
+
 import uuid
 from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app.models.share import SharePermission
-from app.schemas.asset import AssetRead
-
 
 class ShareCreate(BaseModel):
-    permission: SharePermission = SharePermission.VIEW
-    # None -> use the server default expiry window. 0 -> never expires.
-    expires_in_hours: int | None = Field(default=None, ge=0, le=24 * 365)
+    expires_in_seconds: int | None = Field(default=None, ge=60, le=60 * 60 * 24 * 30)
+    max_downloads: int | None = Field(default=None, ge=1, le=100000)
+    allow_download: bool = True
 
 
 class ShareRead(BaseModel):
@@ -18,16 +19,20 @@ class ShareRead(BaseModel):
 
     id: uuid.UUID
     asset_id: uuid.UUID
-    created_by: uuid.UUID
     token: str
-    permission: SharePermission
     expires_at: datetime | None
-    revoked_at: datetime | None
+    max_downloads: int | None
+    download_count: int
+    allow_download: bool
+    revoked: bool
     created_at: datetime
-    is_active: bool = True
 
 
-class SharePublicRead(BaseModel):
-    asset: AssetRead
-    permission: SharePermission
+class SharePublicView(BaseModel):
+    asset_id: uuid.UUID
+    name: str
+    content_type: str
+    size_bytes: int
+    kind: str
+    allow_download: bool
     download_url: str | None = None

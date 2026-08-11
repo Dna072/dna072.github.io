@@ -6,10 +6,16 @@ API or as a worker in Docker Compose, Kubernetes, or a local dev shell.
 
 from __future__ import annotations
 
+import tempfile
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def _default_liveness_file() -> str:
+    return str(Path(tempfile.gettempdir()) / "renderflow-worker-alive")
 
 
 class Settings(BaseSettings):
@@ -60,7 +66,7 @@ class Settings(BaseSettings):
     job_lease_seconds: float = Field(default=600.0)
     # File touched on every heartbeat so orchestrators can run a file-based
     # exec liveness probe against the (HTTP-less) worker process.
-    worker_liveness_file: str = Field(default="/tmp/renderflow-worker-alive")
+    worker_liveness_file: str = Field(default_factory=_default_liveness_file)
 
     # --- Processing --------------------------------------------------------
     # Force mock processing even when ffmpeg is present (useful in CI).

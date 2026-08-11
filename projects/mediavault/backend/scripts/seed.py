@@ -16,7 +16,7 @@ import sys
 from app.core.config import settings
 from app.core.database import Base, SessionLocal, engine
 from app.core.logging import configure_logging, get_logger
-from app.models.enums import AssetKind, Role
+from app.models.enums import Role
 from app.services.asset import AssetService
 from app.services.auth import AuthService
 from app.services.folder import FolderService

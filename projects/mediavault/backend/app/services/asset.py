@@ -90,22 +90,7 @@ class AssetService:
             uploaded_by=user.id,
         )
         self.assets.add(asset)
-        self._reindex(asset)
         return asset
-
-    def _reindex(self, asset: Asset) -> None:
-        """Populate the search vector on PostgreSQL (no-op on SQLite)."""
-        if not settings.is_postgres:
-            return
-        from sqlalchemy import func, select
-
-        vector = select(
-            func.setweight(func.to_tsvector("english", func.coalesce(asset.name, "")), "A")
-            .op("||")(func.setweight(func.to_tsvector("english", func.coalesce(asset.description, "")), "B"))
-            .op("||")(func.setweight(func.to_tsvector("english", func.coalesce(asset.original_filename, "")), "C"))
-        )
-        asset.search_vector = self.db.execute(vector).scalar_one()
-        self.db.flush()
 
     # --- Retrieval ----------------------------------------------------------
     def get(self, workspace_id: uuid.UUID, asset_id: uuid.UUID) -> Asset:
@@ -136,7 +121,6 @@ class AssetService:
                 raise NotFoundError("Target folder not found.")
             asset.folder_id = folder_id
         self.db.flush()
-        self._reindex(asset)
         return asset
 
     def set_tags(self, asset: Asset, tag_ids: list[uuid.UUID]) -> Asset:

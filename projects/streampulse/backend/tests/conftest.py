@@ -14,13 +14,17 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-os.environ.setdefault(
-    "DATABASE_URL",
-    os.environ.get(
-        "TEST_DATABASE_URL",
-        "postgresql+psycopg2://streampulse:streampulse@localhost:5433/streampulse_test",
-    ),
+# Always target a dedicated test database. TEST_DATABASE_URL wins over any
+# inherited DATABASE_URL so tests can never accidentally drop a dev database.
+_TEST_URL = os.environ.get("TEST_DATABASE_URL") or (
+    "postgresql+psycopg2://streampulse:streampulse@localhost:5433/streampulse_test"
 )
+if "_test" not in _TEST_URL:
+    raise RuntimeError(
+        "Refusing to run tests: TEST_DATABASE_URL must point at a *_test database "
+        f"(got {_TEST_URL!r})."
+    )
+os.environ["DATABASE_URL"] = _TEST_URL
 os.environ.setdefault("LOG_JSON", "false")
 
 from app.core.security import hash_password  # noqa: E402

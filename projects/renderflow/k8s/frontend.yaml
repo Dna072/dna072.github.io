@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renderflow-frontend
+  namespace: renderflow
+  labels:
+    app: renderflow-frontend
+    app.kubernetes.io/component: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: renderflow-frontend
+  template:
+    metadata:
+      labels:
+        app: renderflow-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: renderflow/frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: renderflow-frontend
+  namespace: renderflow
+  labels:
+    app: renderflow-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: renderflow-frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

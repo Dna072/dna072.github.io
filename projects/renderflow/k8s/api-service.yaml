@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: renderflow-api
+  namespace: renderflow
+  labels:
+    app: renderflow-api
+spec:
+  type: ClusterIP
+  selector:
+    app: renderflow-api
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000

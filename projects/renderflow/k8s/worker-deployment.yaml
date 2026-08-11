@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: renderflow-worker
+  namespace: renderflow
+  labels:
+    app: renderflow-worker
+    app.kubernetes.io/component: worker
+spec:
+  # Scaled automatically by the HPA (see worker-hpa.yaml); this is the floor.
+  replicas: 2
+  selector:
+    matchLabels:
+      app: renderflow-worker
+  template:
+    metadata:
+      labels:
+        app: renderflow-worker
+    spec:
+      # Give in-flight jobs time to finish on scale-down / rollout.
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: worker
+          image: renderflow/worker:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: renderflow-config
+            - secretRef:
+                name: renderflow-secrets
+          # The worker has no HTTP server; liveness/readiness use the heartbeat
+          # file it touches every loop. If the file goes stale the process is
+          # stuck and the pod is restarted.
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - "test $(( $(date +%s) - $(cat /tmp/renderflow-worker-alive 2>/dev/null | cut -d. -f1 || echo 0) )) -lt 60"
+            initialDelaySeconds: 15
+            periodSeconds: 15
+            failureThreshold: 3
+          readinessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - "test -f /tmp/renderflow-worker-alive"
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              # Media transcoding is CPU-bound; give workers headroom.
+              cpu: "1000m"
+              memory: "1Gi"

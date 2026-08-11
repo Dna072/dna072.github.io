@@ -1,0 +1,43 @@
+# Ingress routes the browser to the frontend and API paths straight to the API
+# Service (so the API is reachable at the same origin as the UI). Assumes an
+# ingress controller (nginx-ingress / ALB) is installed in the cluster.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: renderflow
+  namespace: renderflow
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: renderflow.local
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: renderflow-api
+                port:
+                  number: 8000
+          - path: /docs
+            pathType: Prefix
+            backend:
+              service:
+                name: renderflow-api
+                port:
+                  number: 8000
+          - path: /openapi.json
+            pathType: Exact
+            backend:
+              service:
+                name: renderflow-api
+                port:
+                  number: 8000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: renderflow-frontend
+                port:
+                  number: 80

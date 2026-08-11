@@ -1,46 +1,36 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from "react";
 
-interface PollingResult<T> {
-  data: T | null
-  error: string | null
-  loading: boolean
-  refresh: () => Promise<void>
-}
-
-/** Polls `fetcher` every `intervalMs`, keeping the ops UI near-real-time. */
+// Polls an async loader on an interval, exposing data/error/loading and a
+// manual refresh. Pausing (e.g. when a modal is open) is supported.
 export function usePolling<T>(
-  fetcher: () => Promise<T>,
-  intervalMs = 5000,
+  loader: () => Promise<T>,
+  intervalMs = 3000,
   enabled = true,
-): PollingResult<T> {
-  const [data, setData] = useState<T | null>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
-  const fetcherRef = useRef(fetcher)
-
-  useEffect(() => {
-    fetcherRef.current = fetcher
-  }, [fetcher])
+) {
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const loaderRef = useRef(loader);
+  loaderRef.current = loader;
 
   const refresh = useCallback(async () => {
     try {
-      const result = await fetcherRef.current()
-      setData(result)
-      setError(null)
-    } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Request failed')
+      const result = await loaderRef.current();
+      setData(result);
+      setError(null);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    if (!enabled) return
+    if (!enabled) return;
+    refresh();
+    const id = setInterval(refresh, intervalMs);
+    return () => clearInterval(id);
+  }, [refresh, intervalMs, enabled]);
 
-    void refresh()
-    const id = window.setInterval(() => void refresh(), intervalMs)
-    return () => window.clearInterval(id)
-  }, [refresh, intervalMs, enabled])
-
-  return { data, error, loading, refresh }
+  return { data, error, loading, refresh };
 }

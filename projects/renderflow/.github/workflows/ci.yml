@@ -1,32 +1,48 @@
-name: renderflow CI
+# CI for the standalone RenderFlow repository.
+#
+# NOTE: In this portfolio monorepo, GitHub Actions only runs workflows at the
+# repository root (.github/workflows). This file lives inside the project so
+# that when RenderFlow is extracted to its own repo (Dna072/renderflow) the
+# project root becomes the repo root and CI works with no changes.
+name: renderflow-ci
+
 on:
   push:
+    branches: ["**"]
   pull_request:
+
 jobs:
   backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
-      - name: Install & test
-        run: |
-          if [ -d backend ]; then cd backend; elif [ -d api ]; then cd api; fi
-          pip install -r requirements.txt pytest httpx || true
-          export PYTHONPATH=$PWD
-          pytest -q || true
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements-dev.txt
+      - name: Lint (ruff)
+        run: ruff check backend
+      - name: Tests (pytest)
+        working-directory: backend
+        run: pytest
+        env:
+          # ffmpeg may be absent on the runner; use mock processing.
+          RENDERFLOW_FORCE_MOCK_PROCESSING: "true"
+
   frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '22' }
-      - run: |
-          cd frontend
-          npm ci || npm install
-          npm run build
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: docker compose config
+        with:
+          node-version: "22"
+      - name: Install deps
+        run: npm ci || npm install
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build

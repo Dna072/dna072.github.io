@@ -1,27 +1,27 @@
+# Python
 __pycache__/
 *.py[cod]
-*.egg-info/
-.eggs/
 .venv/
 venv/
-*.env
-.env
-.env.local
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
-.mypy_cache/
-htmlcov/
-.coverage
-*.log
+*.db
+*.sqlite3
 
-node_modules/
-frontend/dist/
-frontend/.vite/
-*.tsbuildinfo
+# Env / secrets
+.env
+.env.local
 
-data/
+# Storage / artifacts
+backend/storage/
 storage/
-media-storage/
 
+# Node / frontend
+node_modules/
+dist/
+.vite/
+
+# OS / editor
 .DS_Store
-*.swp
+*.log

@@ -1,23 +1,17 @@
-# syntax=docker/dockerfile:1
-
+# Frontend image: build the Vite app, then serve static assets via nginx which
+# also reverse-proxies /api to the backend.
+# Build context: projects/renderflow/  (see docker-compose.yml)
 FROM node:22-alpine AS build
 WORKDIR /app
-
-COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci
-
+COPY frontend/package.json frontend/package-lock.json* ./
+RUN npm ci || npm install
 COPY frontend/ ./
-ARG VITE_API_BASE_URL=
-ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 RUN npm run build
 
-FROM nginx:1.27-alpine
+FROM nginx:1.27-alpine AS runtime
 COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
-
 EXPOSE 80
-
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD wget -qO- http://127.0.0.1/ || exit 1
-
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+    CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1
 CMD ["nginx", "-g", "daemon off;"]

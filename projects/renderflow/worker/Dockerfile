@@ -1,26 +1,29 @@
-# syntax=docker/dockerfile:1
+# Worker image. Shares the backend application package (models, queue, storage,
+# processors) but its entrypoint runs the dequeue/process loop instead of the
+# HTTP server. Build context: projects/renderflow/
+FROM python:3.12-slim
 
-FROM python:3.12-slim AS base
-WORKDIR /app
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ffmpeg \
-    libpq5 \
-    procps \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
-COPY common/ /app/common/
-RUN pip install --no-cache-dir /app/common
+WORKDIR /app
 
-COPY worker/requirements.txt /app/worker/requirements.txt
-RUN pip install --no-cache-dir -r /app/worker/requirements.txt
+COPY backend/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY worker/ /app/worker/
-WORKDIR /app/worker
+COPY backend/app ./app
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-    CMD pgrep -f "python.*worker.main" > /dev/null || exit 1
+RUN useradd --create-home --uid 10001 appuser \
+    && mkdir -p /data/storage && chown -R appuser:appuser /app /data
+USER appuser
 
-CMD ["python", "-m", "worker.main"]
+ENV RENDERFLOW_SERVICE_NAME=renderflow-worker \
+    RENDERFLOW_STORAGE_LOCAL_DIR=/data/storage
+
+# Liveness for orchestrators: the worker writes a heartbeat file each loop.
+CMD ["python", "-m", "app.worker.runner"]

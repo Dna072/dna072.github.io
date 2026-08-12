@@ -45,7 +45,7 @@ function AnimatedStat({
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-content">
         <FadeIn>
           <p className="text-sm font-medium text-brand">About</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -63,7 +63,7 @@ export function AboutSection() {
               <CardHeader>
                 <CardTitle>Professional biography</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4 text-sm leading-relaxed text-muted">
+              <CardContent className="max-w-prose space-y-4 text-base leading-relaxed text-muted">
                 {siteConfig.author.bio.split("\n\n").map((paragraph) => (
                   <p key={paragraph.slice(0, 24)}>{paragraph}</p>
                 ))}

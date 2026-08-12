@@ -8,7 +8,7 @@ import { projectDetails } from "@/lib/projects";
 export function FeaturedProjectsSection({ repos }: { repos: GitHubRepo[] }) {
   return (
     <section id="projects" className="scroll-mt-24 px-4 py-20 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-content">
         <FadeIn>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>

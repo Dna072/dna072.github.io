@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ArchitecturePage() {
   return (
     <div className="px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-content">
         <p className="text-sm font-medium text-brand">Architecture</p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight">
           Engineering diagrams

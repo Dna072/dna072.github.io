@@ -52,6 +52,8 @@
   --color-card: var(--card);
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-ibm-plex-mono);
+  /* ~33% wider than Tailwind max-w-6xl (72rem) for readable line length */
+  --container-content: 96rem;
 }
 
 * {

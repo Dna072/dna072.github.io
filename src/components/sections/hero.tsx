@@ -25,7 +25,7 @@ export function HeroSection() {
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="relative mx-auto grid max-w-content items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p className="mb-4 text-sm font-medium tracking-wide text-brand">
             {siteConfig.author.role}

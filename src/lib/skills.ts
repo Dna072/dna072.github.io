@@ -2,7 +2,7 @@ export type SkillCategory = {
   id: string;
   title: string;
   description: string;
-  skills: { name: string; level: number }[];
+  skills: string[];
 };
 
 export const skillCategories: SkillCategory[] = [
@@ -10,12 +10,7 @@ export const skillCategories: SkillCategory[] = [
     id: "programming",
     title: "Programming",
     description: "Core languages for data platforms, APIs, and web products.",
-    skills: [
-      { name: "Python", level: 95 },
-      { name: "SQL", level: 95 },
-      { name: "TypeScript", level: 88 },
-      { name: "JavaScript", level: 90 },
-    ],
+    skills: ["Python", "SQL", "TypeScript", "JavaScript"],
   },
   {
     id: "fullstack",
@@ -23,13 +18,13 @@ export const skillCategories: SkillCategory[] = [
     description:
       "Full-stack product engineering—APIs, services, and modern UI delivery.",
     skills: [
-      { name: "React / ReactJS", level: 90 },
-      { name: "Vite", level: 86 },
-      { name: "Next.js", level: 88 },
-      { name: "Node.js", level: 88 },
-      { name: "Express.js", level: 85 },
-      { name: "Tailwind CSS", level: 88 },
-      { name: "REST APIs", level: 90 },
+      "React / ReactJS",
+      "Vite",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Tailwind CSS",
+      "REST APIs",
     ],
   },
   {
@@ -37,12 +32,12 @@ export const skillCategories: SkillCategory[] = [
     title: "Data Engineering",
     description: "Orchestration, processing, and warehouse tooling.",
     skills: [
-      { name: "Airflow", level: 90 },
-      { name: "Spark", level: 85 },
-      { name: "AWS Glue", level: 85 },
-      { name: "Redshift", level: 88 },
-      { name: "Athena", level: 82 },
-      { name: "PostgreSQL", level: 90 },
+      "Airflow",
+      "Spark",
+      "AWS Glue",
+      "Redshift",
+      "Athena",
+      "PostgreSQL",
     ],
   },
   {
@@ -51,22 +46,17 @@ export const skillCategories: SkillCategory[] = [
     description:
       "Applied ML with a strong focus on reinforcement learning research.",
     skills: [
-      { name: "Reinforcement Learning", level: 88 },
-      { name: "Deep RL", level: 86 },
-      { name: "Supervised Learning", level: 82 },
-      { name: "Feature Engineering", level: 84 },
+      "Reinforcement Learning",
+      "Deep RL",
+      "Supervised Learning",
+      "Feature Engineering",
     ],
   },
   {
     id: "cloud",
     title: "Cloud & DevOps",
     description: "Cloud platforms and delivery automation.",
-    skills: [
-      { name: "AWS", level: 88 },
-      { name: "Docker", level: 82 },
-      { name: "GitHub Actions", level: 85 },
-      { name: "CI/CD", level: 84 },
-    ],
+    skills: ["AWS", "Docker", "GitHub Actions", "CI/CD"],
   },
 ];
 

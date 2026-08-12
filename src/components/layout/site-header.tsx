@@ -34,7 +34,7 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand: () => void }) {
           : "border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-content items-center justify-between px-4 sm:px-6">
         <Link href="/" className="group flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand/15 text-sm font-bold text-brand ring-1 ring-brand/30">
             DA

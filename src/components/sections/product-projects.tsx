@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function ProductProjectsSection() {
   return (
     <section id="products" className="scroll-mt-24 px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-content">
         <FadeIn>
           <p className="text-sm font-medium text-brand">Product & platforms</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">

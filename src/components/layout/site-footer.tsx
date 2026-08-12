@@ -6,7 +6,7 @@ import { withBasePath } from "@/lib/utils";
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-background-elevated/40">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-content gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="space-y-3">
           <p className="text-lg font-semibold tracking-tight">{siteConfig.name}</p>
           <p className="max-w-md text-sm leading-relaxed text-muted">
@@ -21,26 +21,13 @@ export function SiteFooter() {
         <div>
           <p className="mb-3 text-sm font-medium">Explore</p>
           <ul className="space-y-2 text-sm text-muted">
-            <li>
-              <Link href="/projects/" className="hover:text-foreground">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/articles/" className="hover:text-foreground">
-                Articles
-              </Link>
-            </li>
-            <li>
-              <Link href="/architecture/" className="hover:text-foreground">
-                Architecture
-              </Link>
-            </li>
-            <li>
-              <Link href="/github/" className="hover:text-foreground">
-                GitHub
-              </Link>
-            </li>
+            {siteConfig.footerNavigation.map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="hover:text-foreground">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

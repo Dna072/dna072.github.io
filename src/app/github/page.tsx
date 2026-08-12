@@ -34,7 +34,7 @@ export default async function GitHubPage() {
 
   return (
     <div className="px-4 py-16 sm:px-6">
-      <div className="mx-auto max-w-6xl space-y-10">
+      <div className="mx-auto max-w-content space-y-10">
         <div className="flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             {user?.avatar_url ? (

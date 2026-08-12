@@ -24,7 +24,7 @@ export default async function ProjectsPage() {
   return (
     <div className="py-8">
       <div className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-content">
           <p className="text-sm font-medium text-brand">Projects</p>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight">
             Products, data platforms & research
@@ -40,7 +40,7 @@ export default async function ProjectsPage() {
       <ProductProjectsSection />
 
       <div className="px-4 pb-16 sm:px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-content">
           <h2 className="text-2xl font-semibold tracking-tight">
             GitHub repositories
           </h2>

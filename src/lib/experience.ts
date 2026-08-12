@@ -20,12 +20,10 @@ export const timeline: TimelineItem[] = [
     start: "2023",
     end: "Present",
     summary:
-      "Develop enterprise solutions with Microsoft Power Platform and collaborate with stakeholders to digitize workflows and improve operational reporting.",
+      "Enterprise Power Platform solutions that digitize workflows and improve operational reporting.",
     highlights: [
-      "Developed enterprise solutions using Microsoft Power Platform (Power Apps, Power Automate, and Power BI).",
-      "Built business dashboards and reports supporting operational and risk management decisions.",
-      "Automated business processes using Power Automate, reducing manual effort and improving operational efficiency.",
-      "Collaborated with business stakeholders to digitize workflows and improve reporting.",
+      "Built apps, automations, and Power BI dashboards for risk and operations.",
+      "Reduced manual work by automating recurring business processes.",
     ],
   },
   {
@@ -37,12 +35,11 @@ export const timeline: TimelineItem[] = [
     start: "2022",
     end: "2025",
     summary:
-      "Designed and deployed production ELT pipelines and a star-schema Redshift warehouse supporting nationwide education analytics for 500,000+ users.",
+      "Production ELT pipelines and a Redshift warehouse for nationwide education analytics (500,000+ users).",
     highlights: [
-      "Built AWS Glue ELT from PostgreSQL into Amazon Redshift for nationwide analytics.",
-      "Modeled staging and transformation layers into an analytics-optimized star schema.",
-      "Improved Redshift query performance by up to 50% with distribution/sort key tuning and data quality checks.",
-      "Contributed to production web platforms including TPG (tpg.ntc.gov.gh) supporting teaching profession workflows.",
+      "AWS Glue ELT from PostgreSQL into a star-schema Redshift model.",
+      "Cut query times by up to 50% with sort/dist keys and data quality checks.",
+      "Shipped production web work on TPG (tpg.ntc.gov.gh).",
     ],
   },
   {
@@ -54,11 +51,10 @@ export const timeline: TimelineItem[] = [
     start: "2022",
     end: "2024",
     summary:
-      "Graduate training in machine learning and data science, culminating in a thesis on deep reinforcement learning for job shop scheduling.",
+      "Graduate focus on machine learning, with a thesis on deep RL for job shop scheduling.",
     highlights: [
-      "Thesis: Deep Reinforcement Learning for Job Shop Scheduling (github.com/Dna072/drl-jss).",
-      "Built strong foundations in RL, supervised learning, and reproducible experimental workflows.",
-      "Combined ML research with practical data engineering and software engineering skills.",
+      "Thesis: Deep RL for Job Shop Scheduling (github.com/Dna072/drl-jss).",
+      "Strengthened RL, supervised learning, and reproducible experiment workflows.",
     ],
   },
   {
@@ -70,10 +66,9 @@ export const timeline: TimelineItem[] = [
     start: "2013",
     end: "2017",
     summary:
-      "Undergraduate foundation in computer engineering—beginning continuous backend and frontend software development practice from 2017 onward.",
+      "Computer engineering foundation; continuous backend and frontend practice since 2017.",
     highlights: [
-      "Built foundations in programming, systems thinking, and software engineering.",
-      "Started shipping backend and frontend applications professionally and personally since 2017.",
+      "Core training in programming, systems, and software engineering.",
     ],
   },
   {
@@ -84,10 +79,9 @@ export const timeline: TimelineItem[] = [
     start: "2016",
     end: "2016",
     summary:
-      "Competed in Google Hash Code practice problems, strengthening algorithmic problem-solving under constraints.",
+      "Google Hash Code practice rounds focused on constrained optimization problems.",
     highlights: [
-      "Collaborated on optimization-style engineering challenges.",
-      "Published practice repository documenting approaches and learnings.",
+      "Team problem-solving on algorithmic engineering challenges.",
     ],
   },
   {
@@ -98,10 +92,9 @@ export const timeline: TimelineItem[] = [
     start: "Ongoing",
     end: "Present",
     summary:
-      "Published project documentation and repositories covering data pipelines, warehouse modeling, and lakehouse analytics.",
+      "Public docs and repos on data pipelines, warehouse modeling, and lakehouse analytics.",
     highlights: [
-      "Documented Sparkify Redshift warehouse and Airflow orchestration patterns.",
-      "Published STEDI lakehouse analytics architecture on AWS Glue / Athena / S3.",
+      "Sparkify Redshift + Airflow patterns; STEDI lakehouse on Glue / Athena / S3.",
     ],
   },
 ];

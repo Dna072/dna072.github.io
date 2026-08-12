@@ -15,13 +15,11 @@ export const siteConfig = {
       "Building media/video SaaS backends, scalable APIs, and data platforms that turn complex systems into trusted products.",
     shortBio:
       "Full-stack and data engineer with backend & frontend experience since 2017—shipping Python APIs, React/TypeScript apps, cloud data platforms, and production-style media/video SaaS projects.",
-    bio: `Full-stack engineer and Analytics/Data Engineer with 4+ years designing scalable cloud data platforms, analytical data models, and modern ELT pipelines on AWS—backed by backend and frontend development experience since 2017.
+    bio: `Full-stack and data engineer with 4+ years building cloud data platforms and ELT pipelines on AWS, plus backend and frontend work since 2017.
 
-I build trusted datasets and automated pipelines for reporting, BI, and machine learning, and I also ship production web platforms with TypeScript, JavaScript, React, Vite, Node.js, Express, Next.js, Tailwind CSS, and Python. Live work includes MedLink, Arctiq, and the National Teaching Council's TPG platform.
+I ship trusted datasets for reporting and ML, and production web apps with TypeScript, React, Node.js, Next.js, and Python. Live platforms include MedLink, Arctiq, and TPG (National Teaching Council).
 
-Recent portfolio work explores the video content lifecycle through four production-style media/video SaaS apps: ClipForge, MediaVault, StreamPulse, and RenderFlow (FastAPI, React/TypeScript, PostgreSQL, Redis, Docker/Kubernetes).
-
-I have strong machine learning foundations and a particular interest in reinforcement learning. My MSc thesis applied deep reinforcement learning to job shop scheduling (github.com/Dna072/drl-jss). I hold an MSc in Data Science from Uppsala University and a BSc in Computer Engineering from the University of Ghana.`,
+Recent portfolio work covers the video content lifecycle through ClipForge, MediaVault, StreamPulse, and RenderFlow. MSc Data Science (Uppsala); thesis on deep RL for job shop scheduling (github.com/Dna072/drl-jss). BSc Computer Engineering (University of Ghana).`,
     goals:
       "I want to join teams building high-quality backend services, full-stack products, data platforms, or media technology systems—where reliability, observability, and strong engineering craft matter.",
   },
@@ -53,17 +51,25 @@ I have strong machine learning foundations and a particular interest in reinforc
     githubRepos: 26,
     technologies: 30,
   },
+  /** Primary header links — keep to 4–5 high-signal destinations. */
   navigation: [
-    { label: "About", href: "/#about" },
     { label: "Projects", href: "/projects/" },
     { label: "Experience", href: "/#experience" },
     { label: "Skills", href: "/#skills" },
+    { label: "Resume", href: "/resume/" },
+    { label: "Contact", href: "/contact/" },
+  ],
+  /** Secondary destinations shown in the footer. */
+  footerNavigation: [
+    { label: "About", href: "/#about" },
     { label: "Articles", href: "/articles/" },
     { label: "GitHub", href: "/github/" },
     { label: "Architecture", href: "/architecture/" },
+    { label: "Projects", href: "/projects/" },
     { label: "Resume", href: "/resume/" },
     { label: "Contact", href: "/contact/" },
   ],
 } as const;
 
 export type NavItem = (typeof siteConfig.navigation)[number];
+export type FooterNavItem = (typeof siteConfig.footerNavigation)[number];

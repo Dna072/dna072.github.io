@@ -1,58 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Startup</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <!-- Note that the below Bootstrap file is a specific version. If you grab the most
-    current from Bootstrap website, you will see the button grow transition being a lot faster
-    than in my video. Use whichever style sheet you like best! -->
-    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- My own stylesheet -->
-    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Derrick Adjei — Full-Stack Engineer (Python Backend · React/TypeScript)</title>
+    <meta
+      name="description"
+      content="Full-stack engineer focused on Python backend systems, React/TypeScript, and scalable cloud applications. Portfolio projects in media/video SaaS."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="startup text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-12 my-auto">
-            <h1 class="text-uppercase faded">
-              <strong>the biggest startup event of the year</strong>
-            </h1>
-            <hr>
-          </div>
-
-          <!-- Begin Mailchimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-          <style type="text/css">
-            #mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; }
-            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-          </style>
-          <div id="mc_embed_signup">
-          <form action="https://gmail.us20.list-manage.com/subscribe/post?u=cff24cdb15ad706f860d89dde&amp;id=9c17f654e0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
-          
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cff24cdb15ad706f860d89dde_9c17f654e0" tabindex="-1" value=""></div>
-              <div class="col-lg-12 my-auto"><input class="btn btn-primary btn-xl" type="submit" value="Find out more" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-              </div>
-          </form>
-          </div>
-
-          <!--End mc_embed_signup-->
-
-         <!--  <div class="col-lg-12 my-auto">
-            <button class="btn btn-primary btn-xl">Find Out More</button>
-          </div> -->
-        </div>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="./">Derrick Adjei<span>.</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#projects" aria-current="page">Projects</a>
+          <a href="#focus">Focus</a>
+          <a href="https://dna072.github.io/Portfolio/">Full portfolio</a>
+          <a href="https://github.com/Dna072">GitHub</a>
+          <a href="mailto:derrick.adjei.eng@gmail.com">Contact</a>
+        </nav>
       </div>
     </header>
 
-  </body>
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">Stockholm · Full-stack · Backend focus</p>
+            <h1>
+              <span class="accent">Derrick Adjei</span><br />
+              Python backends, React/TypeScript, cloud systems
+            </h1>
+            <p class="hero__lead">
+              Full-stack engineer focused on Python backend systems, React/TypeScript, and
+              scalable cloud applications—building production-style media/video SaaS projects
+              aligned with modern media technology platforms.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#projects">View projects</a>
+              <a class="btn btn-ghost" href="https://github.com/Dna072">GitHub</a>
+            </div>
+          </div>
+          <div class="hero__visual" role="img" aria-label="Abstract media workspace atmosphere">
+            <div class="hero__badge">Media SaaS · APIs · Async pipelines</div>
+          </div>
+        </div>
+      </section>
 
+      <section id="projects">
+        <div class="container">
+          <div class="section-head">
+            <h2>Featured projects</h2>
+            <p>
+              Four production-style portfolio systems exploring the video content lifecycle:
+              processing, asset management, analytics, and distributed rendering.
+            </p>
+            <p class="notice">
+              Built as production-style portfolio projects—not commercial products with live
+              customer traffic.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>ClipForge</h3>
+              <p class="one-liner">
+                AI video processing &amp; content intelligence—upload, async pipeline, transcripts,
+                summaries, chapters, and tags.
+              </p>
+              <div class="stack">
+                <span class="chip">Python</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">React</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Redis</span>
+                <span class="chip">FFmpeg</span>
+                <span class="chip">AI</span>
+              </div>
+              <p class="challenge">
+                <strong>Challenge:</strong> Reliable async media pipelines with AI provider
+                abstraction and demo-mode fallbacks.
+              </p>
+              <div class="card-actions">
+                <a href="case-studies/clipforge.html">Case study</a>
+                <a href="https://github.com/Dna072/clipforge">GitHub</a>
+                <a href="case-studies/clipforge.html#architecture">Architecture</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>MediaVault</h3>
+              <p class="one-liner">
+                Video asset management SaaS—workspaces, folders, tags, RBAC, search, and signed
+                access URLs.
+              </p>
+              <div class="stack">
+                <span class="chip">Python</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">React</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">JWT</span>
+                <span class="chip">FTS</span>
+              </div>
+              <p class="challenge">
+                <strong>Challenge:</strong> Relational modeling, indexes, and role-based
+                authorization that stay correct under real library workflows.
+              </p>
+              <div class="card-actions">
+                <a href="case-studies/mediavault.html">Case study</a>
+                <a href="https://github.com/Dna072/mediavault">GitHub</a>
+                <a href="case-studies/mediavault.html#architecture">Architecture</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>StreamPulse</h3>
+              <p class="one-liner">
+                Video analytics dashboard—KPIs, time series, audience/device/geo breakdowns from
+                real APIs.
+              </p>
+              <div class="stack">
+                <span class="chip">Python</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">React</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">SQL</span>
+                <span class="chip">Charts</span>
+              </div>
+              <p class="challenge">
+                <strong>Challenge:</strong> Aggregations and indexes that keep dashboard queries
+                fast on realistic seed event data.
+              </p>
+              <div class="card-actions">
+                <a href="case-studies/streampulse.html">Case study</a>
+                <a href="https://github.com/Dna072/streampulse">GitHub</a>
+                <a href="case-studies/streampulse.html#architecture">Architecture</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <h3>RenderFlow</h3>
+              <p class="one-liner">
+                Distributed media processing—job queues, worker heartbeats, retries, Docker, and
+                Kubernetes manifests.
+              </p>
+              <div class="stack">
+                <span class="chip">Python</span>
+                <span class="chip">FastAPI</span>
+                <span class="chip">Redis</span>
+                <span class="chip">Workers</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Kubernetes</span>
+                <span class="chip">AWS design</span>
+              </div>
+              <p class="challenge">
+                <strong>Challenge:</strong> Idempotent jobs, failure recovery, and production-style
+                container orchestration.
+              </p>
+              <div class="card-actions">
+                <a href="case-studies/renderflow.html">Case study</a>
+                <a href="https://github.com/Dna072/renderflow">GitHub</a>
+                <a href="case-studies/renderflow.html#architecture">Architecture</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="focus">
+        <div class="container">
+          <div class="section-head">
+            <h2>Engineering focus</h2>
+            <p>Capabilities aligned with backend-focused fullstack roles in media technology.</p>
+          </div>
+          <div class="focus-grid">
+            <div class="focus-item">
+              <h3>Python APIs</h3>
+              <p>FastAPI, Pydantic validation, SQLAlchemy, Alembic, auth, and clean service layers.</p>
+            </div>
+            <div class="focus-item">
+              <h3>React + TypeScript</h3>
+              <p>Dashboards, forms, tables, uploads, and resilient loading/error/empty states.</p>
+            </div>
+            <div class="focus-item">
+              <h3>Cloud &amp; ops</h3>
+              <p>Docker Compose, Kubernetes manifests, health probes, structured logs, AWS-oriented design.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Derrick Adjei · Stockholm ·
+          <a href="mailto:derrick.adjei.eng@gmail.com">derrick.adjei.eng@gmail.com</a>
+          ·
+          <a href="https://www.linkedin.com/in/derrick-adjei-5421289a/">LinkedIn</a>
+          ·
+          <a href="https://dna072.github.io/Portfolio/">Extended portfolio</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

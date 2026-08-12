@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RenderFlow — Case Study | Derrick Adjei</title>
+    <meta
+      name="description"
+      content="Case study: RenderFlow distributed media processing — queues, workers, Docker, Kubernetes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../">Derrick Adjei<span>.</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../#projects">Projects</a>
+          <a href="https://github.com/Dna072/renderflow">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container page-hero prose">
+      <p class="eyebrow">Portfolio project · Infrastructure</p>
+      <h1>RenderFlow</h1>
+      <p>
+        Distributed media processing platform. Built as a production-style portfolio project to
+        demonstrate queues, worker reliability, containers, and Kubernetes.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="https://github.com/Dna072/renderflow">GitHub repository</a>
+        <a class="btn btn-ghost" href="https://github.com/Dna072/renderflow#readme">View architecture</a>
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Transcoding and related FFmpeg work must run off the request path, survive failures, and
+        scale horizontally—with operators able to inspect and retry jobs.
+      </p>
+
+      <h2>Solution</h2>
+      <p>
+        FastAPI accepts jobs; Redis backs the queue; workers claim work with heartbeats, retries,
+        and idempotency keys; results land in object storage. Ops UI lists jobs/workers; Compose +
+        Kubernetes manifests encode the deployment shape.
+      </p>
+
+      <h2 id="architecture">Architecture</h2>
+      <div class="diagram">React ops UI
+  → FastAPI (jobs, workers, retries)
+  → PostgreSQL (job records)
+  → Redis queue
+  → Worker pool (FFmpeg / mock fallback)
+  → Object storage</div>
+
+      <h2>Key features</h2>
+      <ul>
+        <li>Job types: transcode, thumbnail, audio extract, metadata</li>
+        <li>Status, priority, retries, error messages, idempotency</li>
+        <li>Worker heartbeat and failed-job retry</li>
+        <li>Docker Compose multi-service stack</li>
+        <li>Kubernetes Deployments, Services, ConfigMaps, Secrets, probes, HPA</li>
+      </ul>
+
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Job state machine explicit in DB + queue payloads</li>
+        <li>Idempotency keys prevent duplicate side effects on retry</li>
+        <li>Health/readiness probes separate liveness from dependency readiness</li>
+        <li>Mock processing path keeps CI green without FFmpeg</li>
+      </ul>
+
+      <h2>Challenges</h2>
+      <ul>
+        <li>At-least-once delivery vs. exactly-once side effects</li>
+        <li>Detecting dead workers via heartbeats</li>
+        <li>K8s manifests that are realistic without requiring a live cluster in CI</li>
+      </ul>
+
+      <h2>Testing</h2>
+      <p>State machine, retry/idempotency, and API tests; container build in CI.</p>
+
+      <h2>Infrastructure</h2>
+      <p>
+        Local Compose. K8s under <code>k8s/</code>. AWS sketch: EKS or ECS, ElastiCache/SQS, S3, RDS.
+        Health endpoints feed load balancer and orchestrator probes.
+      </p>
+
+      <h2>What I learned</h2>
+      <p>
+        Distributed media work is operations work: heartbeats, retries, and probes are product
+        features for reliability—not afterthoughts.
+      </p>
+    </main>
+    <footer class="footer">
+      <div class="container"><a href="../">← Back to portfolio</a></div>
+    </footer>
+  </body>
+</html>

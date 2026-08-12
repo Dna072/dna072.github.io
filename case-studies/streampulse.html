@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StreamPulse — Case Study | Derrick Adjei</title>
+    <meta
+      name="description"
+      content="Case study: StreamPulse video analytics dashboard — SQL aggregations and API-driven charts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="../">Derrick Adjei<span>.</span></a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../#projects">Projects</a>
+          <a href="https://github.com/Dna072/streampulse">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container page-hero prose">
+      <p class="eyebrow">Portfolio project · Analytics &amp; SQL</p>
+      <h1>StreamPulse</h1>
+      <p>
+        Video analytics and performance dashboard. Built as a production-style portfolio project
+        where charts are powered by real backend aggregations—not hardcoded frontend series.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="https://github.com/Dna072/streampulse">GitHub repository</a>
+        <a class="btn btn-ghost" href="https://github.com/Dna072/streampulse#readme">View architecture</a>
+      </p>
+
+      <h2>Problem</h2>
+      <p>
+        Product and content teams need trustworthy views of watch time, completion, audience, and
+        device/geo mix—with filters and comparison periods that stay responsive.
+      </p>
+
+      <h2>Solution</h2>
+      <p>
+        FastAPI metrics endpoints over PostgreSQL event data, seeded with realistic demo history.
+        React dashboard renders KPIs, time series, funnels, and breakdowns from those APIs, with
+        loading/error/empty states.
+      </p>
+
+      <h2 id="architecture">Architecture</h2>
+      <div class="diagram">Seeded events (views, progress, geo, device)
+  → PostgreSQL + indexes
+  → FastAPI aggregations (overview, timeseries, video, audience, geo, device)
+  → React dashboard (Recharts) with date/video filters</div>
+
+      <h2>Key features</h2>
+      <ul>
+        <li>Overview KPIs and time series</li>
+        <li>Top videos, engagement funnel</li>
+        <li>Geographic and device analytics</li>
+        <li>Date range + video filters; comparison mode</li>
+        <li>Documented indexes and query rationale</li>
+      </ul>
+
+      <h2>Technical decisions</h2>
+      <ul>
+        <li>Push aggregation to SQL where the database is strongest</li>
+        <li>Index for time-range and video-scoped queries</li>
+        <li>Frontend never fabricates metric series</li>
+      </ul>
+
+      <h2>Challenges</h2>
+      <ul>
+        <li>Seed data volume vs. local Docker performance</li>
+        <li>Consistent empty/error states when filters yield no rows</li>
+        <li>Comparison periods without duplicative query logic</li>
+      </ul>
+
+      <h2>Testing</h2>
+      <p>API tests for aggregations and filters; frontend tests for dashboard states; CI pipeline.</p>
+
+      <h2>Infrastructure</h2>
+      <p>Compose locally. AWS sketch: RDS, ECS API, CloudFront UI; optional read replica later.</p>
+
+      <h2>What I learned</h2>
+      <p>
+        Analytics UX quality tracks query design. Indexes and honest loading states beat decorative
+        charts with fake numbers.
+      </p>
+    </main>
+    <footer class="footer">
+      <div class="container"><a href="../">← Back to portfolio</a></div>
+    </footer>
+  </body>
+</html>

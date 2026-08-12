@@ -1,12 +1,12 @@
 # Derrick Adjei — Engineering Portfolio (GitHub Pages)
 
-Personal site for **Derrick Adjei** (Stockholm), positioned for backend-focused fullstack roles in media technology (e.g. Backlight).
+Personal site for **Derrick Adjei** (Stockholm), focused on backend-heavy fullstack work in **media/video SaaS**.
 
 ## Site
 
 - `index.html` — hero + four project cards + engineering focus
 - `case-studies/` — ClipForge, MediaVault, StreamPulse, RenderFlow
-- `docs/` — architecture plan, job analysis, job-match audit
+- `docs/` — architecture plan, skills analysis, skills audit
 
 ## Featured project repositories
 

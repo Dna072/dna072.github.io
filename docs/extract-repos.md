@@ -1,6 +1,6 @@
 # Project repositories
 
-The four Backlight-targeted portfolio apps live in **separate GitHub repositories** (source is no longer mirrored under this site).
+The four media/video SaaS portfolio apps live in **separate GitHub repositories** (source is no longer mirrored under this site).
 
 | Project | Repository |
 |---------|------------|

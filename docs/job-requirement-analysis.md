@@ -1,13 +1,12 @@
-# Backlight Job Requirement Analysis
+# Media/Video SaaS — Skills & Role Analysis
 
-Source: [Junior Fullstack Developer (Backend focus) — Backlight](https://www.linkedin.com/jobs/view/4448553868/)  
-Location: Stockholm (CET)
+Target profile: fullstack engineer with a **backend focus**, building products around the **video content lifecycle** (creation → processing → distribution → monetization insights).
 
-## Company context
+## Domain context
 
-Backlight is a global media technology company focused on the **video content lifecycle** (creation → monetization). SaaS products for creative/production teams. The role owns features end-to-end: scalable Python backends, React/TypeScript frontends, APIs, and AI integration.
+Media/video SaaS products serve creative and production teams. Typical ownership spans scalable Python backends, React/TypeScript frontends, APIs, and optional AI integration.
 
-## Must-have requirements
+## Core skills to demonstrate
 
 | Requirement | Interpretation | Portfolio response |
 |-------------|----------------|-------------------|
@@ -17,11 +16,10 @@ Backlight is a global media technology company focused on the **video content li
 | Code reviews | Collaboration quality signal | CI lint/tests; readable PRs/docs |
 | Production troubleshooting + performance/availability | Observability mindset | Health/ready, structured logs, request IDs, async jobs |
 | Frontend ↔ backend integration | Full-stack ownership | Auth flows, real API clients, UX states |
-| Git/GitHub | Professional VCS | Branches, Actions, extractable repos |
+| Git/GitHub | Professional VCS | Branches, Actions, separate project repos |
 | Problem solving + attention to detail | Realistic systems | Media pipelines, RBAC, analytics SQL, job retries |
-| 2+ years or equivalent education | Experience bar | Align narrative with existing DE/fullstack background; projects show depth |
 
-## Bonus requirements
+## Bonus skills
 
 | Bonus | Portfolio response |
 |-------|-------------------|
@@ -33,7 +31,7 @@ Backlight is a global media technology company focused on the **video content li
 
 ## Positioning statement (site copy)
 
-> Full-stack engineer focused on **Python backend systems**, **React/TypeScript**, and **scalable cloud applications**—with portfolio work in media/video SaaS aligned to Backlight’s domain.
+> Full-stack engineer focused on **Python backend systems**, **React/TypeScript**, and **scalable cloud applications**—with portfolio work in media/video SaaS.
 
 ## Honesty constraints
 
@@ -41,10 +39,9 @@ Backlight is a global media technology company focused on the **video content li
 - No invented customers, revenue, traffic, or uptime.
 - Benchmarks labeled as test results only.
 
-## Gap watchlist (revisit after implementation)
+## Gap watchlist
 
 - Live public demos (may remain Compose-local)
-- Separate GitHub repositories (blocked until user creates them)
 - Integration into existing Next.js `Portfolio` repo (needs write access)
 - Real OpenAI key demos (MockAI fallback required)
 - Actual FFmpeg in CI (mock fallback acceptable)

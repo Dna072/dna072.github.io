@@ -1,7 +1,6 @@
-# Backlight Portfolio — Architecture & Implementation Plan
+# Media/Video SaaS Portfolio — Architecture & Implementation Plan
 
-**Target role:** Junior Fullstack Developer (Backend focus) — Backlight  
-**Job:** https://www.linkedin.com/jobs/view/4448553868/  
+**Focus:** Fullstack (backend-heavy) media/video SaaS apps  
 **Candidate:** Derrick Adjei  
 **Date:** 2026-08-11
 
@@ -26,13 +25,13 @@
 **Important related repo (no write access from this agent):**  
 `Dna072/Portfolio` — production Next.js 15 portfolio at https://dna072.github.io/Portfolio with Manrope/IBM Plex Mono, green brand `#1db954`, projects/case studies, architecture pages. Design language should inform any site updates here. Cursor bot currently cannot push to that repo.
 
-**Current `index.html` content:** Coursera-style “startup event” landing + Mailchimp — **not** a personal engineering portfolio. Replacing it with a Backlight-targeted portfolio is appropriate; we are not preserving a finished personal brand page.
+**Current `index.html` content:** Coursera-style “startup event” landing + Mailchimp — **not** a personal engineering portfolio. Replacing it with a media/video SaaS engineering portfolio is appropriate; we are not preserving a finished personal brand page.
 
 ---
 
-## 2. Job requirement analysis (Backlight)
+## 2. Skills analysis (media/video SaaS)
 
-### Core responsibilities → portfolio evidence
+### Core skills → portfolio evidence
 
 | Requirement | How we demonstrate it |
 |-------------|----------------------|
@@ -57,7 +56,7 @@
 
 ### Domain fit
 
-Backlight = media technology / video content lifecycle. Portfolio theme: **media/video SaaS ecosystem** (processing → asset management → analytics → distributed render).
+Portfolio theme: **media/video SaaS ecosystem** (processing → asset management → analytics → distributed render).
 
 ---
 
@@ -72,52 +71,25 @@ Backlight = media technology / video content lifecycle. Portfolio theme: **media
    - https://github.com/Dna072/renderflow  
 
 2. **Portfolio website (this repo):** Focused engineering portfolio that:
-   - Positions Derrick for Backlight (Python backend + React/TS + cloud)
+   - Highlights Python backend + React/TS + cloud skills for media/video SaaS
    - Cards + case-study pages for the four projects
    - Links to the separate GitHub repositories
    - States clearly: *“Built as production-style portfolio projects”* — no fake users/revenue/uptime
 
 3. **Ideal future:** Mirror case studies into `Dna072/Portfolio` once write access is granted.
 
-### Presentation model
+---
 
-**Combination:** case studies embedded on the site + GitHub repository links + optional live demos (Docker Compose local / free-tier deploy docs documented in each project README). Prefer honest “run locally with Docker Compose” over fake production URLs.
+## 4–6. Project briefs
+
+See each repository README for architecture, stack, and local demo instructions.
 
 ---
 
-## 4. Four projects (media SaaS ecosystem)
+## 6. Delivery phases
 
-| # | Name | Focus | Stack highlights |
-|---|------|-------|------------------|
-| 1 | **ClipForge** | Flagship: AI video intelligence pipeline | FastAPI, Redis workers, FFmpeg, AI providers, React dashboard |
-| 2 | **MediaVault** | Asset management, RBAC, search | FastAPI `/api/v1`, JWT roles, FTS, signed URLs, polished React UI |
-| 3 | **StreamPulse** | Analytics dashboard + SQL | Metrics APIs, seed data, charts from real APIs, indexes |
-| 4 | **RenderFlow** | Infra: queues, workers, K8s | Job lifecycle, retries, heartbeats, Compose + K8s manifests |
-
-Shared standards: Python 3.12+, FastAPI, SQLAlchemy, Alembic, Pydantic, pytest, Ruff; React+TS, ESLint/Prettier; Docker Compose; `.env.example`; no secrets in git.
-
----
-
-## 5. Agent / workstream plan
-
-| Agent | Scope | Independence |
-|-------|-------|--------------|
-| **A1** (parent) | Audit, plan, portfolio site, orchestration, job-match audit | Coordinates |
-| **A2** | ClipForge full stack | Parallel |
-| **A3** | MediaVault full stack | Parallel |
-| **A4** | StreamPulse full stack | Parallel |
-| **A5** | RenderFlow API/workers/K8s | Parallel |
-| **A6** | Portfolio website + case studies | After scaffolds; can start in parallel with shared copy |
-| **A7** | Cross-cutting CI/security/job-match polish | After projects land |
-
-Overlaps: only `docs/` and top-level portfolio pages — parent owns those. Project source now lives in separate GitHub repositories.
-
----
-
-## 6. Implementation roadmap
-
-### Phase 1–2 — Done in this doc
-Audit + plan + job analysis.
+### Phase 1–2 — Planning
+Audit + plan + skills analysis.
 
 ### Phase 3 — Scaffold
 Create directory skeletons, shared conventions, empty READMEs, Compose stubs.
@@ -131,8 +103,8 @@ Projects section, four case-study pages, positioning copy, architecture diagrams
 ### Phase 9 — Quality pass
 Tests, lint, Docker build checks, security review (uploads, auth, secrets).
 
-### Phase 10 — Job-match audit
-`docs/backlight-job-match.md` with evidence table + gaps.
+### Phase 10 — Skills audit
+`docs/skills-audit.md` with evidence table + gaps.
 
 ---
 
@@ -146,9 +118,9 @@ Tests, lint, Docker build checks, security review (uploads, auth, secrets).
 
 ---
 
-## 8. Success criteria for Backlight hiring manager
+## 8. Success criteria
 
-After review, they should believe the candidate can:
+After review, a hiring manager should believe the candidate can:
 
 1. Design and ship Python/FastAPI backends with real data models  
 2. Build React/TypeScript UIs that talk to those APIs  

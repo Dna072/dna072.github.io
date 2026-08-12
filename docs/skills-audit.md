@@ -1,12 +1,11 @@
-# Backlight Job-Match Audit
+# Skills Audit — Media/Video SaaS Portfolio
 
-**Role:** Junior Fullstack Developer (Backend focus) — Backlight  
-**Job:** https://www.linkedin.com/jobs/view/4448553868/
+**Focus:** Junior/mid fullstack (backend-heavy) for media and video SaaS products.
 
 ## Evidence table
 
-| Job requirement | Portfolio evidence | Project |
-|-----------------|-------------------|---------|
+| Skill area | Portfolio evidence | Project |
+|------------|-------------------|---------|
 | Python backend | FastAPI services, workers, domain services | [ClipForge](https://github.com/Dna072/clipforge), [MediaVault](https://github.com/Dna072/mediavault), [StreamPulse](https://github.com/Dna072/streampulse), [RenderFlow](https://github.com/Dna072/renderflow) |
 | ReactJS | Dashboards, library UIs, ops consoles | All four |
 | TypeScript | Typed Vite frontends | All four |

@@ -65,27 +65,23 @@ Backlight = media technology / video content lifecycle. Portfolio theme: **media
 
 ### Where projects live
 
-1. **Source of truth (this monorepo):** `projects/{clipforge,mediavault,streampulse,renderflow}/`  
-   Each package is **fully self-contained** (own README, Docker, CI, `.env.example`) so it can be extracted to its own GitHub repository with `git subtree` / fresh remote.
+1. **Separate GitHub repositories (source of truth):**  
+   - https://github.com/Dna072/clipforge  
+   - https://github.com/Dna072/mediavault  
+   - https://github.com/Dna072/streampulse  
+   - https://github.com/Dna072/renderflow  
 
-2. **Separate GitHub repos (requested):**  
-   - `Dna072/clipforge`  
-   - `Dna072/mediavault`  
-   - `Dna072/streampulse`  
-   - `Dna072/renderflow`  
-   Agent cannot create repos with current token; user action requested.
-
-3. **Portfolio website (this repo):** Replace stub landing with a focused engineering portfolio that:
+2. **Portfolio website (this repo):** Focused engineering portfolio that:
    - Positions Derrick for Backlight (Python backend + React/TS + cloud)
    - Cards + case-study pages for the four projects
-   - Links to GitHub (and live demos when available)
+   - Links to the separate GitHub repositories
    - States clearly: *“Built as production-style portfolio projects”* — no fake users/revenue/uptime
 
-4. **Ideal future:** Mirror case studies into `Dna072/Portfolio` once write access is granted.
+3. **Ideal future:** Mirror case studies into `Dna072/Portfolio` once write access is granted.
 
 ### Presentation model
 
-**Combination:** case studies embedded on the site + GitHub links + optional live demos (Docker Compose local / free-tier deploy docs). Prefer honest “run locally with Docker Compose” over fake production URLs.
+**Combination:** case studies embedded on the site + GitHub repository links + optional live demos (Docker Compose local / free-tier deploy docs documented in each project README). Prefer honest “run locally with Docker Compose” over fake production URLs.
 
 ---
 
@@ -114,7 +110,7 @@ Shared standards: Python 3.12+, FastAPI, SQLAlchemy, Alembic, Pydantic, pytest, 
 | **A6** | Portfolio website + case studies | After scaffolds; can start in parallel with shared copy |
 | **A7** | Cross-cutting CI/security/job-match polish | After projects land |
 
-Overlaps: only `docs/` and top-level portfolio pages — parent owns those. Project agents own `projects/<name>/` exclusively.
+Overlaps: only `docs/` and top-level portfolio pages — parent owns those. Project source now lives in separate GitHub repositories.
 
 ---
 

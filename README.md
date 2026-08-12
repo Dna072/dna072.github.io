@@ -6,8 +6,16 @@ Personal site for **Derrick Adjei** (Stockholm), positioned for backend-focused 
 
 - `index.html` — hero + four project cards + engineering focus
 - `case-studies/` — ClipForge, MediaVault, StreamPulse, RenderFlow
-- `projects/` — full application source (extractable to separate GitHub repos)
 - `docs/` — architecture plan, job analysis, job-match audit
+
+## Featured project repositories
+
+| Project | Repository |
+|---------|------------|
+| ClipForge | https://github.com/Dna072/clipforge |
+| MediaVault | https://github.com/Dna072/mediavault |
+| StreamPulse | https://github.com/Dna072/streampulse |
+| RenderFlow | https://github.com/Dna072/renderflow |
 
 ## Honesty
 

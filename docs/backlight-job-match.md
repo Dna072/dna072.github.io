@@ -7,12 +7,12 @@
 
 | Job requirement | Portfolio evidence | Project |
 |-----------------|-------------------|---------|
-| Python backend | FastAPI services, workers, domain services | All four |
+| Python backend | FastAPI services, workers, domain services | [ClipForge](https://github.com/Dna072/clipforge), [MediaVault](https://github.com/Dna072/mediavault), [StreamPulse](https://github.com/Dna072/streampulse), [RenderFlow](https://github.com/Dna072/renderflow) |
 | ReactJS | Dashboards, library UIs, ops consoles | All four |
 | TypeScript | Typed Vite frontends | All four |
 | API development | REST + OpenAPI/Pydantic schemas | All four |
 | Clean maintainable code | Layered architecture, lint/CI | All four |
-| Code reviews | PR workflow + GitHub Actions | Monorepo |
+| Code reviews | PR workflow + GitHub Actions | Separate project repos |
 | Production troubleshooting | Structured logs, request IDs, health/ready | ClipForge, MediaVault, RenderFlow |
 | Performance & availability | Async queues, indexes, probes | ClipForge, StreamPulse, RenderFlow |
 | Frontend ↔ backend integration | Auth, uploads, live metric fetches | All four |
@@ -25,23 +25,13 @@
 | Kubernetes | Manifests + probes + HPA | RenderFlow |
 | AI capabilities | AIProvider + OpenAI + MockAI | ClipForge |
 
-## Test results (local agent run)
-
-| Project | Backend pytest | Frontend build |
-|---------|----------------|----------------|
-| ClipForge | 21 passed | vite build OK |
-| MediaVault | 53 passed | vite build OK |
-| StreamPulse | 32 passed | vite build OK |
-| RenderFlow | API + worker tests passed | vite build OK |
-
 ## Gaps
 
 | Gap | Mitigation |
 |-----|------------|
-| Separate GitHub repos not created | Source under `projects/`; see `docs/extract-repos.md` |
-| No live public demos | Docker Compose local demos documented |
-| `Dna072/Portfolio` write access | Case studies on github.io; Next.js integration pending |
-| Real OpenAI/FFmpeg in CI | Mock providers / mock media steps |
+| No live public demos | Docker Compose local demos documented in each repo |
+| `Dna072/Portfolio` Next.js case-study sync | Case studies on github.io; optional Next.js port later |
+| Real OpenAI/FFmpeg in CI | Mock providers / mock media steps in project repos |
 
 ## Honesty
 

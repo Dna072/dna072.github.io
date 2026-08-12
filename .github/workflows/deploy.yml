@@ -1,0 +1,83 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && !contains(github.event.head_commit.message, 'chore: publish static')) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site (user site at root)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          BASE_PATH: ""
+        run: |
+          echo "Building with BASE_PATH='$BASE_PATH' GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          npm run build
+
+      - name: Add .nojekyll
+        run: touch out/.nojekyll
+
+      - name: Place Google verification at /sitemap.xml/
+        run: |
+          VERIFY_FILE=public/google2b6956ffb1924ad6.html
+          if [ -f "$VERIFY_FILE" ]; then
+            if [ -f out/sitemap.xml ]; then
+              mv out/sitemap.xml out/sitemap-index.xml
+            fi
+            mkdir -p out/sitemap.xml
+            cp "$VERIFY_FILE" out/sitemap.xml/index.html
+            cp "$VERIFY_FILE" out/sitemap.xml/google2b6956ffb1924ad6.html
+          fi
+
+      # Legacy Pages source is branch master / — sync export into repo root so
+      # https://dna072.github.io/ updates without requiring Actions Pages mode.
+      - name: Sync static export into repository root
+        run: |
+          set -euo pipefail
+          # Remove previous Next export artifacts at root (keep source tree)
+          rm -rf _next projects articles architecture github resume contact 404
+          rm -f index.html 404.html apple-icon.png icon.png favicon.ico robots.txt sitemap-index.xml
+          rm -rf sitemap.xml
+          # Copy fresh export
+          cp -a out/. .
+          # Do not commit the out/ directory itself
+          rm -rf out
+
+      - name: Commit and push published site
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No publish changes"
+            exit 0
+          fi
+          git commit -m "chore: publish static portfolio export"
+          git push origin HEAD:master

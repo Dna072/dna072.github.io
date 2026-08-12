@@ -1,0 +1,821 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","airflow-pipelines",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","airflow-pipelines","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","airflow-pipelines","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"Airflow Pipelines | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"Production-style orchestration for repeatable data workflows."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"Airflow Pipelines"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"Production-style orchestration for repeatable data workflows."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","Apache Airflow",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Apache Airflow"}],["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"SQL"}],["$","div","AWS",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"AWS"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Docker"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/airflow-pipelines","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],null,["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]]}],["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/airflow-pipelines-cover.svg","alt":"airflow-pipelines cover","className":"h-full w-full object-cover"}]}],"$L1a","$L1b","$L1c"]}]}]]
+1d:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 9, 2026"}]]}]]}]
+1b:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Manual and ad-hoc data jobs are fragile—hard to monitor, difficult to backfill, and risky to change. Teams need scheduled, observable pipelines with clear dependencies."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Built Apache Airflow DAGs that automate extract/transform/load stages with modular operators, retry policies, and explicit task dependencies so pipelines are testable and operable."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","Apache Airflow",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Apache Airflow"}],["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"SQL"}],["$","div","AWS",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"AWS"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Docker"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Staging → curated analytical tables with task-level ownership. Each DAG stage isolates ingestion, transformation, and quality validation."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1d",null,{"chart":"flowchart LR\n  A[Source Systems] --> B[Airflow Scheduler]\n  B --> C[Extract Tasks]\n  C --> D[Transform Tasks]\n  D --> E[Load / Publish]\n  E --> F[Analytics Consumers]\n  B --> G[Monitoring & Alerts]"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1d",null,{"chart":"flowchart TD\n  start([DAG Trigger]) --> extract[Extract raw data]\n  extract --> validate[Validate schema & volume]\n  validate --> transform[Transform & enrich]\n  transform --> load[Load curated tables]\n  load --> dq[Data quality checks]\n  dq -->|pass| done([Publish ready datasets])\n  dq -->|fail| alert[Fail task & alert]"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}],["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Idempotent tasks and clear retry boundaries matter more than clever DAG graphs.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],"$L1e"]}],"$L1f","$L20"]}]]}],"$L21"]}]
+22:T6cb2,<h1>Enterprise Cloud Data Warehouse for Music Streaming Analytics</h1>
+<p><a href="https://airflow.apache.org/"><img src="https://img.shields.io/badge/Apache%20Airflow-2.6-017CEE?logo=apacheairflow&#x26;logoColor=white" alt="Apache Airflow"></a>
+<a href="https://aws.amazon.com/redshift/"><img src="https://img.shields.io/badge/Amazon%20Redshift-Analytics-FF9900?logo=amazon-aws&#x26;logoColor=white" alt="Amazon Redshift"></a>
+<a href="https://aws.amazon.com/s3/"><img src="https://img.shields.io/badge/Amazon%20S3-Data%20Lake-569A31?logo=amazons3&#x26;logoColor=white" alt="Amazon S3"></a>
+<a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&#x26;logoColor=white" alt="Docker"></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&#x26;logoColor=white" alt="Python"></a>
+<a href="https://aws.amazon.com/redshift/"><img src="https://img.shields.io/badge/SQL-Redshift-4479A1?logo=postgresql&#x26;logoColor=white" alt="SQL"></a></p>
+<blockquote>
+<p>Orchestrated ETL for music streaming analytics — ingest raw event and song metadata from S3, transform into a Redshift star schema, and enforce data quality with reusable Airflow operators.</p>
+</blockquote>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#technology-stack">Technology Stack</a></li>
+<li><a href="#data-model">Data Model</a></li>
+<li><a href="#pipeline-workflow">Pipeline Workflow</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#performance-considerations">Performance Considerations</a></li>
+<li><a href="#running-locally">Running Locally</a></li>
+<li><a href="#future-improvements">Future Improvements</a></li>
+<li><a href="#lessons-learned">Lessons Learned</a></li>
+<li><a href="#repository-structure">Repository Structure</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#why-this-project-matters">Why This Project Matters</a></li>
+</ul>
+<hr>
+<h2>Executive Summary</h2>
+<p>Music streaming platforms generate continuous streams of user activity and catalog metadata. Without a reliable warehouse pipeline, product, growth, and data science teams are forced to query raw JSON logs — slow, inconsistent, and unsuitable for recurring analytics.</p>
+<p>This project delivers an <strong>end-to-end cloud data warehouse pipeline</strong> that:</p>
+<table>
+<thead>
+<tr>
+<th>Business Need</th>
+<th>How This Pipeline Addresses It</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trusted listening analytics</td>
+<td>Transforms raw events into a curated <code>songplays</code> fact table</td>
+</tr>
+<tr>
+<td>Consistent dimensional context</td>
+<td>Maintains user, song, artist, and time dimensions</td>
+</tr>
+<tr>
+<td>Operational reliability</td>
+<td>Orchestrates ETL with Airflow retries, logging, and quality gates</td>
+</tr>
+<tr>
+<td>Analyst-ready data</td>
+<td>Exposes a star schema optimized for BI and ad-hoc SQL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Value generated</strong></p>
+<ul>
+<li><strong>Faster time-to-insight</strong> — analysts query dimensional models instead of nested JSON</li>
+<li><strong>Lower operational risk</strong> — automated quality checks fail the pipeline when row counts or null constraints break expectations</li>
+<li><strong>Reusable engineering patterns</strong> — custom Airflow operators encapsulate staging, fact loads, dimension loads, and validation</li>
+<li><strong>Cloud-native scale</strong> — S3 as the landing zone and Redshift <code>COPY</code> for bulk parallel ingest</li>
+</ul>
+<p>Built as a production-style reference implementation for engineering managers and hiring teams evaluating data platform design skills.</p>
+<hr>
+<h2>Architecture</h2>
+<pre><code class="language-mermaid">flowchart TB
+    subgraph Sources["Source Systems"]
+        APP["Music App Event Logs&#x3C;br/>(JSON, partitioned by year/month)"]
+        CAT["Song Catalog Metadata&#x3C;br/>(JSON, Million Song Dataset subset)"]
+    end
+
+    subgraph Lake["Object Storage"]
+        S3["Amazon S3&#x3C;br/>log-data / song-data / JSONPaths"]
+    end
+
+    subgraph Orchestration["Orchestration Layer"]
+        AF["Apache Airflow 2.6&#x3C;br/>CeleryExecutor · Docker Compose"]
+        PG["PostgreSQL&#x3C;br/>Airflow Metadata"]
+        REDIS["Redis&#x3C;br/>Celery Broker"]
+    end
+
+    subgraph Warehouse["Analytics Warehouse — Amazon Redshift"]
+        STG["Staging Layer&#x3C;br/>staging_events · staging_songs"]
+        XFORM["Transformation Layer&#x3C;br/>Custom Operators + SQL"]
+        STAR["Star Schema&#x3C;br/>fact_songplays + dimensions"]
+    end
+
+    subgraph Consumers["Downstream"]
+        BI["BI / Reporting / Ad-hoc SQL"]
+    end
+
+    APP --> S3
+    CAT --> S3
+    S3 -->|"Redshift COPY"| STG
+    AF --> STG
+    AF --> XFORM
+    AF --> STAR
+    PG -.-> AF
+    REDIS -.-> AF
+    STG --> XFORM --> STAR --> BI
+</code></pre>
+<p><strong>Design intent:</strong> keep raw data immutable in S3, stage into Redshift for bulk load throughput, transform into analytics-friendly tables, and gate publication with SQL-based quality checks before the DAG completes.</p>
+<hr>
+<h2>Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Layer</th>
+<th align="left">Technology</th>
+<th align="left">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Language</td>
+<td align="left"><img src="https://img.shields.io/badge/-Python-3776AB?logo=python&#x26;logoColor=white" alt="Python"></td>
+<td align="left">Custom operators, DAG definitions, configuration</td>
+</tr>
+<tr>
+<td align="left">Query</td>
+<td align="left"><img src="https://img.shields.io/badge/-SQL-4479A1?logo=postgresql&#x26;logoColor=white" alt="SQL"></td>
+<td align="left">Staging DDL, transformations, quality tests</td>
+</tr>
+<tr>
+<td align="left">Orchestration</td>
+<td align="left"><img src="https://img.shields.io/badge/-Apache%20Airflow%202.6-017CEE?logo=apacheairflow&#x26;logoColor=white" alt="Airflow"></td>
+<td align="left">Scheduling, retries, task graph, connections</td>
+</tr>
+<tr>
+<td align="left">Executor</td>
+<td align="left">CeleryExecutor + Redis</td>
+<td align="left">Distributed task execution for local stack</td>
+</tr>
+<tr>
+<td align="left">Metadata DB</td>
+<td align="left"><img src="https://img.shields.io/badge/-PostgreSQL%2013-4169E1?logo=postgresql&#x26;logoColor=white" alt="PostgreSQL"></td>
+<td align="left">Airflow metastore</td>
+</tr>
+<tr>
+<td align="left">Data Lake</td>
+<td align="left"><img src="https://img.shields.io/badge/-Amazon%20S3-569A31?logo=amazons3&#x26;logoColor=white" alt="S3"></td>
+<td align="left">Source JSON event &#x26; song files</td>
+</tr>
+<tr>
+<td align="left">Warehouse</td>
+<td align="left"><img src="https://img.shields.io/badge/-Amazon%20Redshift-FF9900?logo=amazon-aws&#x26;logoColor=white" alt="Redshift"></td>
+<td align="left">Staging + star schema analytics store</td>
+</tr>
+<tr>
+<td align="left">Auth / Access</td>
+<td align="left">AWS IAM credentials</td>
+<td align="left">S3 read + Redshift connectivity via Airflow connections</td>
+</tr>
+<tr>
+<td align="left">Packaging</td>
+<td align="left"><img src="https://img.shields.io/badge/-Docker%20Compose-2496ED?logo=docker&#x26;logoColor=white" alt="Docker"></td>
+<td align="left">Local Airflow webserver, scheduler, worker, triggerer</td>
+</tr>
+<tr>
+<td align="left">Config</td>
+<td align="left"><code>python-dotenv</code> + <code>.env</code></td>
+<td align="left">Environment variables for ports, AWS, and Redshift</td>
+</tr>
+</tbody>
+</table>
+<p>This repository does <strong>not</strong> currently use AWS Glue, Apache Spark, dbt, Terraform, or GitHub Actions. Those appear under <a href="#future-improvements">Future Improvements</a> as realistic next steps — not as implemented components.</p>
+<hr>
+<h2>Data Model</h2>
+<p>The warehouse follows a classic <strong>star schema</strong>: one central fact table surrounded by denormalized dimensions. This pattern is chosen for music streaming analytics because:</p>
+<ol>
+<li><strong>Songplays are the grain of business questions</strong> — “who listened to what, when, and where”</li>
+<li><strong>Dimensions change slowly</strong> relative to event volume</li>
+<li><strong>BI tools and SQL analysts</strong> join efficiently from a single fact out to descriptive attributes</li>
+<li><strong>Quality checks</strong> can target null keys and expected entity counts per dimension</li>
+</ol>
+<pre><code class="language-mermaid">erDiagram
+    FACT_SONGPLAYS ||--o{ DIM_USERS : "userid"
+    FACT_SONGPLAYS ||--o{ DIM_SONGS : "songid"
+    FACT_SONGPLAYS ||--o{ DIM_ARTISTS : "artistid"
+    FACT_SONGPLAYS ||--o{ DIM_TIME : "start_time"
+
+    FACT_SONGPLAYS {
+        varchar playid PK
+        timestamp start_time
+        int userid
+        varchar level
+        varchar songid
+        varchar artistid
+        int sessionid
+        varchar location
+        varchar user_agent
+    }
+
+    DIM_USERS {
+        int userid PK
+        varchar first_name
+        varchar last_name
+        varchar gender
+        varchar level
+    }
+
+    DIM_SONGS {
+        varchar songid PK
+        varchar title
+        varchar artistid
+        int year
+        numeric duration
+    }
+
+    DIM_ARTISTS {
+        varchar artistid PK
+        varchar name
+        varchar location
+        numeric latitude
+        numeric longitude
+    }
+
+    DIM_TIME {
+        timestamp start_time PK
+        int hour
+        int day
+        int week
+        varchar month
+        int year
+        varchar weekday
+    }
+</code></pre>
+<h3>Fact Table</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Grain</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fact_songplays_table</code></td>
+<td>One row per <code>NextSong</code> play event</td>
+<td>Built by joining staged events to song metadata on title, artist, and duration; surrogate <code>songplay_id</code> derived via <code>md5(sessionid || start_time)</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Dimension Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dim_users_table</code></td>
+<td>Staging events</td>
+<td>Distinct listeners and subscription <code>level</code></td>
+</tr>
+<tr>
+<td><code>dim_songs_table</code></td>
+<td>Staging songs</td>
+<td>Track catalog attributes</td>
+</tr>
+<tr>
+<td><code>dim_artists_table</code></td>
+<td>Staging songs</td>
+<td>Artist identity and geo attributes</td>
+</tr>
+<tr>
+<td><code>dim_time_table</code></td>
+<td>Fact songplays</td>
+<td>Calendar breakdown (hour, day, week, month, year, weekday) for time-series analysis</td>
+</tr>
+</tbody>
+</table>
+<h3>Staging Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>staging_events</code></td>
+<td>Landing zone for application JSON logs (<code>DISTSTYLE EVEN</code>)</td>
+</tr>
+<tr>
+<td><code>staging_songs</code></td>
+<td>Landing zone for song catalog JSON (<code>DISTSTYLE EVEN</code>)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>DDL for the logical warehouse schema also lives in <a href="create_tables.sql"><code>create_tables.sql</code></a>. Runtime loads create analytics tables via operator-driven <code>CREATE TABLE … AS</code> patterns (<code>fact_*</code> / <code>dim_*</code> naming).</p>
+</blockquote>
+<hr>
+<h2>Pipeline Workflow</h2>
+<p>The DAG (<code>final_project</code>) runs on an <strong>hourly schedule</strong> (<code>0 * * * *</code>) with parallel staging, a fact load bottleneck, fan-out dimension loads, and a terminal quality gate.</p>
+<pre><code class="language-mermaid">flowchart LR
+    A[Begin execution] --> B[Stage events&#x3C;br/>S3 → Redshift]
+    A --> C[Stage songs&#x3C;br/>S3 → Redshift]
+    B --> D[Load songplays fact]
+    C --> D
+    D --> E[Load users dim]
+    D --> F[Load songs dim]
+    D --> G[Load artists dim]
+    D --> H[Load time dim]
+    E --> I[Data quality checks]
+    F --> I
+    G --> I
+    H --> I
+    I --> J[Stop execution]
+</code></pre>
+<h3>Stage-by-stage walkthrough</h3>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Operator</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Begin</strong></td>
+<td><code>DummyOperator</code></td>
+<td>Marks DAG start</td>
+</tr>
+<tr>
+<td><strong>2. Stage Events</strong></td>
+<td><code>StageToRedshiftOperator</code></td>
+<td>Drops/recreates <code>staging_events</code>, <code>COPY</code> from <code>s3://{bucket}/log-data</code> using a JSONPaths file</td>
+</tr>
+<tr>
+<td><strong>3. Stage Songs</strong></td>
+<td><code>StageToRedshiftOperator</code></td>
+<td>Drops/recreates <code>staging_songs</code>, <code>COPY</code> from <code>s3://{bucket}/song-data</code> with <code>FORMAT AS JSON 'auto'</code></td>
+</tr>
+<tr>
+<td><strong>4. Load Fact</strong></td>
+<td><code>LoadFactOperator</code></td>
+<td>Builds <code>fact_songplays_table</code> from <code>NextSong</code> events left-joined to songs</td>
+</tr>
+<tr>
+<td><strong>5. Load Dimensions</strong></td>
+<td><code>LoadDimensionOperator</code> × 4</td>
+<td>Rebuilds user, song, artist, and time dimensions (default truncate-insert / delete-load)</td>
+</tr>
+<tr>
+<td><strong>6. Quality Gate</strong></td>
+<td><code>DataQualityOperator</code></td>
+<td>Runs SQL assertions (null checks + expected counts); fails the task on mismatch</td>
+</tr>
+<tr>
+<td><strong>7. Stop</strong></td>
+<td><code>DummyOperator</code></td>
+<td>Marks successful completion</td>
+</tr>
+</tbody>
+</table>
+<h3>Source datasets</h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Format</th>
+<th>Partitioning</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event logs</td>
+<td>JSON</td>
+<td><code>year/month</code> path layout</td>
+<td>Simulated streaming app activity</td>
+</tr>
+<tr>
+<td>Song metadata</td>
+<td>JSON</td>
+<td>Track-ID prefix paths</td>
+<td>Subset of the <a href="http://millionsongdataset.com/">Million Song Dataset</a></td>
+</tr>
+<tr>
+<td>Log JSONPaths</td>
+<td>JSON</td>
+<td>Single file</td>
+<td>Guides Redshift JSON parsing for event columns</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Features</h2>
+<p>Production-oriented capabilities implemented in this codebase:</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reusable operators</strong></td>
+<td>Four custom Airflow operators for stage, fact, dimension, and quality — parameterized for connection IDs, tables, and SQL</td>
+</tr>
+<tr>
+<td><strong>Bulk cloud ingest</strong></td>
+<td>Redshift <code>COPY</code> from S3 for high-throughput JSON loads</td>
+</tr>
+<tr>
+<td><strong>Parallel staging</strong></td>
+<td>Events and songs stage concurrently before the fact join</td>
+</tr>
+<tr>
+<td><strong>Dimension load modes</strong></td>
+<td><code>LoadDimensionOperator</code> supports delete-load (default) and append-only</td>
+</tr>
+<tr>
+<td><strong>Backfill-ready S3 keys</strong></td>
+<td>Stage operator renders <code>s3_key</code> with Airflow execution context for time-partitioned paths</td>
+</tr>
+<tr>
+<td><strong>Data validation</strong></td>
+<td>Configurable SQL test cases with expected results; task fails if any check fails</td>
+</tr>
+<tr>
+<td><strong>Logging</strong></td>
+<td>Structured Airflow task logs for credential lookup, <code>COPY</code>, table rebuilds, and quality outcomes</td>
+</tr>
+<tr>
+<td><strong>Error handling &#x26; retries</strong></td>
+<td><code>retries=3</code>, <code>retry_delay=5 minutes</code>, <code>depends_on_past=False</code>, <code>email_on_retry=False</code></td>
+</tr>
+<tr>
+<td><strong>Idempotent re-runs</strong></td>
+<td>Staging and analytical tables are dropped/recreated (or delete-loaded), so DAG re-execution produces a clean snapshot</td>
+</tr>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Hourly schedule with catchup disabled for controlled local/cloud runs</td>
+</tr>
+<tr>
+<td><strong>Secrets via Airflow connections</strong></td>
+<td>AWS and Redshift credentials stored as Airflow connections; S3 bucket as an Airflow Variable</td>
+</tr>
+<tr>
+<td><strong>Containerized local platform</strong></td>
+<td>Docker Compose stack: webserver, scheduler, Celery worker, triggerer, Postgres, Redis</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Null <code>user_id</code> in <code>dim_users_table</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>User row count</td>
+<td><code>104</code></td>
+</tr>
+<tr>
+<td>Null <code>user_id</code> in <code>fact_songplays_table</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Null <code>artist_id</code> in <code>dim_artists_table</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>Artist row count</td>
+<td><code>21754</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Performance Considerations</h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>How it is applied</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parallel processing</strong></td>
+<td>Independent staging tasks run in parallel; dimension loads fan out after the fact table is ready</td>
+</tr>
+<tr>
+<td><strong>Redshift <code>COPY</code></strong></td>
+<td>Bulk ingest from S3 — preferred over row-by-row inserts for warehouse loads</td>
+</tr>
+<tr>
+<td><strong>EVEN distribution on staging</strong></td>
+<td><code>DISTSTYLE EVEN</code> on staging tables spreads temporary load work evenly across slices</td>
+</tr>
+<tr>
+<td><strong>Source partitioning awareness</strong></td>
+<td>Log data is organized by year/month; song data by track-ID prefixes — stage keys can be templated for narrower reads during backfills</td>
+</tr>
+<tr>
+<td><strong>Star schema query shape</strong></td>
+<td>Fact + dimension design reduces wide JSON scans for common analytical questions</td>
+</tr>
+<tr>
+<td><strong>Celery workers</strong></td>
+<td>Local Compose stack uses CeleryExecutor so tasks can execute across worker processes</td>
+</tr>
+</tbody>
+</table>
+<h3>Optimization opportunities (not yet hardcoded in runtime CTAS tables)</h3>
+<p>For larger production datasets, the next performance pass would typically add:</p>
+<ul>
+<li><strong>Distribution keys</strong> on high-cardinality join columns (e.g., <code>userid</code>, <code>songid</code>) for the fact table</li>
+<li><strong>Sort keys</strong> on <code>start_time</code> to accelerate time-range filters and merges</li>
+<li><strong>Selective incremental loads</strong> using execution-date-scoped S3 prefixes instead of full-prefix copies every run</li>
+</ul>
+<hr>
+<h2>Running Locally</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li>Docker Desktop (or Docker Engine + Compose)</li>
+<li>An AWS account with:
+<ul>
+<li>IAM user/keys with S3 read access and Redshift access</li>
+<li>An Amazon Redshift (Serverless or provisioned) endpoint</li>
+<li>An S3 bucket containing <code>log-data/</code>, <code>song-data/</code>, and <code>log_json_path.json</code></li>
+</ul>
+</li>
+<li>Recommended resources for the Compose stack: <strong>≥ 4 GB RAM</strong>, <strong>≥ 2 CPUs</strong></li>
+</ul>
+<h3>1. Clone and configure environment</h3>
+<pre><code class="language-bash">git clone https://github.com/Dna072/airflow-pipelines.git
+cd airflow-pipelines
+cp env.template .env
+</code></pre>
+<p>Fill in <code>.env</code> with your AWS keys, Redshift host/login/password, and S3 bucket name.</p>
+<h3>2. Prepare source data in S3</h3>
+<p>Place (or copy) the event logs, song metadata, and JSONPaths file into your bucket:</p>
+<pre><code class="language-text">s3://&#x3C;your-bucket>/log-data/
+s3://&#x3C;your-bucket>/song-data/
+s3://&#x3C;your-bucket>/log_json_path.json
+</code></pre>
+<blockquote>
+<p>Prefer colocating the bucket in the <strong>same AWS region</strong> as Redshift to reduce transfer cost and latency.</p>
+</blockquote>
+<h3>3. Start the Airflow stack</h3>
+<pre><code class="language-bash">docker-compose --env-file .env up -d
+</code></pre>
+<p>Open the UI: <a href="http://localhost:8080">http://localhost:8080</a><br>
+Default credentials: <code>airflow</code> / <code>airflow</code></p>
+<h3>4. Configure Airflow connections &#x26; variables</h3>
+<p>Copy the template and set your URIs / bucket:</p>
+<pre><code class="language-bash">cp set_connections_and_variables.template set_connections_and_variables.sh
+# edit aws_credentials URI, redshift URI, and s3_bucket
+docker compose exec --user airflow airflow-webserver sh set_connections_and_variables.sh
+</code></pre>
+<p>Alternatively, configure via <strong>Admin → Connections / Variables</strong> in the UI:</p>
+<table>
+<thead>
+<tr>
+<th>Conn / Variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aws_credentials</code></td>
+<td>AWS access for S3 <code>COPY</code></td>
+</tr>
+<tr>
+<td><code>redshift</code></td>
+<td>Warehouse connectivity</td>
+</tr>
+<tr>
+<td><code>s3_bucket</code></td>
+<td>Source bucket name</td>
+</tr>
+</tbody>
+</table>
+<h3>5. Ensure Redshift is available and run the DAG</h3>
+<ol>
+<li>Start/resume your Redshift workgroup or cluster</li>
+<li>Unpause and trigger the <code>final_project</code> DAG</li>
+<li>Confirm all tasks succeed through the quality gate</li>
+</ol>
+<h3>Optional: Flower (Celery monitoring)</h3>
+<pre><code class="language-bash">docker-compose --env-file .env --profile flower up -d
+</code></pre>
+<p>Flower UI: <a href="http://localhost:5555">http://localhost:5555</a></p>
+<hr>
+<h2>Future Improvements</h2>
+<p>Realistic production hardening paths for this codebase:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>GitHub Actions for linting, DAG parse checks, and image builds on every PR</td>
+</tr>
+<tr>
+<td><strong>Infrastructure as Code</strong></td>
+<td>Terraform/CDK for Redshift, S3, IAM roles, and networking</td>
+</tr>
+<tr>
+<td><strong>Transformation layer</strong></td>
+<td>Adopt dbt for versioned models, docs, and lineage on top of staging tables</td>
+</tr>
+<tr>
+<td><strong>Data quality</strong></td>
+<td>Expand beyond row-count asserts with Great Expectations or custom anomaly detection</td>
+</tr>
+<tr>
+<td><strong>Observability</strong></td>
+<td>Metrics + alerts (task SLA misses, COPY failures); OpenLineage for end-to-end lineage</td>
+</tr>
+<tr>
+<td><strong>Data contracts</strong></td>
+<td>Explicit schemas between producers (app logs / catalog) and the warehouse</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Replace long-lived access keys with IAM roles / temporary credentials; secret backends (AWS Secrets Manager)</td>
+</tr>
+<tr>
+<td><strong>Incremental loading</strong></td>
+<td>Execution-date-scoped S3 prefixes + append/merge patterns for facts at scale</td>
+</tr>
+<tr>
+<td><strong>Warehouse tuning</strong></td>
+<td>Explicit <code>DISTKEY</code> / <code>SORTKEY</code> strategy on fact and large dimensions</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Unit tests for operators; integration tests against a disposable Redshift/local Postgres double</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Lessons Learned</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom operators over inline PythonOperators</strong></td>
+<td>More upfront structure; much better reuse, testing surface, and DAG readability</td>
+</tr>
+<tr>
+<td><strong>Star schema over wide staging tables for analytics</strong></td>
+<td>Extra transform step; dramatically clearer BI queries and dimensional quality checks</td>
+</tr>
+<tr>
+<td><strong>Delete-load dimensions by default</strong></td>
+<td>Simple idempotency for moderate volumes; append/SCD patterns needed as dimensions grow</td>
+</tr>
+<tr>
+<td><strong>Fact rebuilt via CTAS each run</strong></td>
+<td>Clean snapshots and easy local demos; not ideal for very large historical facts without incremental design</td>
+</tr>
+<tr>
+<td><strong>Airflow connections for credentials</strong></td>
+<td>Convenient for local Compose; production should prefer IAM roles and a secrets backend</td>
+</tr>
+<tr>
+<td><strong>EVEN distribution on staging</strong></td>
+<td>Fair for temporary tables; analytical tables need join-aware distribution at scale</td>
+</tr>
+<tr>
+<td><strong>SQL assertion quality checks</strong></td>
+<td>Fast feedback and clear failure modes; complements (does not replace) statistical or schema-contract testing</td>
+</tr>
+<tr>
+<td><strong>CeleryExecutor locally</strong></td>
+<td>Closer to production Airflow topology; heavier than LocalExecutor for laptop demos</td>
+</tr>
+</tbody>
+</table>
+<p>The core engineering lesson: <strong>orchestration quality matters as much as SQL quality</strong>. Retries, explicit dependencies, reusable operators, and a hard quality gate turn a script into a pipeline teams can operate.</p>
+<hr>
+<h2>Repository Structure</h2>
+<pre><code class="language-text">airflow-pipelines/
+├── assets/                              # UI &#x26; DAG graph screenshots
+│   ├── final_project_dag_graph1.png
+│   ├── final_project_dag_graph2.png
+│   └── login.png
+├── dags/
+│   └── final_project.py                 # Main ETL DAG (hourly)
+├── plugins/
+│   ├── helpers/
+│   │   ├── __init__.py
+│   │   └── sql_queries.py               # Staging DDL, inserts, quality cases
+│   └── operators/
+│       ├── __init__.py
+│       ├── stage_redshift.py            # S3 → Redshift COPY
+│       ├── load_fact.py                 # Fact table CTAS load
+│       ├── load_dimension.py            # Dimension delete-load / append
+│       └── data_quality.py              # SQL assertion runner
+├── create_tables.sql                    # Reference warehouse DDL
+├── docker-compose.yaml                  # Airflow + Postgres + Redis stack
+├── Dockerfile                           # Extended Airflow image
+├── env.template                         # Environment variable template
+├── set_connections_and_variables.template
+├── requirements.txt                     # python-dotenv
+├── LICENSE.md
+└── README.md
+</code></pre>
+<p><code>airflow1/</code> contains an earlier example DAG layout retained for reference. The active pipeline lives under <code>dags/</code> and <code>plugins/</code>.</p>
+<hr>
+<h2>Screenshots</h2>
+<h3>Airflow UI Login</h3>
+<p><img src="assets/login.png" alt="Airflow Web Server login"></p>
+<h3>DAG Graph — Task Dependencies</h3>
+<p><img src="assets/final_project_dag_graph2.png" alt="Working DAG with correct task dependencies"></p>
+<h3>DAG Graph — Execution View</h3>
+<p><img src="assets/final_project_dag_graph1.png" alt="DAG graph execution view"></p>
+<hr>
+<h2>Why This Project Matters</h2>
+<p>This repository demonstrates senior-level data engineering skills that transfer directly to production platforms:</p>
+<table>
+<thead>
+<tr>
+<th>Skill</th>
+<th>Evidence in this repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pipeline orchestration</strong></td>
+<td>Airflow DAG with clear dependencies, retries, and hourly automation</td>
+</tr>
+<tr>
+<td><strong>Cloud data movement</strong></td>
+<td>S3 → Redshift <code>COPY</code> with JSON and JSONPaths support</td>
+</tr>
+<tr>
+<td><strong>Dimensional modeling</strong></td>
+<td>Star schema with fact songplays and four dimensions</td>
+</tr>
+<tr>
+<td><strong>Operator design</strong></td>
+<td>Reusable, parameterized custom operators instead of one-off scripts</td>
+</tr>
+<tr>
+<td><strong>Data quality as a gate</strong></td>
+<td>SQL tests that fail the DAG when expectations are violated</td>
+</tr>
+<tr>
+<td><strong>Local platform engineering</strong></td>
+<td>Docker Compose with CeleryExecutor, Postgres metastore, and Redis</td>
+</tr>
+<tr>
+<td><strong>Operational thinking</strong></td>
+<td>Idempotent reloads, logging, connection/variable separation, backfill-aware keys</td>
+</tr>
+<tr>
+<td><strong>Honest roadmap</strong></td>
+<td>Clear separation between what is built today and what productionization still requires</td>
+</tr>
+</tbody>
+</table>
+<hr>
+1c:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$22"}}]]}]
+1e:["$","span",null,{"children":"Idempotent tasks and clear retry boundaries matter more than clever DAG graphs."}]
+1f:["$","li","Custom operators pay off when the same S3/warehouse patterns repeat.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Custom operators pay off when the same S3/warehouse patterns repeat."}]]}]
+20:["$","li","Observability (logs, SLAs, failure alerts) is part of the data product.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Observability (logs, SLAs, failure alerts) is part of the data product."}]]}]
+21:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/airflow-pipelines-cover.svg",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/airflow-pipelines-cover.svg","alt":"Airflow pipelines architecture illustration","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

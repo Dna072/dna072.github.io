@@ -1,43 +1,41 @@
-# Dependencies & envs
-node_modules/
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-dist/
-build/
-*.egg-info/
-.next/
-out/
-coverage/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Secrets & local env
-.env
-.env.local
-.env.*.local
-!.env.example
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Media / uploads / local data
-uploads/
-data/
-*.mp4
-*.mov
-*.avi
-*.mkv
-storage/
-media_storage/
+# testing
+/coverage
 
-# OS / IDE
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
 .DS_Store
-.idea/
-.vscode/
-*.swp
+*.pem
 
-# Logs
-*.log
+# debug
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

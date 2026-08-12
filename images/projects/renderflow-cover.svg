@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1a12"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="none" stroke="#1DB954" stroke-width="3" opacity="0.9">
+    <rect x="140" y="240" width="200" height="100" rx="16"/>
+    <rect x="500" y="180" width="200" height="80" rx="14"/>
+    <rect x="500" y="300" width="200" height="80" rx="14"/>
+    <rect x="500" y="420" width="200" height="80" rx="14"/>
+    <rect x="860" y="240" width="200" height="100" rx="16"/>
+    <path d="M340 290H500M700 220H860M700 340H860M700 460H900V340"/>
+  </g>
+  <text x="140" y="120" fill="#f4f4f5" font-family="ui-sans-serif,system-ui" font-size="42" font-weight="700">RenderFlow</text>
+  <text x="140" y="165" fill="#a1a1aa" font-family="ui-sans-serif,system-ui" font-size="22">Distributed render queue · workers · K8s</text>
+</svg>

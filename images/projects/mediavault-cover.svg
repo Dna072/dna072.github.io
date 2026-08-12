@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1a12"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="none" stroke="#1DB954" stroke-width="3" opacity="0.9">
+    <rect x="180" y="200" width="240" height="300" rx="18"/>
+    <rect x="480" y="200" width="240" height="300" rx="18"/>
+    <rect x="780" y="200" width="240" height="300" rx="18"/>
+    <path d="M220 260H380M220 320H340M520 260H680M520 320H640M820 260H980M820 320H940"/>
+  </g>
+  <text x="180" y="120" fill="#f4f4f5" font-family="ui-sans-serif,system-ui" font-size="42" font-weight="700">MediaVault</text>
+  <text x="180" y="165" fill="#a1a1aa" font-family="ui-sans-serif,system-ui" font-size="22">DAM with RBAC, search, and signed URLs</text>
+</svg>

@@ -1,0 +1,728 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","clipforge",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","clipforge","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","clipforge","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"ClipForge | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"AI video processing & content intelligence — production-style media/video SaaS portfolio project."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"ClipForge"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"AI video processing & content intelligence — production-style media/video SaaS portfolio project."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","FastAPI",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"FastAPI"}],["$","div","React",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"React"}],["$","div","TypeScript",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"TypeScript"}],["$","div","PostgreSQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"PostgreSQL"}],["$","div","Redis",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Redis"}],["$","div","FFmpeg",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"FFmpeg"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Docker"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/clipforge","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],null,["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]]}],"$L1a","$L1b","$L1c","$L1d"]}]}]]
+1e:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/clipforge-cover.svg","alt":"clipforge cover","className":"h-full w-full object-cover"}]}]
+1b:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 12, 2026"}]]}]]}]
+1c:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Creative teams need more than raw file storage: after upload, videos should be processed asynchronously—thumbnails, audio, transcripts, and AI-derived summaries/chapters/tags—without blocking API requests or the UI."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"ClipForge accepts uploads, persists metadata, enqueues processing jobs on Redis, and runs workers that orchestrate FFmpeg plus an AI provider abstraction (OpenAI + MockAI). The React dashboard shows library state, job progress, transcripts, and AI outputs."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","FastAPI",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"FastAPI"}],["$","div","React",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"React"}],["$","div","TypeScript",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"TypeScript"}],["$","div","PostgreSQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"PostgreSQL"}],["$","div","Redis",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Redis"}],["$","div","FFmpeg",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"FFmpeg"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Docker"}],["$","div","AI / OpenAI",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"AI / OpenAI"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Workspaces and users own video assets with processing job state. Pipeline stages persist thumbnails, audio extracts, transcripts, and AI outputs (summary, chapters, tags) against each video record."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart LR\n  UI[React Dashboard] --> API[FastAPI]\n  API --> DB[(PostgreSQL)]\n  API --> Q[(Redis Queue)]\n  Q --> W[Workers]\n  W --> FF[FFmpeg]\n  W --> AI[AIProvider]\n  AI --> OAI[OpenAI]\n  AI --> MOCK[MockAI]\n  W --> DB\n  API --> OBJ[(Object Storage)]"}]}]]}],"$L1f","$L20","$L21"]}]
+22:T62d2,<h1>ClipForge — AI Video Processing &#x26; Content Intelligence Platform</h1>
+<blockquote>
+<p><strong>Built as a production-style portfolio project</strong> by Derrick Adjei.
+Not a live commercial product — there are no real users, revenue, or uptime
+claims. Every number in this README is either a configuration value or a local
+test result.</p>
+</blockquote>
+<p>ClipForge is a media SaaS backend (with a polished React dashboard) that ingests
+videos and turns them into structured content intelligence: extracted technical
+metadata, thumbnails, an audio track, a transcript, and AI‑generated summary,
+chapters, and tags. Processing happens <strong>asynchronously</strong> through a Redis‑backed
+worker so the API stays responsive under load.</p>
+<p>It runs <strong>fully offline in demo mode</strong> — the <code>MockAIProvider</code> produces realistic,
+deterministic AI output with no API key or network access, so the entire
+<code>upload → queue → process → AI results</code> path works out of the box.</p>
+<hr>
+<h2>Table of contents</h2>
+<ol>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#tech-stack">Tech stack</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#database">Database</a></li>
+<li><a href="#ai-provider-abstraction">AI provider abstraction</a></li>
+<li><a href="#running-locally">Running locally</a></li>
+<li><a href="#environment-variables">Environment variables</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#docker">Docker</a></li>
+<li><a href="#deployment-aws-architecture">Deployment (AWS architecture)</a></li>
+<li><a href="#engineering-decisions">Engineering decisions</a></li>
+<li><a href="#future-improvements">Future improvements</a></li>
+<li><a href="#project-layout">Project layout</a></li>
+</ol>
+<hr>
+<h2>Demo</h2>
+<p>The fastest way to see the whole thing:</p>
+<pre><code class="language-bash">cd projects/clipforge
+cp .env.example .env
+docker compose up --build
+</code></pre>
+<p>Then open:</p>
+<ul>
+<li><strong>Frontend:</strong> <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li><strong>API docs (OpenAPI/Swagger):</strong> <a href="http://localhost:8000/docs">http://localhost:8000/docs</a></li>
+<li><strong>Health / readiness:</strong> <a href="http://localhost:8000/health">http://localhost:8000/health</a> · <a href="http://localhost:8000/ready">http://localhost:8000/ready</a></li>
+</ul>
+<p>The API container runs migrations and seeds a <strong>demo account</strong> with sample
+completed videos on first boot:</p>
+<pre><code>email:    demo@clipforge.dev
+password: demo12345
+</code></pre>
+<p><strong>Demo flow to try:</strong> sign in → <strong>Upload</strong> a video → watch the detail page show a
+live pipeline checklist (metadata → thumbnail → audio → transcript → AI) → see
+the AI summary, chapters, and tags appear when it completes. Search the library
+by transcript text.</p>
+<blockquote>
+<p>Because demo mode uses the deterministic <code>MockAIProvider</code>, transcripts/summaries
+are synthetic. Set <code>AI_PROVIDER=openai</code> and <code>OPENAI_API_KEY=...</code> for real
+Whisper transcription + LLM analysis.</p>
+</blockquote>
+<hr>
+<h2>Architecture</h2>
+<p>ClipForge separates the <strong>synchronous request path</strong> (auth, uploads, reads) from
+the <strong>asynchronous processing path</strong> (the heavy media/AI work), connected by a
+Redis queue.</p>
+<pre><code class="language-mermaid">flowchart LR
+    subgraph Client
+      FE["React + TS SPA&#x3C;br/>(nginx)"]
+    end
+
+    subgraph API["FastAPI API"]
+      R["Routers&#x3C;br/>/api/v1/*"]
+      SVC["Services&#x3C;br/>(business logic)"]
+      REPO["Repositories"]
+    end
+
+    Q[("Redis&#x3C;br/>job queue")]
+    W["Worker&#x3C;br/>(pipeline consumer)"]
+    DB[("PostgreSQL")]
+    ST[["Object storage&#x3C;br/>(local FS / S3)"]]
+    AI{{"AIProvider&#x3C;br/>Mock | OpenAI"}}
+
+    FE -->|HTTPS /api| R --> SVC --> REPO --> DB
+    SVC -->|save upload| ST
+    SVC -->|enqueue job| Q
+    Q -->|dequeue| W
+    W -->|ffprobe / ffmpeg| ST
+    W --> AI
+    W -->|update video + job| DB
+    FE -->|poll status| R
+</code></pre>
+<p><strong>Clean architecture, inward dependencies only:</strong></p>
+<pre><code>api  ->  services  ->  repositories  ->  models
+                \->  ai (protocol)   \->  (SQLAlchemy)
+</code></pre>
+<ul>
+<li><strong>Routers</strong> (<code>app/api</code>) — HTTP concerns only: parse/validate, call a service,
+serialize a schema.</li>
+<li><strong>Services</strong> (<code>app/services</code>) — business logic and orchestration; framework‑
+agnostic and unit‑testable.</li>
+<li><strong>Repositories</strong> (<code>app/repositories</code>) — all query/ORM logic, keeping SQL out of
+services.</li>
+<li><strong>AI abstraction</strong> (<code>app/services/ai</code>) — a <code>Protocol</code> the pipeline depends on;
+concrete providers are swapped by a factory.</li>
+<li><strong>Worker</strong> (<code>app/workers</code>) — a standalone process running the same
+<code>ProcessingPipeline</code> used in tests.</li>
+</ul>
+<h3>Processing pipeline (per video)</h3>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant U as User
+    participant API
+    participant Q as Redis
+    participant W as Worker
+    participant AI as AIProvider
+    U->>API: POST /videos (multipart upload)
+    API->>API: validate (type/size/ext/MIME)
+    API-->>U: 201 {status: queued}
+    API->>Q: enqueue {job_id, video_id}
+    W->>Q: BRPOP job
+    W->>W: 1. ffprobe metadata
+    W->>W: 2. ffmpeg thumbnail (non-fatal)
+    W->>W: 3. ffmpeg audio extract (non-fatal)
+    W->>AI: 4. transcribe(audio)
+    W->>AI: 5. analyze(transcript) -> summary/chapters/tags
+    W->>API: video.status = completed (persisted to DB)
+    U->>API: GET /videos/{id}/status (poll)
+</code></pre>
+<p>Each stage records its own status on the job (<code>steps</code>) so the UI renders a live
+checklist. Thumbnail/audio failures are <strong>non‑fatal</strong> — a single undecodable file
+never blocks AI insights, and the pipeline degrades gracefully when ffmpeg is
+absent.</p>
+<hr>
+<h2>Tech stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>Python 3.12, FastAPI, Uvicorn</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>SQLAlchemy 2.0 (typed ORM), PostgreSQL, Alembic migrations</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td>Pydantic v2 + pydantic‑settings</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>JWT access/refresh (PyJWT), bcrypt password hashing (passlib)</td>
+</tr>
+<tr>
+<td>Async / queue</td>
+<td>Redis list queue, standalone worker process</td>
+</tr>
+<tr>
+<td>Media</td>
+<td>ffmpeg / ffprobe (metadata, thumbnails, audio)</td>
+</tr>
+<tr>
+<td>AI</td>
+<td><code>AIProvider</code> protocol → <code>OpenAIProvider</code> (Whisper + chat) / <code>MockAIProvider</code></td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>structlog (JSON logs), request IDs, <code>/health</code> + <code>/ready</code> probes</td>
+</tr>
+<tr>
+<td>Hardening</td>
+<td>CORS, SlowAPI rate limiting, upload validation, non‑root containers</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>React 18, TypeScript, Vite, React Router</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>pytest (+coverage), Vitest + Testing Library</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Ruff, mypy, ESLint, Prettier</td>
+</tr>
+<tr>
+<td>Infra</td>
+<td>Docker, docker‑compose, GitHub Actions</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Features</h2>
+<ul>
+<li><strong>JWT auth</strong> — register/login with access + refresh tokens; transparent token
+refresh on the client; bcrypt hashing.</li>
+<li><strong>Workspaces &#x26; projects</strong> — every user gets a default workspace on signup;
+membership‑scoped authorization on all reads/writes.</li>
+<li><strong>Validated uploads</strong> — extension, MIME type, size, and empty‑file checks, with
+defence‑in‑depth re‑validation against bytes actually written.</li>
+<li><strong>Async processing pipeline</strong> — metadata (ffprobe), thumbnail + audio (ffmpeg),
+transcript, and AI summary/chapters/tags, dispatched via Redis.</li>
+<li><strong>AI provider abstraction</strong> — real OpenAI or fully offline mock (demo mode).</li>
+<li><strong>Search &#x26; filtering</strong> — search across title/summary/transcript, filter by
+status/project, paginated.</li>
+<li><strong>Dashboard stats</strong> — totals, duration, storage, status breakdown, recents.</li>
+<li><strong>Live status</strong> — job step checklist with client polling until completion.</li>
+<li><strong>Operational endpoints</strong> — OpenAPI docs, <code>/health</code>, <code>/ready</code>, structured logs,
+request IDs, consistent error envelope.</li>
+<li><strong>Polished dark UI</strong> — responsive SaaS media‑tool look (charcoal/slate + amber),
+with loading/error/empty states throughout.</li>
+</ul>
+<hr>
+<h2>API</h2>
+<p>Interactive docs live at <code>/docs</code> (Swagger) and <code>/redoc</code>. All app routes are under
+<code>/api/v1</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+<th>Auth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/auth/register</code></td>
+<td>Create account (+ default workspace)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/auth/login</code></td>
+<td>Get access + refresh tokens</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/auth/refresh</code></td>
+<td>Exchange refresh token for new tokens</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/auth/me</code></td>
+<td>Current user</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/workspaces</code></td>
+<td>List my workspaces</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/workspaces</code></td>
+<td>Create workspace</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/workspaces/{id}/projects</code></td>
+<td>List projects in a workspace</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/workspaces/{id}/projects</code></td>
+<td>Create project</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/videos</code></td>
+<td>Upload a video (multipart) → enqueue job</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/videos</code></td>
+<td>Search/filter/paginate videos</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/videos/{id}</code></td>
+<td>Video detail (metadata + AI results)</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><code>/api/v1/videos/{id}</code></td>
+<td>Update (e.g. title)</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><code>/api/v1/videos/{id}</code></td>
+<td>Delete video + assets</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/videos/{id}/status</code></td>
+<td>Latest processing job + step progress</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/videos/{id}/reprocess</code></td>
+<td>Re‑enqueue processing</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/dashboard/stats</code></td>
+<td>Aggregate dashboard stats</td>
+<td>✔</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/health</code></td>
+<td>Liveness probe</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/ready</code></td>
+<td>Readiness (DB + Redis reachability)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Errors use a consistent envelope:</p>
+<pre><code class="language-json">{ "error": { "code": "not_found", "detail": "Video not found" } }
+</code></pre>
+<hr>
+<h2>Database</h2>
+<pre><code class="language-mermaid">erDiagram
+    USERS ||--o{ WORKSPACE_MEMBERS : "has"
+    WORKSPACES ||--o{ WORKSPACE_MEMBERS : "has"
+    WORKSPACES ||--o{ PROJECTS : "contains"
+    PROJECTS ||--o{ VIDEOS : "contains"
+    VIDEOS ||--o{ PROCESSING_JOBS : "has"
+    USERS ||--o{ VIDEOS : "uploaded"
+
+    USERS {
+      string id PK
+      string email UK
+      string hashed_password
+    }
+    WORKSPACES {
+      string id PK
+      string slug UK
+      string owner_id FK
+    }
+    VIDEOS {
+      string id PK
+      string project_id FK
+      string status
+      float duration_seconds
+      text transcript
+      text summary
+      json chapters
+      json tags
+    }
+    PROCESSING_JOBS {
+      string id PK
+      string video_id FK
+      string status
+      json steps
+      int attempts
+    }
+</code></pre>
+<ul>
+<li>Schema is managed with <strong>Alembic</strong> (<code>alembic upgrade head</code>). The initial
+migration is dialect‑aware and uses <code>JSONB</code> on PostgreSQL.</li>
+<li>Indexes on foreign keys plus <code>videos.status</code> and <code>videos.title</code> support the
+library search/filter paths.</li>
+<li>JSON columns (<code>chapters</code>, <code>tags</code>, <code>steps</code>) store semi‑structured pipeline output.</li>
+</ul>
+<hr>
+<h2>AI provider abstraction</h2>
+<p>The pipeline depends only on a <code>Protocol</code>, never on a vendor SDK:</p>
+<pre><code class="language-python">class AIProvider(Protocol):
+    name: str
+    def transcribe(self, audio_path: str, *, duration_seconds: float | None = None) -> Transcript: ...
+    def analyze(self, transcript: str, *, title: str, duration_seconds: float | None = None) -> ContentInsights: ...
+</code></pre>
+<ul>
+<li><strong><code>MockAIProvider</code></strong> — deterministic, offline. Powers demo mode and tests.</li>
+<li><strong><code>OpenAIProvider</code></strong> — Whisper transcription + a JSON‑constrained chat model for
+summary/chapters/tags, wrapped in retries.</li>
+<li><strong><code>get_ai_provider()</code></strong> — a factory that selects OpenAI only when a key is
+configured and <strong>falls back to mock</strong> otherwise, so the AI path never breaks.</li>
+</ul>
+<p>This makes the interesting business logic (the pipeline) testable without network
+access, and makes swapping AI vendors a one‑line change.</p>
+<hr>
+<h2>Running locally</h2>
+<h3>Option A — Docker (recommended)</h3>
+<p>See <a href="#demo">Demo</a>. One command brings up API, worker, frontend, Postgres, and Redis.</p>
+<h3>Option B — Run services directly</h3>
+<p><strong>Backend</strong> (needs <code>ffmpeg</code> on PATH; PostgreSQL + Redis optional — it degrades to
+an in‑memory queue and you can use SQLite):</p>
+<pre><code class="language-bash">cd projects/clipforge/backend
+pip install -r requirements-dev.txt
+cp ../.env.example .env            # edit as needed
+
+# Use SQLite for a zero-dependency run, or point DATABASE_URL at Postgres
+export DATABASE_URL="sqlite+pysqlite:///./clipforge.db"
+python -m scripts.seed             # demo user + sample videos
+uvicorn app.main:app --reload      # http://localhost:8000/docs
+</code></pre>
+<p>Run the worker in a second terminal (requires Redis for the real queue):</p>
+<pre><code class="language-bash">cd projects/clipforge/backend
+python -m app.workers.processor
+</code></pre>
+<p><strong>Frontend:</strong></p>
+<pre><code class="language-bash">cd projects/clipforge/frontend
+npm install
+npm run dev                        # http://localhost:5173 (proxies /api to :8000)
+</code></pre>
+<hr>
+<h2>Environment variables</h2>
+<p>All configuration is env‑driven (see <a href=".env.example"><code>.env.example</code></a>). Highlights:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ENVIRONMENT</code></td>
+<td><code>development</code></td>
+<td>Toggles JSON logs / prod behavior</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY</code></td>
+<td><code>dev-insecure-change-me</code></td>
+<td>JWT signing key — <strong>set a strong value</strong></td>
+</tr>
+<tr>
+<td><code>DATABASE_URL</code></td>
+<td>local Postgres</td>
+<td>SQLAlchemy connection string</td>
+</tr>
+<tr>
+<td><code>REDIS_URL</code></td>
+<td><code>redis://localhost:6379/0</code></td>
+<td>Queue / cache</td>
+</tr>
+<tr>
+<td><code>STORAGE_DIR</code></td>
+<td><code>./storage</code></td>
+<td>Local object storage root</td>
+</tr>
+<tr>
+<td><code>MAX_UPLOAD_BYTES</code></td>
+<td><code>524288000</code> (500 MB)</td>
+<td>Upload size cap</td>
+</tr>
+<tr>
+<td><code>AI_PROVIDER</code></td>
+<td><code>mock</code></td>
+<td><code>mock</code> (offline) or <code>openai</code></td>
+</tr>
+<tr>
+<td><code>OPENAI_API_KEY</code></td>
+<td><em>(empty)</em></td>
+<td>Enables real AI when set</td>
+</tr>
+<tr>
+<td><code>CORS_ORIGINS</code></td>
+<td>localhost dev origins</td>
+<td>Comma‑separated allowlist</td>
+</tr>
+<tr>
+<td><code>RATE_LIMIT_DEFAULT</code></td>
+<td><code>120/minute</code></td>
+<td>Global rate limit</td>
+</tr>
+<tr>
+<td><code>SEED_ON_START</code></td>
+<td><code>true</code> (compose)</td>
+<td>Seed demo data on API container boot</td>
+</tr>
+</tbody>
+</table>
+<p>No secrets are committed. <code>.env</code> is git‑ignored; only <code>.env.example</code> is tracked.</p>
+<hr>
+<h2>Testing</h2>
+<p><strong>Backend</strong> — pytest against in‑memory SQLite and an in‑memory queue (no external
+services needed). Includes unit tests (security, AI mock, upload validation),
+API integration tests (auth, videos, dashboard, health), and full
+<strong>pipeline tests with <code>MockAIProvider</code></strong> (success, step progress, failure path).</p>
+<pre><code class="language-bash">cd projects/clipforge/backend
+DATABASE_URL="sqlite+pysqlite:///:memory:" SECRET_KEY=test pytest -q
+ruff check .        # lint
+mypy app            # type-check
+</code></pre>
+<p><em>Latest local run: <strong>34 passed</strong>, <code>ruff</code> clean, <code>mypy</code> clean (54 files).</em></p>
+<p><strong>Frontend</strong> — Vitest + Testing Library component/unit tests.</p>
+<pre><code class="language-bash">cd projects/clipforge/frontend
+npm run test        # 11 passed
+npm run lint
+npm run build
+</code></pre>
+<p>An end‑to‑end sanity path (register → upload a real MP4 → run the pipeline →
+verify metadata/thumbnail/audio/transcript/summary/chapters/tags) was validated
+locally against actual <code>ffmpeg</code>/<code>ffprobe</code>.</p>
+<hr>
+<h2>Docker</h2>
+<ul>
+<li><code>backend/Dockerfile</code> — Python 3.12‑slim + ffmpeg, non‑root user, healthcheck.</li>
+<li><code>frontend/Dockerfile</code> — multi‑stage Node build served by nginx, which also
+reverse‑proxies <code>/api</code> and <code>/media</code> to the API.</li>
+<li><code>docker-compose.yml</code> — five services: <code>postgres</code>, <code>redis</code>, <code>api</code>, <code>worker</code>,
+<code>frontend</code>, with health‑gated startup ordering and shared storage volume.</li>
+</ul>
+<pre><code class="language-bash">docker compose up --build      # from projects/clipforge/
+docker compose logs -f worker  # watch processing
+docker compose down -v         # tear down + wipe volumes
+</code></pre>
+<hr>
+<h2>Deployment (AWS architecture)</h2>
+<blockquote>
+<p>Documented, <strong>not provisioned</strong> — no live cloud resources are created. This maps
+the local components to a realistic AWS deployment.</p>
+</blockquote>
+<pre><code class="language-mermaid">flowchart TB
+    U[Users] --> CF[CloudFront CDN]
+    CF --> S3W[S3: static SPA]
+    CF --> ALB[Application Load Balancer]
+
+    subgraph ECS["ECS Fargate"]
+      API1["api task(s)&#x3C;br/>(autoscaled)"]
+      WK1["worker task(s)&#x3C;br/>(autoscaled on queue depth)"]
+    end
+
+    ALB --> API1
+    API1 --> RDS[("RDS PostgreSQL&#x3C;br/>Multi-AZ")]
+    API1 --> EC[("ElastiCache Redis")]
+    WK1 --> EC
+    API1 --> S3M[["S3: media/uploads"]]
+    WK1 --> S3M
+    S3M --> CF
+    API1 --> SM["Secrets Manager"]
+    API1 --> CW["CloudWatch Logs/Metrics"]
+    WK1 --> CW
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Local component</th>
+<th>AWS service</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local FS <code>storage/</code></td>
+<td><strong>S3</strong></td>
+<td><code>LocalStorage</code> is the seam; swap for an S3 client</td>
+</tr>
+<tr>
+<td>Media delivery</td>
+<td><strong>CloudFront</strong> + S3 signed URLs</td>
+<td><code>LocalStorage.public_url()</code> becomes signed URLs</td>
+</tr>
+<tr>
+<td>PostgreSQL container</td>
+<td><strong>RDS PostgreSQL (Multi‑AZ)</strong></td>
+<td>Managed backups/failover</td>
+</tr>
+<tr>
+<td>Redis container</td>
+<td><strong>ElastiCache for Redis</strong></td>
+<td>Queue + cache</td>
+</tr>
+<tr>
+<td><code>api</code> container</td>
+<td><strong>ECS Fargate</strong> behind an ALB</td>
+<td>Autoscale on CPU/RPS; <code>/health</code> + <code>/ready</code> probes</td>
+</tr>
+<tr>
+<td><code>worker</code> container</td>
+<td><strong>ECS Fargate service</strong></td>
+<td>Autoscale on Redis queue depth</td>
+</tr>
+<tr>
+<td>Frontend (nginx)</td>
+<td><strong>S3 + CloudFront</strong></td>
+<td>Static SPA hosting</td>
+</tr>
+<tr>
+<td>Secrets/env</td>
+<td><strong>Secrets Manager / SSM</strong></td>
+<td><code>SECRET_KEY</code>, <code>OPENAI_API_KEY</code>, DB creds</td>
+</tr>
+<tr>
+<td>Logs/metrics</td>
+<td><strong>CloudWatch</strong></td>
+<td>JSON logs already emitted via structlog</td>
+</tr>
+</tbody>
+</table>
+<p>Storage is the only code seam that changes for cloud; everything else is
+config. A future queue upgrade would move from a Redis list to <strong>SQS</strong> for
+managed retries/DLQ (see below).</p>
+<hr>
+<h2>Engineering decisions</h2>
+<ul>
+<li><strong>Queue over background tasks.</strong> Media/AI work is offloaded to a dedicated
+worker via Redis so the API never blocks on ffmpeg or model latency, and
+workers scale independently of the API.</li>
+<li><strong>Provider abstraction for AI.</strong> Depending on a <code>Protocol</code> (not the OpenAI SDK)
+keeps the pipeline unit‑testable and vendor‑swappable, and enables a genuinely
+functional offline demo instead of stubbed 501s.</li>
+<li><strong>Clean layering.</strong> Routers → services → repositories → models keeps SQL out of
+business logic and business logic out of HTTP handlers, so each layer is tested
+in isolation.</li>
+<li><strong>Graceful degradation.</strong> ffmpeg/ffprobe missing or a bad file? Those steps are
+marked <code>skipped</code>/<code>failed</code> and the pipeline continues. Redis down? The API falls
+back to an in‑memory queue so reads/writes keep working.</li>
+<li><strong>Membership‑scoped queries.</strong> Authorization is enforced at the repository layer
+(every video query joins through workspace membership), preventing horizontal
+access bugs.</li>
+<li><strong>Config as env.</strong> One image, many environments; secrets never live in code.</li>
+<li><strong>Portable persistence.</strong> A <code>JSONType</code> renders <code>JSONB</code> on Postgres and <code>JSON</code> on
+SQLite, so the same models power fast in‑memory tests and production.</li>
+</ul>
+<hr>
+<h2>Future improvements</h2>
+<ul>
+<li><strong>SQS + DLQ</strong> instead of a Redis list for managed retries, visibility timeouts,
+and dead‑letter handling; idempotency keys per job.</li>
+<li><strong>WebSocket/SSE</strong> push for live status instead of client polling.</li>
+<li><strong>Real streaming playback</strong> (HLS/DASH transcode ladder) and signed URL delivery.</li>
+<li><strong>Semantic search</strong> over transcripts using embeddings + pgvector.</li>
+<li><strong>Role‑based access control</strong> and workspace invitations (schema already supports
+member roles).</li>
+<li><strong>Chunked/resumable uploads</strong> (tus / S3 multipart) for large files.</li>
+<li><strong>Per‑workspace usage quotas</strong> and rate limits backed by Redis.</li>
+<li><strong>Observability</strong>: OpenTelemetry traces spanning API → queue → worker.</li>
+</ul>
+<hr>
+<h2>Project layout</h2>
+<pre><code>projects/clipforge/
+├── backend/
+│   ├── app/
+│   │   ├── api/v1/          # routers (auth, workspaces, videos, dashboard, health)
+│   │   ├── core/            # config, security, db, logging, deps, middleware
+│   │   ├── models/          # SQLAlchemy models
+│   │   ├── schemas/         # Pydantic schemas
+│   │   ├── services/        # business logic, pipeline, storage, queue
+│   │   │   └── ai/          # AIProvider protocol + Mock/OpenAI providers
+│   │   ├── repositories/    # data access
+│   │   ├── workers/         # Redis queue consumer
+│   │   └── utils/           # ffmpeg/ffprobe helpers
+│   ├── alembic/             # migrations
+│   ├── scripts/             # seed.py, entrypoint.sh
+│   ├── tests/               # pytest suite
+│   ├── Dockerfile
+│   └── pyproject.toml / requirements*.txt
+├── frontend/                # React + TS + Vite SPA
+│   ├── src/{api,components,pages,context,lib,types,styles}
+│   ├── Dockerfile + nginx.conf
+│   └── package.json
+├── .github/workflows/       # CI (backend + frontend) — see note below
+├── docker-compose.yml
+└── .env.example
+</code></pre>
+<blockquote>
+<p><strong>CI note:</strong> GitHub only auto‑runs workflows at the <strong>repo root</strong>
+<code>.github/workflows/</code>. These workflows live inside the package for
+<strong>extractability</strong> to a standalone repo; to activate them in this monorepo,
+copy/symlink them to the repo‑root <code>.github/workflows/</code> (their paths are already
+repo‑root‑relative).</p>
+</blockquote>
+1d:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$22"}}]]}]
+1f:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart TD\n  upload[Upload video] --> meta[Store metadata + object]\n  meta --> enqueue[Enqueue Redis job]\n  enqueue --> probe[ffprobe]\n  probe --> thumbs[Thumbnails]\n  thumbs --> audio[Audio extract]\n  audio --> transcript[Transcript]\n  transcript --> ai[AI summary / chapters / tags]\n  ai --> persist[Persist results]\n  persist --> ui[Dashboard status updates]"}]}]]}]
+20:["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}],["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Media products live or die on queue design, observable workers, and honest UI states—not on wrapping a single model call.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Media products live or die on queue design, observable workers, and honest UI states—not on wrapping a single model call."}]]}],["$","li","Abstraction boundaries around AI and FFmpeg keep the system testable and demoable without API keys.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Abstraction boundaries around AI and FFmpeg keep the system testable and demoable without API keys."}]]}],["$","li","Idempotent processing steps and clear job status transitions matter as much as the model quality.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Idempotent processing steps and clear job status transitions matter as much as the model quality."}]]}]]}]]}]
+21:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/clipforge-cover.svg",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/clipforge-cover.svg","alt":"ClipForge AI video pipeline architecture illustration","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

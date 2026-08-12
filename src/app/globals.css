@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Prefer reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:root {
+  --background: #09090b;
+  --background-elevated: #111113;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --brand: #1db954;
+  --brand-hover: #1ed760;
+  --border: rgba(255, 255, 255, 0.1);
+  --glow: rgba(29, 185, 84, 0.18);
+  --card: rgba(255, 255, 255, 0.03);
+}
+
+.light {
+  --background: #fafafa;
+  --background-elevated: #ffffff;
+  --foreground: #18181b;
+  --muted: #52525b;
+  --brand: #16833d;
+  --brand-hover: #1db954;
+  --border: rgba(24, 24, 27, 0.12);
+  --glow: rgba(29, 185, 84, 0.12);
+  --card: rgba(24, 24, 27, 0.03);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-border: var(--border);
+  --color-glow: var(--glow);
+  --color-card: var(--card);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(29, 185, 84, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(255, 255, 255, 0.05), transparent 50%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(29, 185, 84, 0.35);
+  color: white;
+}
+
+.glass {
+  background: color-mix(in oklab, var(--background-elevated) 72%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.light .grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.prose-portfolio {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--brand);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-quotes: var(--muted);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-pre-bg: var(--background-elevated);
+  --tw-prose-hr: var(--border);
+}
+
+.heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+
+.heatmap-0 { background: rgba(255, 255, 255, 0.06); }
+.heatmap-1 { background: rgba(29, 185, 84, 0.25); }
+.heatmap-2 { background: rgba(29, 185, 84, 0.45); }
+.heatmap-3 { background: rgba(29, 185, 84, 0.7); }
+.heatmap-4 { background: rgba(29, 185, 84, 1); }
+
+.light .heatmap-0 { background: rgba(0, 0, 0, 0.06); }

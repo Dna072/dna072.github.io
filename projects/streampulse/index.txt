@@ -1,0 +1,454 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","streampulse",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","streampulse","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","streampulse","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"StreamPulse | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"SQL-backed video analytics APIs and a live React dashboard — media/video SaaS portfolio project."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"StreamPulse"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"SQL-backed video analytics APIs and a live React dashboard — media/video SaaS portfolio project."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","FastAPI",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"FastAPI"}],["$","div","React",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"React"}],["$","div","TypeScript",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"TypeScript"}],["$","div","PostgreSQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"PostgreSQL"}],["$","div","Recharts",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Recharts"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Docker"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/streampulse","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],null,["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]]}],"$L1a","$L1b","$L1c","$L1d"]}]}]]
+1e:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/streampulse-cover.svg","alt":"streampulse cover","className":"h-full w-full object-cover"}]}]
+1b:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 12, 2026"}]]}]]}]
+1c:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Product and content teams need trustworthy views of watch time, completion, audience, and device/geo mix—with filters and comparison periods that stay responsive."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"FastAPI metrics endpoints over PostgreSQL event data, seeded with realistic demo history. React dashboard renders KPIs, time series, funnels, and breakdowns from those APIs, with loading/error/empty states."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","FastAPI",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"FastAPI"}],["$","div","React",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"React"}],["$","div","TypeScript",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"TypeScript"}],["$","div","PostgreSQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"PostgreSQL"}],["$","div","Recharts",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Recharts"}],["$","div","Docker",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Docker"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Event-level watch data aggregated into KPI, time-series, funnel, and breakdown queries. Indexes support date-range and video filters used by the dashboard."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart LR\n  Dash[React + Recharts] --> API[FastAPI metrics]\n  API --> PG[(PostgreSQL events)]\n  Seed[Demo seed] --> PG"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart TD\n  seed[Seed demo events] --> agg[Aggregate metrics SQL]\n  agg --> kpi[Overview KPIs]\n  agg --> ts[Time series]\n  agg --> funnel[Engagement funnel]\n  agg --> brk[Geo / device breakdowns]\n  kpi --> ui[Dashboard]\n  ts --> ui\n  funnel --> ui\n  brk --> ui"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}],"$L1f"]}],"$L20"]}]
+21:T4822,<h1>StreamPulse — Video Analytics &#x26; Performance Dashboard</h1>
+<p>A production-style analytics product for video content: a <strong>FastAPI</strong> backend that
+serves aggregated metrics straight from PostgreSQL, and a polished <strong>React +
+TypeScript</strong> dashboard that renders them. Every chart is fed by a real API call —
+<strong>nothing is hardcoded in the UI</strong>.</p>
+<blockquote>
+<p><strong>Honesty note:</strong> this is a portfolio project. All data is <strong>synthetic</strong>, produced
+by a seed script (<code>app/seed.py</code>). There are no real users, no real traffic, and no
+uptime/revenue claims anywhere.</p>
+</blockquote>
+<p>Built by <strong>Derrick Adjei</strong> as part of a media-technology portfolio (targeting
+Backlight — Junior Fullstack, backend focus).</p>
+<hr>
+<h2>Table of contents</h2>
+<ul>
+<li><a href="#what-it-does">What it does</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#tech-stack">Tech stack</a></li>
+<li><a href="#quick-start-docker-compose">Quick start (Docker Compose)</a></li>
+<li><a href="#local-development">Local development</a></li>
+<li><a href="#api-reference">API reference</a></li>
+<li><a href="#data-model">Data model</a></li>
+<li><a href="#database--indexing--the-why">Database &#x26; indexing — the <em>why</em></a></li>
+<li><a href="#query-design">Query design</a></li>
+<li><a href="#comparison-mode">Comparison mode</a></li>
+<li><a href="#seed-data">Seed data</a></li>
+<li><a href="#testing--ci">Testing &#x26; CI</a></li>
+<li><a href="#observability">Observability</a></li>
+<li><a href="#aws-deployment-notes">AWS deployment notes</a></li>
+<li><a href="#project-structure">Project structure</a></li>
+</ul>
+<hr>
+<h2>What it does</h2>
+<ul>
+<li><strong>KPI overview</strong> — total views, unique viewers, watch hours, average view duration,
+engagement rate, completion rate — each with an optional period-over-period delta.</li>
+<li><strong>Time series</strong> — views / watch-hours / unique-viewers over time with automatic
+day/week/month bucketing and an overlaid <em>previous period</em> line in comparison mode.</li>
+<li><strong>Engagement funnel</strong> — impressions → views → 25% → 50% → 75% → completion, with
+per-step conversion.</li>
+<li><strong>Audience breakdowns</strong> — top countries and device-type split.</li>
+<li><strong>Video performance</strong> — paginated, sortable per-video table.</li>
+<li><strong>Filters</strong> — date range (quick presets + custom), single-video filter, comparison
+toggle. All filters flow to every endpoint.</li>
+<li><strong>UX states</strong> — every panel has loading (skeleton), error (with retry), and empty
+states.</li>
+</ul>
+<hr>
+<h2>Architecture</h2>
+<pre><code class="language-mermaid">flowchart LR
+    subgraph Browser
+      UI["React + TS SPA&#x3C;br/>(Vite, Recharts, React Query)"]
+    end
+    subgraph Edge
+      NX["nginx&#x3C;br/>(serves built SPA)"]
+    end
+    subgraph API["FastAPI service"]
+      MW["Request-ID + structured logging&#x3C;br/>middleware"]
+      AUTH["JWT auth&#x3C;br/>(OAuth2 password flow)"]
+      AN["Analytics routers&#x3C;br/>(aggregation queries)"]
+    end
+    DB[("PostgreSQL 16&#x3C;br/>videos · impression_events · view_events")]
+
+    UI -->|"/api/v1/* (Bearer JWT)"| API
+    NX --- UI
+    MW --> AUTH --> AN
+    AN -->|"date_trunc, count(distinct),&#x3C;br/>conditional aggregation"| DB
+</code></pre>
+<p>Request flow: the SPA authenticates via <code>/api/v1/auth/login</code>, stores the JWT, and
+attaches it to every request. The API validates the token, resolves the shared
+date-range/comparison filter, runs a bounded aggregation query, and returns a small
+reduced payload. PostgreSQL does the heavy lifting; the API ships only summarized data.</p>
+<hr>
+<h2>Tech stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>Python 3.12, FastAPI, SQLAlchemy 2.0, Alembic, Pydantic v2, structlog</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>JWT (python-jose), bcrypt password hashing (passlib)</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL 16</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>React 18, TypeScript, Vite, Recharts, TanStack Query, Axios</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>pytest (backend, against real Postgres); ESLint + <code>tsc</code> (frontend)</td>
+</tr>
+<tr>
+<td>Infra</td>
+<td>Docker, docker-compose, nginx, GitHub Actions CI</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Quick start (Docker Compose)</h2>
+<p>Requires Docker + Docker Compose.</p>
+<pre><code class="language-bash">cd projects/streampulse
+cp .env.example .env          # optional; sensible defaults are baked in
+docker compose up --build
+</code></pre>
+<p>On first boot the API container waits for Postgres, runs Alembic migrations, and
+seeds ~120 days of synthetic data. Then:</p>
+<ul>
+<li><strong>Dashboard:</strong> <a href="http://localhost:8080">http://localhost:8080</a></li>
+<li><strong>API docs (Swagger):</strong> <a href="http://localhost:8000/docs">http://localhost:8000/docs</a></li>
+<li><strong>Health / readiness:</strong> <a href="http://localhost:8000/health">http://localhost:8000/health</a> · <a href="http://localhost:8000/ready">http://localhost:8000/ready</a></li>
+</ul>
+<p><strong>Demo login</strong> (created by the seed script):</p>
+<pre><code>email:    demo@streampulse.dev
+password: streampulse-demo
+</code></pre>
+<p>Tune seed volume via <code>.env</code> (<code>SEED_DAYS</code>, <code>SEED_TRAFFIC</code>) before the first <code>up</code>, or set
+<code>RUN_SEED=false</code> to skip seeding.</p>
+<hr>
+<h2>Local development</h2>
+<h3>Backend</h3>
+<pre><code class="language-bash">cd projects/streampulse/backend
+python -m venv .venv &#x26;&#x26; source .venv/bin/activate
+pip install -r requirements.txt
+
+# Point at a Postgres you control:
+export DATABASE_URL="postgresql+psycopg2://streampulse:streampulse@localhost:5432/streampulse"
+
+alembic upgrade head            # create schema
+python -m app.seed              # load synthetic data
+uvicorn app.main:app --reload   # http://localhost:8000
+</code></pre>
+<h3>Frontend</h3>
+<pre><code class="language-bash">cd projects/streampulse/frontend
+npm install
+echo "VITE_API_BASE_URL=http://localhost:8000" > .env
+npm run dev                     # http://localhost:5173
+</code></pre>
+<hr>
+<h2>API reference</h2>
+<p>All analytics endpoints require a <code>Bearer</code> token and share these query params:
+<code>start_date</code>, <code>end_date</code> (UTC dates; end is exclusive), <code>compare</code> (bool), and an
+optional <code>video_id</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><code>/api/v1/auth/login</code></td>
+<td>OAuth2 password login → JWT (<code>username</code> = email)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/auth/me</code></td>
+<td>Current user</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/overview</code></td>
+<td>Headline KPIs (+ deltas in comparison mode)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/timeseries</code></td>
+<td>Views/watch-hours/unique over time (<code>granularity=auto|day|week|month</code>)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/videos</code></td>
+<td>Per-video performance (<code>limit</code>, <code>offset</code>, <code>sort_by</code>, <code>category</code>)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/audience/geo</code></td>
+<td>Views by country</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/audience/device</code></td>
+<td>Views by device type</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/funnel</code></td>
+<td>Impressions → views → retention → completion</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/videos/catalog</code></td>
+<td>All videos (for the filter dropdown)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/categories</code></td>
+<td>Distinct categories</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/api/v1/analytics/meta/bounds</code></td>
+<td>Earliest/latest data dates</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/health</code> · <code>/ready</code></td>
+<td>Liveness / readiness probes</td>
+</tr>
+</tbody>
+</table>
+<p>Full, interactive schema at <code>/docs</code>.</p>
+<hr>
+<h2>Data model</h2>
+<p>Two append-only <strong>fact</strong> tables around a <code>videos</code> <strong>dimension</strong> table:</p>
+<ul>
+<li><strong><code>videos</code></strong> — one row per piece of content (title, category, duration, publish date).</li>
+<li><strong><code>impression_events</code></strong> — a video was surfaced to a viewer (top of the funnel).</li>
+<li><strong><code>view_events</code></strong> — a viewer started watching. Carries <code>watch_seconds</code>,
+<code>quartile_reached</code> (0–4 → highest 25% milestone reached), engagement flags
+(<code>liked</code>/<code>commented</code>/<code>shared</code>), a pseudonymous <code>viewer_id</code> (for unique-viewer counts),
+and <code>country_code</code> / <code>device_type</code> dimensions.</li>
+</ul>
+<p>Splitting impressions from views keeps the common "views" queries scanning a smaller
+table, while still supporting a true impressions-based funnel.</p>
+<hr>
+<h2>Database &#x26; indexing — the <em>why</em></h2>
+<p>Every dashboard query is an <strong>aggregation over a time window</strong>, optionally narrowed by
+video, and often grouped by a dimension (country/device). The indexes are chosen to
+serve exactly those access patterns.</p>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>Columns</th>
+<th>Serves</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ix_views_time</code></td>
+<td><code>(event_time)</code></td>
+<td>Every time-bounded query</td>
+<td>The date range is present in <em>all</em> dashboard queries, so a leading <code>event_time</code> index bounds every scan.</td>
+</tr>
+<tr>
+<td><code>ix_views_video_time</code></td>
+<td><code>(video_id, event_time)</code></td>
+<td>Single-video views; "top videos"</td>
+<td>Composite with <code>video_id</code> first lets a video filter + date range resolve via one index range scan.</td>
+</tr>
+<tr>
+<td><code>ix_views_country_time</code></td>
+<td><code>(country_code, event_time)</code></td>
+<td>Geo breakdown; country filters</td>
+<td>Supports slicing a country over a time window without scanning the whole table.</td>
+</tr>
+<tr>
+<td><code>ix_views_device_time</code></td>
+<td><code>(device_type, event_time)</code></td>
+<td>Device breakdown</td>
+<td>Same rationale for the device dimension.</td>
+</tr>
+<tr>
+<td><code>ix_impressions_video_time</code></td>
+<td><code>(video_id, event_time)</code></td>
+<td>Funnel (per video)</td>
+<td>Impression counts by video + range for the top of the funnel.</td>
+</tr>
+<tr>
+<td><code>ix_impressions_time</code></td>
+<td><code>(event_time)</code></td>
+<td>Funnel (all videos)</td>
+<td>Time-bounded impression totals.</td>
+</tr>
+<tr>
+<td><code>ix_videos_category</code> / <code>ix_videos_published_at</code></td>
+<td>—</td>
+<td>Category filter / recency sort</td>
+<td>Small dimension table lookups.</td>
+</tr>
+</tbody>
+</table>
+<h3>Proof: the planner uses them</h3>
+<p>Time-series over a 30-day window (82k-view seed) — bounded by <code>ix_views_time</code>:</p>
+<pre><code>GroupAggregate
+  ->  Sort  (Sort Key: date_trunc('day', event_time))
+        ->  Index Scan using ix_views_time on view_events
+              Index Cond: ((event_time >= now() - '30 days') AND (event_time &#x3C; now()))
+</code></pre>
+<p>Per-video + date range — resolved by the composite <code>ix_views_video_time</code>:</p>
+<pre><code>Aggregate
+  ->  Bitmap Heap Scan on view_events
+        ->  Bitmap Index Scan on ix_views_video_time
+              Index Cond: ((video_id = 5) AND (event_time >= …) AND (event_time &#x3C; …))
+</code></pre>
+<h3>Scaling further (documented, not built)</h3>
+<p>For very large, append-only event tables the next steps would be <strong>native range
+partitioning by month</strong> on <code>event_time</code> (partition pruning + cheap retention drops)
+and a <strong>BRIN index</strong> on <code>event_time</code> (tiny, ideal for time-ordered inserts). Heavy
+dashboards would then read from <strong>pre-aggregated daily rollup tables</strong> refreshed by a
+scheduled job, rather than scanning raw events on every request.</p>
+<hr>
+<h2>Query design</h2>
+<ul>
+<li><strong><code>date_trunc(granularity, event_time)</code></strong> for time bucketing, with granularity chosen
+automatically from the window length (≤31d → day, ≤120d → week, else month).</li>
+<li><strong><code>count(DISTINCT viewer_id)</code></strong> for unique viewers.</li>
+<li><strong>Conditional aggregation</strong> (<code>avg</code>/<code>sum</code> over <code>CASE</code> expressions) computes engagement
+rate, completion rate, and all funnel quartiles in a <strong>single table scan</strong> each,
+instead of multiple round-trips.</li>
+<li>Every query is <strong>bounded by <code>event_time</code></strong> so the indexes above apply.</li>
+</ul>
+<hr>
+<h2>Comparison mode</h2>
+<p>When <code>compare=true</code>, the API computes the <strong>immediately preceding, equal-length window</strong>
+(<code>[start - span, start)</code>). Overview KPIs return <code>{ value, previous, delta_pct }</code>; the
+time series returns a parallel <code>previous_points</code> array aligned by index so the UI can
+overlay it as a dashed line.</p>
+<hr>
+<h2>Seed data</h2>
+<p><code>app/seed.py</code> generates months of plausible-but-synthetic events:</p>
+<ul>
+<li>24 videos across 6 categories with per-video <strong>popularity</strong> and <strong>quality</strong> traits.</li>
+<li><strong>Recency decay</strong> (interest fades after publish) and <strong>weekly seasonality</strong> (weekends
+run hotter), plus a mild upward trend.</li>
+<li><strong>Impression → view</strong> click-through, then per-view <strong>retention</strong> sampled from a
+quality-shifted distribution (TV/desktop watch slightly longer than mobile).</li>
+<li>A bounded <strong>viewer pool</strong> with a "power viewer" subset, so unique viewers are
+meaningfully fewer than total views.</li>
+</ul>
+<p>Reproducible via <code>SEED_RANDOM_SEED</code>. Volume via <code>SEED_DAYS</code> / <code>SEED_TRAFFIC</code>.</p>
+<hr>
+<h2>Testing &#x26; CI</h2>
+<pre><code class="language-bash">cd projects/streampulse/backend
+export TEST_DATABASE_URL="postgresql+psycopg2://streampulse:streampulse@localhost:5432/streampulse_test"
+pytest        # 18 tests: auth, health/request-id, and every analytics endpoint
+ruff check .
+</code></pre>
+<p>Tests run against a <strong>real Postgres</strong> (the queries use Postgres-only features) and are
+hard-guarded to a <code>*_test</code> database so they can never touch a dev DB. GitHub Actions
+(<code>.github/workflows/streampulse-ci.yml</code>) runs backend lint + migrate + pytest (with a
+Postgres service), frontend lint + typecheck + build, and builds both Docker images.</p>
+<hr>
+<h2>Observability</h2>
+<ul>
+<li><strong>structlog</strong> JSON logs (toggle <code>LOG_JSON=false</code> for pretty local output).</li>
+<li>A <strong>request-ID</strong> middleware assigns/propagates <code>X-Request-ID</code> and binds it to every
+log line for correlation; it also logs method, path, status, and duration.</li>
+<li><strong><code>/health</code></strong> (process liveness) and <strong><code>/ready</code></strong> (verifies DB connectivity, returns
+503 when degraded) for container/orchestrator probes.</li>
+</ul>
+<hr>
+<h2>AWS deployment notes</h2>
+<p>A pragmatic path to production (architecture only — no live infra is provisioned):</p>
+<pre><code class="language-mermaid">flowchart LR
+    U[Users] --> CF[CloudFront]
+    CF --> S3[(S3 static SPA)]
+    CF --> ALB[Application Load Balancer]
+    ALB --> ECS["ECS Fargate&#x3C;br/>FastAPI tasks (autoscaled)"]
+    ECS --> RDS[(RDS PostgreSQL&#x3C;br/>Multi-AZ)]
+    ECS --> CW[CloudWatch Logs/Alarms]
+</code></pre>
+<ul>
+<li><strong>Frontend:</strong> build the SPA and host on <strong>S3</strong> behind <strong>CloudFront</strong> (CDN + TLS).</li>
+<li><strong>API:</strong> container image on <strong>ECS Fargate</strong> behind an <strong>ALB</strong>, using the <code>/health</code> and
+<code>/ready</code> probes for target-group health and autoscaling.</li>
+<li><strong>Database:</strong> <strong>RDS for PostgreSQL</strong> (Multi-AZ for availability); credentials in
+<strong>Secrets Manager</strong>, injected as env vars; <code>SECRET_KEY</code> likewise.</li>
+<li><strong>Migrations:</strong> run <code>alembic upgrade head</code> as a one-off ECS task in the deploy
+pipeline before shifting traffic.</li>
+<li><strong>Logs/metrics:</strong> ship structured logs to <strong>CloudWatch</strong> (request IDs make tracing a
+single request across log lines trivial); alarm on 5xx rate and DB connections.</li>
+<li><strong>Scale:</strong> as event volume grows, add read replicas, monthly partitioning, and daily
+rollup tables (see <a href="#scaling-further-documented-not-built">scaling notes</a>).</li>
+</ul>
+<hr>
+<h2>Project structure</h2>
+<pre><code>projects/streampulse/
+├── backend/
+│   ├── app/
+│   │   ├── api/            # deps + route modules (auth, analytics, health)
+│   │   ├── core/           # config, structured logging, security (JWT/bcrypt)
+│   │   ├── db/             # engine/session, declarative base
+│   │   ├── models/         # SQLAlchemy models (+ index definitions)
+│   │   ├── schemas/        # Pydantic request/response models
+│   │   ├── services/       # analytics query layer (the SQL lives here)
+│   │   ├── seed.py         # synthetic data generator
+│   │   └── main.py         # app factory, middleware, router wiring
+│   ├── alembic/            # migrations
+│   ├── tests/              # pytest suite (real Postgres)
+│   └── Dockerfile
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # FilterBar, KPI cards, charts, states, table
+│   │   ├── context/        # auth context
+│   │   ├── lib/            # api client, react-query hooks, types, formatters
+│   │   └── Dashboard.tsx
+│   ├── nginx.conf
+│   └── Dockerfile
+├── docker-compose.yml
+├── .env.example
+└── README.md
+</code></pre>
+1d:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$21"}}]]}]
+1f:["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Analytics UX quality tracks query design—indexes and honest loading states beat decorative charts with fake numbers.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Analytics UX quality tracks query design—indexes and honest loading states beat decorative charts with fake numbers."}]]}],["$","li","Comparison periods and filters belong in the API contract, not only in chart chrome.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Comparison periods and filters belong in the API contract, not only in chart chrome."}]]}],["$","li","Seeded demo data makes the product reviewable without production traffic.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Seeded demo data makes the product reviewable without production traffic."}]]}]]}]
+20:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/streampulse-cover.svg",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/streampulse-cover.svg","alt":"StreamPulse analytics architecture illustration","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

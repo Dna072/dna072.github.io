@@ -1,0 +1,850 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","stedi-human-balance-analytics",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","stedi-human-balance-analytics","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","stedi-human-balance-analytics","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"STEDI Human Balance Analytics | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"AWS lakehouse for privacy-aware sensor analytics."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"STEDI Human Balance Analytics"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"AWS lakehouse for privacy-aware sensor analytics."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","AWS Glue",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"AWS Glue"}],["$","div","Amazon S3",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Amazon S3"}],["$","div","Athena",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Athena"}],["$","div","Spark",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Spark"}],["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"SQL"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/stedi-human-balance-analytics","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],null,["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]]}],["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":"$L1a"}],"$L1b","$L1c","$L1d"]}]}]]
+1e:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","img",null,{"src":"/images/projects/stedi-cover.svg","alt":"stedi-human-balance-analytics cover","className":"h-full w-full object-cover"}]
+1b:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 9, 2026"}]]}]]}]
+1c:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"STEDI collects customer, accelerometer, and step-trainer sensor data that must be sanitized, joined, and curated into a lakehouse suitable for machine learning—while respecting privacy consent."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Built a landing → trusted → curated lakehouse on AWS using S3, Glue jobs, and Athena so only consented, high-quality records reach the ML-ready curated zone."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","AWS Glue",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"AWS Glue"}],["$","div","Amazon S3",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Amazon S3"}],["$","div","Athena",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Athena"}],["$","div","Spark",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Spark"}],["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"SQL"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Medallion-style zones: landing (raw), trusted (cleaned/consented), curated (joined ML features). Customer consent gates accelerometer and step-trainer joins."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart TB\n  subgraph Landing\n    C1[Customer Landing]\n    A1[Accelerometer Landing]\n    S1[Step Trainer Landing]\n  end\n  subgraph Trusted\n    C2[Customer Trusted]\n    A2[Accelerometer Trusted]\n    S2[Step Trainer Trusted]\n  end\n  subgraph Curated\n    ML[Machine Learning Curated]\n  end\n  C1 --> C2\n  A1 --> A2\n  S1 --> S2\n  C2 --> A2\n  C2 --> S2\n  A2 --> ML\n  S2 --> ML"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1e",null,{"chart":"flowchart TD\n  ingest[Ingest to S3 landing] --> glue1[Glue: sanitize & consent filter]\n  glue1 --> trusted[Write trusted zone tables]\n  trusted --> glue2[Glue: join sensor streams]\n  glue2 --> curated[Write ML curated table]\n  curated --> athena[Query with Athena]"}]}]]}],["$","section",null,{"children":["$L1f","$L20"]}],"$L21"]}]
+22:T81e9,<h1>Privacy-Governed IoT Data Lakehouse for Human Balance Analytics</h1>
+<p><strong>A consent-aware AWS lakehouse pipeline that curates multi-source sensor data for real-time step-detection ML.</strong></p>
+<p><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.x-3776AB?logo=python&#x26;logoColor=white" alt="Python"></a>
+<a href="https://spark.apache.org/"><img src="https://img.shields.io/badge/Apache%20Spark-PySpark-E25A1C?logo=apachespark&#x26;logoColor=white" alt="Apache Spark"></a>
+<a href="https://aws.amazon.com/glue/"><img src="https://img.shields.io/badge/AWS%20Glue-ETL-232F3E?logo=amazonaws&#x26;logoColor=white" alt="AWS Glue"></a>
+<a href="https://aws.amazon.com/s3/"><img src="https://img.shields.io/badge/Amazon%20S3-Data%20Lake-569A31?logo=amazons3&#x26;logoColor=white" alt="Amazon S3"></a>
+<a href="https://aws.amazon.com/athena/"><img src="https://img.shields.io/badge/Amazon%20Athena-SQL-232F3E?logo=amazonaws&#x26;logoColor=white" alt="Amazon Athena"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a></p>
+<hr>
+<h2>Executive Summary</h2>
+<p>STEDI develops a connected Step Trainer — a hardware device with motion sensors and a companion mobile app — to help users perform balance exercises and detect steps in real time. Early adopters generate three high-volume data streams:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Data</th>
+<th>Sensitivity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Customer registration</strong></td>
+<td>Profile, device serial number, consent timestamps</td>
+<td>Contains PII</td>
+</tr>
+<tr>
+<td><strong>Mobile accelerometer</strong></td>
+<td>X/Y/Z motion readings tied to user email</td>
+<td>Behavioral + identifiable</td>
+</tr>
+<tr>
+<td><strong>Step Trainer IoT sensor</strong></td>
+<td>Distance readings from onboard motion sensor</td>
+<td>Device-level telemetry</td>
+</tr>
+</tbody>
+</table>
+<p>The business challenge is not simply <em>moving data to the cloud</em> — it is building a <strong>privacy-first analytics pipeline</strong> that:</p>
+<ol>
+<li>Keeps raw PII out of downstream analytics and ML workloads</li>
+<li>Enforces <strong>research consent at the row level</strong>, including temporal consent (data collected <em>before</em> consent must be excluded)</li>
+<li>Produces a <strong>joined, ML-ready feature dataset</strong> that aligns accelerometer and Step Trainer readings at the same timestamp</li>
+</ol>
+<p>I designed and implemented this project as an <strong>AWS lakehouse</strong> using a medallion architecture (Landing → Trusted → Curated). The pipeline transforms heterogeneous JSON sources into governed datasets that data scientists can consume directly for step-detection model training — without exposing customer PII or non-consented records.</p>
+<p><strong>Value delivered:</strong></p>
+<ul>
+<li>✅ Regulatory-aligned data handling through consent-aware filtering</li>
+<li>✅ Reusable, cataloged datasets registered in the AWS Glue Data Catalog</li>
+<li>✅ Automated PySpark transformations with built-in data quality checks</li>
+<li>✅ A single curated table (<code>machine_learning_curated</code>) ready for feature engineering and model training</li>
+</ul>
+<hr>
+<h2>Architecture</h2>
+<p>The platform follows a <strong>medallion lakehouse pattern</strong> on Amazon S3, orchestrated by AWS Glue and queryable through the Glue Data Catalog and Amazon Athena.</p>
+<pre><code class="language-mermaid">flowchart TB
+    subgraph Sources["Source Systems"]
+        WEB["Customer Website / App Backend"]
+        MOB["Mobile App — Accelerometer"]
+        IOT["Step Trainer IoT Device"]
+    end
+
+    subgraph Landing["🟤 Landing Zone — Raw JSON on S3"]
+        CL["customer/landing/"]
+        AL["accelerometer/landing/"]
+        SL["step_trainer/landing/"]
+    end
+
+    subgraph Trusted["🟢 Trusted Zone — Consent-Filtered"]
+        CT["customer_trusted"]
+        AT["accelerometer_trusted"]
+        ST["step_trainer_trusted"]
+    end
+
+    subgraph Curated["🔵 Curated Zone — ML-Ready"]
+        CC["customer_curated"]
+        ML["machine_learning_curated"]
+    end
+
+    subgraph Consumption["Downstream Consumers"]
+        DS["Data Science / ML Training"]
+        ATH["Amazon Athena — Ad-hoc SQL"]
+    end
+
+    WEB --> CL
+    MOB --> AL
+    IOT --> SL
+
+    CL -->|"Glue Job 1"| CT
+    CT -->|"Glue Job 2"| AT
+    CT -->|"Glue Job 3"| CC
+    SL -->|"Glue Job 4"| ST
+    AT -->|"Glue Job 5"| ML
+    ST -->|"Glue Job 5"| ML
+
+    CC -.->|"serialNumber join"| ST
+    ML --> DS
+    CT &#x26; AT &#x26; ST &#x26; CC &#x26; ML --> ATH
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Purpose</th>
+<th>PII Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Landing</strong></td>
+<td>Immutable raw ingest from source systems</td>
+<td>PII present — not for analytics</td>
+</tr>
+<tr>
+<td><strong>Trusted</strong></td>
+<td>Consent-enforced, column-pruned records</td>
+<td>PII minimized; only consented users</td>
+</tr>
+<tr>
+<td><strong>Curated</strong></td>
+<td>Business- and ML-ready datasets</td>
+<td>Anonymized / feature-oriented</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Technology</th>
+<th>Role in This Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language</strong></td>
+<td><img src="https://img.shields.io/badge/-Python-3776AB?logo=python&#x26;logoColor=white&#x26;style=flat-square" alt="Python"></td>
+<td>Glue job scripting, Spark transformations</td>
+</tr>
+<tr>
+<td><strong>Query Language</strong></td>
+<td><img src="https://img.shields.io/badge/-SQL-CC2927?logo=postgresql&#x26;logoColor=white&#x26;style=flat-square" alt="SQL"></td>
+<td>Spark SQL transforms, Athena queries, DDL definitions</td>
+</tr>
+<tr>
+<td><strong>Distributed Compute</strong></td>
+<td><img src="https://img.shields.io/badge/-PySpark-E25A1C?logo=apachespark&#x26;logoColor=white&#x26;style=flat-square" alt="Apache Spark"></td>
+<td>Large-scale filtering, joins, deduplication</td>
+</tr>
+<tr>
+<td><strong>ETL / Orchestration</strong></td>
+<td><img src="https://img.shields.io/badge/-AWS%20Glue-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="AWS Glue"></td>
+<td>Serverless ETL jobs, Glue Studio visual workflows</td>
+</tr>
+<tr>
+<td><strong>Object Storage</strong></td>
+<td><img src="https://img.shields.io/badge/-Amazon%20S3-569A31?logo=amazons3&#x26;logoColor=white&#x26;style=flat-square" alt="Amazon S3"></td>
+<td>Lakehouse storage across all zones</td>
+</tr>
+<tr>
+<td><strong>Metadata / Catalog</strong></td>
+<td><img src="https://img.shields.io/badge/-Glue%20Data%20Catalog-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="AWS Glue Data Catalog"></td>
+<td>External table definitions, schema discovery</td>
+</tr>
+<tr>
+<td><strong>Query Engine</strong></td>
+<td><img src="https://img.shields.io/badge/-Amazon%20Athena-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="Amazon Athena"></td>
+<td>Serverless SQL over S3-backed tables</td>
+</tr>
+<tr>
+<td><strong>Data Quality</strong></td>
+<td><img src="https://img.shields.io/badge/-Glue%20Data%20Quality-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="AWS Glue Data Quality"></td>
+<td>Row-level validation via <code>EvaluateDataQuality</code></td>
+</tr>
+<tr>
+<td><strong>Identity &#x26; Access</strong></td>
+<td><img src="https://img.shields.io/badge/-AWS%20IAM-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="AWS IAM"></td>
+<td>Least-privilege access to S3 and Glue</td>
+</tr>
+<tr>
+<td><strong>CLI / Deployment</strong></td>
+<td><img src="https://img.shields.io/badge/-AWS%20CLI-232F3E?logo=amazonaws&#x26;logoColor=white&#x26;style=flat-square" alt="AWS CLI"></td>
+<td>Bucket provisioning, data upload</td>
+</tr>
+<tr>
+<td><strong>Version Control</strong></td>
+<td><img src="https://img.shields.io/badge/-Git-F05032?logo=git&#x26;logoColor=white&#x26;style=flat-square" alt="Git"></td>
+<td>Pipeline code and DDL versioning</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Data Model</h2>
+<p>This project implements a <strong>lakehouse logical model</strong> rather than a traditional OLAP warehouse. Tables are organized by <strong>medallion zone</strong> and <strong>domain</strong>, with the final curated output structured for ML feature consumption.</p>
+<h3>Logical Entity Relationships</h3>
+<pre><code class="language-mermaid">erDiagram
+    CUSTOMER_CURATED ||--o{ STEP_TRAINER_TRUSTED : "serialNumber"
+    CUSTOMER_TRUSTED ||--o{ ACCELEROMETER_TRUSTED : "email = user"
+    ACCELEROMETER_TRUSTED ||--o{ MACHINE_LEARNING_CURATED : "timestamp"
+    STEP_TRAINER_TRUSTED ||--o{ MACHINE_LEARNING_CURATED : "sensorReadingTime = timestamp"
+
+    CUSTOMER_CURATED {
+        string customerName
+        string email
+        string phone
+        string birthday
+        string serialNumber PK
+        bigint registrationDate
+        bigint lastUpdateDate
+        bigint shareWithResearchAsOfDate
+        bigint shareWithPublicAsOfDate
+        bigint shareWithFriendsAsOfDate
+    }
+
+    ACCELEROMETER_TRUSTED {
+        string user
+        bigint timestamp PK
+        float x
+        float y
+        float z
+        string serialNumber
+    }
+
+    STEP_TRAINER_TRUSTED {
+        bigint sensorReadingTime PK
+        string serialNumber FK
+        int distanceFromObject
+    }
+
+    MACHINE_LEARNING_CURATED {
+        string serialNumber
+        bigint timestamp PK
+        int distanceFromObject
+        float x
+        float y
+        float z
+    }
+</code></pre>
+<h3>Dimension-Like Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Grain</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customer_trusted</code></td>
+<td>One row per consented customer</td>
+<td>Customers who opted into research (<code>shareWithResearchAsOfDate IS NOT NULL</code>)</td>
+</tr>
+<tr>
+<td><code>customer_curated</code></td>
+<td>One row per active research participant</td>
+<td>Distinct customers with verified accelerometer activity — the governed participant population</td>
+</tr>
+</tbody>
+</table>
+<p>These tables carry <strong>slowly changing consent attributes</strong> (research, public, friends sharing dates) that drive downstream filtering logic.</p>
+<h3>Fact-Like / Event Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Grain</th>
+<th>Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accelerometer_trusted</code></td>
+<td>One row per <code>(user, timestamp)</code></td>
+<td><code>x</code>, <code>y</code>, <code>z</code> accelerometer axes</td>
+</tr>
+<tr>
+<td><code>step_trainer_trusted</code></td>
+<td>One row per <code>(serialNumber, sensorReadingTime)</code></td>
+<td><code>distanceFromObject</code></td>
+</tr>
+<tr>
+<td><code>machine_learning_curated</code></td>
+<td>One row per <code>(serialNumber, timestamp)</code></td>
+<td>Combined sensor features: distance + x/y/z</td>
+</tr>
+</tbody>
+</table>
+<h3>Why a Star-Schema–Inspired Design (Without a Traditional Warehouse)</h3>
+<p>I deliberately chose a <strong>lakehouse medallion layout</strong> over loading into a columnar warehouse like Redshift because:</p>
+<ol>
+<li><strong>Source format</strong> — All ingest data arrives as semi-structured JSON; S3 + Glue handles this natively without upfront schema enforcement.</li>
+<li><strong>ML consumption pattern</strong> — Data scientists need a <strong>wide, timestamp-aligned feature table</strong>, not normalized dimension lookups at query time.</li>
+<li><strong>Privacy boundaries</strong> — Zone separation (Landing → Trusted → Curated) provides a clear audit trail for consent enforcement, which is harder to express in a flat star schema alone.</li>
+<li><strong>Cost and scale</strong> — Serverless Glue + S3 scales with batch volume without provisioning warehouse clusters.</li>
+</ol>
+<p>The final <code>machine_learning_curated</code> table behaves like a <strong>denormalized fact table</strong> at the <code>(device, timestamp)</code> grain — the pattern ML teams typically prefer for training pipelines.</p>
+<hr>
+<h2>Pipeline Workflow</h2>
+<p>Five AWS Glue jobs execute sequentially based on data dependencies. Each job reads from the Glue Data Catalog, applies Spark SQL transformations, runs data quality checks, and writes results back to S3 with catalog updates.</p>
+<pre><code class="language-mermaid">flowchart LR
+    subgraph Job1["Job 1 — Customer Landing → Trusted"]
+        J1A["Read JSON from S3"] --> J1B["Filter: shareWithResearchAsOfDate IS NOT NULL"]
+        J1B --> J1C["Write customer_trusted"]
+    end
+
+    subgraph Job2["Job 2 — Accelerometer Landing → Trusted"]
+        J2A["Join accelerometer_landing ⋈ customer_trusted"] --> J2B["Filter: timestamp > consent date"]
+        J2B --> J2C["Drop PII columns"]
+        J2C --> J2D["Write accelerometer_trusted"]
+    end
+
+    subgraph Job3["Job 3 — Customer Trusted → Curated"]
+        J3A["Join customer_trusted ⋈ accelerometer_trusted"] --> J3B["SELECT DISTINCT customer attributes"]
+        J3B --> J3C["Write customer_curated"]
+    end
+
+    subgraph Job4["Job 4 — Step Trainer Landing → Trusted"]
+        J4A["Join step_trainer_landing ⋈ customer_curated"] --> J4B["Filter by serialNumber"]
+        J4B --> J4C["Write step_trainer_trusted"]
+    end
+
+    subgraph Job5["Job 5 — ML Curated Feature Table"]
+        J5A["Join accelerometer_trusted ⋈ step_trainer_trusted"] --> J5B["Align on timestamp"]
+        J5B --> J5C["Write machine_learning_curated"]
+    end
+
+    Job1 --> Job2
+    Job2 --> Job3
+    Job3 --> Job4
+    Job4 --> Job5
+</code></pre>
+<p><strong>Script:</strong> <a href="starter/customer/scripts/customer_landing_to_trusted.py"><code>starter/customer/scripts/customer_landing_to_trusted.py</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>s3://&#x3C;bucket>/customer/landing/</code> (JSON)</td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Retain only customers with <code>shareWithResearchAsOfDate IS NOT NULL</code></td>
+</tr>
+<tr>
+<td>Target</td>
+<td><code>s3://&#x3C;bucket>/customer/trusted/</code> → <code>customer_trusted</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Script:</strong> <a href="starter/accelerometer/scripts/accelerometer_landing_to_trusted.py"><code>starter/accelerometer/scripts/accelerometer_landing_to_trusted.py</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>accelerometer_landing</code> ⋈ <code>customer_trusted</code> on <code>user = email</code></td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Keep readings where <code>timestamp > shareWithResearchAsOfDate</code>; project only <code>user, serialNumber, timestamp, x, y, z</code></td>
+</tr>
+<tr>
+<td>Target</td>
+<td><code>s3://&#x3C;bucket>/accelerometer/trusted/</code> → <code>accelerometer_trusted</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Script:</strong> <a href="starter/customer/scripts/customer_trusted_to_curated.py"><code>starter/customer/scripts/customer_trusted_to_curated.py</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>accelerometer_trusted</code> ⋈ <code>customer_trusted</code> on <code>user = email</code></td>
+</tr>
+<tr>
+<td>Transform</td>
+<td><code>SELECT DISTINCT</code> customer attributes for participants with accelerometer data</td>
+</tr>
+<tr>
+<td>Target</td>
+<td><code>s3://&#x3C;bucket>/customer/curated/</code> → <code>customer_curated</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Script:</strong> <a href="starter/step_trainer/scripts/step_trainer_landing_to_trusted.py"><code>starter/step_trainer/scripts/step_trainer_landing_to_trusted.py</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>step_trainer_landing</code> ⋈ <code>customer_curated</code> on <code>serialNumber</code></td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Retain sensor readings only for curated research participants</td>
+</tr>
+<tr>
+<td>Target</td>
+<td><code>s3://&#x3C;bucket>/step_trainer/trusted/</code> → <code>step_trainer_trusted</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Script:</strong> <a href="starter/step_trainer/scripts/step_trainer_trusted_to_machine_learning_curated.py"><code>starter/step_trainer/scripts/step_trainer_trusted_to_machine_learning_curated.py</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>accelerometer_trusted</code> ⋈ <code>step_trainer_trusted</code> on <code>timestamp = sensorReadingTime</code></td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Produce wide feature row: <code>serialNumber, timestamp, distanceFromObject, x, y, z</code></td>
+</tr>
+<tr>
+<td>Target</td>
+<td><code>s3://&#x3C;bucket>/machine_learning/curated/</code> → <code>machine_learning_curated</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Target S3 Layout</h3>
+<pre><code>s3://&#x3C;your-bucket>/
+├── customer/
+│   ├── landing/
+│   ├── trusted/
+│   └── curated/
+├── accelerometer/
+│   ├── landing/
+│   └── trusted/
+├── step_trainer/
+│   ├── landing/
+│   └── trusted/
+└── machine_learning/
+    └── curated/
+</code></pre>
+<hr>
+<h2>Features</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Implementation</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Privacy &#x26; consent enforcement</strong></td>
+<td>✅ Implemented</td>
+<td>Temporal consent filtering ensures accelerometer data predating consent is excluded</td>
+</tr>
+<tr>
+<td><strong>PII minimization</strong></td>
+<td>✅ Implemented</td>
+<td>Trusted-zone jobs drop unnecessary customer attributes before downstream joins</td>
+</tr>
+<tr>
+<td><strong>Data validation</strong></td>
+<td>✅ Implemented</td>
+<td>AWS Glue Data Quality <code>EvaluateDataQuality</code> with <code>ColumnCount > 0</code> on every write node</td>
+</tr>
+<tr>
+<td><strong>Catalog synchronization</strong></td>
+<td>✅ Implemented</td>
+<td>Sinks use <code>enableUpdateCatalog=True</code> and <code>updateBehavior="UPDATE_IN_DATABASE"</code></td>
+</tr>
+<tr>
+<td><strong>Scalable architecture</strong></td>
+<td>✅ Implemented</td>
+<td>Serverless Glue + S3 — no cluster provisioning required</td>
+</tr>
+<tr>
+<td><strong>Reproducible transforms</strong></td>
+<td>✅ Implemented</td>
+<td>Version-controlled PySpark scripts with explicit Spark SQL</td>
+</tr>
+<tr>
+<td><strong>Incremental loading</strong></td>
+<td>⏳ Batch full-refresh</td>
+<td>Current jobs process full datasets; incremental patterns are a planned improvement</td>
+</tr>
+<tr>
+<td><strong>Orchestration / scheduling</strong></td>
+<td>⏳ Manual triggers</td>
+<td>Jobs are designed for Glue Studio / scheduled triggers — not yet wired to Airflow</td>
+</tr>
+<tr>
+<td><strong>Idempotency</strong></td>
+<td>⏳ Partial</td>
+<td>Full overwrites per run; deduplication applied at customer curated layer</td>
+</tr>
+</tbody>
+</table>
+<p>A customer may agree to share data on day 30, but the app may have collected accelerometer readings from day 1. Without temporal filtering (<code>timestamp > shareWithResearchAsOfDate</code>), pre-consent data would leak into the trusted zone.</p>
+<p>This design also supports future consent revocation: if a customer withdraws consent, their <code>shareWithResearchAsOfDate</code> boundary remains auditable, and re-running the pipeline excludes post-revocation data that falls outside the original consent window.</p>
+<hr>
+<h2>Performance Considerations</h2>
+<p>The current implementation is optimized for <strong>correctness and governance</strong> on batch workloads. Below is how the architecture handles performance today and where I would invest next.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Current State</th>
+<th>Production Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parallel processing</strong></td>
+<td>PySpark on AWS Glue DPUs</td>
+<td>Glue auto-scales executors; tune worker type and DPU count based on JSON file volume</td>
+</tr>
+<tr>
+<td><strong>Partitioning</strong></td>
+<td>Not partitioned (<code>partitionKeys=[]</code>)</td>
+<td>Partition landing/trusted zones by <code>year/month/day</code> derived from <code>timestamp</code> to reduce scan costs</td>
+</tr>
+<tr>
+<td><strong>File format</strong></td>
+<td>JSON (human-readable, schema-flexible)</td>
+<td>Migrate curated outputs to <strong>Parquet</strong> or <strong>Iceberg</strong> for columnar compression and predicate pushdown</td>
+</tr>
+<tr>
+<td><strong>Join optimization</strong></td>
+<td>Spark SQL broadcast/hash joins</td>
+<td>Pre-filter smaller tables (<code>customer_curated</code>) before joining large sensor streams</td>
+</tr>
+<tr>
+<td><strong>Distribution keys</strong></td>
+<td>N/A (S3 lakehouse)</td>
+<td>If promoted to Redshift, distribute <code>machine_learning_curated</code> on <code>serialNumber</code></td>
+</tr>
+<tr>
+<td><strong>Sort keys</strong></td>
+<td>N/A (S3 lakehouse)</td>
+<td>If promoted to Redshift, sort on <code>timestamp</code> for time-range ML training queries</td>
+</tr>
+<tr>
+<td><strong>Query optimization</strong></td>
+<td>Athena over Glue Catalog</td>
+<td>Use partition projection and column pruning; consider materialized views for repeated aggregates</td>
+</tr>
+</tbody>
+</table>
+<p>The ML curated job joins two time-series tables on exact timestamp equality. At scale, I would:</p>
+<ol>
+<li>Repartition both DataFrames by <code>timestamp</code> before the join to reduce shuffle volume</li>
+<li>Apply a time-window tolerance if device clock skew exists (not needed in current synthetic data)</li>
+<li>Persist intermediate trusted tables in Parquet to avoid re-parsing JSON on every downstream job</li>
+</ol>
+<hr>
+<h2>Running Locally</h2>
+<p>This pipeline runs on <strong>AWS Glue</strong> in the cloud. There is no local Docker stack — deployment follows a standard AWS setup workflow.</p>
+<h3>Prerequisites</h3>
+<ul>
+<li>AWS account with permissions to create S3 buckets, Glue databases/tables, and run Glue jobs</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">AWS CLI</a> installed and configured</li>
+<li>An IAM user or role with <strong>S3</strong> and <strong>Glue</strong> access (I used a dedicated IAM user with <code>AmazonS3FullAccess</code> and Glue service permissions)</li>
+</ul>
+<h3>1. Configure AWS CLI</h3>
+<pre><code class="language-bash">aws configure
+# Enter your Access Key, Secret Key, and default region (e.g., us-east-1)
+</code></pre>
+<h3>2. Create an S3 Bucket</h3>
+<pre><code class="language-bash">aws s3 mb s3://&#x3C;your-bucket-name>
+</code></pre>
+<h3>3. Upload Landing Data</h3>
+<p>From the repository root:</p>
+<pre><code class="language-bash">aws s3 cp ./starter/customer/landing/       s3://&#x3C;your-bucket-name>/customer/landing/       --recursive
+aws s3 cp ./starter/accelerometer/landing/  s3://&#x3C;your-bucket-name>/accelerometer/landing/  --recursive
+aws s3 cp ./starter/step_trainer/landing/   s3://&#x3C;your-bucket-name>/step_trainer/landing/   --recursive
+</code></pre>
+<h3>4. Create Glue Data Catalog Tables</h3>
+<p>Run the DDL scripts in Athena or the Glue console. <strong>Update the <code>LOCATION</code> paths</strong> to point to your bucket:</p>
+<table>
+<thead>
+<tr>
+<th>DDL Script</th>
+<th>Table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="starter/customer/ddl/customer_landing.sql"><code>starter/customer/ddl/customer_landing.sql</code></a></td>
+<td><code>customer_landing</code></td>
+</tr>
+<tr>
+<td><a href="starter/accelerometer/ddl/accelerometer_landing.sql"><code>starter/accelerometer/ddl/accelerometer_landing.sql</code></a></td>
+<td><code>accelerometer_landing</code></td>
+</tr>
+<tr>
+<td><a href="starter/step_trainer/ddl/step_trainer_landing.sql"><code>starter/step_trainer/ddl/step_trainer_landing.sql</code></a></td>
+<td><code>step_trainer_landing</code></td>
+</tr>
+</tbody>
+</table>
+<h3>5. Deploy and Run Glue Jobs</h3>
+<ol>
+<li>Open <strong>AWS Glue Studio</strong> and create a visual ETL job for each script under <code>starter/*/scripts/</code></li>
+<li>Update S3 paths and catalog database/table names in each script to match your environment</li>
+<li>Execute jobs in dependency order:</li>
+</ol>
+<pre><code>customer_landing_to_trusted
+  → accelerometer_landing_to_trusted
+  → customer_trusted_to_curated
+  → step_trainer_landing_to_trusted
+  → step_trainer_trusted_to_machine_learning_curated
+</code></pre>
+<h3>6. Validate Output</h3>
+<p>Query tables in <strong>Amazon Athena</strong> or inspect outputs in the Glue Data Catalog:</p>
+<pre><code class="language-sql">SELECT COUNT(*) FROM machine_learning_curated;
+SELECT * FROM machine_learning_curated LIMIT 10;
+</code></pre>
+<hr>
+<h2>Future Improvements</h2>
+<p>Realistic next steps to harden this into a production-grade platform:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Improvement</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔴 High</td>
+<td><strong>CI/CD (GitHub Actions)</strong></td>
+<td>Lint, validate DDL, and deploy Glue jobs on merge to <code>main</code></td>
+</tr>
+<tr>
+<td>🔴 High</td>
+<td><strong>Infrastructure as Code (Terraform)</strong></td>
+<td>Reproducible S3 layout, IAM policies, Glue databases, and job definitions</td>
+</tr>
+<tr>
+<td>🔴 High</td>
+<td><strong>Data quality tests (Great Expectations / dbt tests)</strong></td>
+<td>Expand beyond <code>ColumnCount > 0</code> — enforce uniqueness, referential integrity, consent invariants</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td><strong>Apache Airflow / MWAA orchestration</strong></td>
+<td>DAG-based scheduling with dependency management and retry policies</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td><strong>Monitoring &#x26; observability</strong></td>
+<td>CloudWatch alarms on job failures, row-count anomaly detection, Slack/PagerDuty alerts</td>
+</tr>
+<tr>
+<td>🟡 Medium</td>
+<td><strong>OpenLineage + Data Contracts</strong></td>
+<td>End-to-end lineage from source systems to ML features; schema evolution governance</td>
+</tr>
+<tr>
+<td>🟢 Lower</td>
+<td><strong>Delta Lake / Apache Iceberg</strong></td>
+<td>ACID transactions, time travel, and incremental MERGE operations</td>
+</tr>
+<tr>
+<td>🟢 Lower</td>
+<td><strong>dbt on Athena/Spark</strong></td>
+<td>Modular, testable SQL transformations with documentation generation</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Lessons Learned</h2>
+<p><strong>1. Privacy must be encoded in the pipeline, not documented in a policy.</strong></p>
+<p>Filtering on <code>shareWithResearchAsOfDate IS NOT NULL</code> is necessary but insufficient. The temporal join condition (<code>timestamp > shareWithResearchAsOfDate</code>) is what prevents pre-consent data leakage. I learned to treat consent as a <strong>time-bounded predicate</strong>, not a static flag.</p>
+<p><strong>2. Medallion zones create clear ownership boundaries.</strong></p>
+<p>Separating Landing (raw), Trusted (consent-filtered), and Curated (ML-ready) made it straightforward to explain to stakeholders which datasets are safe for which use cases. The zone naming convention doubles as a data governance API.</p>
+<p><strong>3. JSON is great for landing, expensive for everything else.</strong></p>
+<p>JSON kept initial ingest simple, but repeated parsing across five jobs adds latency. In a production system, I would convert to Parquet at the Trusted boundary and never re-read JSON downstream.</p>
+<p><strong>4. Glue Studio accelerates prototyping; scripts belong in Git.</strong></p>
+<p>Visual workflows helped me iterate on join logic quickly, but the exported PySpark scripts in this repository are the source of truth. Keeping them version-controlled enables code review and CI integration.</p>
+<p><strong>5. Data quality checks should match business rules, not just schema checks.</strong></p>
+<p>The current <code>ColumnCount > 0</code> rule catches empty writes but not logical errors (e.g., orphaned serial numbers). Expanding rules to validate join cardinality and consent invariants would catch regressions earlier.</p>
+<hr>
+<h2>Repository Structure</h2>
+<pre><code>stedi-human-balance-analytics/
+├── README.md
+└── starter/
+    ├── README.md                          # S3 layout reference
+    ├── customer/
+    │   ├── ddl/
+    │   │   └── customer_landing.sql       # Glue catalog DDL
+    │   ├── landing/                       # Sample raw customer JSON
+    │   ├── scripts/
+    │   │   ├── customer_landing_to_trusted.py
+    │   │   └── customer_trusted_to_curated.py
+    │   └── screenshots/                   # Glue Studio &#x26; Athena outputs
+    ├── accelerometer/
+    │   ├── ddl/
+    │   │   └── accelerometer_landing.sql
+    │   ├── landing/                       # Sample raw accelerometer JSON
+    │   ├── scripts/
+    │   │   └── accelerometer_landing_to_trusted.py
+    │   └── screenshots/
+    └── step_trainer/
+        ├── ddl/
+        │   └── step_trainer_landing.sql
+        ├── landing/                       # Sample raw IoT sensor JSON
+        ├── scripts/
+        │   ├── step_trainer_landing_to_trusted.py
+        │   └── step_trainer_trusted_to_machine_learning_curated.py
+        └── screenshots/
+</code></pre>
+<hr>
+<h2>Screenshots</h2>
+<h3>Customer Pipeline</h3>
+<p><strong>Glue Studio — Customer Landing to Trusted</strong></p>
+<p><img src="starter/customer/screenshots/customer_trusted_glue.png" alt="Customer trusted Glue job"></p>
+<p><strong>Athena — customer_trusted sample data</strong></p>
+<p><img src="starter/customer/screenshots/customer_trusted.png" alt="Customer trusted data"></p>
+<p><strong>Row counts — customer_trusted</strong></p>
+<p><img src="starter/customer/screenshots/customer_trusted_count.png" alt="Customer trusted count"></p>
+<p><strong>Glue Studio — Customer Trusted to Curated</strong></p>
+<p><img src="starter/customer/screenshots/customer_curated_glue.png" alt="Customer curated Glue job"></p>
+<p><strong>Row counts — customer_curated</strong></p>
+<p><img src="starter/customer/screenshots/customer_curated_count.png" alt="Customer curated count"></p>
+<h3>Accelerometer Pipeline</h3>
+<p><strong>Glue Studio — Accelerometer Landing to Trusted</strong></p>
+<p><img src="starter/accelerometer/screenshots/accelerometer_trusted_glue.png" alt="Accelerometer trusted Glue job"></p>
+<p><strong>Athena — accelerometer_trusted sample data</strong></p>
+<p><img src="starter/accelerometer/screenshots/accelerometer_trusted.png" alt="Accelerometer trusted data"></p>
+<p><strong>Row counts — accelerometer_trusted</strong></p>
+<p><img src="starter/accelerometer/screenshots/accelerometer_trusted_count.png" alt="Accelerometer trusted count"></p>
+<h3>Step Trainer &#x26; ML Curated</h3>
+<p><strong>Glue Studio — Step Trainer to ML Curated</strong></p>
+<p><img src="starter/step_trainer/screenshots/machine_learning_curated_glue.png" alt="ML curated Glue job"></p>
+<p><strong>Athena — machine_learning_curated sample data</strong></p>
+<p><img src="starter/step_trainer/screenshots/machine_learning_curated.png" alt="ML curated data"></p>
+<p><strong>Row counts — machine_learning_curated</strong></p>
+<p><img src="starter/step_trainer/screenshots/machine_learning_curated_count.png" alt="ML curated count"></p>
+<hr>
+<h2>Why This Project Matters</h2>
+<p>This repository demonstrates end-to-end data engineering skills that translate directly to production IoT and consumer analytics platforms:</p>
+<table>
+<thead>
+<tr>
+<th>Skill Area</th>
+<th>Evidence in This Project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lakehouse architecture</strong></td>
+<td>Medallion zone design (Landing → Trusted → Curated) on S3</td>
+</tr>
+<tr>
+<td><strong>Privacy-by-design engineering</strong></td>
+<td>Consent-aware filtering with temporal predicates</td>
+</tr>
+<tr>
+<td><strong>Distributed data processing</strong></td>
+<td>PySpark SQL joins, filters, and deduplication at scale</td>
+</tr>
+<tr>
+<td><strong>Cloud-native ETL</strong></td>
+<td>AWS Glue jobs with Data Catalog integration and Data Quality</td>
+</tr>
+<tr>
+<td><strong>Cross-domain data integration</strong></td>
+<td>Joining customer, mobile, and IoT streams on shared keys</td>
+</tr>
+<tr>
+<td><strong>ML feature pipeline design</strong></td>
+<td>Producing a timestamp-aligned, wide feature table for model training</td>
+</tr>
+<tr>
+<td><strong>Infrastructure awareness</strong></td>
+<td>IAM, S3 layout conventions, DDL management, CLI-based deployment</td>
+</tr>
+<tr>
+<td><strong>Documentation &#x26; communication</strong></td>
+<td>Architecture diagrams, data model documentation, operational runbooks</td>
+</tr>
+</tbody>
+</table>
+<p>Building this pipeline taught me that the hardest part of IoT analytics is not the join logic — it is <strong>governing who and what data is allowed into the trusted zone</strong>. That mindset is what I bring to every data platform I design.</p>
+<hr>
+<p><strong>Built by <a href="https://github.com/Dna072">Dna072</a></strong></p>
+<p><em>If this project resonates with the kind of data engineering work you're hiring for, I'd love to connect.</em></p>
+1d:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$22"}}]]}]
+1f:["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}]
+20:["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Consent filters belong early in the pipeline, not at query time.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Consent filters belong early in the pipeline, not at query time."}]]}],["$","li","Glue Data Catalog + Athena makes lakehouse datasets discoverable.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Glue Data Catalog + Athena makes lakehouse datasets discoverable."}]]}],["$","li","Clear zone boundaries (landing/trusted/curated) improve governance.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Clear zone boundaries (landing/trusted/curated) improve governance."}]]}]]}]
+21:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/stedi-cover.svg",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/stedi-cover.svg","alt":"STEDI lakehouse architecture illustration","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

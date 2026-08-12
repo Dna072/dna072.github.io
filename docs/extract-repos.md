@@ -1,6 +1,6 @@
 # Project repositories
 
-The four media/video SaaS portfolio apps live in **separate GitHub repositories** (source is no longer mirrored under this site).
+The four media/video SaaS portfolio apps live in **separate GitHub repositories**.
 
 | Project | Repository |
 |---------|------------|
@@ -9,4 +9,4 @@ The four media/video SaaS portfolio apps live in **separate GitHub repositories*
 | StreamPulse | https://github.com/Dna072/streampulse |
 | RenderFlow | https://github.com/Dna072/renderflow |
 
-This GitHub Pages site (`dna072.github.io`) hosts the portfolio landing page and case studies that link to those repos.
+Case studies are rendered by this Next.js site under `/projects/<slug>/`.

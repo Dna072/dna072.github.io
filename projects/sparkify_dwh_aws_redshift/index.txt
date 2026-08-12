@@ -1,0 +1,1046 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","sparkify_dwh_aws_redshift",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","sparkify_dwh_aws_redshift","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","sparkify_dwh_aws_redshift","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"Sparkify Data Warehouse on AWS Redshift | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"S3 → Redshift ETL for music streaming analytics."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"Sparkify Data Warehouse on AWS Redshift"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"S3 → Redshift ETL for music streaming analytics."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","Amazon Redshift",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Amazon Redshift"}],["$","div","Amazon S3",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Amazon S3"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"SQL"}],["$","div","ETL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"ETL"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/sparkify_dwh_aws_redshift","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],null,["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]]}],["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/sparkify-cover.svg","alt":"sparkify_dwh_aws_redshift cover","className":"h-full w-full object-cover"}]}],"$L1a","$L1b","$L1c"]}]}]]
+1d:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 9, 2026"}]]}]]}]
+1b:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Sparkify needed a warehouse that turns song play logs and song metadata into an analytical star schema so the analytics team can answer product questions quickly."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Implemented an ETL pipeline that stages JSON data from S3 into Amazon Redshift, then loads fact and dimension tables optimized for song-play analytics."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","Amazon Redshift",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Amazon Redshift"}],["$","div","Amazon S3",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Amazon S3"}],["$","div","SQL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"SQL"}],["$","div","ETL",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"ETL"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Star schema centered on songplays fact table with dimensions for users, songs, artists, and time—supporting common analytics queries with clean joins."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1d",null,{"chart":"flowchart LR\n  S3[(Amazon S3 JSON logs)] --> ETL[Python ETL]\n  ETL --> STG[(Redshift Staging)]\n  STG --> DIM[(Dimension Tables)]\n  STG --> FACT[(Songplays Fact)]\n  FACT --> BI[Analytics Queries]\n  DIM --> BI"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1d",null,{"chart":"flowchart TD\n  a[Create tables] --> b[Copy song data to staging]\n  a --> c[Copy log data to staging]\n  b --> d[Load artists & songs dims]\n  c --> e[Load users & time dims]\n  d --> f[Load songplays fact]\n  e --> f\n  f --> g[Run analytical validation queries]"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}],["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Staging tables simplify debugging COPY failures from S3.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Staging tables simplify debugging COPY failures from S3."}]]}],["$","li","Careful distribution/sort key choices improve Redshift query performance.",{"className":"flex gap-2","children":["$L1e","$L1f"]}],"$L20"]}]]}],"$L21"]}]
+22:T8079,<h1>Enterprise Cloud Data Warehouse for Music Streaming Analytics</h1>
+<p><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&#x26;logoColor=white" alt="Python"></a>
+<a href="https://aws.amazon.com/redshift/"><img src="https://img.shields.io/badge/AWS-Redshift-232F3E?logo=amazon-aws&#x26;logoColor=white" alt="AWS Redshift"></a>
+<a href="https://aws.amazon.com/s3/"><img src="https://img.shields.io/badge/Amazon-S3-569A31?logo=amazon-s3&#x26;logoColor=white" alt="Amazon S3"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<a href="redshift_setup.py"><img src="https://img.shields.io/badge/IaC-boto3-blue" alt="Infrastructure as Code"></a></p>
+<p><strong>A production-oriented ETL pipeline that ingests music streaming event logs and song metadata from S3, stages them in Amazon Redshift, and transforms them into a star-schema analytics warehouse.</strong></p>
+<p><a href="#architecture">Architecture</a> · <a href="#data-model">Data Model</a> · <a href="#pipeline-workflow">Pipeline Workflow</a> · <a href="#running-locally">Running Locally</a> · <a href="#future-improvements">Future Improvements</a></p>
+<hr>
+<h2>Executive Summary</h2>
+<p>Music streaming platforms generate high-volume, semi-structured event data — page views, session activity, and playback events — alongside structured catalog metadata for songs and artists. Product, analytics, and growth teams need a reliable way to answer questions like <em>Which songs drive the most engagement?</em>, <em>Who are the most active listeners?</em>, and <em>How does listening behavior vary by geography and time of day?</em></p>
+<p>Raw JSON logs in object storage are not optimized for analytical workloads. Ad-hoc queries against S3 are slow, expensive, and difficult to govern. Organizations solve this by building <strong>ELT pipelines</strong> that land data in a columnar cloud data warehouse, apply dimensional modeling, and expose curated tables to BI tools and data scientists.</p>
+<p>This project implements that pattern end-to-end:</p>
+<table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Business Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Curated star-schema warehouse</strong></td>
+<td>Fast, predictable SQL for product and analytics teams</td>
+</tr>
+<tr>
+<td><strong>Automated S3 → Redshift ingestion</strong></td>
+<td>Eliminates manual data movement and reduces operational toil</td>
+</tr>
+<tr>
+<td><strong>Infrastructure provisioning via code</strong></td>
+<td>Repeatable cluster and IAM setup across environments</td>
+</tr>
+<tr>
+<td><strong>Distribution and sort key tuning</strong></td>
+<td>Query performance aligned with common analytical access patterns</td>
+</tr>
+</tbody>
+</table>
+<p>I designed and built this pipeline to demonstrate how I approach cloud data warehouse engineering: schema design driven by query patterns, infrastructure automation, and performance-conscious Redshift physical design.</p>
+<hr>
+<h2>Architecture</h2>
+<p>The pipeline follows a classic <strong>ELT</strong> pattern — extract and load raw data into staging tables, then transform in-database using SQL.</p>
+<pre><code class="language-mermaid">flowchart TB
+    subgraph Sources["Source Systems"]
+        LOGS["Event Logs&#x3C;br/>&#x3C;small>JSON · partitioned by year/month&#x3C;/small>"]
+        SONGS["Song Catalog&#x3C;br/>&#x3C;small>JSON · partitioned by track ID prefix&#x3C;/small>"]
+    end
+
+    subgraph AWS["AWS Cloud"]
+        S3[("Amazon S3&#x3C;br/>Object Storage")]
+        IAM["IAM Role&#x3C;br/>&#x3C;small>S3ReadOnlyAccess&#x3C;/small>"]
+        RS[("Amazon Redshift&#x3C;br/>Analytics Warehouse")]
+    end
+
+    subgraph Layers["Redshift Layers"]
+        STG["Staging Layer&#x3C;br/>&#x3C;small>staging_events · staging_songs&#x3C;/small>"]
+        DIM["Dimension Tables&#x3C;br/>&#x3C;small>users · songs · artists · time&#x3C;/small>"]
+        FACT["Fact Table&#x3C;br/>&#x3C;small>fact_songplays&#x3C;/small>"]
+    end
+
+    subgraph Consumption["Downstream"]
+        BI["BI / Reporting&#x3C;br/>&#x3C;small>SQL · pandas&#x3C;/small>"]
+    end
+
+    LOGS --> S3
+    SONGS --> S3
+    S3 -->|"COPY (parallel load)"| STG
+    IAM -.->|"authorizes"| S3
+    IAM -.->|"attached to cluster"| RS
+    STG -->|"INSERT … SELECT"| DIM
+    STG -->|"JOIN + filter"| FACT
+    DIM --> FACT
+    FACT --> BI
+    DIM --> BI
+
+    style Sources fill:#f0f4f8,stroke:#64748b
+    style AWS fill:#fff7ed,stroke:#ea580c
+    style Layers fill:#eff6ff,stroke:#2563eb
+    style Consumption fill:#f0fdf4,stroke:#16a34a
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Amazon S3</strong></td>
+<td>Durable landing zone for raw JSON event logs and song metadata</td>
+</tr>
+<tr>
+<td><strong>IAM Role</strong></td>
+<td>Grants Redshift secure, scoped read access to S3 without embedding credentials</td>
+</tr>
+<tr>
+<td><strong>Staging tables</strong></td>
+<td>Hold raw COPY-loaded data before transformation; isolate schema drift from analytics tables</td>
+</tr>
+<tr>
+<td><strong>Dimension tables</strong></td>
+<td>Conformed descriptors for users, songs, artists, and time</td>
+</tr>
+<tr>
+<td><strong>Fact table</strong></td>
+<td>Grain-level song play events with foreign keys to all dimensions</td>
+</tr>
+<tr>
+<td><strong>Python orchestration</strong></td>
+<td>Provisions infrastructure, creates schema, and executes the ETL workflow</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Technology Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language</strong></td>
+<td><img src="https://img.shields.io/badge/-Python-3776AB?logo=python&#x26;logoColor=white" alt="Python"> Python 3.8+</td>
+<td>ETL orchestration, infrastructure automation, query execution</td>
+</tr>
+<tr>
+<td><strong>Query Language</strong></td>
+<td><img src="https://img.shields.io/badge/-SQL-CC2927?logo=postgresql&#x26;logoColor=white" alt="SQL"> Redshift SQL</td>
+<td>DDL, COPY, and transformation logic</td>
+</tr>
+<tr>
+<td><strong>Data Warehouse</strong></td>
+<td><img src="https://img.shields.io/badge/-Redshift-232F3E?logo=amazon-aws&#x26;logoColor=white" alt="Redshift"> Amazon Redshift</td>
+<td>Columnar MPP analytics warehouse</td>
+</tr>
+<tr>
+<td><strong>Object Storage</strong></td>
+<td><img src="https://img.shields.io/badge/-S3-569A31?logo=amazon-s3&#x26;logoColor=white" alt="S3"> Amazon S3</td>
+<td>Raw JSON data lake</td>
+</tr>
+<tr>
+<td><strong>Cloud SDK</strong></td>
+<td><img src="https://img.shields.io/badge/-boto3-232F3E?logo=amazon-aws&#x26;logoColor=white" alt="boto3"> boto3 / botocore</td>
+<td>IAM role, Redshift cluster, EC2 security group management</td>
+</tr>
+<tr>
+<td><strong>Database Driver</strong></td>
+<td><img src="https://img.shields.io/badge/-psycopg2-336791?logo=postgresql&#x26;logoColor=white" alt="psycopg2"> psycopg2</td>
+<td>Redshift connectivity (PostgreSQL wire protocol)</td>
+</tr>
+<tr>
+<td><strong>Data Processing</strong></td>
+<td><img src="https://img.shields.io/badge/-pandas-150458?logo=pandas&#x26;logoColor=white" alt="pandas"> pandas</td>
+<td>Cluster property inspection and query result display</td>
+</tr>
+<tr>
+<td><strong>Configuration</strong></td>
+<td><code>configparser</code></td>
+<td>Environment-specific settings via <code>dwh.cfg</code></td>
+</tr>
+<tr>
+<td><strong>Identity &#x26; Access</strong></td>
+<td>AWS IAM</td>
+<td>Least-privilege S3 access for Redshift COPY operations</td>
+</tr>
+<tr>
+<td><strong>Data Format</strong></td>
+<td>JSON</td>
+<td>Semi-structured source files with Redshift JSONPath parsing</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> This project intentionally uses a lightweight Python stack. Orchestration tools like Airflow, transformation frameworks like dbt, and IaC tools like Terraform are natural extensions — see <a href="#future-improvements">Future Improvements</a>.</p>
+</blockquote>
+<hr>
+<h2>Data Model</h2>
+<p>I selected a <strong>star schema</strong> because the primary access pattern is analytical: aggregations and filters over song play events joined to descriptive dimensions. Star schemas minimize join complexity, align with BI tool expectations, and map cleanly to Redshift's MPP query planner.</p>
+<h3>Entity Relationship</h3>
+<pre><code class="language-mermaid">erDiagram
+    fact_songplays ||--o{ dim_users : "user_id"
+    fact_songplays ||--o{ dim_songs : "song_id"
+    fact_songplays ||--o{ dim_artists : "artist_id"
+    fact_songplays ||--o{ dim_times : "start_time"
+
+    fact_songplays {
+        int songplay_id PK
+        timestamp start_time SK
+        int user_id FK
+        varchar level
+        varchar song_id FK
+        varchar artist_id FK
+        int session_id
+        varchar location
+        varchar user_agent
+    }
+
+    dim_users {
+        int user_id PK
+        varchar first_name
+        varchar last_name
+        varchar gender
+        varchar level
+    }
+
+    dim_songs {
+        varchar song_id PK
+        varchar title SK
+        varchar artist_id FK
+        int year
+        numeric duration
+    }
+
+    dim_artists {
+        varchar artist_id PK
+        varchar artist_name SK
+        varchar artist_location
+        float latitude
+        float longitude
+    }
+
+    dim_times {
+        int time_id PK
+        timestamp start_time SK
+        int hour
+        int day
+        int week
+        int month
+        int year
+        int weekday
+    }
+</code></pre>
+<h3>Fact Table</h3>
+<p><strong><code>fact_songplays</code></strong> — one row per song play event (grain: individual playback).</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>songplay_id</code></td>
+<td>Surrogate key (<code>IDENTITY</code>)</td>
+</tr>
+<tr>
+<td><code>start_time</code></td>
+<td>Event timestamp — <strong>sort key</strong> for time-range queries</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>Listener reference</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td>Subscription tier at time of play (<code>free</code> / <code>paid</code>)</td>
+</tr>
+<tr>
+<td><code>song_id</code>, <code>artist_id</code></td>
+<td>Catalog references</td>
+</tr>
+<tr>
+<td><code>session_id</code></td>
+<td>Application session identifier</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>Listener metro area</td>
+</tr>
+<tr>
+<td><code>user_agent</code></td>
+<td>Client browser / device string</td>
+</tr>
+</tbody>
+</table>
+<p>Only events where <code>page = 'NextSong'</code> and <code>user_id IS NOT NULL</code> are loaded, ensuring the fact table captures confirmed playback actions.</p>
+<h3>Dimension Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+<th>Key Design Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>dim_users</code></strong></td>
+<td>Listener attributes (name, gender, subscription level)</td>
+<td><code>DISTSTYLE ALL</code> — small table replicated to every slice for co-located joins</td>
+</tr>
+<tr>
+<td><strong><code>dim_songs</code></strong></td>
+<td>Song metadata (title, year, duration)</td>
+<td><code>DISTKEY artist_id</code> — balanced distribution; <code>SORTKEY title</code> for title searches</td>
+</tr>
+<tr>
+<td><strong><code>dim_artists</code></strong></td>
+<td>Artist metadata including geolocation</td>
+<td><code>DISTSTYLE AUTO</code> — avoids manual skew on high-cardinality keys</td>
+</tr>
+<tr>
+<td><strong><code>dim_times</code></strong></td>
+<td>Timestamp decomposed into hour, day, week, month, year, weekday</td>
+<td><code>SORTKEY start_time</code> — accelerates time-based filtering and grouping</td>
+</tr>
+</tbody>
+</table>
+<h3>Staging Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Source</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>staging_events</code></strong></td>
+<td>S3 event logs</td>
+<td>Raw JSON parsed via JSONPath manifest</td>
+</tr>
+<tr>
+<td><strong><code>staging_songs</code></strong></td>
+<td>S3 song metadata</td>
+<td>Raw catalog records (<code>FORMAT AS JSON 'auto'</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Both use <code>DISTSTYLE EVEN</code> — they are transient load targets, not join-optimized analytics tables.</p>
+<h3>Why Star Schema?</h3>
+<table>
+<thead>
+<tr>
+<th>Alternative</th>
+<th>Tradeoff</th>
+<th>My Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Snowflake schema</strong></td>
+<td>Normalized dimensions reduce redundancy but increase join depth</td>
+<td>Rejected — dimension tables are small; denormalization cost is negligible</td>
+</tr>
+<tr>
+<td><strong>Wide denormalized table</strong></td>
+<td>Simple queries but massive redundancy and update anomalies</td>
+<td>Rejected — poor fit for evolving catalog metadata</td>
+</tr>
+<tr>
+<td><strong>Star schema</strong></td>
+<td>Fast aggregations, intuitive for analysts, Redshift-optimized</td>
+<td><strong>Selected</strong> — matches query patterns and team skill sets</td>
+</tr>
+</tbody>
+</table>
+<h3>Physical Design Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Diststyle</th>
+<th>Distkey</th>
+<th>Sortkey</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fact_songplays</code></td>
+<td>AUTO</td>
+<td>—</td>
+<td><code>start_time</code></td>
+</tr>
+<tr>
+<td><code>dim_users</code></td>
+<td>ALL</td>
+<td>—</td>
+<td><code>user_id</code></td>
+</tr>
+<tr>
+<td><code>dim_songs</code></td>
+<td>KEY</td>
+<td><code>artist_id</code></td>
+<td><code>title</code></td>
+</tr>
+<tr>
+<td><code>dim_artists</code></td>
+<td>AUTO</td>
+<td>—</td>
+<td><code>artist_name</code></td>
+</tr>
+<tr>
+<td><code>dim_times</code></td>
+<td>AUTO</td>
+<td>—</td>
+<td><code>start_time</code></td>
+</tr>
+<tr>
+<td><code>staging_events</code></td>
+<td>EVEN</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>staging_songs</code></td>
+<td>EVEN</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Pipeline Workflow</h2>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Dev as Operator
+    participant Setup as redshift_setup.py
+    participant AWS as AWS APIs
+    participant DDL as create_tables.py
+    participant ETL as etl.py
+    participant RS as Redshift
+
+    Dev->>Setup: python redshift_setup.py --create
+    Setup->>AWS: Create IAM role (S3ReadOnlyAccess)
+    Setup->>AWS: Create Redshift cluster
+    Setup->>AWS: Open security group port 5439
+    Setup->>RS: Test psycopg2 connection
+
+    Dev->>DDL: python create_tables.py
+    DDL->>RS: DROP existing tables (if any)
+    DDL->>RS: CREATE staging + dimension + fact tables
+
+    Dev->>ETL: python etl.py
+    ETL->>RS: COPY staging_events ← S3 log_data
+    ETL->>RS: COPY staging_songs ← S3 song_data
+    ETL->>RS: INSERT dim_users (deduplicated, latest record)
+    ETL->>RS: INSERT dim_songs
+    ETL->>RS: INSERT dim_artists (distinct)
+    ETL->>RS: INSERT dim_times (timestamp decomposition)
+    ETL->>RS: INSERT fact_songplays (staging join + filter)
+
+    Dev->>RS: python example_queries.py
+    RS-->>Dev: Analytics results + query timings
+</code></pre>
+<h3>Stage 1 — Infrastructure Provisioning</h3>
+<p><code>redshift_setup.py</code> automates the AWS footprint:</p>
+<ol>
+<li><strong>IAM role</strong> — created (or retrieved) with <code>AmazonS3ReadOnlyAccess</code>, trusted by <code>redshift.amazonaws.com</code></li>
+<li><strong>Redshift cluster</strong> — provisioned with configurable node type, node count, and attached IAM role</li>
+<li><strong>Network access</strong> — security group ingress opened on port <code>5439</code></li>
+<li><strong>Health check</strong> — connection validated via <code>psycopg2</code></li>
+</ol>
+<pre><code class="language-bash">python redshift_setup.py --create   # Provision cluster
+python redshift_setup.py --test     # Verify connectivity
+python redshift_setup.py --delete   # Tear down cluster
+</code></pre>
+<h3>Stage 2 — Schema Initialization</h3>
+<p><code>create_tables.py</code> performs an <strong>idempotent full reset</strong> of the warehouse schema:</p>
+<ol>
+<li>Drop all staging and analytics tables (if they exist)</li>
+<li>Create tables in dependency order: dimensions first, then the fact table</li>
+</ol>
+<p>All DDL lives in <code>sql_queries.py</code> as parameterized query strings — a single source of truth for schema and ETL logic.</p>
+<h3>Stage 3 — Extract &#x26; Load (Staging)</h3>
+<p><code>etl.py</code> executes parallel S3 COPY commands:</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>S3 Source</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>staging_events</code></td>
+<td><code>s3://…/log_data</code></td>
+<td>JSON with explicit JSONPath manifest</td>
+</tr>
+<tr>
+<td><code>staging_songs</code></td>
+<td><code>s3://…/song_data</code></td>
+<td>JSON auto-detection</td>
+</tr>
+</tbody>
+</table>
+<p>Redshift's COPY command leverages the cluster's MPP architecture to load data in parallel directly from S3.</p>
+<h3>Stage 4 — Transform (Analytics Tables)</h3>
+<p>SQL <code>INSERT … SELECT</code> statements populate the star schema:</p>
+<ul>
+<li><strong><code>dim_users</code></strong> — <code>DISTINCT</code> on <code>user_id</code>, ordered by <code>ts DESC</code> to retain the most recent user attributes</li>
+<li><strong><code>dim_songs</code></strong> / <strong><code>dim_artists</code></strong> — loaded from song metadata staging</li>
+<li><strong><code>dim_times</code></strong> — timestamps converted from epoch milliseconds and decomposed with <code>EXTRACT</code></li>
+<li><strong><code>fact_songplays</code></strong> — inner join of <code>staging_events</code> and <code>staging_songs</code> on song title + artist name, filtered to <code>NextSong</code> page events</li>
+</ul>
+<h3>Stage 5 — Validation &#x26; Analytics</h3>
+<ul>
+<li><strong><code>stl_load_errors.py</code></strong> — inspects Redshift's <code>stl_load_errors</code> system table for COPY failures</li>
+<li><strong><code>example_queries.py</code></strong> — runs five analytical queries with execution timing</li>
+</ul>
+<hr>
+<h2>Features</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Implementation</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Infrastructure as Code</strong></td>
+<td><code>redshift_setup.py</code> via boto3</td>
+<td>Programmatic IAM role + cluster lifecycle</td>
+</tr>
+<tr>
+<td><strong>Staging layer pattern</strong></td>
+<td><code>staging_events</code>, <code>staging_songs</code></td>
+<td>Isolates raw ingestion from curated analytics</td>
+</tr>
+<tr>
+<td><strong>Star-schema modeling</strong></td>
+<td>1 fact + 4 dimensions</td>
+<td>Optimized for aggregation-heavy workloads</td>
+</tr>
+<tr>
+<td><strong>Parallel S3 loading</strong></td>
+<td>Redshift <code>COPY</code></td>
+<td>MPP-native bulk ingest</td>
+</tr>
+<tr>
+<td><strong>Idempotent schema setup</strong></td>
+<td>Drop-then-create in <code>create_tables.py</code></td>
+<td>Safe re-runs for development</td>
+</tr>
+<tr>
+<td><strong>Full reload ETL</strong></td>
+<td>Truncate-via-drop + re-insert</td>
+<td>Appropriate for batch MVP; incremental loading is a future enhancement</td>
+</tr>
+<tr>
+<td><strong>Load error diagnostics</strong></td>
+<td><code>stl_load_errors.py</code></td>
+<td>Surfaces COPY failures from system tables</td>
+</tr>
+<tr>
+<td><strong>Query benchmarking</strong></td>
+<td>Timed queries in <code>example_queries.py</code></td>
+<td>Validates sort key and distribution choices</td>
+</tr>
+<tr>
+<td><strong>Configuration management</strong></td>
+<td><code>dwh.cfg</code> (gitignored)</td>
+<td>Separates secrets from source code</td>
+</tr>
+<tr>
+<td><strong>Error handling</strong></td>
+<td>Try/except in setup and query scripts</td>
+<td>Graceful failure with actionable console output</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Incremental / CDC loading</li>
+<li>Workflow scheduling (cron, Airflow)</li>
+<li>Automated data quality test suites</li>
+<li>CI/CD pipelines</li>
+<li>Secrets management (AWS Secrets Manager / Parameter Store)</li>
+</ul>
+<p>These are documented as <a href="#future-improvements">Future Improvements</a>.</p>
+<hr>
+<h2>Performance Considerations</h2>
+<p>Redshift performance depends on how data is physically laid out across nodes (slices). I made deliberate choices for each table class:</p>
+<h3>Distribution Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Applied To</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DISTSTYLE ALL</strong></td>
+<td><code>dim_users</code></td>
+<td>Small dimension replicated on every slice — eliminates redistribution during fact joins</td>
+</tr>
+<tr>
+<td><strong>DISTKEY</strong></td>
+<td><code>dim_songs</code> (<code>artist_id</code>)</td>
+<td>Co-locates songs with their artists; relatively balanced cardinality</td>
+</tr>
+<tr>
+<td><strong>DISTSTYLE AUTO</strong></td>
+<td><code>fact_songplays</code>, <code>dim_artists</code>, <code>dim_times</code></td>
+<td>Delegates to Redshift's optimizer to avoid manual skew</td>
+</tr>
+<tr>
+<td><strong>DISTSTYLE EVEN</strong></td>
+<td>Staging tables</td>
+<td>Simple round-robin for transient data not involved in complex joins</td>
+</tr>
+</tbody>
+</table>
+<h3>Sort Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Sort Key</th>
+<th>Query Pattern Served</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fact_songplays</code></td>
+<td><code>start_time</code></td>
+<td>Time-range filters, chronological ordering</td>
+</tr>
+<tr>
+<td><code>dim_songs</code></td>
+<td><code>title</code></td>
+<td>Song title lookups and pattern searches</td>
+</tr>
+<tr>
+<td><code>dim_artists</code></td>
+<td><code>artist_name</code></td>
+<td>Artist name ordering and filtering</td>
+</tr>
+<tr>
+<td><code>dim_times</code></td>
+<td><code>start_time</code></td>
+<td>Time dimension joins and temporal grouping</td>
+</tr>
+<tr>
+<td><code>dim_users</code></td>
+<td><code>user_id</code></td>
+<td>Point lookups by user</td>
+</tr>
+</tbody>
+</table>
+<h3>Parallel Processing</h3>
+<ul>
+<li><strong>COPY from S3</strong> — Redshift automatically parallelizes loads across slices, one file per slice where possible</li>
+<li><strong>MPP query execution</strong> — aggregation queries in <code>example_queries.py</code> benefit from zone-map pruning on sort keys after the first scan</li>
+</ul>
+<h3>Observed Query Performance</h3>
+<p>Sample results from a 4-node <code>ra3.large</code> cluster (first-run timings; subsequent queries benefit from cache):</p>
+<table>
+<thead>
+<tr>
+<th>Query</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top 10 locations by song plays</td>
+<td>~0.3s</td>
+</tr>
+<tr>
+<td>Most popular artists</td>
+<td>~5.5s</td>
+</tr>
+<tr>
+<td>Top 10 most played songs</td>
+<td>~6.4s</td>
+</tr>
+<tr>
+<td>Song plays by weekday</td>
+<td>~6.7s</td>
+</tr>
+<tr>
+<td>Top 10 most active users</td>
+<td>~7.4s</td>
+</tr>
+</tbody>
+</table>
+<p>Location aggregations on <code>fact_songplays</code> are fastest because they avoid multi-table joins. Dimensional joins pay a one-time compilation and cache-warming cost on first execution.</p>
+<hr>
+<h2>Running Locally</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li>Python 3.8+</li>
+<li>AWS account with permissions for IAM, Redshift, EC2 (security groups), and S3 read access</li>
+<li>Sample datasets accessible from your Redshift cluster's IAM role (public JSON logs and song metadata in S3)</li>
+</ul>
+<h3>1. Clone and install dependencies</h3>
+<pre><code class="language-bash">git clone https://github.com/&#x3C;your-username>/music-streaming-data-warehouse.git
+cd music-streaming-data-warehouse
+
+pip install -r requirements.txt
+</code></pre>
+<h3>2. Configure credentials</h3>
+<p>Copy the example config and fill in your values:</p>
+<pre><code class="language-bash">cp dwh.cfg.example dwh.cfg
+</code></pre>
+<pre><code class="language-ini">[AWS]
+KEY=&#x3C;your-aws-access-key-id>
+SECRET=&#x3C;your-aws-secret-access-key>
+
+[DWH]
+HOST=                          # Populated after cluster creation
+DB_NAME=dev
+DB_USER=awsuser
+DB_PASSWORD=&#x3C;strong-password>
+DB_PORT=5439
+DWH_CLUSTER_TYPE=single-node  # or multi-node
+DWH_NUM_NODES=1
+DWH_NODE_TYPE=ra3.large
+DWH_IAM_ROLE_NAME=dwhRole
+DWH_CLUSTER_IDENTIFIER=dwhCluster
+
+[IAM_ROLE]
+ARN=                           # Populated after IAM role creation
+</code></pre>
+<blockquote>
+<p><strong>Security:</strong> <code>dwh.cfg</code> is gitignored. Never commit credentials to version control.</p>
+</blockquote>
+<h3>3. Provision infrastructure</h3>
+<pre><code class="language-bash">python redshift_setup.py --create
+</code></pre>
+<p>Copy the printed <strong>IAM Role ARN</strong> and <strong>Cluster endpoint</strong> into <code>dwh.cfg</code>, then verify connectivity:</p>
+<pre><code class="language-bash">python redshift_setup.py --test
+</code></pre>
+<h3>4. Create schema</h3>
+<pre><code class="language-bash">python create_tables.py
+</code></pre>
+<h3>5. Run the ETL pipeline</h3>
+<pre><code class="language-bash">python etl.py
+</code></pre>
+<p>Expected output:</p>
+<pre><code>⏳ Loading staging tables...
+⏳ Loading analytical tables...
+✅ Done loading tables!
+</code></pre>
+<h3>6. Validate and explore</h3>
+<pre><code class="language-bash"># Check for COPY errors
+python stl_load_errors.py
+
+# Run analytical queries with timing
+python example_queries.py
+</code></pre>
+<h3>7. Tear down (avoid ongoing AWS charges)</h3>
+<pre><code class="language-bash">python redshift_setup.py --delete
+</code></pre>
+<hr>
+<h2>Future Improvements</h2>
+<p>This repository is a functional MVP. The following enhancements would move it toward a production-grade platform:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Enhancement</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Orchestration</strong></td>
+<td><a href="https://airflow.apache.org/">Apache Airflow</a> or AWS Step Functions</td>
+<td>Scheduled, monitored, retryable pipeline runs</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td><a href="https://www.terraform.io/">Terraform</a> / AWS CDK</td>
+<td>Declarative, reviewable, multi-environment IaC</td>
+</tr>
+<tr>
+<td><strong>Transformations</strong></td>
+<td><a href="https://www.getdbt.com/">dbt</a></td>
+<td>Version-controlled SQL models, documentation, lineage</td>
+</tr>
+<tr>
+<td><strong>Data Quality</strong></td>
+<td><a href="https://greatexpectations.io/">Great Expectations</a></td>
+<td>Automated schema and statistical validation</td>
+</tr>
+<tr>
+<td><strong>Lineage</strong></td>
+<td><a href="https://openlineage.io/">OpenLineage</a></td>
+<td>End-to-end data lineage for debugging and compliance</td>
+</tr>
+<tr>
+<td><strong>Contracts</strong></td>
+<td>Data Contracts</td>
+<td>Explicit SLAs between producers and consumers</td>
+</tr>
+<tr>
+<td><strong>CI/CD</strong></td>
+<td>GitHub Actions</td>
+<td>Lint, test, and validate SQL on every pull request</td>
+</tr>
+<tr>
+<td><strong>Incremental Loading</strong></td>
+<td>Merge / upsert on <code>songplay_id</code></td>
+<td>Reduce load times and warehouse churn</td>
+</tr>
+<tr>
+<td><strong>Monitoring</strong></td>
+<td>CloudWatch + Redshift system tables</td>
+<td>Alerting on load failures, disk usage, query latency</td>
+</tr>
+<tr>
+<td><strong>Observability</strong></td>
+<td>Structured logging (JSON) + correlation IDs</td>
+<td>Traceable pipeline runs across services</td>
+</tr>
+<tr>
+<td><strong>Secrets</strong></td>
+<td>AWS Secrets Manager</td>
+<td>Eliminate plaintext credentials in config files</td>
+</tr>
+<tr>
+<td><strong>Containerization</strong></td>
+<td>Docker</td>
+<td>Reproducible local and CI environments</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Lessons Learned</h2>
+<h3>Staging before transforming</h3>
+<p>Loading raw JSON into staging tables before applying business logic was the right call. When a COPY failed due to JSONPath mismatches, I could inspect <code>staging_events</code> column metadata and <code>stl_load_errors</code> without corrupting analytics tables.</p>
+<h3>Distribution key selection requires data profiling</h3>
+<p>I initially considered distributing <code>fact_songplays</code> on <code>user_id</code>, but high-cardinality keys with skewed access patterns can create hot slices. I chose <code>DISTSTYLE AUTO</code> for the fact table and <code>DISTKEY artist_id</code> for songs after analyzing cardinality — letting Redshift optimize where manual tuning had unclear benefit.</p>
+<h3>Join logic is the highest-risk transformation</h3>
+<p>Linking event logs to song metadata via <code>(song title, artist name)</code> works for this dataset but is fragile in production. A production pipeline would join on stable surrogate keys (<code>song_id</code>) emitted by the application at event time.</p>
+<h3>Full reloads are fine until they aren't</h3>
+<p>Drop-and-reload simplifies development and guarantees consistency. At scale, I would introduce incremental loads keyed on event timestamp with merge semantics and late-arriving data handling.</p>
+<h3>Infrastructure automation saves hours</h3>
+<p>Provisioning a Redshift cluster, IAM role, and security group manually is error-prone. Codifying it in <code>redshift_setup.py</code> made teardown and re-creation repeatable — a pattern I'd extend with Terraform for team use.</p>
+<hr>
+<h2>Repository Structure</h2>
+<pre><code>.
+├── README.md                 # Project documentation
+├── requirements.txt          # Python dependencies
+├── dwh.cfg.example           # Configuration template (copy to dwh.cfg)
+├── sql_queries.py            # All DDL, COPY, and INSERT statements
+├── redshift_setup.py         # AWS infrastructure provisioning (IAM, cluster, networking)
+├── create_tables.py          # Drop and create warehouse schema
+├── etl.py                    # Staging COPY + analytics INSERT orchestration
+├── example_queries.py        # Sample analytical queries with timing
+├── stl_load_errors.py        # COPY error diagnostics utility
+└── images/
+    └── schema_design.svg     # Star schema visual diagram
+</code></pre>
+<hr>
+<h2>Screenshots</h2>
+<h3>Star Schema Design</h3>
+<p><img src="images/schema_design.svg" alt="Star schema diagram showing fact_songplays connected to dim_users, dim_songs, dim_artists, and dim_times"></p>
+<h3>Sample Analytics Output</h3>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th>Play Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You're The One</td>
+<td>37</td>
+</tr>
+<tr>
+<td>I CAN'T GET STARTED</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Catch You Baby (Steve Pitron &#x26; Max Sanna Radio Edit)</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Nothin' On You [feat. Bruno Mars] (Album Version)</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Hey Daddy (Daddy's Home)</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>User ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Play Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>49</td>
+<td>Chloe</td>
+<td>Cuevas</td>
+<td>42</td>
+</tr>
+<tr>
+<td>97</td>
+<td>Kate</td>
+<td>Harrell</td>
+<td>32</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Tegan</td>
+<td>Levine</td>
+<td>31</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Aleena</td>
+<td>Kirby</td>
+<td>21</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Jacob</td>
+<td>Klein</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Play Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>San Francisco-Oakland-Hayward, CA</td>
+<td>42</td>
+</tr>
+<tr>
+<td>Lansing-East Lansing, MI</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Portland-South Portland, ME</td>
+<td>31</td>
+</tr>
+<tr>
+<td>Waterloo-Cedar Falls, IA</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Tampa-St. Petersburg-Clearwater, FL</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Why This Project Matters</h2>
+<p>This project demonstrates end-to-end <strong>cloud data warehouse engineering</strong> — not just SQL, but the full lifecycle of getting analytics-ready data into production:</p>
+<table>
+<thead>
+<tr>
+<th>Skill Area</th>
+<th>Evidence in This Repo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dimensional modeling</strong></td>
+<td>Star schema with conformed dimensions and a clearly defined fact grain</td>
+</tr>
+<tr>
+<td><strong>Cloud platform fluency</strong></td>
+<td>S3, IAM, Redshift cluster management via boto3</td>
+</tr>
+<tr>
+<td><strong>ETL / ELT design</strong></td>
+<td>Staging layer, COPY-based load, SQL-driven transformation</td>
+</tr>
+<tr>
+<td><strong>Performance engineering</strong></td>
+<td>Distribution styles, sort keys, and query timing validation</td>
+</tr>
+<tr>
+<td><strong>Infrastructure as Code</strong></td>
+<td>Programmatic provisioning and teardown of AWS resources</td>
+</tr>
+<tr>
+<td><strong>Operational awareness</strong></td>
+<td>Load error inspection, connection testing, cost-conscious teardown</td>
+</tr>
+<tr>
+<td><strong>Software engineering</strong></td>
+<td>Modular query definitions, configuration separation, documented scripts</td>
+</tr>
+</tbody>
+</table>
+<p>For hiring managers and recruiters: this is representative of the work I do on analytics platform teams — translating raw product telemetry into governed, queryable datasets that unlock business decisions.</p>
+<hr>
+<p><strong>Built with purpose. Designed for scale.</strong></p>
+<p>If this project resonates with the kind of data engineering work you're hiring for, I'd welcome a conversation.</p>
+1c:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$22"}}]]}]
+1e:["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}]
+1f:["$","span",null,{"children":"Careful distribution/sort key choices improve Redshift query performance."}]
+20:["$","li","Fact/dimension separation keeps analytics SQL readable and trustworthy.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Fact/dimension separation keeps analytics SQL readable and trustworthy."}]]}]
+21:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/sparkify-cover.svg",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/sparkify-cover.svg","alt":"Sparkify Redshift warehouse illustration","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

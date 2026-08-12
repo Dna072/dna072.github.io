@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1a12"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="none" stroke="#1DB954" stroke-width="3" opacity="0.9">
+    <rect x="140" y="180" width="180" height="90" rx="16"/>
+    <rect x="510" y="180" width="180" height="90" rx="16"/>
+    <rect x="880" y="180" width="180" height="90" rx="16"/>
+    <rect x="320" y="400" width="180" height="90" rx="16"/>
+    <rect x="700" y="400" width="180" height="90" rx="16"/>
+    <path d="M320 225H510M690 225H880M230 270V360H410V400M600 270V360H790V400"/>
+  </g>
+  <text x="140" y="120" fill="#f4f4f5" font-family="ui-sans-serif,system-ui" font-size="42" font-weight="700">Airflow Pipelines</text>
+  <text x="140" y="165" fill="#a1a1aa" font-family="ui-sans-serif,system-ui" font-size="22">Orchestrated ETL with clear dependencies</text>
+</svg>

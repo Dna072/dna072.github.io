@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="100%" stop-color="#121815"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="180" fill="#1DB954" opacity="0.18"/>
+  <text x="80" y="220" fill="#1DB954" font-family="ui-sans-serif,system-ui" font-size="28" font-weight="600">DATA ENGINEER · ANALYTICS ENGINEER · FULL-STACK</text>
+  <text x="80" y="310" fill="#f4f4f5" font-family="ui-sans-serif,system-ui" font-size="72" font-weight="700">Derrick Adjei</text>
+  <text x="80" y="380" fill="#a1a1aa" font-family="ui-sans-serif,system-ui" font-size="30">Building scalable data platforms that transform</text>
+  <text x="80" y="425" fill="#a1a1aa" font-family="ui-sans-serif,system-ui" font-size="30">complex data into trusted analytics.</text>
+  <text x="80" y="520" fill="#d4d4d8" font-family="ui-sans-serif,system-ui" font-size="22">Stockholm, Sweden · dna072.github.io/Portfolio</text>
+</svg>

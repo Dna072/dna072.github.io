@@ -1,0 +1,859 @@
+1:"$Sreact.fragment"
+3:I[9766,[],""]
+4:I[98924,[],""]
+6:I[24431,[],"OutletBoundary"]
+8:I[15278,[],"AsyncMetadataOutlet"]
+a:I[24431,[],"ViewportBoundary"]
+c:I[24431,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[57150,[],""]
+:HL["/_next/static/media/4c9affa5bc8f420e-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/98e207f02528a563-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/d3ebbfd689654d3a-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/3127d3699d777a06.css","style"]
+0:{"P":null,"b":"m1ECtZFBj3Raseax-t5Ea","p":"","c":["","projects","drl-jss",""],"i":false,"f":[[["",{"children":["projects",{"children":[["slug","drl-jss","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/3127d3699d777a06.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["projects",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","drl-jss","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","media":"(prefers-color-scheme: dark)","content":"#09090b"}],["$","meta","3",{"name":"theme-color","media":"(prefers-color-scheme: light)","content":"#fafafa"}]]
+7:null
+10:I[1715,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"ThemeProvider"]
+12:I[90379,["2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","4909","static/chunks/4909-1f5c586e3e84e0a5.js","478","static/chunks/478-9a67ad52007bf98d.js","6845","static/chunks/6845-bc64a83686d86a37.js","7177","static/chunks/app/layout-da3148749846421a.js"],"AppShell"]
+11:T813,{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://dna072.github.io/#person","name":"Derrick Adjei","url":"https://dna072.github.io","image":"https://dna072.github.io/images/headshot.png","jobTitle":"Full-Stack Engineer · Data Engineer","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","email":"derrick.adjei.eng@gmail.com","telephone":"+46-76-251-7998","address":{"@type":"PostalAddress","addressLocality":"Stockholm","addressCountry":"SE"},"sameAs":["https://github.com/Dna072","https://www.linkedin.com/in/derrick-adjei-5421289a/","https://dna072.github.io"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"Uppsala University"},{"@type":"CollegeOrUniversity","name":"University of Ghana"}],"worksFor":[{"@type":"Organization","name":"KPMG Sweden"}],"knowsAbout":["Data Engineering","Analytics Engineering","Backend Development","Frontend Development","TypeScript","JavaScript","React","Vite","Node.js","Next.js","Reinforcement Learning","Deep Reinforcement Learning","Apache Airflow","Amazon Redshift","AWS Glue","Python","SQL","Microsoft Power Platform","Power BI"]},{"@type":"WebSite","@id":"https://dna072.github.io/#website","name":"Derrick Adjei","url":"https://dna072.github.io","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","inLanguage":"en","publisher":{"@id":"https://dna072.github.io/#person"}},{"@type":"ProfilePage","@id":"https://dna072.github.io/#profile","url":"https://dna072.github.io","name":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm","description":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.","mainEntity":{"@id":"https://dna072.github.io/#person"},"isPartOf":{"@id":"https://dna072.github.io/#website"}}]}2:["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"any"}],["$","link",null,{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","type":"image/png","sizes":"32x32"}],["$","link",null,{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}]]}],["$","body",null,{"className":"__variable_73ee6c __variable_46fe82 antialiased","children":["$","$L10",null,{"attribute":"class","defaultTheme":"dark","enableSystem":true,"disableTransitionOnChange":true,"children":[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$11"}}],["$","$L12",null,{"projects":[{"name":"clipforge","href":"/projects/clipforge/"},{"name":"mediavault","href":"/projects/mediavault/"},{"name":"streampulse","href":"/projects/streampulse/"},{"name":"renderflow","href":"/projects/renderflow/"},{"name":"drl-jss","href":"/projects/drl-jss/"},{"name":"airflow-pipelines","href":"/projects/airflow-pipelines/"},{"name":"sparkify_dwh_aws_redshift","href":"/projects/sparkify_dwh_aws_redshift/"},{"name":"stedi-human-balance-analytics","href":"/projects/stedi-human-balance-analytics/"}],"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto flex min-h-[60vh] max-w-xl flex-col items-center justify-center px-4 text-center","children":["$L13","$L14","$L15","$L16"]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]}]]}]
+17:I[52619,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],""]
+13:["$","p",null,{"className":"text-sm font-medium text-brand","children":"404"}]
+14:["$","h1",null,{"className":"mt-2 text-3xl font-semibold tracking-tight","children":"Page not found"}]
+15:["$","p",null,{"className":"mt-3 text-muted","children":"The page you're looking for doesn't exist or was moved."}]
+16:["$","$L17",null,{"href":"/","children":"Back home","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2 mt-8","ref":null}]
+18:I[80622,[],"IconMark"]
+9:{"metadata":[["$","title","0",{"children":"Deep RL for Job Shop Scheduling | Derrick Adjei"}],["$","meta","1",{"name":"description","content":"Master's thesis: applying deep reinforcement learning to combinatorial scheduling."}],["$","link","2",{"rel":"author","href":"https://dna072.github.io"}],["$","meta","3",{"name":"author","content":"Derrick Adjei"}],["$","meta","4",{"name":"keywords","content":"Derrick Adjei,Derrick Adjei Data Engineer,Data Engineer Stockholm,Analytics Engineer Stockholm,Data Engineer Sweden,Full-Stack Engineer Stockholm,Apache Airflow,Amazon Redshift,AWS Glue,AWS Data Engineer,ETL pipelines,ELT pipelines,Data warehousing,Lakehouse,Power Platform,Power BI,Python,SQL,React,TypeScript,Next.js,Uppsala University,Portfolio"}],["$","meta","5",{"name":"creator","content":"Derrick Adjei"}],["$","meta","6",{"name":"publisher","content":"Derrick Adjei"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"category","content":"technology"}],["$","link","10",{"rel":"canonical","href":"https://dna072.github.io/"}],["$","meta","11",{"property":"og:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","12",{"property":"og:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","13",{"property":"og:url","content":"https://dna072.github.io/"}],["$","meta","14",{"property":"og:site_name","content":"Derrick Adjei"}],["$","meta","15",{"property":"og:locale","content":"en_US"}],["$","meta","16",{"property":"og:image","content":"https://dna072.github.io/og.png"}],["$","meta","17",{"property":"og:image:width","content":"1200"}],["$","meta","18",{"property":"og:image:height","content":"630"}],["$","meta","19",{"property":"og:image:alt","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","20",{"property":"og:type","content":"website"}],["$","meta","21",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","22",{"name":"twitter:creator","content":"@dna072"}],["$","meta","23",{"name":"twitter:title","content":"Derrick Adjei | Full-Stack & Data Engineer in Stockholm"}],["$","meta","24",{"name":"twitter:description","content":"Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms."}],["$","meta","25",{"name":"twitter:image","content":"https://dna072.github.io/og.png"}],["$","link","26",{"rel":"shortcut icon","href":"https://dna072.github.io/favicon.ico?v=4"}],["$","link","27",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","28",{"rel":"icon","href":"https://dna072.github.io/favicon.ico?v=4","sizes":"16x16 32x32 48x48","type":"image/x-icon"}],["$","link","29",{"rel":"icon","href":"https://dna072.github.io/favicon-32.png?v=4","sizes":"32x32","type":"image/png"}],["$","link","30",{"rel":"icon","href":"https://dna072.github.io/favicon.svg?v=4","type":"image/svg+xml"}],["$","link","31",{"rel":"apple-touch-icon","href":"https://dna072.github.io/apple-touch-icon.png?v=4","sizes":"180x180"}],["$","$L18","32",{}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+19:I[71778,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"ReadingProgress"]
+5:[["$","$L19",null,{"targetId":"project-article"}],["$","article",null,{"id":"project-article","className":"px-4 py-16 sm:px-6","children":["$","div",null,{"className":"mx-auto max-w-4xl","children":[["$","p",null,{"className":"text-sm font-medium text-brand","children":"Project case study"}],["$","h1",null,{"className":"mt-2 text-4xl font-semibold tracking-tight","children":"Deep RL for Job Shop Scheduling"}],["$","p",null,{"className":"mt-3 text-lg text-muted","children":"Master's thesis: applying deep reinforcement learning to combinatorial scheduling."}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-2","children":[["$","div",null,{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Python"}],["$","div","Deep Reinforcement Learning",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Deep Reinforcement Learning"}],["$","div","PyTorch / RL libraries",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"PyTorch / RL libraries"}],["$","div","Simulation environments",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-white/10 bg-white/5 text-foreground/80","children":"Simulation environments"}]]]}],["$","div",null,{"className":"mt-6 flex flex-wrap gap-3","children":[["$","a",null,{"href":"https://github.com/Dna072/drl-jss","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-github h-4 w-4","aria-hidden":"true","children":[["$","path","tonef",{"d":"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"}],["$","path","9comsn",{"d":"M9 18c-4.51 2-5-2-7-2"}],"$undefined"]}]," Repository"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-brand text-black hover:bg-brand-hover shadow-[0_0_0_1px_rgba(29,185,84,0.25)] h-11 px-5 py-2","ref":null}],["$","a",null,{"href":"https://github.com/Dna072/drl-jss","target":"_blank","rel":"noreferrer","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-external-link h-4 w-4","aria-hidden":"true","children":[["$","path","1q9fwt",{"d":"M15 3h6v6"}],["$","path","gplh6r",{"d":"M10 14 21 3"}],["$","path","a6xqqp",{"d":"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"}],"$undefined"]}]," Live Demo"],"className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 bg-white/5 text-foreground border border-white/10 hover:bg-white/10 h-11 px-5 py-2","ref":null}],"$L1a"]}],"$L1b","$L1c","$L1d","$L1e"]}]}]]
+1f:I[91947,["9425","static/chunks/bf2ff291-187e9b6737d017c0.js","988","static/chunks/993e5495-8f37b575f5ea4e90.js","2619","static/chunks/2619-04bc32f026a0d946.js","1485","static/chunks/1485-c29208fe45623273.js","478","static/chunks/478-9a67ad52007bf98d.js","8499","static/chunks/8499-a083604ad3426bf5.js","8419","static/chunks/app/projects/%5Bslug%5D/page-2fde4997759f4332.js"],"MermaidDiagram"]
+1a:["$","$L17",null,{"href":"/projects/","children":"All projects","className":"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 border border-white/15 bg-transparent hover:bg-white/5 text-foreground h-11 px-5 py-2","ref":null}]
+1b:["$","div",null,{"className":"relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/drl-jss-cover.png","alt":"drl-jss cover","className":"h-full w-full object-cover"}]}]
+1c:["$","dl",null,{"className":"mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm sm:grid-cols-3","children":[["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Stars"}],["$","dd",null,{"className":"mt-1 font-medium","children":0}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Language"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Python"}]]}],["$","div",null,{"children":[["$","dt",null,{"className":"text-muted","children":"Last updated"}],["$","dd",null,{"className":"mt-1 font-medium","children":"Aug 9, 2026"}]]}]]}]
+1d:["$","div",null,{"className":"mt-12 space-y-12","children":[["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Business problem"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Job shop scheduling is a classic NP-hard optimization problem. Traditional heuristics struggle to generalize across dynamic shop-floor conditions, while exact solvers do not scale for many practical instances."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Solution"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Developed and evaluated deep reinforcement learning agents that learn scheduling policies for job shop environments—demonstrating how DRL can produce competitive decisions for complex sequencing problems."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Tech stack"}],["$","div",null,{"className":"mt-4 flex flex-wrap gap-2","children":[["$","div","Python",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Python"}],["$","div","Deep Reinforcement Learning",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Deep Reinforcement Learning"}],["$","div","PyTorch / RL libraries",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"PyTorch / RL libraries"}],["$","div","Simulation environments",{"className":"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-medium transition-colors border-brand/30 bg-brand/10 text-brand","children":"Simulation environments"}]]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Data model"}],["$","p",null,{"className":"mt-3 leading-relaxed text-muted","children":"Environment state encodes jobs, machines, and remaining operations; actions select scheduling decisions; rewards optimize makespan and related objectives."}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Architecture diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1f",null,{"chart":"flowchart LR\n  ENV[Job Shop Environment] --> AGENT[DRL Agent]\n  AGENT --> ACTION[Scheduling Action]\n  ACTION --> ENV\n  ENV --> REWARD[Reward / Makespan Signal]\n  REWARD --> AGENT\n  AGENT --> POLICY[Learned Scheduling Policy]"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Pipeline diagram"}],["$","div",null,{"className":"overflow-auto rounded-2xl border border-white/10 bg-white/[0.02] p-4","children":["$","$L1f",null,{"chart":"flowchart TD\n  a[Define JSS environment] --> b[Design state & action space]\n  b --> c[Train DRL policy]\n  c --> d[Evaluate vs baselines]\n  d --> e[Analyze generalization & makespan]\n  e --> f[Document thesis findings]"}]}]]}],["$","section",null,{"children":[["$","h2",null,{"className":"text-2xl font-semibold tracking-tight","children":"Lessons learned"}],["$","ul",null,{"className":"mt-4 space-y-2 text-muted","children":[["$","li","Representation of state/action space is as important as the learning algorithm.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Representation of state/action space is as important as the learning algorithm."}]]}],"$L20","$L21"]}]]}],"$L22"]}]
+23:T7a20,<h1>Deep Reinforcement Learning for Industrial Job-Shop Scheduling</h1>
+<p><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&#x26;logoColor=white" alt="Python"></a>
+<a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.1-EE4C2C?logo=pytorch&#x26;logoColor=white" alt="PyTorch"></a>
+<a href="https://stable-baselines3.readthedocs.io/"><img src="https://img.shields.io/badge/Stable--Baselines3-2.2-brightgreen" alt="Stable-Baselines3"></a>
+<a href="https://gymnasium.farama.org/"><img src="https://img.shields.io/badge/Gymnasium-0.29-black" alt="Gymnasium"></a>
+<a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-1.24-013243?logo=numpy&#x26;logoColor=white" alt="NumPy"></a>
+<a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-2.1-150458?logo=pandas&#x26;logoColor=white" alt="Pandas"></a>
+<a href="#"><img src="https://img.shields.io/badge/Machine%20Learning-Research-blue" alt="Machine Learning"></a>
+<a href="#"><img src="https://img.shields.io/badge/Reinforcement%20Learning-DQN%20%7C%20A2C%20%7C%20PPO-orange" alt="Reinforcement Learning"></a>
+<a href="./LICENSE"><img src="https://img.shields.io/badge/Open%20Source-MIT-success" alt="Open Source"></a>
+<a href="./.github/workflows"><img src="https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&#x26;logoColor=white" alt="CI"></a></p>
+<p>Production-oriented research codebase for <strong>dynamic industrial job-shop scheduling</strong> with deep reinforcement learning. The system models a factory floor with machines, tray capacities, recipe compatibility constraints, and continuously arriving jobs, then trains policies that make <strong>direct job–machine assignment decisions</strong> to minimize tardiness.</p>
+<blockquote>
+<p><strong>Research write-up:</strong> <a href="http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-538891">URN: urn:nbn:se:uu:diva-538891</a></p>
+</blockquote>
+<hr>
+<h2>Executive Summary</h2>
+<p>Manufacturing plants continuously receive production orders that must be sequenced across specialized machines under hard constraints: recipe compatibility, tray capacity, process duration, and due dates. Classical dispatch rules (FIFO, EDD, handcrafted heuristics) are fast but myopic—they optimize local criteria and struggle when machine capabilities overlap and job mix shifts over time.</p>
+<p>This repository implements a <strong>Gymnasium</strong> simulation of that decision process and trains <strong>Deep Q-Network (DQN)</strong>, <strong>Advantage Actor-Critic (A2C)</strong>, and <strong>Proximal Policy Optimization (PPO)</strong> agents with <strong>Stable-Baselines3</strong> / <strong>PyTorch</strong>. Instead of selecting a dispatch rule, the agent chooses an explicit <code>(job, machine)</code> pairing (or No-Op / start-machine action) from a structured observation of queues, capacities, deadlines, and machine state.</p>
+<p><strong>Business impact targeted by the control objective</strong></p>
+<ul>
+<li>Fewer late jobs (lower mean tardiness)</li>
+<li>Higher effective throughput under capacity constraints</li>
+<li>Better utilization of specialized vs multi-purpose machines</li>
+<li>A trainable policy that adapts as job mix and load change</li>
+</ul>
+<p>In the primary evaluation configuration (<strong>2 machines · 2 recipes · buffer size 3 · 1000 episodes</strong>), a trained DQN policy reduces late-job rate to <strong>~0.022%</strong> versus <strong>~0.13%</strong> for EDD and <strong>~0.51%</strong> for FIFO on the same evaluation artifacts.</p>
+<hr>
+<h2>Project Highlights</h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom industrial MDP</td>
+<td><code>custom_environment/</code> Gymnasium <code>FactoryEnv</code></td>
+</tr>
+<tr>
+<td>Direct job–machine actions</td>
+<td>Discrete action space over buffer × machines + No-Op + start-machine</td>
+</tr>
+<tr>
+<td>Constrained factory physics</td>
+<td>Tray capacity, recipe eligibility, asynchronous completions</td>
+</tr>
+<tr>
+<td>Learning stack</td>
+<td>SB3 <code>MultiInputPolicy</code> for DQN / A2C / PPO</td>
+</tr>
+<tr>
+<td>Strong baselines</td>
+<td>Random, FIFO, EDD, process-time/deadline heuristic</td>
+</tr>
+<tr>
+<td>Experiment ops</td>
+<td>Training callbacks, pickled eval caches, comparative plotting</td>
+</tr>
+<tr>
+<td>Docs &#x26; demos</td>
+<td>Architecture diagrams, regenerated charts, scheduling GIFs</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Why Reinforcement Learning?</h2>
+<p>Job-shop scheduling is an NP-hard combinatorial optimization problem. In industrial settings it is also <strong>dynamic</strong>: new jobs arrive online, machines become free asynchronously, and feasible assignments depend on evolving capacity and recipe locks.</p>
+<table>
+<thead>
+<tr>
+<th>Classical approach</th>
+<th>Limitation in this setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exact MIP / CP solvers</td>
+<td>Hard to re-solve at every event under tight latency</td>
+</tr>
+<tr>
+<td>Metaheuristics (GA, ACO, PSO)</td>
+<td>Expensive to warm-start continuously</td>
+</tr>
+<tr>
+<td>Dispatch rules</td>
+<td>Fast, but local and brittle under multi-skill machines</td>
+</tr>
+</tbody>
+</table>
+<p>RL is a natural fit because:</p>
+<ol>
+<li>The plant can be cast as an MDP with delayed rewards (completions happen after assignment).</li>
+<li>Policies can be trained offline in simulation and executed with millisecond inference.</li>
+<li>Direct action parameterization removes the need to hand-select a dispatch rule family.</li>
+<li>Value-based methods (DQN) handle discrete constrained action sets well when exploration is managed carefully.</li>
+</ol>
+<hr>
+<h2>System Architecture</h2>
+<pre><code class="language-mermaid">flowchart LR
+    A[Manufacturing Orders] --> B[Job Queue]
+    B --> C[Pending Buffer]
+    C --> D[Factory Environment]
+    D --> E[State Representation]
+    E --> F[RL Agent]
+    F --> G[Policy Network]
+    G --> H[Action Selection]
+    H --> I{Action Type}
+    I -->|Assign job→machine| J[Schedule on tray]
+    I -->|Start machine| K[Begin processing]
+    I -->|No-Op| L[Advance clock]
+    J --> M[Reward Function]
+    K --> M
+    L --> M
+    M --> N[Episode Metrics]
+    N --> O[Tardiness / On-time / Reward]
+</code></pre>
+<h3>Training Pipeline</h3>
+<pre><code class="language-mermaid">flowchart TB
+    subgraph Train["Training Pipeline"]
+      E1[init_custom_factory_env] --> E2[Monitor wrapper]
+      E2 --> E3[SB3 DQN / A2C / PPO]
+      E3 --> E4[Rollout collection]
+      E4 --> E5[Replay / advantage update]
+      E5 --> E6[PlotTrainingCallback]
+      E6 --> E7[Checkpoint under files/trainedAgents]
+      E5 --> E4
+    end
+</code></pre>
+<h3>Inference Pipeline</h3>
+<pre><code class="language-mermaid">flowchart LR
+    S[Reset / live factory obs] --> P[Loaded policy.predict]
+    P --> A[Discrete action]
+    A --> ENV[FactoryEnv.step]
+    ENV --> M[Metrics: JOT, JNOT, tardiness %, factory time]
+</code></pre>
+<h3>Environment Data Flow</h3>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --> Queue
+    Queue --> PendingBuffer: fill buffer slot
+    PendingBuffer --> MachinePending: assign action
+    MachinePending --> MachineActive: start-machine action
+    MachineActive --> CompletedOnTime: deadline met
+    MachineActive --> CompletedLate: deadline missed
+    MachineActive --> UncompletedBuffer: remaining recipes
+    UncompletedBuffer --> MachinePending: re-assign
+    PendingBuffer --> PendingBuffer: No-Op / illegal / blocked
+</code></pre>
+<hr>
+<h2>Environment Design</h2>
+<p>Implemented in <a href="custom_environment/environment.py"><code>custom_environment/environment.py</code></a> as a Gymnasium <code>Env</code>.</p>
+<h3>Decision process</h3>
+<p>At each decision point the agent may:</p>
+<ol>
+<li><strong>Assign</strong> a pending (or uncompleted-buffer) job to an available machine, if recipe + tray constraints allow</li>
+<li><strong>Start</strong> a machine that already has scheduled jobs</li>
+<li><strong>No-Op</strong>, advancing simulated factory time to the next meaningful event</li>
+</ol>
+<h3>Observation space (<code>spaces.Dict</code>)</h3>
+<p>Normalized / encoded features include:</p>
+<table>
+<thead>
+<tr>
+<th>Feature group</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>new_jobs_queue</code></td>
+<td>Upcoming recipe mix in the arrival queue</td>
+</tr>
+<tr>
+<td><code>new_jobs_tray_capacities</code></td>
+<td>Tray demand foresight</td>
+</tr>
+<tr>
+<td><code>pending_job_recipe</code></td>
+<td>Recipes currently actionable in the buffer</td>
+</tr>
+<tr>
+<td><code>pending_job_tray_capacities</code></td>
+<td>Capacity required per pending job</td>
+</tr>
+<tr>
+<td><code>pending_job_process_time_deadline_ratio</code></td>
+<td>Urgency proxy</td>
+</tr>
+<tr>
+<td><code>pending_job_steps_to_deadline</code></td>
+<td>Time-to-due normalized</td>
+</tr>
+<tr>
+<td><code>machine_pending_capacity</code> / <code>machine_active_capacity</code></td>
+<td>Utilization</td>
+</tr>
+<tr>
+<td><code>machine_active_recipe</code> / <code>machine_recipes</code></td>
+<td>Compatibility &#x26; current lock-in</td>
+</tr>
+<tr>
+<td><code>machine_is_available</code></td>
+<td>Binary availability</td>
+</tr>
+</tbody>
+</table>
+<h3>Action space</h3>
+<p>[
+|\mathcal{A}| = |\mathcal{M}| \cdot B + 1 + |\mathcal{M}|
+]</p>
+<p>(+ optional uncompleted-buffer assignment branch in expanded settings)</p>
+<p>where (B) is buffer size and (+1) is No-Op.</p>
+<h3>Reward shaping</h3>
+<p>Dense step rewards encourage feasible scheduling and discourage myopic / illegal behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th align="right">Typical weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job completed on time</td>
+<td align="right"><code>+10</code></td>
+</tr>
+<tr>
+<td>Job completed late</td>
+<td align="right"><code>-15</code></td>
+</tr>
+<tr>
+<td>Valid assignment</td>
+<td align="right"><code>+1</code> to <code>+5</code></td>
+</tr>
+<tr>
+<td>Deadline pressure / idle misuse</td>
+<td align="right"><code>-5</code> … <code>-20</code></td>
+</tr>
+<tr>
+<td>Invalid recipe / unavailable machine</td>
+<td align="right"><code>-20</code> … <code>-30</code></td>
+</tr>
+<tr>
+<td>Illegal action</td>
+<td align="right"><code>-15</code></td>
+</tr>
+</tbody>
+</table>
+<p>Rewards were iteratively refined against training curves (see research write-up, Section 3.6.3 / 4.x).</p>
+<h3>Episode lifecycle &#x26; termination</h3>
+<ul>
+<li>Episodes run up to <code>max_steps</code> (commonly 4k–10k for eval, larger for train).</li>
+<li>During training, catastrophic cumulative reward can trigger early termination (<code>is_evaluation=False</code>).</li>
+<li>Factory clock advances either by 1 tick, by No-Op jump, or to the soonest machine completion.</li>
+</ul>
+<h3>Industrial constraints encoded</h3>
+<ul>
+<li>Recipe eligibility per machine (specialized vs multi-purpose)</li>
+<li>Tray capacity packing before process start</li>
+<li>Stochastic / distributional recipe arrivals inspired by plant recipe frequencies</li>
+<li>Optional refresh of arrival time when jobs enter the buffer (<code>refresh_arrival_time</code>)</li>
+</ul>
+<hr>
+<h2>Model Architecture</h2>
+<h3>Algorithms implemented</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Role in this repo</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DQN</strong></td>
+<td>Primary learner</td>
+<td>Value-based, <code>MultiInputPolicy</code>, strongest empirical results</td>
+</tr>
+<tr>
+<td><strong>A2C</strong></td>
+<td>Actor–critic baseline</td>
+<td>Often under-learned in this sparse/delayed-reward MDP</td>
+</tr>
+<tr>
+<td><strong>PPO</strong></td>
+<td>On-policy baseline</td>
+<td>Used in comparative runs; batch size tuned to 2048</td>
+</tr>
+</tbody>
+</table>
+<h3>Policy network</h3>
+<p>SB3 <code>MultiInputPolicy</code> flattens the Dict observation and feeds an MLP:</p>
+<ul>
+<li>Default DQN net: <code>[64, 64]</code> ReLU</li>
+<li>Stronger DQN configs: <code>[128, 128, 64]</code></li>
+<li>Discount (\gamma) typically <code>0.6–0.99</code> (higher (\gamma) for long-horizon tardiness)</li>
+</ul>
+<h3>Experience &#x26; optimization (DQN)</h3>
+<ol>
+<li>ε-greedy exploration with configurable <code>exploration_fraction</code></li>
+<li>Replay buffer (e.g. 20k transitions), minibatch SGD on Bellman residual</li>
+<li>Target network soft/hard updates via SB3 defaults</li>
+<li>Periodic evaluation + <code>PlotTrainingCallback</code> for reward/tardiness curves</li>
+</ol>
+<h3>Training loop (conceptual)</h3>
+<pre><code class="language-text">for t in 1..T:
+  a_t ~ π_θ(s_t)            # or ε-greedy for DQN
+  s_{t+1}, r_t, done = env.step(a_t)
+  store / update
+  if callback_interval: plot + checkpoint
+</code></pre>
+<hr>
+<h2>Experimental Methodology</h2>
+<h3>Factory configurations</h3>
+<table>
+<thead>
+<tr>
+<th>Config</th>
+<th align="right">Machines</th>
+<th align="right">Recipes</th>
+<th align="right">Buffer</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple specialized</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td>Primary learning / baseline comparison</td>
+</tr>
+<tr>
+<td>All-purpose machines</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td>Stress multi-skill contention</td>
+</tr>
+<tr>
+<td>Expanded observation</td>
+<td align="right">2–4</td>
+<td align="right">2–3</td>
+<td align="right">2–3</td>
+<td>Queue + availability + recipe features</td>
+</tr>
+<tr>
+<td>Larger plant slices</td>
+<td align="right">up to 10</td>
+<td align="right">up to 14</td>
+<td align="right">3–10</td>
+<td>Scalability probes using plant recipe frequencies</td>
+</tr>
+</tbody>
+</table>
+<p>Recipe durations / frequencies are instantiated from industrial recipe metadata in <code>environment_factory.py</code>.</p>
+<h3>Baselines</h3>
+<ul>
+<li><strong>Random</strong> — uniform illegal-prone exploration reference</li>
+<li><strong>FIFO</strong> — oldest pending job first</li>
+<li><strong>EDD</strong> — earliest due date first</li>
+<li><strong>Heuristic (HDR)</strong> — prioritize high process-time/deadline ratio + capacity-aware starts</li>
+</ul>
+<h3>Evaluation protocol</h3>
+<ul>
+<li>Deterministic policy rollout (<code>predict(..., deterministic=True)</code>)</li>
+<li>Typically <strong>1000 episodes</strong></li>
+<li>Metrics logged per episode: cumulative reward, tardiness %, jobs on time (JOT), jobs late (JNOT)</li>
+<li>Results cached as pickles under <code>files/data/</code> for reproducible plotting (<code>compare_agents.py</code>)</li>
+</ul>
+<hr>
+<h2>Results</h2>
+<blockquote>
+<p>Figures below are regenerated from checked-in evaluation pickles via <code>scripts/generate_docs_assets.py</code>. No metrics were fabricated.</p>
+</blockquote>
+<h3>Primary benchmark (2m · 2r · buffer 3 · 1000 episodes)</h3>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th align="right">Mean Reward</th>
+<th align="right">On-time Jobs</th>
+<th align="right">Late Jobs</th>
+<th align="right">Total Jobs</th>
+<th align="right">Late Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DQN</strong></td>
+<td align="right"><strong>5399.24</strong></td>
+<td align="right">7482.74</td>
+<td align="right"><strong>1.66</strong></td>
+<td align="right">7484.40</td>
+<td align="right"><strong>0.022%</strong></td>
+</tr>
+<tr>
+<td>EDD</td>
+<td align="right">1535.87</td>
+<td align="right"><strong>8057.14</strong></td>
+<td align="right">10.39</td>
+<td align="right"><strong>8067.53</strong></td>
+<td align="right">0.128%</td>
+</tr>
+<tr>
+<td>FIFO</td>
+<td align="right">-52786.61</td>
+<td align="right">6907.89</td>
+<td align="right">35.45</td>
+<td align="right">6943.34</td>
+<td align="right">0.512%</td>
+</tr>
+<tr>
+<td>Heuristic</td>
+<td align="right">-17636.01</td>
+<td align="right">4881.07</td>
+<td align="right">306.06</td>
+<td align="right">5187.13</td>
+<td align="right">5.902%</td>
+</tr>
+<tr>
+<td>A2C</td>
+<td align="right">-192262.79</td>
+<td align="right">1865.43</td>
+<td align="right">128.88</td>
+<td align="right">1994.31</td>
+<td align="right">6.521%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Takeaway:</strong> DQN achieves the best tardiness and reward. EDD completes slightly more total jobs but with ~6× higher late rate than DQN in this configuration. A2C fails to match value-based learning here.</p>
+<h3>All-purpose machines (throughput vs tardiness)</h3>
+<p>When machines can run multiple recipes, myopic dispatch rules under-utilize packing opportunities. RL agents complete substantially more jobs, at the cost of higher late rates—an explicit throughput/tardiness trade-off observed in the research experiments:</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th align="right">On-time</th>
+<th align="right">Late</th>
+<th align="right">Total</th>
+<th align="right">Late Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A2C</td>
+<td align="right">6161.45</td>
+<td align="right">758.70</td>
+<td align="right"><strong>6920.15</strong></td>
+<td align="right">11.83%</td>
+</tr>
+<tr>
+<td>DQN</td>
+<td align="right">5164.75</td>
+<td align="right">707.05</td>
+<td align="right">5871.80</td>
+<td align="right">12.32%</td>
+</tr>
+<tr>
+<td>EDD</td>
+<td align="right">3011.23</td>
+<td align="right">165.65</td>
+<td align="right">3176.88</td>
+<td align="right"><strong>5.35%</strong></td>
+</tr>
+<tr>
+<td>Heuristic</td>
+<td align="right">2273.17</td>
+<td align="right">175.22</td>
+<td align="right">2448.39</td>
+<td align="right">7.25%</td>
+</tr>
+<tr>
+<td>FIFO</td>
+<td align="right">1396.20</td>
+<td align="right">148.42</td>
+<td align="right">1544.62</td>
+<td align="right">9.67%</td>
+</tr>
+</tbody>
+</table>
+<h3>Feature / arrival-time ablation highlight</h3>
+<p>With refreshed arrival-time semantics and a trained DQN (<code>20M</code> steps, RAT setting), late rate drops to <strong>~0.05%</strong> while sustaining high on-time throughput—evidence that observation design materially affects policy quality.</p>
+<h3>Qualitative scheduling demos</h3>
+<table>
+<thead>
+<tr>
+<th>Heuristic policy</th>
+<th>Random policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="docs/gifs/scheduling_episode_heuristic.gif" alt=""></td>
+<td><img src="docs/gifs/scheduling_episode_random.gif" alt=""></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Project Structure</h2>
+<pre><code class="language-text">.
+├── custom_environment/          # Gymnasium factory MDP + domain models
+│   ├── environment.py           # FactoryEnv: obs/action/reward/step dynamics
+│   ├── environment_factory.py   # Scenario builders (recipes, machines, jobs)
+│   ├── job.py / machine.py / recipe.py
+│   ├── *_factory.py             # Object construction helpers
+│   └── utils.py                 # Normalization, IO helpers, pretty printers
+├── callback/
+│   └── plot_training_callback.py
+├── scripts/
+│   └── generate_docs_assets.py  # Regenerate docs charts + GIFs
+├── docs/
+│   ├── images/                  # Benchmark &#x26; training figures
+│   └── gifs/                    # Episode visualizations
+├── files/
+│   ├── data/                    # Cached evaluation pickles
+│   ├── plots/                   # Historical training/eval plots
+│   ├── trainedAgents/           # Saved SB3 policies
+│   └── references/              # Related research PDFs
+├── dqn_agent.py / a2c_agent.py / ppo_agent.py
+├── fifo_agent.py / edd_agent.py / heuristic_agent.py / random_agent.py
+├── compare_agents.py            # Head-to-head evaluation + plots
+├── eval_dqn.py                  # Focused DQN evaluation entrypoint
+├── manual_agent.py              # Interactive environment probing
+├── tests/                       # Smoke tests for environment contracts
+├── requirements.txt
+├── Dockerfile
+└── README.md
+</code></pre>
+<hr>
+<h2>How It Works</h2>
+<ol>
+<li><strong>Data / scenario loading</strong> — <code>init_custom_factory_env(...)</code> samples recipes from industrial frequency weights and builds machines with valid recipe sets.</li>
+<li><strong>Environment creation</strong> — returns a Gymnasium-compatible <code>FactoryEnv</code> with Dict observations.</li>
+<li><strong>Training</strong> — SB3 agent collects rollouts, optimizes policy/value parameters, checkpoints models, and emits learning curves via callback.</li>
+<li><strong>Evaluation</strong> — frozen policy rolls out for (N) episodes; metrics persisted to <code>files/data/*.pkl</code>.</li>
+<li><strong>Visualization</strong> — <code>compare_agents.py</code> and <code>scripts/generate_docs_assets.py</code> produce comparative charts and GIFs.</li>
+<li><strong>Prediction / inference</strong> — <code>model.predict(obs, deterministic=True)</code> maps live observations to scheduling actions.</li>
+</ol>
+<hr>
+<h2>Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language</td>
+<td>Python 3.10+</td>
+<td>Research + production ML standard</td>
+</tr>
+<tr>
+<td>DL</td>
+<td>PyTorch 2.1</td>
+<td>Backend for SB3 policies</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>Stable-Baselines3 2.2</td>
+<td>Battle-tested DQN/A2C/PPO</td>
+</tr>
+<tr>
+<td>Env API</td>
+<td>Gymnasium 0.29</td>
+<td>Standard MDP interface / SB3 compatibility</td>
+</tr>
+<tr>
+<td>Numerics</td>
+<td>NumPy / Pandas</td>
+<td>Observation transforms &#x26; analysis</td>
+</tr>
+<tr>
+<td>Viz</td>
+<td>Matplotlib / Plotly / Pillow</td>
+<td>Training curves, benchmarks, GIFs</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>Black / Ruff / GitHub Actions</td>
+<td>Formatting, lint, env validation</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td>Docker</td>
+<td>Reproducible runtime</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Installation</h2>
+<pre><code class="language-bash">git clone &#x3C;repo-url>
+cd &#x3C;repo>
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+</code></pre>
+<h3>Docker</h3>
+<pre><code class="language-bash">docker build -t industrial-drl-jss .
+docker run --rm -it -v "$PWD":/app industrial-drl-jss bash
+</code></pre>
+<hr>
+<h2>Running the Project</h2>
+<h3>Smoke-check the environment</h3>
+<pre><code class="language-bash">python -c "from stable_baselines3.common.env_checker import check_env; \
+from custom_environment.environment_factory import init_custom_factory_env; \
+check_env(init_custom_factory_env())"
+</code></pre>
+<h3>Manual / interactive probing</h3>
+<pre><code class="language-bash">python manual_agent.py
+</code></pre>
+<h3>Train</h3>
+<pre><code class="language-bash"># DQN (primary)
+python dqn_agent.py
+
+# A2C / PPO
+python a2c_agent.py
+python ppo_agent.py
+</code></pre>
+<p>Training hyperparameters (steps, γ, network width, machine/recipe counts) are defined in each agent’s <code>__main__</code> block. Checkpoints land in <code>files/trainedAgents/</code>.</p>
+<h3>Evaluate a trained DQN</h3>
+<pre><code class="language-bash">python eval_dqn.py
+</code></pre>
+<h3>Baseline + RL comparison</h3>
+<pre><code class="language-bash">python compare_agents.py
+</code></pre>
+<p>Uses cached pickles when present; otherwise runs episodic evaluations and writes plots under <code>files/plots/</code>.</p>
+<h3>Dispatch-rule baselines only</h3>
+<pre><code class="language-bash">python fifo_agent.py
+python edd_agent.py
+python heuristic_agent.py
+python random_agent.py
+</code></pre>
+<h3>Regenerate documentation assets</h3>
+<pre><code class="language-bash">python scripts/generate_docs_assets.py
+# or
+python scripts/generate_docs_assets.py --figures-only
+python scripts/generate_docs_assets.py --gifs-only
+</code></pre>
+<h3>Tests</h3>
+<pre><code class="language-bash">python -m pytest -q
+</code></pre>
+<hr>
+<h2>Engineering Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gymnasium</strong></td>
+<td>Standard interface; SB3/env_checker ecosystem</td>
+<td>Custom rendering still needed for factory UX</td>
+</tr>
+<tr>
+<td><strong>Stable-Baselines3</strong></td>
+<td>Reliable DQN/A2C/PPO, Dict obs support via <code>MultiInputPolicy</code></td>
+<td>Less research flexibility than a from-scratch trainer</td>
+</tr>
+<tr>
+<td><strong>DQN as primary algorithm</strong></td>
+<td>Discrete constrained actions; strong empirical sample efficiency here</td>
+<td>Sensitive to reward scale &#x26; exploration schedule</td>
+</tr>
+<tr>
+<td><strong>Direct job–machine actions</strong></td>
+<td>Avoids dispatch-rule indirection; learns packing + timing jointly</td>
+<td>Action space grows with (B \times M)</td>
+</tr>
+<tr>
+<td><strong>Dense shaped rewards</strong></td>
+<td>Completions are delayed; shaping stabilizes early learning</td>
+<td>Risk of proxy-objective mismatch vs pure tardiness</td>
+</tr>
+<tr>
+<td><strong>Iterative obs expansion</strong></td>
+<td>Feature ablations (queue, availability, tray caps) drove gains</td>
+<td>Longer experiment cycles; config sprawl in filenames</td>
+</tr>
+<tr>
+<td><strong>Pickle-cached eval</strong></td>
+<td>Cheap replotting for 1000-episode studies</td>
+<td>Must version filenames carefully per config</td>
+</tr>
+</tbody>
+</table>
+<h3>Scalability notes</h3>
+<ul>
+<li>Observation/action sizes scale with machines and buffer length.</li>
+<li>Multi-million to hundreds-of-millions step runs were used for harder configs.</li>
+<li>Larger plants likely need action masking, hierarchical policies, or graph encoders.</li>
+</ul>
+<hr>
+<h2>Limitations</h2>
+<ol>
+<li><strong>Reward design</strong> — shaped rewards accelerate learning but can drift from pure business KPIs; some training phases show reward regressions.</li>
+<li><strong>Observation completeness</strong> — residual information gaps remain for long-horizon contention.</li>
+<li><strong>Generalization</strong> — policies are configuration-sensitive (machine map, recipe mix, arrival semantics).</li>
+<li><strong>Compute</strong> — competitive DQN runs often require (10^7)–(10^8+) environment steps.</li>
+<li><strong>Deployment gap</strong> — bridging simulation assumptions to live MES/APS integration (latency, uncertainty, human overrides) is future work.</li>
+<li><strong>A2C/PPO</strong> — on-policy methods underperformed DQN on several setups in this MDP.</li>
+</ol>
+<hr>
+<h2>Future Work</h2>
+<ul>
+<li><strong>Transformer / sequence policies</strong> for queue-aware attention over jobs</li>
+<li><strong>Graph Neural Networks</strong> over job–machine bipartite graphs</li>
+<li><strong>Multi-agent RL</strong> (machine-local actors + global critic)</li>
+<li><strong>Curriculum learning</strong> from small plants → full recipe catalogs</li>
+<li><strong>Action masking</strong> for illegal assignments (cleaner exploration)</li>
+<li><strong>Distributed training</strong> with Ray RLlib / large-scale rollout workers</li>
+<li><strong>Experiment tracking</strong> with Weights &#x26; Biases or MLflow</li>
+<li><strong>Cloud deployment</strong> of inference microservices beside factory digital twins</li>
+<li><strong>Safer reward learning</strong> / constrained RL for hard service-level objectives</li>
+</ul>
+<hr>
+<h2>Research Contributions</h2>
+<ol>
+<li><strong>Direct assignment MDP</strong> for industrial batch/job-shop scheduling with tray capacities and recipe constraints—not merely dispatch-rule selection.</li>
+<li><strong>Iterative environment/obs/reward engineering methodology</strong> showing which features (especially machine availability) unlock stable DQN learning.</li>
+<li><strong>Systematic comparison</strong> of DQN vs A2C vs PPO vs FIFO/EDD/HDR across specialized and multi-purpose machine regimes.</li>
+<li><strong>Evidence</strong> that value-based DRL can beat strong due-date heuristics on tardiness in the primary configuration, while exposing throughput–tardiness trade-offs in all-purpose settings.</li>
+<li><strong>Reproducible research engineering artifacts</strong>: factories, callbacks, cached evaluations, and regeneration scripts for figures/GIFs.</li>
+</ol>
+<hr>
+<h2>Production Considerations</h2>
+<p>If productizing this stack beside a real plant:</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety</td>
+<td>Shadow-mode inference before closed-loop control</td>
+</tr>
+<tr>
+<td>Constraints</td>
+<td>Hard action masks + fallback to EDD on OOD states</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>Amb-frozen MLP policy; batch obs serialization</td>
+</tr>
+<tr>
+<td>Drift</td>
+<td>Continual evaluation against live KPI dashboards</td>
+</tr>
+<tr>
+<td>Auditability</td>
+<td>Log <code>(state, action, expected Q, realized tardiness)</code></td>
+</tr>
+<tr>
+<td>Integration</td>
+<td>Adapter layer from MES events → Gymnasium-like obs</td>
+</tr>
+<tr>
+<td>Rollback</td>
+<td>Keep dispatch-rule baseline as hot standby</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Roadmap for Recruiters &#x26; Contributors</h2>
+<p>Additional repository upgrades that further strengthen production readiness (several already started in-tree):</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" checked disabled> Professional architecture documentation &#x26; Mermaid diagrams</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Regenerated benchmark charts from real eval artifacts</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Lightweight scheduling GIFs (no core-algo changes)</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Dockerized runtime</li>
+<li class="task-list-item"><input type="checkbox" checked disabled> Environment smoke tests + CI hooks</li>
+<li class="task-list-item"><input type="checkbox" disabled> Interactive Streamlit/Gradio demo for episode playback</li>
+<li class="task-list-item"><input type="checkbox" disabled> Action masking wrapper + illegal-action analytics</li>
+<li class="task-list-item"><input type="checkbox" disabled> W&#x26;B/MLflow experiment templates</li>
+<li class="task-list-item"><input type="checkbox" disabled> Deterministic seed harness + benchmark report CI job</li>
+<li class="task-list-item"><input type="checkbox" disabled> Semantic versioning / tagged releases of env + baselines</li>
+<li class="task-list-item"><input type="checkbox" disabled> Typed public API package layout (<code>src/</code>)</li>
+</ul>
+<hr>
+<h2>Citation</h2>
+<p>If you use this repository, please cite the research write-up:</p>
+<pre><code class="language-bibtex">@mastersthesis{adjei2024drljss,
+  title  = {Deep Reinforcement Learning for Industrial Job-Shop Scheduling},
+  author = {Adjei, Derrick Nii Adjei},
+  year   = {2024},
+  school = {Uppsala University},
+  url    = {http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-538891}
+}
+</code></pre>
+<hr>
+<h2>License</h2>
+<p>MIT License — see <a href="./LICENSE">LICENSE</a>.</p>
+<hr>
+<h2>Skills Demonstrated</h2>
+<p>✔ Reinforcement Learning<br>
+✔ Deep Learning<br>
+✔ PyTorch<br>
+✔ Stable-Baselines3 / Gymnasium<br>
+✔ Production Python<br>
+✔ Software Engineering<br>
+✔ Discrete-Event Simulation<br>
+✔ Combinatorial Optimization<br>
+✔ Industrial AI / Manufacturing Decision Systems<br>
+✔ Research Engineering<br>
+✔ Experiment Design &#x26; Ablations<br>
+✔ Data Analysis &#x26; Scientific Visualization<br>
+✔ Benchmarking against operational heuristics<br>
+✔ CI-friendly ML repository design</p>
+1e:["$","section",null,{"className":"mt-12","children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"README"}],["$","div",null,{"className":"prose prose-invert prose-portfolio max-w-none rounded-2xl border border-white/10 bg-white/[0.02] p-6","dangerouslySetInnerHTML":{"__html":"$23"}}]]}]
+20:["$","li","Reinforcement learning shines when policies must adapt beyond fixed heuristics.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Reinforcement learning shines when policies must adapt beyond fixed heuristics."}]]}]
+21:["$","li","Reproducible experiments and clear baselines are essential for thesis-grade ML research.",{"className":"flex gap-2","children":[["$","span",null,{"className":"mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"}],["$","span",null,{"children":"Reproducible experiments and clear baselines are essential for thesis-grade ML research."}]]}]
+22:["$","section",null,{"children":[["$","h2",null,{"className":"mb-4 text-2xl font-semibold tracking-tight","children":"Screenshots"}],["$","div",null,{"className":"grid gap-4","children":[["$","div","/images/projects/drl-jss-cover.png",{"className":"relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10","children":["$","img",null,{"src":"/images/projects/drl-jss-cover.png","alt":"Deep reinforcement learning for job shop scheduling — thesis project cover","className":"h-full w-full object-cover","loading":"lazy"}]}]]}]]}]

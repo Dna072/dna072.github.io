@@ -61,7 +61,7 @@ jobs:
           fi
 
       # Legacy Pages source is branch master / — sync export into repo root so
-      # https://dna072.github.io/ updates without requiring Actions Pages mode.
+      # https://derrick-adjei.github.io/ updates without requiring Actions Pages mode.
       - name: Sync static export into repository root
         run: |
           set -euo pipefail

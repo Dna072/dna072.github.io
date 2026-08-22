@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Derrick Adjei | Full-Stack & Data Engineer in Stockholm",
   description:
     "Derrick Adjei is a full-stack and data engineer in Stockholm. Builds Python/FastAPI backends, React/TypeScript apps, media/video SaaS systems, and AWS data platforms.",
-  url: "https://dna072.github.io",
+  url: "https://derrick-adjei.github.io",
   locale: "en_US",
   author: {
     name: "Derrick Adjei",

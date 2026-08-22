@@ -1,6 +1,6 @@
 # Derrick Adjei — Portfolio (GitHub Pages)
 
-Unified personal site at **https://dna072.github.io/** — Next.js UI (from the former `/Portfolio` app) with merged media/video SaaS case studies and data-engineering projects.
+Unified personal site at **https://derrick-adjei.github.io/** — Next.js portfolio with media/video SaaS case studies and data-engineering projects.
 
 ## Stack
 
@@ -40,9 +40,11 @@ BASE_PATH= npm run build
 
 GitHub Actions on `master` builds with `BASE_PATH=""` and syncs the export to the repository root (compatible with Pages source: `master` /).
 
-## Note on `/Portfolio`
+## Site URL
 
-https://dna072.github.io/Portfolio/ is a separate project Pages site from `Dna072/Portfolio`. This repo is now the main site. Grant write access to that repo (or archive it) if you want it redirected or retired.
+The canonical portfolio URL is **https://derrick-adjei.github.io/** (GitHub user site on the `derrick-adjei` account).
+
+See [docs/site-url.md](./docs/site-url.md) for hosting setup and redirecting the legacy `dna072.github.io` URL.
 
 ## Honesty
 

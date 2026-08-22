@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://dna072.github.io/sitemap-index.xml
+Sitemap: https://derrick-adjei.github.io/sitemap-index.xml

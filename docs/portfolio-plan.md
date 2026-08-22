@@ -1,6 +1,6 @@
 # Unified portfolio site
 
-The Next.js portfolio UI (previously only at `/Portfolio`) is now the **main site** for `dna072.github.io`.
+The Next.js portfolio UI is the **main site** for `derrick-adjei.github.io`.
 
 ## Content merge
 
